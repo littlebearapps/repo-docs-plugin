@@ -16,6 +16,8 @@
   <a href="https://code.claude.com/docs/en/plugins"><img src="https://img.shields.io/badge/Claude_Code-Plugin-D97757?logo=claude&logoColor=white" alt="Claude Code Plugin" /></a>
   <a href="https://opencode.ai/"><img src="https://img.shields.io/badge/OpenCode-Compatible-22c55e" alt="OpenCode Compatible" /></a>
   <a href="https://www.npmjs.com/"><img src="https://img.shields.io/badge/npm_%26_PyPI-Ready-cb3837" alt="npm & PyPI Ready" /></a>
+  <a href="https://github.com/littlebearapps/pitchdocs/stargazers"><img src="https://img.shields.io/github/stars/littlebearapps/pitchdocs?style=flat&color=yellow" alt="GitHub Stars" /></a>
+  <a href="https://github.com/littlebearapps/pitchdocs/graphs/contributors"><img src="https://img.shields.io/github/contributors/littlebearapps/pitchdocs?color=blue" alt="Contributors" /></a>
 </p>
 
 <p align="center">
@@ -77,36 +79,24 @@ Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, 
 - 🔍 **Evidence-based feature extraction** — scans 10 signal categories in your code and backs every claim with a file path
 - 📋 **Full docs suite from one command** — README, CHANGELOG, CONTRIBUTING, ROADMAP, SECURITY, issue templates, and 15+ more files
 - ✅ **4-question test on every doc** — does this solve my problem? can I use it? who made it? where do I learn more?
-- 🎯 **Benefit-driven language** — turns technical features into user outcomes with 5 benefit categories and evidence requirements
 - 🤖 **AI context file generation** — AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, and 3 more from one codebase scan
 - 🔎 **GEO-optimised for AI citation** — structured so ChatGPT, Perplexity, and Google AI Overviews cite your project accurately
 - 📊 **Quality scoring (0–100)** — grades docs on completeness, structure, freshness, and link health — export to CI with `--min-score`
-- 🔗 **Documentation verification** — broken links, stale content, heading hierarchy, badge URLs, and credential scanning
-- 📡 **llms.txt generation** — AI-readable content indices following the [llmstxt.org](https://llmstxt.org/) spec
-- 🚀 **Launch artifacts** — Dev.to articles, Hacker News posts, Reddit posts, Twitter/X threads, and awesome list submissions
 - 🔒 **Context Guard** — post-commit hooks detect stale AI context files, and a write guard prevents content filter errors on standard OSS files *(Claude Code only)*
-- 📦 **npm and PyPI ready** — audit registry metadata and ensure README renders correctly across GitHub, npm, and PyPI
-- 🗂️ **Diataxis framework** — classify docs into tutorials, how-to guides, reference, and explanation quadrants
-- 🔄 **Upstream spec tracking** — a GitHub Action checks monthly that your CHANGELOG, CODE_OF_CONDUCT, and commit conventions follow the latest spec versions
-- ♻️ **Install once, use everywhere** — add the plugin once and use it across all your projects without repeating setup
 - 🔌 **Works with 9 AI tools** — Claude Code, OpenCode, Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, Goose
 
 ---
 
 ## ⚖️ How PitchDocs Compares
 
-| Capability | PitchDocs | Manual Writing | [readme.so](https://readme.so/) | [readmeai](https://github.com/eli64s/readme-ai) | Generic AI Prompt |
-|-----------|-----------|----------------|--------------------------------|--------------------------------------------------|-------------------|
-| Scans codebase for features | 10 signal categories with file-level evidence | You decide what to include | No | Basic directory scan | Depends on prompt quality |
-| Benefit-driven language | Built-in framework (5 categories, evidence required) | If you know how | No | AI-generated, unstructured | Hit or miss |
-| Full docs suite (20+ files) | One command: `/pitchdocs:docs-audit fix` | Hours of manual work | README only | README only | One file at a time |
-| GEO / AI citation optimised | Atomic sections, comparison tables, concrete stats, llms.txt | If you know GEO | No | No | No |
-| AI context files | AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md | Manual | No | No | No |
-| Launch artifacts | Dev.to, HN, Reddit, Twitter, awesome lists | Manual per platform | No | No | No |
-| Documentation verification | Links, freshness, llms.txt sync, heading hierarchy, badges | Manual review | No | No | No |
-| Cross-tool compatibility | 9 AI coding tools with documented setup | N/A | N/A | CLI only | Tool-specific |
-| Upstream spec tracking | Monthly GitHub Action drift checks | Manual | No | No | No |
-| Reusable across projects | Install once, use everywhere | Start from scratch | Start from scratch | Run per project | Re-prompt each time |
+| Capability | PitchDocs | [readmeai](https://github.com/eli64s/readme-ai) | Generic AI Prompt |
+|-----------|-----------|--------------------------------------------------|-------------------|
+| Scans codebase for features | 10 signal categories with file-level evidence | Basic directory scan | Depends on prompt quality |
+| Full docs suite (20+ files) | One command: `/pitchdocs:docs-audit fix` | README only | One file at a time |
+| GEO / AI citation optimised | Atomic sections, comparison tables, concrete stats, llms.txt | No | No |
+| AI context files | AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, and 3 more | No | No |
+| Quality scoring and verification | 0–100 score, broken links, freshness, heading hierarchy, badges | No | No |
+| Cross-tool compatibility | 9 AI coding tools with documented setup | CLI only | Tool-specific |
 
 ---
 
@@ -158,6 +148,7 @@ See the [Other AI Tools guide](docs/guides/other-ai-tools.md) for per-tool setup
 - [Troubleshooting](docs/guides/troubleshooting.md) — Content filter errors, quality scores, badge issues, and FAQ
 - [Other AI Tools](docs/guides/other-ai-tools.md) — Setup for Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose
 - [Documentation Hub](docs/README.md) — All guides, command reference, and skills reference
+- [Support](SUPPORT.md) — Getting help, common questions, and response times
 
 ---
 
@@ -166,6 +157,8 @@ See the [Other AI Tools guide](docs/guides/other-ai-tools.md) for per-tool setup
 Found a way to make generated docs even better? We'd love your help — whether it's improving a template, fixing a language rule, or suggesting a new doc type entirely.
 
 See our [Contributing Guide](CONTRIBUTING.md) to get started, or jump straight in:
+
+**Roadmap:** See [open milestones](https://github.com/littlebearapps/pitchdocs/milestones) and [feature requests](https://github.com/littlebearapps/pitchdocs/issues?q=is:open+label:enhancement) for what's coming next.
 
 - [Good First Issues](https://github.com/littlebearapps/pitchdocs/labels/good%20first%20issue) — Great starting points
 - [Feature Requests](https://github.com/littlebearapps/pitchdocs/issues/new?template=feature_request.yml) — Suggest improvements
