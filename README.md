@@ -45,7 +45,7 @@ Get your first generated README in under 60 seconds.
 /readme
 ```
 
-**Optional — install quality rules and hooks (Claude Code only):**
+**Optional — install Context Guard hooks (Claude Code only):**
 
 ```bash
 # 4. Install Context Guard hooks for AI context file freshness and content filter protection
@@ -152,6 +152,8 @@ See the [Other AI Tools guide](docs/guides/other-ai-tools.md) for per-tool setup
 ## 📚 Documentation
 
 - [Getting Started Guide](docs/guides/getting-started.md) — Installation, first README generation, and full command walkthrough
+- [Workflows](docs/guides/workflows.md) — Recipes for public-ready repos, releases, launches, and ongoing maintenance
+- [Troubleshooting](docs/guides/troubleshooting.md) — Content filter errors, quality scores, badge issues, and FAQ
 - [Other AI Tools](docs/guides/other-ai-tools.md) — Setup for Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose
 - [Documentation Hub](docs/README.md) — All guides, command reference, and skills reference
 
