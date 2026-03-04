@@ -26,17 +26,17 @@ Every PitchDocs command accepts natural language arguments that guide what it ge
 ### Focus on a section
 
 ```
-/readme focus on the comparison table
-/readme focus on the quickstart section
-/readme focus on badges and credibility signals
+/pitchdocs:readme focus on the comparison table
+/pitchdocs:readme focus on the quickstart section
+/pitchdocs:readme focus on badges and credibility signals
 ```
 
 ### Target a specific audience
 
 ```
-/readme for a technical audience familiar with TypeScript
-/readme for non-technical stakeholders
-/user-guide for DevOps engineers setting up CI/CD
+/pitchdocs:readme for a technical audience familiar with TypeScript
+/pitchdocs:readme for non-technical stakeholders
+/pitchdocs:user-guide for DevOps engineers setting up CI/CD
 ```
 
 ### Iterate on existing output
@@ -44,9 +44,9 @@ Every PitchDocs command accepts natural language arguments that guide what it ge
 Run commands multiple times with different focus areas:
 
 ```
-/readme                              # First pass — full generation
-/readme improve the features section # Second pass — refine specific section
-/readme add a comparison with Tool X # Third pass — add competitive positioning
+/pitchdocs:readme                              # First pass — full generation
+/pitchdocs:readme improve the features section # Second pass — refine specific section
+/pitchdocs:readme add a comparison with Tool X # Third pass — add competitive positioning
 ```
 
 PitchDocs reads existing content before generating, so each pass refines rather than replaces.
@@ -58,9 +58,9 @@ PitchDocs reads existing content before generating, so each pass refines rather 
 PitchDocs defaults to professional-yet-approachable, benefit-driven language. Adjust by describing the tone you want:
 
 ```
-/readme with a formal, enterprise tone
-/readme keep it casual and developer-friendly
-/readme minimal marketing — focus on technical accuracy
+/pitchdocs:readme with a formal, enterprise tone
+/pitchdocs:readme keep it casual and developer-friendly
+/pitchdocs:readme minimal marketing — focus on technical accuracy
 ```
 
 **What you can't override:** The 4-question test (Does this solve my problem? Can I use it? Who made it? Where do I learn more?) is always applied. Every feature claim still requires code evidence. These are structural quality standards, not tone.
@@ -72,10 +72,10 @@ PitchDocs defaults to professional-yet-approachable, benefit-driven language. Ad
 Point commands at specific packages rather than the repo root:
 
 ```
-/readme packages/api
-/features packages/ui
-/docs-audit packages/shared
-/user-guide packages/cli
+/pitchdocs:readme packages/api
+/pitchdocs:features packages/ui
+/pitchdocs:docs-audit packages/shared
+/pitchdocs:user-guide packages/cli
 ```
 
 Each package can have its own independent documentation set. PitchDocs scans only the targeted directory's manifest files, source code, and git history.
@@ -97,8 +97,8 @@ The core quality framework. Enforces:
 If PitchDocs generates content you find overly structured, it's following these rules. You can ask it to simplify:
 
 ```
-/readme without emoji headings
-/readme shorter features section — max 5 items
+/pitchdocs:readme without emoji headings
+/pitchdocs:readme shorter features section — max 5 items
 ```
 
 ### context-quality (Claude Code only)
@@ -113,13 +113,13 @@ Guides PitchDocs around Claude's content filter. You don't need to interact with
 
 ## Output Formats for Features
 
-The `/features` command supports multiple output formats:
+The `/pitchdocs:features` command supports multiple output formats:
 
 ```
-/features              # Structured inventory (Hero / Core / Supporting tiers)
-/features table        # | Feature | Benefit | Status | table format
-/features bullets      # Emoji+bold+em-dash bullet format
-/features audit        # Gap analysis: documented vs actual
+/pitchdocs:features              # Structured inventory (Hero / Core / Supporting tiers)
+/pitchdocs:features table        # | Feature | Benefit | Status | table format
+/pitchdocs:features bullets      # Emoji+bold+em-dash bullet format
+/pitchdocs:features audit        # Gap analysis: documented vs actual
 ```
 
 Choose the format that matches where you'll paste the output. `table` works well for comparison sections; `bullets` works well for features lists.
@@ -131,15 +131,15 @@ Choose the format that matches where you'll paste the output. `table` works well
 After a release, you don't always need to refresh everything. Target specific areas:
 
 ```
-/doc-refresh plan              # Dry run — see what needs updating
-/doc-refresh changelog         # Only CHANGELOG.md
-/doc-refresh readme            # Only README.md features and metrics
-/doc-refresh guides            # Only affected user guides
-/doc-refresh context           # Only AI context files and llms.txt
-/doc-refresh release-notes     # Only GitHub release body
+/pitchdocs:doc-refresh plan              # Dry run — see what needs updating
+/pitchdocs:doc-refresh changelog         # Only CHANGELOG.md
+/pitchdocs:doc-refresh readme            # Only README.md features and metrics
+/pitchdocs:doc-refresh guides            # Only affected user guides
+/pitchdocs:doc-refresh context           # Only AI context files and llms.txt
+/pitchdocs:doc-refresh release-notes     # Only GitHub release body
 ```
 
-Use `/doc-refresh plan` first to see what changed, then refresh selectively.
+Use `/pitchdocs:doc-refresh plan` first to see what changed, then refresh selectively.
 
 ---
 

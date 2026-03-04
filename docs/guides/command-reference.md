@@ -13,9 +13,11 @@ order: 3
 
 > **Summary**: All 12 PitchDocs commands with arguments, generated files, and examples.
 
+**Note:** When installed as a plugin, all commands use the `pitchdocs:` prefix (e.g., `/pitchdocs:readme`). The short form `/readme` only works inside the pitchdocs source directory.
+
 ---
 
-## `/readme`
+## `/pitchdocs:readme`
 
 Generate or update a marketing-friendly README.md.
 
@@ -27,16 +29,16 @@ Generate or update a marketing-friendly README.md.
 
 **Examples:**
 ```
-/readme                              # Generate for current project
-/readme packages/api                 # Generate for a specific package
-/readme focus on the comparison table # Steer output to a specific section
+/pitchdocs:readme                              # Generate for current project
+/pitchdocs:readme packages/api                 # Generate for a specific package
+/pitchdocs:readme focus on the comparison table # Steer output to a specific section
 ```
 
 If a README.md already exists, PitchDocs reads it first and improves it rather than replacing from scratch.
 
 ---
 
-## `/features`
+## `/pitchdocs:features`
 
 Extract features from code and translate to benefits.
 
@@ -48,15 +50,15 @@ Extract features from code and translate to benefits.
 
 **Examples:**
 ```
-/features                # Full inventory (Hero / Core / Supporting tiers)
-/features table          # Markdown table format
-/features bullets        # Emoji+bold+em-dash bullet format
-/features audit          # Compare extracted vs documented features
+/pitchdocs:features                # Full inventory (Hero / Core / Supporting tiers)
+/pitchdocs:features table          # Markdown table format
+/pitchdocs:features bullets        # Emoji+bold+em-dash bullet format
+/pitchdocs:features audit          # Compare extracted vs documented features
 ```
 
 ---
 
-## `/docs-audit`
+## `/pitchdocs:docs-audit`
 
 Audit documentation completeness against a 20+ file checklist.
 
@@ -68,16 +70,16 @@ Audit documentation completeness against a 20+ file checklist.
 
 **Examples:**
 ```
-/docs-audit              # Report what's missing
-/docs-audit fix          # Auto-generate all missing docs
-/docs-audit packages/ui  # Audit a specific directory
+/pitchdocs:docs-audit              # Report what's missing
+/pitchdocs:docs-audit fix          # Auto-generate all missing docs
+/pitchdocs:docs-audit packages/ui  # Audit a specific directory
 ```
 
 Checks across 3 priority tiers: Tier 1 (README, LICENSE, CONTRIBUTING), Tier 2 (CHANGELOG, SECURITY, CODE_OF_CONDUCT), and Tier 3 (llms.txt, AGENTS.md, templates).
 
 ---
 
-## `/docs-verify`
+## `/pitchdocs:docs-verify`
 
 Verify documentation quality, links, freshness, and consistency.
 
@@ -89,18 +91,18 @@ Verify documentation quality, links, freshness, and consistency.
 
 **Examples:**
 ```
-/docs-verify             # Run all 9 checks
-/docs-verify links       # Link validation only
-/docs-verify score       # Quality score only (0–100)
-/docs-verify ci          # CI-friendly format (exit codes)
-/docs-verify ci --min-score 70  # Fail if score below 70
+/pitchdocs:docs-verify             # Run all 9 checks
+/pitchdocs:docs-verify links       # Link validation only
+/pitchdocs:docs-verify score       # Quality score only (0–100)
+/pitchdocs:docs-verify ci          # CI-friendly format (exit codes)
+/pitchdocs:docs-verify ci --min-score 70  # Fail if score below 70
 ```
 
 Runs 9 checks: markdown lint, link validation, llms.txt sync, image validation, freshness, feature coverage, badge URLs, token audit, and security scan.
 
 ---
 
-## `/changelog`
+## `/pitchdocs:changelog`
 
 Generate CHANGELOG.md from git history using conventional commits.
 
@@ -112,16 +114,16 @@ Generate CHANGELOG.md from git history using conventional commits.
 
 **Examples:**
 ```
-/changelog               # Update [Unreleased] section only
-/changelog v1.5.0        # Generate entry for a specific version
-/changelog full          # Regenerate entire changelog from all tags
+/pitchdocs:changelog               # Update [Unreleased] section only
+/pitchdocs:changelog v1.5.0        # Generate entry for a specific version
+/pitchdocs:changelog full          # Regenerate entire changelog from all tags
 ```
 
 **Note:** CHANGELOG.md has medium content filter risk. PitchDocs uses chunked writing automatically.
 
 ---
 
-## `/roadmap`
+## `/pitchdocs:roadmap`
 
 Generate ROADMAP.md from GitHub milestones and issues.
 
@@ -133,16 +135,16 @@ Generate ROADMAP.md from GitHub milestones and issues.
 
 **Examples:**
 ```
-/roadmap                 # Generate from all milestones and issues
-/roadmap "v2.0"          # Focus on a specific milestone
-/roadmap full            # Regenerate from scratch
+/pitchdocs:roadmap                 # Generate from all milestones and issues
+/pitchdocs:roadmap "v2.0"          # Focus on a specific milestone
+/pitchdocs:roadmap full            # Regenerate from scratch
 ```
 
 Uses GitHub milestones, issues labelled `enhancement`/`feature`, and git tags for completed versions.
 
 ---
 
-## `/user-guide`
+## `/pitchdocs:user-guide`
 
 Generate task-oriented user guides in `docs/guides/`.
 
@@ -154,15 +156,15 @@ Generate task-oriented user guides in `docs/guides/`.
 
 **Examples:**
 ```
-/user-guide              # Auto-detect and generate most-needed guides
-/user-guide deployment   # Generate a specific guide
-/user-guide all          # Full guide suite
-/user-guide hub          # Hub page only (docs/README.md)
+/pitchdocs:user-guide              # Auto-detect and generate most-needed guides
+/pitchdocs:user-guide deployment   # Generate a specific guide
+/pitchdocs:user-guide all          # Full guide suite
+/pitchdocs:user-guide hub          # Hub page only (docs/README.md)
 ```
 
 ---
 
-## `/llms-txt`
+## `/pitchdocs:llms-txt`
 
 Generate llms.txt and llms-full.txt for AI discoverability.
 
@@ -174,15 +176,15 @@ Generate llms.txt and llms-full.txt for AI discoverability.
 
 **Examples:**
 ```
-/llms-txt                # Generate llms.txt only
-/llms-txt full           # Generate both llms.txt and llms-full.txt
+/pitchdocs:llms-txt                # Generate llms.txt only
+/pitchdocs:llms-txt full           # Generate both llms.txt and llms-full.txt
 ```
 
 Follows the [llmstxt.org](https://llmstxt.org/) specification.
 
 ---
 
-## `/ai-context`
+## `/pitchdocs:ai-context`
 
 Generate AI IDE context files for 7 tools.
 
@@ -194,15 +196,15 @@ Generate AI IDE context files for 7 tools.
 
 **Examples:**
 ```
-/ai-context              # Generate all 7 context files
-/ai-context agents       # AGENTS.md only
-/ai-context cursor       # .cursorrules only
-/ai-context audit        # Check existing files for drift (no writes)
+/pitchdocs:ai-context              # Generate all 7 context files
+/pitchdocs:ai-context agents       # AGENTS.md only
+/pitchdocs:ai-context cursor       # .cursorrules only
+/pitchdocs:ai-context audit        # Check existing files for drift (no writes)
 ```
 
 ---
 
-## `/doc-refresh`
+## `/pitchdocs:doc-refresh`
 
 Refresh documentation after version bumps, feature additions, or periodic maintenance.
 
@@ -214,17 +216,17 @@ Refresh documentation after version bumps, feature additions, or periodic mainte
 
 **Examples:**
 ```
-/doc-refresh             # Auto-detect latest tag, refresh what changed
-/doc-refresh v1.7.0      # Refresh for a specific version
-/doc-refresh v1.5.0..v1.7.0  # Refresh for a version range
-/doc-refresh plan        # Dry run — report what needs refreshing
-/doc-refresh changelog   # Only refresh CHANGELOG.md
-/doc-refresh full        # Refresh everything regardless
+/pitchdocs:doc-refresh             # Auto-detect latest tag, refresh what changed
+/pitchdocs:doc-refresh v1.7.0      # Refresh for a specific version
+/pitchdocs:doc-refresh v1.5.0..v1.7.0  # Refresh for a version range
+/pitchdocs:doc-refresh plan        # Dry run — report what needs refreshing
+/pitchdocs:doc-refresh changelog   # Only refresh CHANGELOG.md
+/pitchdocs:doc-refresh full        # Refresh everything regardless
 ```
 
 ---
 
-## `/launch`
+## `/pitchdocs:launch`
 
 Generate platform-specific launch and promotion artifacts.
 
@@ -236,19 +238,19 @@ Generate platform-specific launch and promotion artifacts.
 
 **Examples:**
 ```
-/launch                  # Generate all launch artifacts
-/launch devto            # Dev.to article only
-/launch hn               # Hacker News "Show HN" post
-/launch reddit           # Reddit post templates
-/launch social           # Twitter/X thread + social preview guide
-/launch awesome          # Awesome list submission PR template
+/pitchdocs:launch                  # Generate all launch artifacts
+/pitchdocs:launch devto            # Dev.to article only
+/pitchdocs:launch hn               # Hacker News "Show HN" post
+/pitchdocs:launch reddit           # Reddit post templates
+/pitchdocs:launch social           # Twitter/X thread + social preview guide
+/pitchdocs:launch awesome          # Awesome list submission PR template
 ```
 
 All artifacts are written to `docs/launch/` for human review — they are starting points, not copy-paste-ready.
 
 ---
 
-## `/context-guard`
+## `/pitchdocs:context-guard`
 
 Install, uninstall, or check Context Guard hooks. **Claude Code only.**
 
@@ -260,9 +262,9 @@ Install, uninstall, or check Context Guard hooks. **Claude Code only.**
 
 **Examples:**
 ```
-/context-guard install   # Install 3 hooks into the current project
-/context-guard status    # Check installation state and run drift check
-/context-guard uninstall # Remove hooks (preserves other hooks)
+/pitchdocs:context-guard install   # Install 3 hooks into the current project
+/pitchdocs:context-guard status    # Check installation state and run drift check
+/pitchdocs:context-guard uninstall # Remove hooks (preserves other hooks)
 ```
 
 Installs 3 hooks: drift detection (warns after commits), structural change reminders (nudges on config changes), and content filter guard (prevents HTTP 400 on high-risk files).

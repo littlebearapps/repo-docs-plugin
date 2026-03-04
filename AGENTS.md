@@ -52,7 +52,7 @@ The docs-writer agent (`.claude/agents/docs-writer.md`) orchestrates the full do
 
 ## Workflow Commands
 
-These commands are defined in `commands/*.md` and can be invoked as slash commands in Claude Code and OpenCode, or as prompts in Codex CLI. Commands marked *(Claude Code only)* use features not available in other tools:
+These commands are defined in `commands/*.md` and can be invoked as slash commands in Claude Code and OpenCode, or as prompts in Codex CLI. Claude Code users: invoke as `/pitchdocs:command-name` (e.g., `/pitchdocs:readme`). Commands marked *(Claude Code only)* use features not available in other tools:
 
 | Command | What It Does |
 |---------|-------------|
@@ -74,7 +74,7 @@ These commands are defined in `commands/*.md` and can be invoked as slash comman
 PitchDocs includes features that are specific to Claude Code and do not work in OpenCode, Codex CLI, or other tools:
 
 - **Rules** (3): `.claude/rules/doc-standards.md` (quality standards — 4-question framework, GEO, device screenshot dimensions, caption patterns, shadow/border guidance, auto-loaded), `.claude/rules/context-quality.md` (AI context file quality, auto-loaded), and `.claude/rules/content-filter.md` (content filter quick reference, auto-loaded)
-- **Hooks** (3): `hooks/context-drift-check.sh` (post-commit drift detection), `hooks/context-structural-change.sh` (structural change reminders), and `hooks/content-filter-guard.sh` (Write guard for high-risk OSS files) — opt-in via `/context-guard install`
+- **Hooks** (3): `hooks/context-drift-check.sh` (post-commit drift detection), `hooks/context-structural-change.sh` (structural change reminders), and `hooks/content-filter-guard.sh` (Write guard for high-risk OSS files) — opt-in via `/pitchdocs:context-guard install` (Claude Code)
 
 ## AI Context Files
 

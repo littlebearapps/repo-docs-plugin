@@ -26,40 +26,40 @@ Generate the full documentation set for a project you're about to open-source or
 
 1. **Generate README first** — this establishes the project's voice and features:
    ```
-   /readme
+   /pitchdocs:readme
    ```
 
 2. **Audit for missing docs** — check what else the repo needs:
    ```
-   /docs-audit
+   /pitchdocs:docs-audit
    ```
 
 3. **Auto-generate everything missing** — fill all gaps in one go:
    ```
-   /docs-audit fix
+   /pitchdocs:docs-audit fix
    ```
 
 4. **Generate AI context files** — help other developers' AI tools understand your project:
    ```
-   /ai-context
+   /pitchdocs:ai-context
    ```
 
 5. **Generate llms.txt** — make the repo AI-discoverable:
    ```
-   /llms-txt full
+   /pitchdocs:llms-txt full
    ```
 
 6. **Verify everything** — check links, freshness, and quality:
    ```
-   /docs-verify
+   /pitchdocs:docs-verify
    ```
 
 7. **Review the quality score** — aim for 80+ (Grade B or above):
    ```
-   /docs-verify score
+   /pitchdocs:docs-verify score
    ```
 
-**Tip:** If your score is below 80, run `/docs-verify` without arguments to see which dimensions need improvement, then address them individually.
+**Tip:** If your score is below 80, run `/pitchdocs:docs-verify` without arguments to see which dimensions need improvement, then address them individually.
 
 ---
 
@@ -69,22 +69,22 @@ Update documentation after cutting a new version.
 
 1. **Update the changelog** for the new version:
    ```
-   /changelog v1.5.0
+   /pitchdocs:changelog v1.5.0
    ```
 
 2. **Refresh all affected docs** — analyses git changes since the last tag and updates what's needed:
    ```
-   /doc-refresh
+   /pitchdocs:doc-refresh
    ```
 
 3. **Verify nothing is broken** — check for stale content and broken links:
    ```
-   /docs-verify
+   /pitchdocs:docs-verify
    ```
 
 4. **Update badges** — if your version badge is hardcoded, update it in README. If it uses shields.io dynamic badges, it updates automatically.
 
-**Using release-please?** Run `/doc-refresh` before merging the release-please PR. Release-please owns version strings; `/doc-refresh` owns prose, features, metrics, and guides.
+**Using release-please?** Run `/pitchdocs:doc-refresh` before merging the release-please PR. Release-please owns version strings; `/pitchdocs:doc-refresh` owns prose, features, metrics, and guides.
 
 ---
 
@@ -94,21 +94,21 @@ Generate launch content for Dev.to, Hacker News, Reddit, Twitter/X, or awesome l
 
 1. **Ensure README is polished** — launch artifacts are derived from it:
    ```
-   /readme
+   /pitchdocs:readme
    ```
 
 2. **Generate all launch artifacts**:
    ```
-   /launch
+   /pitchdocs:launch
    ```
 
    Or target a specific platform:
    ```
-   /launch devto    # Dev.to article
-   /launch hn       # Hacker News "Show HN" post
-   /launch reddit   # Reddit post templates
-   /launch social   # Twitter/X thread + social preview guide
-   /launch awesome  # Awesome list submission PR
+   /pitchdocs:launch devto    # Dev.to article
+   /pitchdocs:launch hn       # Hacker News "Show HN" post
+   /pitchdocs:launch reddit   # Reddit post templates
+   /pitchdocs:launch social   # Twitter/X thread + social preview guide
+   /pitchdocs:launch awesome  # Awesome list submission PR
    ```
 
 3. **Review before posting** — all artifacts are written to `docs/launch/` for human review. Check for:
@@ -129,17 +129,17 @@ Prevent documentation drift with regular maintenance.
 
 | Trigger | Action |
 |---------|--------|
-| After every release | `/doc-refresh` (or `/doc-refresh v1.x.0`) |
-| Monthly (active projects) | `/docs-verify` to check for staleness |
-| Quarterly | `/features audit` to catch undocumented features |
-| After major refactors | `/ai-context audit` to check context file accuracy |
+| After every release | `/pitchdocs:doc-refresh` (or `/pitchdocs:doc-refresh v1.x.0`) |
+| Monthly (active projects) | `/pitchdocs:docs-verify` to check for staleness |
+| Quarterly | `/pitchdocs:features audit` to catch undocumented features |
+| After major refactors | `/pitchdocs:ai-context audit` to check context file accuracy |
 
 ### Set up Context Guard (Claude Code only)
 
 Install hooks that automatically warn about stale docs:
 
 ```
-/context-guard install
+/pitchdocs:context-guard install
 ```
 
 This adds three hooks:
@@ -149,12 +149,12 @@ This adds three hooks:
 
 Check status anytime:
 ```
-/context-guard status
+/pitchdocs:context-guard status
 ```
 
 ### Add docs verification to CI
 
-Run `/docs-verify ci` to get a CI-friendly output format. Add to GitHub Actions:
+Run `/pitchdocs:docs-verify ci` to get a CI-friendly output format. Add to GitHub Actions:
 
 ```yaml
 # .github/workflows/docs.yml
@@ -174,7 +174,7 @@ jobs:
           args: --no-progress '**.md'
 ```
 
-For PitchDocs-specific checks (quality score, feature coverage, llms.txt sync), run `/docs-verify ci --min-score 70` in a Claude Code session or CI agent.
+For PitchDocs-specific checks (quality score, feature coverage, llms.txt sync), run `/pitchdocs:docs-verify ci --min-score 70` in a Claude Code session or CI agent.
 
 ---
 
@@ -184,27 +184,27 @@ After adding a feature to your codebase, update docs to reflect it.
 
 1. **Check what PitchDocs detects**:
    ```
-   /features audit
+   /pitchdocs:features audit
    ```
 
 2. **Update README features section**:
    ```
-   /readme focus on features
+   /pitchdocs:readme focus on features
    ```
 
 3. **Update affected guides** (if any):
    ```
-   /doc-refresh guides
+   /pitchdocs:doc-refresh guides
    ```
 
 4. **Refresh AI context files**:
    ```
-   /doc-refresh context
+   /pitchdocs:doc-refresh context
    ```
 
 5. **Verify everything is consistent**:
    ```
-   /docs-verify
+   /pitchdocs:docs-verify
    ```
 
 ---

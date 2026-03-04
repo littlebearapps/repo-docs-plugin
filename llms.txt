@@ -43,18 +43,18 @@
 
 ## Commands
 
-- [/readme](./commands/readme.md): Generate or update a marketing-friendly README.md
-- [/features](./commands/features.md): Extract features from code and translate to benefits
-- [/changelog](./commands/changelog.md): Generate CHANGELOG.md from git history
-- [/roadmap](./commands/roadmap.md): Generate ROADMAP.md from GitHub milestones
-- [/docs-audit](./commands/docs-audit.md): Audit docs completeness against 20+ file checklist with AI context and Diataxis coverage
-- [/llms-txt](./commands/llms-txt.md): Generate llms.txt and llms-full.txt
-- [/user-guide](./commands/user-guide.md): Generate task-oriented user guides with Diataxis classification
-- [/ai-context](./commands/ai-context.md): Generate AI IDE context files (AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md)
-- [/docs-verify](./commands/docs-verify.md): Verify documentation links, freshness, llms.txt sync, badge URLs, quality score, and security
-- [/launch](./commands/launch.md): Generate platform-specific launch artifacts (Dev.to, HN, Reddit, Twitter, awesome lists)
-- [/doc-refresh](./commands/doc-refresh.md): Refresh all docs after version bumps — CHANGELOG, README features, user guides, AI context files, and llms.txt
-- [/context-guard](./commands/context-guard.md): Install, uninstall, or check status of Context Guard hooks for AI context file freshness (Claude Code only)
+- [/pitchdocs:readme](./commands/readme.md): Generate or update a marketing-friendly README.md
+- [/pitchdocs:features](./commands/features.md): Extract features from code and translate to benefits
+- [/pitchdocs:changelog](./commands/changelog.md): Generate CHANGELOG.md from git history
+- [/pitchdocs:roadmap](./commands/roadmap.md): Generate ROADMAP.md from GitHub milestones
+- [/pitchdocs:docs-audit](./commands/docs-audit.md): Audit docs completeness against 20+ file checklist with AI context and Diataxis coverage
+- [/pitchdocs:llms-txt](./commands/llms-txt.md): Generate llms.txt and llms-full.txt
+- [/pitchdocs:user-guide](./commands/user-guide.md): Generate task-oriented user guides with Diataxis classification
+- [/pitchdocs:ai-context](./commands/ai-context.md): Generate AI IDE context files (AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md)
+- [/pitchdocs:docs-verify](./commands/docs-verify.md): Verify documentation links, freshness, llms.txt sync, badge URLs, quality score, and security
+- [/pitchdocs:launch](./commands/launch.md): Generate platform-specific launch artifacts (Dev.to, HN, Reddit, Twitter, awesome lists)
+- [/pitchdocs:doc-refresh](./commands/doc-refresh.md): Refresh all docs after version bumps — CHANGELOG, README features, user guides, AI context files, and llms.txt
+- [/pitchdocs:context-guard](./commands/context-guard.md): Install, uninstall, or check status of Context Guard hooks for AI context file freshness (Claude Code only)
 
 ## Optional
 

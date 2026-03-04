@@ -119,7 +119,7 @@ PitchDocs classifies documentation into four types (from the Diataxis framework)
 | Reference | Information | Information-oriented | Command Reference |
 | Explanation | Understanding | Understanding-oriented | This page |
 
-When PitchDocs generates guides with `/user-guide`, it classifies each guide into one of these types. This helps ensure the docs set covers all four quadrants rather than concentrating on just one.
+When PitchDocs generates guides with `/pitchdocs:user-guide`, it classifies each guide into one of these types. This helps ensure the docs set covers all four quadrants rather than concentrating on just one.
 
 ---
 

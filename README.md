@@ -42,17 +42,19 @@ Get your first generated README in under 60 seconds.
 /plugin install pitchdocs@lba-plugins
 
 # 3. Generate a README for any project
-/readme
+/pitchdocs:readme
 ```
+
+**Note:** When installed as a plugin, all commands use the `pitchdocs:` prefix (e.g., `/pitchdocs:readme`). The short form `/readme` only works inside the pitchdocs source directory.
 
 **Optional — install Context Guard hooks (Claude Code only):**
 
 ```bash
 # 4. Install Context Guard hooks for AI context file freshness and content filter protection
-/context-guard install
+/pitchdocs:context-guard install
 ```
 
-Keeps your AI context files (AGENTS.md, CLAUDE.md, etc.) in sync as your project evolves, and prevents content filter errors when generating standard OSS files (CODE_OF_CONDUCT, LICENSE, SECURITY). Uninstall anytime with `/context-guard uninstall`.
+Keeps your AI context files (AGENTS.md, CLAUDE.md, etc.) in sync as your project evolves, and prevents content filter errors when generating standard OSS files (CODE_OF_CONDUCT, LICENSE, SECURITY). Uninstall anytime with `/pitchdocs:context-guard uninstall`.
 
 OpenCode reads `.claude/skills/` natively — the same install steps (1–3) work in both tools.
 
@@ -64,7 +66,7 @@ OpenCode reads `.claude/skills/` natively — the same install steps (1–3) wor
 
 Your repo is ready to go public, but the docs aren't. You need a README that sells, a CHANGELOG that makes sense to users, a SECURITY policy, contributing guidelines, issue templates, PR templates — and it all needs to look professional.
 
-PitchDocs gives your AI coding assistant the skills and knowledge to scan your codebase, find what's worth talking about, and write the whole documentation suite for you. README, CHANGELOG, CONTRIBUTING, ROADMAP, CODE_OF_CONDUCT, SECURITY, issue templates, PR templates, user guides, AI context files, and `llms.txt` — all from slash commands like `/readme` and `/docs-audit fix`.
+PitchDocs gives your AI coding assistant the skills and knowledge to scan your codebase, find what's worth talking about, and write the whole documentation suite for you. README, CHANGELOG, CONTRIBUTING, ROADMAP, CODE_OF_CONDUCT, SECURITY, issue templates, PR templates, user guides, AI context files, and `llms.txt` — all from slash commands like `/pitchdocs:readme` and `/pitchdocs:docs-audit fix`.
 
 Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, and backed by evidence from your actual code.
 
@@ -97,7 +99,7 @@ Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, 
 |-----------|-----------|----------------|--------------------------------|--------------------------------------------------|-------------------|
 | Scans codebase for features | 10 signal categories with file-level evidence | You decide what to include | No | Basic directory scan | Depends on prompt quality |
 | Benefit-driven language | Built-in framework (5 categories, evidence required) | If you know how | No | AI-generated, unstructured | Hit or miss |
-| Full docs suite (20+ files) | One command: `/docs-audit fix` | Hours of manual work | README only | README only | One file at a time |
+| Full docs suite (20+ files) | One command: `/pitchdocs:docs-audit fix` | Hours of manual work | README only | README only | One file at a time |
 | GEO / AI citation optimised | Atomic sections, comparison tables, concrete stats, llms.txt | If you know GEO | No | No | No |
 | AI context files | AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md | Manual | No | No | No |
 | Launch artifacts | Dev.to, HN, Reddit, Twitter, awesome lists | Manual per platform | No | No | No |
@@ -112,31 +114,31 @@ Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, 
 
 | Command | What It Does | Why It Matters |
 |---------|-------------|----------------|
-| `/readme` | Generate or update a marketing-friendly README.md | First impressions that convert browsers to users |
-| `/features` | Extract features from code and translate to benefits — output as inventory, table, or emoji+bold+em-dash bullets | Never miss a feature worth documenting |
-| `/changelog` | Generate CHANGELOG.md from git history with user-benefit language | Users see what changed for *them*, not your commit log |
-| `/roadmap` | Generate ROADMAP.md from GitHub milestones and issues | Show contributors where the project is heading |
-| `/docs-audit` | Audit docs completeness, quality, GitHub metadata, visual assets, AI context files, Diataxis coverage, and npm/PyPI registry config | Catch gaps in files, metadata, images, and package registry fields before you ship |
-| `/llms-txt` | Generate llms.txt and llms-full.txt for AI discoverability | AI coding assistants and search engines find and understand your docs |
-| `/user-guide` | Generate task-oriented user guides in `docs/guides/` with Diataxis classification | Readers find answers without reading your source code |
-| `/ai-context` | Generate AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md from codebase analysis | AI coding assistants understand your project's conventions from day one |
-| `/docs-verify` | Verify links, freshness, llms.txt sync, heading hierarchy, and badge URLs | Catch documentation decay before it reaches users |
-| `/launch` | Generate Dev.to articles, HN posts, Reddit posts, Twitter threads, awesome list submissions | Transform docs into platform-specific launch content |
-| `/doc-refresh` | Refresh all docs after version bumps — CHANGELOG, README features, user guides, AI context, llms.txt | Never ship a release with stale documentation |
-| `/context-guard` | Install, uninstall, or check status of Context Guard hooks for AI context file freshness and content filter protection | Catch stale context files and prevent content filter errors automatically |
+| `/pitchdocs:readme` | Generate or update a marketing-friendly README.md | First impressions that convert browsers to users |
+| `/pitchdocs:features` | Extract features from code and translate to benefits — output as inventory, table, or emoji+bold+em-dash bullets | Never miss a feature worth documenting |
+| `/pitchdocs:changelog` | Generate CHANGELOG.md from git history with user-benefit language | Users see what changed for *them*, not your commit log |
+| `/pitchdocs:roadmap` | Generate ROADMAP.md from GitHub milestones and issues | Show contributors where the project is heading |
+| `/pitchdocs:docs-audit` | Audit docs completeness, quality, GitHub metadata, visual assets, AI context files, Diataxis coverage, and npm/PyPI registry config | Catch gaps in files, metadata, images, and package registry fields before you ship |
+| `/pitchdocs:llms-txt` | Generate llms.txt and llms-full.txt for AI discoverability | AI coding assistants and search engines find and understand your docs |
+| `/pitchdocs:user-guide` | Generate task-oriented user guides in `docs/guides/` with Diataxis classification | Readers find answers without reading your source code |
+| `/pitchdocs:ai-context` | Generate AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md from codebase analysis | AI coding assistants understand your project's conventions from day one |
+| `/pitchdocs:docs-verify` | Verify links, freshness, llms.txt sync, heading hierarchy, and badge URLs | Catch documentation decay before it reaches users |
+| `/pitchdocs:launch` | Generate Dev.to articles, HN posts, Reddit posts, Twitter threads, awesome list submissions | Transform docs into platform-specific launch content |
+| `/pitchdocs:doc-refresh` | Refresh all docs after version bumps — CHANGELOG, README features, user guides, AI context, llms.txt | Never ship a release with stale documentation |
+| `/pitchdocs:context-guard` | Install, uninstall, or check status of Context Guard hooks for AI context file freshness and content filter protection | Catch stale context files and prevent content filter errors automatically |
 
-**Note:** `/context-guard` is **Claude Code only**. All other commands work across all supported AI tools.
+**Note:** `/pitchdocs:context-guard` is **Claude Code only**. All other commands work across all supported AI tools.
 
 ### Quick Examples
 
 ```bash
-/readme                   # Generate a marketing-friendly README
-/features bullets         # Extract features as emoji+bold+em-dash bullets
-/docs-audit fix           # Audit and auto-generate missing docs
-/changelog full           # Generate full changelog from all tags
-/ai-context               # Generate AI context files for all tools
-/docs-verify              # Check for broken links and stale content
-/doc-refresh              # Refresh all docs for an upcoming release
+/pitchdocs:readme                   # Generate a marketing-friendly README
+/pitchdocs:features bullets         # Extract features as emoji+bold+em-dash bullets
+/pitchdocs:docs-audit fix           # Audit and auto-generate missing docs
+/pitchdocs:changelog full           # Generate full changelog from all tags
+/pitchdocs:ai-context               # Generate AI context files for all tools
+/pitchdocs:docs-verify              # Check for broken links and stale content
+/pitchdocs:doc-refresh              # Refresh all docs for an upcoming release
 ```
 
 ---

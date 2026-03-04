@@ -10,7 +10,7 @@ PitchDocs is a Claude Code plugin that generates marketing-quality repository do
 - `.claude/rules/context-quality.md` — AI context file quality rule (auto-loaded, Claude Code only)
 - `.claude/rules/content-filter.md` — content filter quick reference rule (auto-loaded, Claude Code only)
 - `commands/*.md` — 12 slash command definitions
-- `hooks/*.sh` — 3 Context Guard hook scripts (Claude Code only, opt-in via `/context-guard install`)
+- `hooks/*.sh` — 3 Context Guard hook scripts (Claude Code only, opt-in via `/pitchdocs:context-guard install`)
 - `.claude-plugin/plugin.json` — plugin manifest
 
 ## Conventions

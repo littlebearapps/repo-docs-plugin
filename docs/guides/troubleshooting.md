@@ -40,7 +40,7 @@ curl -sL "https://raw.githubusercontent.com/spdx/license-list-data/main/text/MIT
 curl -sL "https://raw.githubusercontent.com/github/.github/main/SECURITY.md" -o SECURITY.md
 ```
 
-After fetching, use `/readme` or manual edits to customise placeholders like `[INSERT CONTACT METHOD]`.
+After fetching, use `/pitchdocs:readme` or manual edits to customise placeholders like `[INSERT CONTACT METHOD]`.
 
 **Medium-risk files** (`CHANGELOG.md`, `CONTRIBUTING.md`):
 - Write in chunks — 5 to 10 entries at a time
@@ -60,7 +60,7 @@ After fetching, use `/readme` or manual edits to customise placeholders like `[I
 
 ## Quality Score Interpretation
 
-When you run `/docs-verify score`, PitchDocs rates your documentation across 5 dimensions (total: 0–100):
+When you run `/pitchdocs:docs-verify score`, PitchDocs rates your documentation across 5 dimensions (total: 0–100):
 
 | Dimension | Max Points | What It Measures |
 |-----------|-----------|------------------|
@@ -81,11 +81,11 @@ When you run `/docs-verify score`, PitchDocs rates your documentation across 5 d
 | Below 60 | F | Not ready |
 
 **Improving your score:**
-- **Completeness**: Run `/docs-audit fix` to auto-generate missing files
+- **Completeness**: Run `/pitchdocs:docs-audit fix` to auto-generate missing files
 - **Structure**: Ensure README has a hero section (logo + one-liner + badges), uses heading hierarchy without skipping levels (H1 > H2 > H3, never H1 > H3)
-- **Freshness**: Run `/doc-refresh` after releases or feature additions
-- **Link Health**: Run `/docs-verify links` and fix reported broken links
-- **Evidence**: Run `/features audit` to find undocumented features, then update README
+- **Freshness**: Run `/pitchdocs:doc-refresh` after releases or feature additions
+- **Link Health**: Run `/pitchdocs:docs-verify links` and fix reported broken links
+- **Evidence**: Run `/pitchdocs:features audit` to find undocumented features, then update README
 
 ---
 
@@ -93,16 +93,16 @@ When you run `/docs-verify score`, PitchDocs rates your documentation across 5 d
 
 ### PitchDocs missed a feature
 
-`/features` scans 10 signal categories. If it missed something:
+`/pitchdocs:features` scans 10 signal categories. If it missed something:
 
 1. Check that the feature has code evidence — PitchDocs requires file-level proof (a file path, function name, or config option) for every feature claim
 2. Ensure the feature falls within the 10 signal categories: CLI commands, public API, configuration, integrations, performance, security, TypeScript/DX, testing, middleware/plugins/extensibility, and documentation
-3. Try running `/features` with a specific focus: describe the feature area in your prompt (e.g., `/features focus on the webhook integration`)
+3. Try running `/pitchdocs:features` with a specific focus: describe the feature area in your prompt (e.g., `/pitchdocs:features focus on the webhook integration`)
 4. For features only visible at runtime (e.g. env-var-controlled behaviour), add an `.env.example` or config schema — PitchDocs scans these
 
 ### PitchDocs listed a feature that doesn't exist
 
-Run `/features audit` to compare extracted features against what's documented in README. Over-documented features (claimed but not found in code) are flagged. Remove them from README or add the missing implementation.
+Run `/pitchdocs:features audit` to compare extracted features against what's documented in README. Over-documented features (claimed but not found in code) are flagged. Remove them from README or add the missing implementation.
 
 ---
 
@@ -112,7 +112,7 @@ Run `/features audit` to compare extracted features against what's documented in
 
 - Check the badge URL directly in a browser — shields.io returns SVGs, so a 404 or error SVG indicates a misconfigured URL
 - Common causes: incorrect repo owner/name, wrong package name for npm/PyPI badges, expired tokens for private repos
-- Run `/docs-verify links` — it validates badge URLs alongside regular links
+- Run `/pitchdocs:docs-verify links` — it validates badge URLs alongside regular links
 
 ### Cross-renderer Markdown issues
 
@@ -132,11 +132,11 @@ Markdown that renders on GitHub may break on npm or PyPI:
 
 ## llms.txt Sync Issues
 
-`/docs-verify` checks that every file referenced in `llms.txt` exists on disk. Common issues:
+`/pitchdocs:docs-verify` checks that every file referenced in `llms.txt` exists on disk. Common issues:
 
-- **File renamed but llms.txt not updated** — Run `/llms-txt` to regenerate
-- **New file added but not listed** — Run `/llms-txt` to pick up new docs
-- **Orphaned entries** — Files listed in llms.txt that were deleted. Run `/llms-txt` to regenerate a clean version
+- **File renamed but llms.txt not updated** — Run `/pitchdocs:llms-txt` to regenerate
+- **New file added but not listed** — Run `/pitchdocs:llms-txt` to pick up new docs
+- **Orphaned entries** — Files listed in llms.txt that were deleted. Run `/pitchdocs:llms-txt` to regenerate a clean version
 
 ---
 
@@ -168,7 +168,7 @@ When a README.md already exists, PitchDocs reads it first and improves it rather
 
 ### How do I use PitchDocs with a monorepo?
 
-Point commands at specific packages: `/readme packages/api` or `/features packages/ui`. Each package can have its own documentation set.
+Point commands at specific packages: `/pitchdocs:readme packages/api` or `/pitchdocs:features packages/ui`. Each package can have its own documentation set.
 
 ### What if I disagree with PitchDocs' suggestions?
 
