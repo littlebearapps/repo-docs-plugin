@@ -12,6 +12,11 @@
 - [Claude.md](./CLAUDE.md): Claude Code project context — architecture, conventions, key files, and modification guide
 - [Docs Hub](./docs/README.md): Documentation index with command reference, skills reference, and links to all guides
 - [Getting Started Guide](./docs/guides/getting-started.md): Step-by-step installation, first README generation, and full command walkthrough
+- [Workflows Guide](./docs/guides/workflows.md): Workflow cookbook — make a repo public-ready, prepare a release, launch on a platform, keep docs fresh over time
+- [Command Reference](./docs/guides/command-reference.md): All 12 commands with arguments, generated files, cross-tool support, and examples
+- [Customising Output Guide](./docs/guides/customising-output.md): Steering PitchDocs output — prompt patterns, tone control, monorepo support, iterative refinement
+- [Concepts Guide](./docs/guides/concepts.md): How PitchDocs thinks — evidence-based features, GEO, 4-question test, Diataxis, Lobby Principle, Time to Hello World
+- [Troubleshooting Guide](./docs/guides/troubleshooting.md): Content filter errors, quality score interpretation, feature extraction issues, badge failures, cross-tool limitations, FAQ
 - [Other AI Tools Guide](./docs/guides/other-ai-tools.md): Per-tool setup instructions and compatibility matrix for Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose
 
 ## Skills

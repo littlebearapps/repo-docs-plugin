@@ -13,6 +13,11 @@ Step-by-step instructions for common tasks:
 | Guide | What You'll Do |
 |-------|---------------|
 | [Getting Started](guides/getting-started.md) | Install PitchDocs, generate your first README, and explore all 12 commands |
+| [Workflows](guides/workflows.md) | Step-by-step recipes: make a repo public-ready, prepare a release, launch on a platform, keep docs fresh |
+| [Command Reference](guides/command-reference.md) | All 12 commands with arguments, generated files, and examples |
+| [Customising Output](guides/customising-output.md) | Steer PitchDocs: prompt patterns, tone control, monorepo support, iterative refinement |
+| [Concepts](guides/concepts.md) | How PitchDocs thinks: evidence-based features, GEO, 4-question test, Diataxis, Lobby Principle |
+| [Troubleshooting](guides/troubleshooting.md) | Content filter errors, score interpretation, badge issues, cross-tool limitations, FAQ |
 | [Other AI Tools](guides/other-ai-tools.md) | Set up PitchDocs with Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose |
 
 ## Quick Links
@@ -24,20 +29,7 @@ Step-by-step instructions for common tasks:
 
 ## Command Reference
 
-| Command | Purpose |
-|---------|---------|
-| `/readme` | Generate a marketing-friendly README.md |
-| `/features` | Extract features from code and translate to benefits |
-| `/changelog` | Generate CHANGELOG.md from git history |
-| `/roadmap` | Generate ROADMAP.md from GitHub milestones |
-| `/docs-audit` | Audit docs completeness against 20+ file checklist |
-| `/llms-txt` | Generate llms.txt and llms-full.txt |
-| `/user-guide` | Generate task-oriented user guides |
-| `/ai-context` | Generate 7 AI IDE context files (AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md) |
-| `/docs-verify` | Verify links, freshness, quality score, security, and consistency |
-| `/launch` | Generate platform-specific launch artifacts |
-| `/doc-refresh` | Refresh docs after version bumps, feature additions, or periodic maintenance |
-| `/context-guard` | Install, uninstall, or check Context Guard hooks for AI context file freshness *(Claude Code only)* |
+See the [Command Reference guide](guides/command-reference.md) for all 12 commands with arguments, generated files, cross-tool support, and examples.
 
 ## Skills Reference
 
