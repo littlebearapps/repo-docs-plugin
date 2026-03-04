@@ -23,7 +23,11 @@
     // Duplicate headings — CHANGELOG reuses Added/Fixed/Changed per version
     "MD024": false,
     // Fenced code language — some template blocks are language-agnostic
-    "MD040": false
+    "MD040": false,
+    // Multiple H1 — frontmatter title: counts as first H1, conflicting with actual # heading
+    "MD025": { "front_matter_title": "" },
+    // Table column style — project uses compact table pipes throughout
+    "MD060": false
   },
   "ignores": [
     ".claude/**",
