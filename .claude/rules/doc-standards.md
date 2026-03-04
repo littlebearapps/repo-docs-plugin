@@ -277,6 +277,52 @@ When annotating screenshots with callouts, arrows, or highlights:
 - **Text labels**: white text on red background pill, 14px minimum — must be legible at the display `width`
 - **Tool recommendations**: Cleanshot X (macOS), Flameshot (Linux), or ShareX (Windows) all support annotation presets
 
+#### Captions
+
+Add a caption beneath a screenshot when the image needs context that alt text alone can't convey — workflow diagrams, multi-part screenshots, or before/after comparisons. Captions are optional for straightforward UI screenshots.
+
+**Cross-renderer pattern** (works on GitHub, npm, and PyPI):
+```html
+<p align="center">
+  <img src="docs/images/dashboard-desktop.png" width="700" alt="Dashboard showing project metrics" />
+</p>
+<p align="center"><em>Figure 1: Dashboard overview showing project health metrics and recent activity</em></p>
+```
+
+**GitHub-preferred pattern** (semantic HTML — stripped on npm/PyPI):
+```html
+<figure align="center">
+  <img src="docs/images/dashboard-desktop.png" width="700" alt="Dashboard showing project metrics" />
+  <figcaption><em>Figure 1: Dashboard overview showing project health metrics and recent activity</em></figcaption>
+</figure>
+```
+
+**Rules:**
+- Use the cross-renderer `<p>` + `<em>` pattern for README and any file published to registries
+- Use `<figure>`/`<figcaption>` for GitHub-only docs (guides, tutorials, explanation pages)
+- Caption format: `Figure N: description` — keep descriptions under one sentence
+- Italic formatting (`<em>`) visually distinguishes captions from body text
+- Don't caption every screenshot — only when the image needs explanation beyond its alt text
+
+#### Shadows & Borders
+
+GitHub strips all CSS `style` attributes, so `box-shadow` and `border` do **not** render in GitHub Markdown (or npm/PyPI). Shadows and borders must be baked into the image at capture time.
+
+**Baked shadow (recommended for hero/marketing screenshots):**
+- Capture tools with built-in shadow presets: Cleanshot X (macOS), Flameshot (Linux), ShareX (Windows)
+- Shadow style: soft drop shadow, 10–20px blur, 40–60% opacity black, 0px horizontal / 4–8px vertical offset
+- Export with a white or transparent background behind the shadow — GitHub renders on white, so white is safest
+- Use shadows for hero/marketing screenshots in README where polish matters; skip for in-guide screenshots where content clarity takes priority
+
+**Baked border (for flat screenshots that bleed into the page):**
+- When a screenshot has a white or light background, add a 1px #E0E0E0 border at capture/export time to separate it from the page
+- Terminal screenshots and dark-themed UI don't need borders — their inherent dark background provides contrast
+
+**Anti-patterns:**
+- Don't use inline `style="box-shadow:..."` — stripped on all renderers
+- Don't use `<div>` wrapper styling — stripped on GitHub
+- Don't add shadows to terminal recordings (GIF/SVG) — dark backgrounds provide natural contrast
+
 #### Browser Chrome
 
 - **Exclude** browser chrome (address bar, tabs) for focused UI screenshots — readers care about the app, not the browser
