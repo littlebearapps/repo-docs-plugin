@@ -1,6 +1,6 @@
 ---
 title: "How PitchDocs Thinks"
-description: "Design rationale and frameworks behind PitchDocs output — evidence-based features, GEO, 4-question test, Diátaxis, and the Lobby Principle."
+description: "Design rationale and frameworks behind PitchDocs output — evidence-based features, GEO, 4-question test, Diátaxis, the Lobby Principle, and context drift detection."
 type: explanation
 difficulty: intermediate
 last_verified: "1.12.1"
@@ -12,7 +12,7 @@ order: 5
 
 # How PitchDocs Thinks
 
-> **TL;DR**: PitchDocs applies 6 documentation frameworks — evidence-based features, feature-to-benefit translation, the 4-question test, progressive disclosure, GEO, and Diátaxis — to generate consistently high-quality output.
+> **TL;DR**: PitchDocs applies 6 documentation frameworks — evidence-based features, feature-to-benefit translation, the 4-question test, progressive disclosure, GEO, and Diátaxis — and detects context drift to keep AI coding assistants in sync with your code.
 
 PitchDocs applies several documentation frameworks to generate consistently high-quality output. Understanding these frameworks helps you steer the tool and evaluate its suggestions.
 
@@ -122,6 +122,25 @@ PitchDocs classifies documentation into four types (from the Diataxis framework)
 | Explanation | Understanding | Understanding-oriented | This page |
 
 When PitchDocs generates guides with `/pitchdocs:user-guide`, it classifies each guide into one of these types. This helps ensure the docs set covers all four quadrants rather than concentrating on just one.
+
+---
+
+## Context Drift Detection
+
+AI coding assistants (Claude Code, Cursor, Copilot, Windsurf) rely on context files to understand your project's conventions, architecture, and constraints. When your code changes but context files don't, the AI operates on stale information — suggesting deprecated patterns, referencing moved files, or missing new commands.
+
+**What drifts:**
+- File paths referenced in AGENTS.md or CLAUDE.md that no longer exist
+- Commands listed in context files that were renamed or removed
+- Architecture descriptions that don't reflect recent refactors
+
+**How PitchDocs detects it:**
+PitchDocs' Context Guard hooks (Claude Code only) run automatically after commits and file edits:
+
+- **Post-commit check** — compares modification dates of context files against code changes and flags stale references
+- **Structural change reminder** — fires when you modify commands, skills, agents, or rules and reminds you which context files need updating
+
+Install with `/pitchdocs:context-guard install`. See [Workflows — Set Up Context Guard](workflows.md#set-up-context-guard) for details.
 
 ---
 

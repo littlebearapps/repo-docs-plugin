@@ -70,7 +70,7 @@ Your repo is ready to go public, but the docs aren't. You need a README that sel
 
 PitchDocs gives your AI coding assistant the skills and knowledge to scan your codebase, find what's worth talking about, and write the whole documentation suite for you. README, CHANGELOG, CONTRIBUTING, ROADMAP, CODE_OF_CONDUCT, SECURITY, issue templates, PR templates, user guides, AI context files, and `llms.txt` — all from slash commands like `/pitchdocs:readme` and `/pitchdocs:docs-audit fix`.
 
-Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, and backed by evidence from your actual code.
+Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, and backed by evidence from your actual code — with professional documentation standards (the 4-question test, lobby principle, and Time to Hello World targets) baked in automatically.
 
 ---
 
@@ -78,11 +78,12 @@ Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, 
 
 - 🔍 **Evidence-based feature extraction** — scans 10 signal categories in your code and backs every claim with a file path
 - 📋 **Full docs suite from one command** — README, CHANGELOG, CONTRIBUTING, ROADMAP, SECURITY, issue templates, and 15+ more files
-- ✅ **4-question test on every doc** — does this solve my problem? can I use it? who made it? where do I learn more?
+- ✅ **Professional docs without documentation expertise** — every generated doc passes the 4-question test, applies the lobby principle for progressive disclosure, and targets measurable Time to Hello World
 - 🤖 **AI context file generation** — AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, and 3 more from one codebase scan
 - 🔎 **GEO-optimised for AI citation** — structured so ChatGPT, Perplexity, and Google AI Overviews cite your project accurately
 - 📊 **Quality scoring (0–100)** — grades docs on completeness, structure, freshness, and link health — export to CI with `--min-score`
-- 🔒 **Context Guard** — post-commit hooks detect stale AI context files, and a write guard prevents content filter errors on standard OSS files *(Claude Code only)*
+- 🔒 **Context Guard** — post-commit hooks detect when AI context files drift out of sync with your code and nudge you to update them *(Claude Code only)*
+- 🛡️ **Content filter protection** — automatically handles Claude Code's API filter for CODE_OF_CONDUCT, LICENSE, and SECURITY so you never hit HTTP 400 errors *(Claude Code only)*
 - 🔌 **Works with 9 AI tools** — Claude Code, OpenCode, Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, Goose
 
 ---
