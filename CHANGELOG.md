@@ -5,6 +5,18 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.14.0](https://github.com/littlebearapps/pitchdocs/compare/v1.13.0...v1.14.0) (2026-03-05)
+
+
+### Added
+
+* add GitLab and Bitbucket platform support ([3d8fc03](https://github.com/littlebearapps/pitchdocs/commit/3d8fc039132998558049440dc9bccfcab848d1e0))
+
+
+### Documentation
+
+* strengthen benefit messaging for professional standards, content filter, and context drift ([40bfa7c](https://github.com/littlebearapps/pitchdocs/commit/40bfa7cee7abaab4e8716f35a083282d2adc034d))
+
 ## [1.13.0](https://github.com/littlebearapps/pitchdocs/compare/v1.12.1...v1.13.0) (2026-03-05)
 
 
