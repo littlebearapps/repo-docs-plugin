@@ -59,4 +59,5 @@ AI Context Audit:
   · .windsurfrules — not present (recommend generating)
   · .clinerules — not present (recommend generating)
   · GEMINI.md — not present (recommend generating)
+  ℹ MEMORY.md — contains 3 project conventions that may belong in CLAUDE.md
 ```

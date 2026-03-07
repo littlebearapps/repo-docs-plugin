@@ -15,7 +15,7 @@ order: 3
 
 **Note:** When installed as a plugin, all commands use the `pitchdocs:` prefix (e.g., `/pitchdocs:readme`). The short form `/readme` only works inside the pitchdocs source directory.
 
-### Using commands in other AI tools
+## Using commands in other AI tools
 
 Slash commands are a Claude Code / OpenCode feature. If you're using Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, or Goose, invoke commands as natural-language prompts that reference the underlying skill:
 

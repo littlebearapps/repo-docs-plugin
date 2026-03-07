@@ -24,6 +24,18 @@ This skill generates context files for multiple AI tools from a single codebase 
 | `.clinerules` | Cline (VS Code extension) | Project context for autonomous Cline tasks | Native to Cline |
 | `GEMINI.md` | Gemini CLI | Project context loaded at the start of every Gemini CLI session | Native to Gemini CLI |
 
+### CLAUDE.md vs Auto-Memory (Claude Code)
+
+Claude Code maintains three knowledge layers. PitchDocs generates CLAUDE.md — never MEMORY.md.
+
+| Layer | File | Who Writes | Shared via Git? |
+|-------|------|-----------|-----------------|
+| Project instructions | `CLAUDE.md` | Developer / PitchDocs | Yes |
+| Auto-memory | `~/.claude/.../MEMORY.md` | Claude itself | No (local only) |
+| Session memory | (in-context) | Claude itself | No |
+
+**Boundary rule:** CLAUDE.md contains instructions *for* Claude. MEMORY.md contains notes *by* Claude. If the same insight keeps appearing in MEMORY.md across sessions, promote it to CLAUDE.md.
+
 ## Codebase Analysis Workflow
 
 ### Step 1: Detect Project Profile
@@ -314,6 +326,7 @@ When running in `audit` mode, check existing context files for drift:
 2. **Missing commands** — Are test/build/deploy commands still accurate? Run them to verify.
 3. **Stale paths** — Do referenced file paths still exist?
 4. **New conventions** — Has the project adopted new patterns (e.g., added ESLint, switched to Vitest) that aren't reflected?
+5. **Memory drift** — If a MEMORY.md exists for this project, check whether it records conventions or patterns that should be promoted to CLAUDE.md. Flag as `ℹ MEMORY.md contains project conventions that may belong in CLAUDE.md`.
 
 Report format:
 ```

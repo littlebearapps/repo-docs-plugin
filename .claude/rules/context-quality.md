@@ -50,6 +50,7 @@ When these project changes occur, update the corresponding context files:
 | New rule or convention | All context files listing coding standards |
 | Architecture change | AGENTS.md, CLAUDE.md (architecture section) |
 | New agent | AGENTS.md |
+| Stable pattern in MEMORY.md | Promote to CLAUDE.md (so the whole team benefits) |
 
 ## Tool Compatibility
 
@@ -66,6 +67,7 @@ Not all context files work in all tools. Note that `.github/copilot-instructions
 | `GEMINI.md` | Gemini CLI | Claude Code, Cursor |
 | `.claude/rules/*.md` | Claude Code only | OpenCode, Codex CLI, Cursor |
 | Claude Code hooks | Claude Code only | OpenCode, Codex CLI, all others |
+| `MEMORY.md` (auto-memory) | Claude Code only (auto-written by Claude) | All others — not user-authored, not version-controlled |
 
 ## Context Doc Size Guidance
 
@@ -96,3 +98,4 @@ When updating context files, modify existing sections rather than appending new 
 - Changelogs or version history
 - Exhaustive configuration reference
 - Dependency lists beyond the critical few
+- Auto-memory content (MEMORY.md is Claude's own notebook — project instructions belong in CLAUDE.md, not copied from auto-memory)
