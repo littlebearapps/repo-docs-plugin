@@ -5,6 +5,19 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.16.0](https://github.com/littlebearapps/pitchdocs/compare/v1.15.0...v1.16.0) (2026-03-07)
+
+
+### Added
+
+* add auto-memory (MEMORY.md) accommodations to AI context guidance ([#24](https://github.com/littlebearapps/pitchdocs/issues/24)) ([c68175e](https://github.com/littlebearapps/pitchdocs/commit/c68175e71ff11de30ece974f8e72a691ec1c644c))
+* add root-level SKILL.md for directory submissions ([7ed7cf9](https://github.com/littlebearapps/pitchdocs/commit/7ed7cf9e6d5fa723e3e91f57a4f67bbb4647daed))
+
+
+### Documentation
+
+* fix stale counts in other-ai-tools compatibility guide ([27a7fdb](https://github.com/littlebearapps/pitchdocs/commit/27a7fdbac595600110804270ecf3c52ec80e0ed1))
+
 ## [1.15.0](https://github.com/littlebearapps/pitchdocs/compare/v1.14.0...v1.15.0) (2026-03-06)
 
 
