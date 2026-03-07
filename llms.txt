@@ -2,6 +2,8 @@
 
 > GitHub repository documentation skills and templates for AI coding assistants. A Claude Code plugin that scans codebases, extracts features with file-level evidence, and generates marketing-quality docs — README, CHANGELOG, ROADMAP, user guides, llms.txt, AI context files, launch artifacts, and 20+ files total. Includes quality scoring, security scanning, and project type auto-detection. GEO-optimised for AI citation. Pure Markdown, zero runtime dependencies. Also works with OpenCode, Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose.
 
+- [SKILL.md](./SKILL.md): Root-level skill manifest for directory submissions — plugin overview, installation, all 13 commands, and output format
+
 ## Docs
 
 - [README](./README.md): Project overview, value proposition, quick start, commands table, comparison table, and features list
