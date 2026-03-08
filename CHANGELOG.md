@@ -5,6 +5,13 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.17.0](https://github.com/littlebearapps/pitchdocs/compare/v1.16.0...v1.17.0) (2026-03-08)
+
+
+### Added
+
+* add Signal Gate principle, lifecycle commands, and context health scoring ([#25](https://github.com/littlebearapps/pitchdocs/issues/25)) ([8536449](https://github.com/littlebearapps/pitchdocs/commit/8536449029fcbf541b01e36a5a7c80df78fa5fe0))
+
 ## [1.16.0](https://github.com/littlebearapps/pitchdocs/compare/v1.15.0...v1.16.0) (2026-03-07)
 
 
