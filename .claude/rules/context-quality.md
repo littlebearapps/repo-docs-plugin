@@ -71,31 +71,37 @@ Not all context files work in all tools. Note that `.github/copilot-instructions
 
 ## Context Doc Size Guidance
 
-Context files are loaded into every AI session. Larger files consume more tokens, reducing the budget available for actual work. Keep context docs lean.
+Context files are loaded into every AI session. Research shows overstuffed context files **reduce** AI task success by ~3% and increase costs by 20% (ETH Zurich, 2026). Less is more — only include what agents cannot discover on their own.
 
 ### Line Budgets
 
-| File | Target | Why |
-|------|--------|-----|
-| CLAUDE.md | Under 150 lines | Auto-loaded every Claude Code session — directly impacts token budget |
-| AGENTS.md | Under 200 lines | Loaded by Claude Code, OpenCode, Codex CLI, and Gemini CLI |
-| Other context files | Under 100 lines | .cursorrules, .windsurfrules, .clinerules, GEMINI.md, copilot-instructions.md |
+| File | Target | Hard Max | Why |
+|------|--------|----------|-----|
+| CLAUDE.md | Under 80 lines | 120 lines | Auto-loaded every Claude Code session — directly impacts token budget |
+| AGENTS.md | Under 120 lines | 160 lines | Loaded by Claude Code, OpenCode, Codex CLI, Gemini CLI, Copilot, Cursor, and 60+ tools |
+| Other context files | Under 60 lines | 100 lines | .cursorrules, .windsurfrules, .clinerules, GEMINI.md, copilot-instructions.md |
+
+### The Signal Gate Test
+
+For every line in a context file, ask: **would removing this cause the AI to make a mistake?** If not, cut it.
 
 ### Update, Don't Append
 
 When updating context files, modify existing sections rather than appending new ones. Review the whole file and consolidate.
 
-**Belongs in context files:**
-- Key commands (test, build, lint, deploy)
-- Naming conventions and coding standards
-- Directory structure and key file paths
-- Critical rules and constraints
-- Architecture overview (one paragraph)
+**Belongs in context files (non-discoverable):**
+- Key commands (test, build, lint, deploy) — agents cannot guess these
+- Non-default naming conventions and coding standards
+- Hard constraints and critical rules
+- Security rules and environment quirks (e.g., `direnv exec` requirements)
 
-**Does NOT belong in context files:**
+**Does NOT belong in context files (discoverable):**
+- Directory listings and file trees — agents can `ls` and `find`
+- Dependency lists — agents read manifests (`package.json`, `pyproject.toml`)
+- Architecture overviews — agents read and infer from source code
+- Framework conventions — agents already know React, Express, Django, etc.
+- Key file tables — agents discover entry points via manifests
 - Tutorials or step-by-step guides (put in docs/)
 - Full API documentation (put in docs/ or generate)
 - Changelogs or version history
-- Exhaustive configuration reference
-- Dependency lists beyond the critical few
 - Auto-memory content (MEMORY.md is Claude's own notebook — project instructions belong in CLAUDE.md, not copied from auto-memory)

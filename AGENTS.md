@@ -33,8 +33,8 @@ Skills are loaded on-demand to provide deep reference knowledge. Each lives at `
 | `llms-txt` | llmstxt.org specification reference for generating `llms.txt` and `llms-full.txt` — LLM-friendly content indices for AI coding assistants |
 | `package-registry` | npm and PyPI metadata field auditing, cross-renderer README compatibility (GitHub vs npm vs PyPI), trusted publishing guidance, and registry-specific badges |
 | `user-guides` | Task-oriented how-to documentation with Diataxis framework, guide frontmatter standard, title conventions, numbered steps, copy-paste-ready code, error recovery, and cross-linked hub pages. Companion file `SKILL-templates.md` provides tutorial, reference, and explanation templates. |
-| `ai-context` | AI IDE context file generation — AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md from codebase analysis with staleness audit and auto-memory (MEMORY.md) boundary guidance |
-| `docs-verify` | Documentation validation — broken links, stale content, llms.txt sync, heading hierarchy, badge URLs, and CI-friendly output |
+| `ai-context` | AI IDE context file generation with Signal Gate principle — AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md from codebase analysis. Includes init (bootstrap), update (incremental drift patching), promote (MEMORY.md → CLAUDE.md), and audit with Context Guard status |
+| `docs-verify` | Documentation validation — broken links, stale content, llms.txt sync, heading hierarchy, badge URLs, AI context health scoring, and CI-friendly output |
 | `launch-artifacts` | Platform-specific launch content — Dev.to articles, HN posts, Reddit posts, Twitter threads, awesome list submissions |
 | `api-reference` | API reference generator guidance — TypeDoc, Sphinx, godoc, rustdoc configuration templates and comment conventions |
 | `doc-refresh` | Version-bump documentation orchestration — analyses git history, identifies affected docs, and delegates to existing skills for selective refresh |
@@ -64,8 +64,8 @@ These commands are defined in `commands/*.md` and can be invoked as slash comman
 | `docs-audit` | Audit docs completeness, quality, GitHub metadata, AI context files, Diataxis coverage, and registry config |
 | `llms-txt` | Generate llms.txt and llms-full.txt for AI discoverability |
 | `user-guide` | Generate task-oriented user guides in `docs/guides/` with Diataxis classification |
-| `ai-context` | Generate AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md from codebase analysis |
-| `docs-verify` | Verify links, freshness, llms.txt sync, heading hierarchy, and badge URLs |
+| `ai-context` | Generate AI context files using Signal Gate — supports `all`, `claude`, `agents`, `cursor`, `copilot`, `windsurf`, `cline`, `gemini`, `init`, `update`, `promote`, `audit` |
+| `docs-verify` | Verify links, freshness, llms.txt sync, heading hierarchy, badge URLs, and AI context health |
 | `launch` | Generate Dev.to articles, HN posts, Reddit posts, Twitter threads, awesome list submissions |
 | `doc-refresh` | Refresh all docs after version bumps — CHANGELOG, README features, user guides, AI context, llms.txt |
 | `platform` | Detect hosting platform (GitHub/GitLab/Bitbucket) and report feature support |

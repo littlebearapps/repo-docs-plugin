@@ -295,74 +295,9 @@ When generating docs that depend on third-party specifications, verify you are u
 
 ## Content Filter Mitigation
 
-Claude Code's API has a content filtering system that blocks output (HTTP 400) when generating certain standard OSS documentation files. This is a context-blind copyright filter — it triggers on governance language, security keywords, and verbatim legal text even when the intent is entirely legitimate. Anthropic has confirmed this is "expected behaviour" and will not change it.
+The `content-filter` rule (auto-loaded every session) and `content-filter-guard` hook (installed by Context Guard) handle content filter errors for CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, CHANGELOG.md, and CONTRIBUTING.md. Refer to `.claude/rules/content-filter.md` for risk levels, fetch commands, and chunked writing strategies.
 
-### Risk Levels by File Type
-
-| File | Risk | Why It Triggers | Strategy |
-|------|------|-----------------|----------|
-| CODE_OF_CONDUCT.md | HIGH | Contributor Covenant governance language (lists prohibited behaviours) | Fetch from canonical URL |
-| LICENSE | HIGH | Verbatim copyrighted legal text (MIT, AGPL, etc.) | Use GitHub licence picker or fetch from SPDX |
-| SECURITY.md | MEDIUM-HIGH | Vulnerability/exploit/breach terminology in a responsible disclosure context | Fetch template, then customise placeholders |
-| CHANGELOG.md | MEDIUM | Template-like repetitive structure, PR/version reference lists | Write in small chunks (5-10 entries at a time) |
-| CONTRIBUTING.md | LOW-MEDIUM | CLA-like formatting patterns, git workflow boilerplate | Write in small chunks; start with project-specific content |
-
-### Strategy 1: Fetch from Canonical URLs (HIGH-risk files)
-
-For CODE_OF_CONDUCT.md, LICENSE, and SECURITY.md — download the template text using Bash, then customise placeholders with Edit:
-
-```bash
-# Contributor Covenant v3.0
-curl -sL "https://www.contributor-covenant.org/version/3/0/code_of_conduct/code_of_conduct.md" -o CODE_OF_CONDUCT.md
-
-# MIT License (or substitute the appropriate SPDX identifier)
-curl -sL "https://raw.githubusercontent.com/spdx/license-list-data/main/text/MIT.txt" -o LICENSE
-
-# GitHub's own security policy (heavy customisation needed — replace all GitHub-specific references)
-curl -sL "https://raw.githubusercontent.com/github/.github/main/SECURITY.md" -o SECURITY.md
-```
-
-After fetching, use **Edit** (not Write) to replace placeholders like `[INSERT CONTACT METHOD]`, `[year]`, `[fullname]` with project-specific values.
-
-**Why Edit is safer than Write:** The content filter evaluates Claude's API output, not the final file. When using Write, the entire file content appears in the output. When using Edit, only the diff appears — dramatically reducing the amount of text available for pattern matching.
-
-**Fallback:** If a URL is unreachable, inform the user and provide the canonical URL for manual download.
-
-### Strategy 2: Chunked Writing (MEDIUM-risk files)
-
-For CHANGELOG.md and CONTRIBUTING.md, write in small increments:
-
-1. Write the file header and first section (5-10 lines) with Write tool
-2. Append subsequent sections one at a time with Edit tool
-3. Keep each write operation under 15 lines of template-like content
-4. Start with the most project-specific content (development setup, actual commands) before generic sections (commit conventions, code review process)
-
-### Strategy 3: Retry and Rephrase (when filters trigger unexpectedly)
-
-If a Write or Edit operation returns HTTP 400 "Output blocked by content filtering policy":
-
-1. **Do not retry the same content verbatim** — it will fail again
-2. **Break the content into smaller chunks** — write 5-10 lines at a time
-3. **Rephrase the request** — frame as "create a file based on the project's needs" rather than "write the Contributor Covenant" or "write the MIT license"
-4. **Fall back to fetch** — switch to Strategy 1 (curl from canonical URL) for the blocked file
-5. **Inform the user** — explain that the content filter triggered and provide the canonical URL if all strategies fail
-6. **Start a fresh session if stuck** — if the filter triggers repeatedly on unrelated content, the session may be poisoned by accumulated context. Run `/clear` or start a new Claude Code session
-
-### Other Known Triggers
-
-The copyright filter also affects non-documentation files containing standardised datasets:
-- ISO 3166 country/state code lists (dropdowns, select options)
-- Character mapping tables (kana-to-romaji, transliteration)
-- Large lookup tables with recognisable structure
-
-Use the same chunked-writing strategy: write 5–10 entries at a time.
-
-### What NOT to Do
-
-- Do NOT include large inline templates for high-risk files in prompts — the model attempting to reproduce them verbatim is the primary trigger
-- Do NOT retry the identical blocked content — the filter is largely deterministic for the same input
-- Do NOT use `--resume` after a filter block — start a fresh generation for that file
-- Do NOT attempt to obfuscate content to bypass the filter — it degrades output quality and is unreliable
+**Key principle:** HIGH-risk files (CODE_OF_CONDUCT, LICENSE, SECURITY) must be fetched from canonical URLs using `curl`, never generated inline. MEDIUM-risk files (CHANGELOG, CONTRIBUTING) should be written in chunks of 5–10 entries. If a filter triggers, do not retry the same content — switch strategy or start a fresh session.
 
 ## Additional Skills
 

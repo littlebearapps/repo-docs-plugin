@@ -81,7 +81,7 @@ Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, 
 - 🔍 **Evidence-based feature extraction** — scans 10 signal categories, infers target personas, and extracts user benefits via auto-scan or a conversational "talk it out" path — every claim backed by a file path
 - 📋 **Full docs suite from one command** — README, CHANGELOG, CONTRIBUTING, ROADMAP, SECURITY, issue templates, and 15+ more files
 - ✅ **Professional docs without documentation expertise** — every generated doc passes the 4-question test, applies the lobby principle for progressive disclosure, and targets measurable Time to Hello World
-- 🤖 **AI context file generation** — AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, and 3 more from one codebase scan, with auto-memory boundary detection that flags when Claude's learned patterns should be promoted to CLAUDE.md for the whole team
+- 🤖 **AI context file generation** — AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, and 3 more from one codebase scan using the Signal Gate principle (only what agents can't discover on their own). Bootstrap with `init`, patch drift with `update`, and promote stable MEMORY.md patterns to CLAUDE.md for the whole team
 - 🔎 **GEO-optimised for AI citation** — structured so ChatGPT, Perplexity, and Google AI Overviews cite your project accurately
 - 📊 **Quality scoring (0–100)** — grades docs on completeness, structure, freshness, and link health — export to CI with `--min-score`
 - 🔒 **Context Guard** — two-tier enforcement keeps AI context files in sync: a session-end nudge reminds you to update docs, and an optional pre-commit guard blocks commits with stale context files *(Claude Code only)*
@@ -115,8 +115,8 @@ Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, 
 | `/pitchdocs:docs-audit` | Audit docs completeness, quality, GitHub metadata, visual assets, AI context files, Diataxis coverage, and npm/PyPI registry config | Catch gaps in files, metadata, images, and package registry fields before you ship |
 | `/pitchdocs:llms-txt` | Generate llms.txt and llms-full.txt for AI discoverability | AI coding assistants and search engines find and understand your docs |
 | `/pitchdocs:user-guide` | Generate task-oriented user guides in `docs/guides/` with Diataxis classification | Readers find answers without reading your source code |
-| `/pitchdocs:ai-context` | Generate AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md from codebase analysis | AI coding assistants understand your project's conventions from day one |
-| `/pitchdocs:docs-verify` | Verify links, freshness, llms.txt sync, heading hierarchy, and badge URLs | Catch documentation decay before it reaches users |
+| `/pitchdocs:ai-context` | Generate lean AI context files using Signal Gate — `init` bootstraps, `update` patches drift, `promote` moves MEMORY.md patterns to CLAUDE.md | AI coding assistants understand your project's conventions from day one |
+| `/pitchdocs:docs-verify` | Verify links, freshness, llms.txt sync, heading hierarchy, badge URLs, and AI context health | Catch documentation decay before it reaches users |
 | `/pitchdocs:launch` | Generate Dev.to articles, HN posts, Reddit posts, Twitter threads, awesome list submissions | Transform docs into platform-specific launch content |
 | `/pitchdocs:doc-refresh` | Refresh all docs after version bumps — CHANGELOG, README features, user guides, AI context, llms.txt | Never ship a release with stale documentation |
 | `/pitchdocs:platform` | Detect hosting platform (GitHub, GitLab, Bitbucket) and report feature support | Know which PitchDocs features work on your platform before you start |
@@ -132,7 +132,8 @@ Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, 
 /pitchdocs:features benefits        # Extract user benefits (auto-scan or "talk it out")
 /pitchdocs:docs-audit fix           # Audit and auto-generate missing docs
 /pitchdocs:changelog full           # Generate full changelog from all tags
-/pitchdocs:ai-context               # Generate AI context files for all tools
+/pitchdocs:ai-context init           # Bootstrap AI context for a new project
+/pitchdocs:ai-context update         # Patch only what drifted
 /pitchdocs:docs-verify              # Check for broken links and stale content
 /pitchdocs:doc-refresh              # Refresh all docs for an upcoming release
 ```

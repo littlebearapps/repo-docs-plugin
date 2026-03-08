@@ -120,14 +120,14 @@ Verify documentation quality, links, freshness, and consistency.
 
 **Examples:**
 ```
-/pitchdocs:docs-verify             # Run all 9 checks
+/pitchdocs:docs-verify             # Run all 11 checks
 /pitchdocs:docs-verify links       # Link validation only
 /pitchdocs:docs-verify score       # Quality score only (0–100)
 /pitchdocs:docs-verify ci          # CI-friendly format (exit codes)
 /pitchdocs:docs-verify ci --min-score 70  # Fail if score below 70
 ```
 
-Runs 9 checks: markdown lint, link validation, llms.txt sync, image validation, freshness, feature coverage, badge URLs, token audit, and security scan.
+Runs 11 checks: markdown lint, link validation, llms.txt sync, image validation, freshness, feature coverage, badge URLs, guide frontmatter, token audit, security scan, and AI context health.
 
 ---
 
@@ -215,11 +215,11 @@ Follows the [llmstxt.org](https://llmstxt.org/) specification.
 
 ## `/pitchdocs:ai-context`
 
-Generate AI IDE context files for 7 tools.
+Generate lean AI IDE context files using the Signal Gate principle — only what agents cannot discover on their own.
 
 | Detail | Value |
 |--------|-------|
-| Arguments | `claude`, `agents`, `cursor`, `copilot`, `windsurf`, `cline`, `gemini`, `all`, `audit` |
+| Arguments | **Generate:** `claude`, `agents`, `cursor`, `copilot`, `windsurf`, `cline`, `gemini`, `all` — **Lifecycle:** `init`, `update`, `promote`, `audit` |
 | Generates | Up to 7 files (AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md) |
 | Cross-tool | Yes |
 
@@ -228,7 +228,10 @@ Generate AI IDE context files for 7 tools.
 /pitchdocs:ai-context              # Generate all 7 context files
 /pitchdocs:ai-context agents       # AGENTS.md only
 /pitchdocs:ai-context cursor       # .cursorrules only
-/pitchdocs:ai-context audit        # Check existing files for drift (no writes)
+/pitchdocs:ai-context init         # Bootstrap: generate missing files, offer hooks, run audit
+/pitchdocs:ai-context update       # Patch only what drifted (preserves human edits)
+/pitchdocs:ai-context promote      # Scan MEMORY.md for patterns to promote to CLAUDE.md
+/pitchdocs:ai-context audit        # Check for drift, stale paths, and Context Guard status
 ```
 
 ---

@@ -32,8 +32,8 @@
 - [Package Registry](./.claude/skills/package-registry/SKILL.md): npm and PyPI metadata auditing, README cross-renderer compatibility, trusted publishing, and registry badges
 - [User Guides](./.claude/skills/user-guides/SKILL.md): Task-oriented how-to documentation with Diataxis framework, guide frontmatter standard, title conventions, numbered steps, copy-paste-ready code, error recovery, and cross-linked hub pages
 - [User Guide Templates](./.claude/skills/user-guides/SKILL-templates.md): Companion templates for tutorial, reference, and explanation document types (Diataxis quadrants not covered in the main user-guides skill)
-- [AI Context](./.claude/skills/ai-context/SKILL.md): AI IDE context file generation — AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md from codebase analysis with staleness audit
-- [Docs Verify](./.claude/skills/docs-verify/SKILL.md): Documentation validation — broken links, stale content, llms.txt sync, heading hierarchy, badge URLs, quality scoring (0–100), security scanning, token audit, and CI-friendly output with GitHub Actions template
+- [AI Context](./.claude/skills/ai-context/SKILL.md): AI IDE context file generation with Signal Gate principle — AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md from codebase analysis. Includes init (bootstrap), update (incremental drift patching), promote (MEMORY.md → CLAUDE.md), and audit with Context Guard status
+- [Docs Verify](./.claude/skills/docs-verify/SKILL.md): Documentation validation — broken links, stale content, llms.txt sync, heading hierarchy, badge URLs, AI context health scoring, quality scoring (0–100), security scanning, token audit, and CI-friendly output with GitHub Actions template
 - [Launch Artifacts](./.claude/skills/launch-artifacts/SKILL.md): Platform-specific launch content — Dev.to articles, Hacker News posts, Reddit posts, Twitter/X threads, awesome list submissions, and social preview guidance
 - [API Reference](./.claude/skills/api-reference/SKILL.md): API reference generator guidance — TypeDoc, Sphinx, godoc, rustdoc configuration templates and docstring conventions
 - [Doc Refresh](./.claude/skills/doc-refresh/SKILL.md): Version-bump documentation orchestration — change detection from git history, selective doc refresh, release-please integration, and quality score tracking
@@ -53,7 +53,7 @@
 - [/pitchdocs:docs-audit](./commands/docs-audit.md): Audit docs completeness against 20+ file checklist with AI context and Diataxis coverage
 - [/pitchdocs:llms-txt](./commands/llms-txt.md): Generate llms.txt and llms-full.txt
 - [/pitchdocs:user-guide](./commands/user-guide.md): Generate task-oriented user guides with Diataxis classification
-- [/pitchdocs:ai-context](./commands/ai-context.md): Generate AI IDE context files (AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md)
+- [/pitchdocs:ai-context](./commands/ai-context.md): Generate lean AI IDE context files using Signal Gate — supports init, update, promote, audit, and per-tool generation
 - [/pitchdocs:docs-verify](./commands/docs-verify.md): Verify documentation links, freshness, llms.txt sync, badge URLs, quality score, and security
 - [/pitchdocs:launch](./commands/launch.md): Generate platform-specific launch artifacts (Dev.to, HN, Reddit, Twitter, awesome lists)
 - [/pitchdocs:doc-refresh](./commands/doc-refresh.md): Refresh all docs after version bumps — CHANGELOG, README features, user guides, AI context files, and llms.txt
