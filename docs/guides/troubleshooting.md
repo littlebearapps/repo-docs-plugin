@@ -69,6 +69,7 @@ When you run `/pitchdocs:docs-verify score`, PitchDocs rates your documentation 
 | Freshness | 15 | How recently files were updated relative to latest commits |
 | Link Health | 20 | Broken internal links, dead external URLs, missing anchors |
 | Evidence | 15 | Feature coverage (documented vs actual), benefit translations |
+| AI Context Health | (deductions) | Line budgets, discoverable content, stale paths, cross-file consistency |
 
 **Grade bands:**
 

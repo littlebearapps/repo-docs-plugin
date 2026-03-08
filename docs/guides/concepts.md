@@ -12,7 +12,7 @@ order: 5
 
 # How PitchDocs Thinks
 
-> **TL;DR**: PitchDocs applies 7 documentation frameworks — evidence-based features, feature-to-benefit translation, user benefits extraction, the 4-question test, progressive disclosure, GEO, and Diátaxis — and detects context drift to keep AI coding assistants in sync with your code.
+> **TL;DR**: PitchDocs applies 7 documentation frameworks — evidence-based features, feature-to-benefit translation, user benefits extraction, the 4-question test, progressive disclosure, GEO, and Diátaxis — plus the Signal Gate principle for AI context files and context drift detection to keep AI coding assistants in sync with your code.
 
 PitchDocs applies several documentation frameworks to generate consistently high-quality output. Understanding these frameworks helps you steer the tool and evaluate its suggestions.
 
@@ -146,6 +146,20 @@ When PitchDocs generates guides with `/pitchdocs:user-guide`, it classifies each
 
 ---
 
+## The Signal Gate
+
+AI context files (AGENTS.md, CLAUDE.md, .cursorrules, etc.) tell AI coding assistants how to work with your project. But research shows that overstuffed context files — full of directory listings, dependency lists, and architecture overviews — actually reduce AI task success by ~3% and increase costs by 20% (ETH Zurich, 2026).
+
+**The Signal Gate principle:** For every line in a context file, ask: *would removing this cause the AI to make a mistake?* If not, cut it.
+
+**Include (non-discoverable):** Key commands (test, build, deploy), non-default naming conventions, hard constraints, security rules, environment quirks.
+
+**Exclude (discoverable):** Directory listings, dependency lists, file trees, framework conventions, architecture overviews — agents discover these by reading the codebase.
+
+PitchDocs applies Signal Gate when generating context files via `/pitchdocs:ai-context`. The result: leaner files that stay within recommended line budgets (CLAUDE.md under 80 lines, AGENTS.md under 120 lines) and contain only high-signal content.
+
+---
+
 ## Context Drift Detection
 
 AI coding assistants (Claude Code, Cursor, Copilot, Windsurf) rely on context files to understand your project's conventions, architecture, and constraints. When your code changes but context files don't, the AI operates on stale information — suggesting deprecated patterns, referencing moved files, or missing new commands.
@@ -162,6 +176,8 @@ PitchDocs' Context Guard hooks (Claude Code only) run automatically after commit
 - **Structural change reminder** — fires when you modify commands, skills, agents, or rules and reminds you which context files need updating
 
 Install with `/pitchdocs:context-guard install`. See [Workflows — Set Up Context Guard](workflows.md#set-up-context-guard) for details.
+
+**Fixing drift:** Run `/pitchdocs:ai-context update` to patch only what drifted (preserves human edits). Run `/pitchdocs:ai-context audit` to check drift without making changes. Use `/pitchdocs:ai-context promote` to move stable patterns from Claude's auto-memory (MEMORY.md) into CLAUDE.md for the whole team.
 
 ---
 

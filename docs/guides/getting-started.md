@@ -111,7 +111,8 @@ Use any command on its own for specific doc types:
 /pitchdocs:roadmap            # ROADMAP.md from GitHub milestones
 /pitchdocs:user-guide         # User guides in docs/guides/
 /pitchdocs:llms-txt           # llms.txt for AI discoverability
-/pitchdocs:ai-context         # AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md
+/pitchdocs:ai-context init    # Bootstrap AGENTS.md, CLAUDE.md, .cursorrules, and 4 more (Signal Gate filtered)
+/pitchdocs:ai-context update  # Patch only what drifted since last update
 /pitchdocs:docs-verify        # Validate links, freshness, and consistency
 /pitchdocs:launch             # Dev.to articles, HN posts, Reddit posts, Twitter threads
 ```
@@ -133,6 +134,7 @@ This checks for:
 - Heading hierarchy issues (no level skipping)
 - Badge URL validity
 - Security issues (leaked credentials, internal paths, internal hostnames)
+- AI context health (line budgets, discoverable content, stale paths, cross-file consistency)
 - Quality score (0–100 across 5 dimensions with A–F grade bands)
 - Token budget compliance (skill files within size targets)
 
@@ -160,6 +162,7 @@ Check status anytime with `/pitchdocs:context-guard status`. Uninstall with `/pi
 
 ## What's Next?
 
+- **Manage AI context files** — Run `/pitchdocs:ai-context init` to bootstrap all 7 context files, or `update` to patch only what drifted. Use `promote` to move stable patterns from Claude's auto-memory to CLAUDE.md for the whole team.
 - **Improve your README further** — Run `/pitchdocs:readme` again with specific focus areas (e.g., `/pitchdocs:readme focus on the comparison table`)
 - **Check your quality score** — Run `/pitchdocs:docs-verify score` to get a numeric rating and actionable suggestions for improvement
 - **Set up CI verification** — The `/pitchdocs:docs-verify` command outputs CI-friendly results for GitHub Actions

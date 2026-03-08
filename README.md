@@ -70,7 +70,9 @@ For other AI tools, see the [setup guide](docs/guides/other-ai-tools.md).
 
 Your repo is ready to go public, but the docs aren't. You need a README that sells, a CHANGELOG that makes sense to users, a SECURITY policy, contributing guidelines, issue templates, PR templates — and it all needs to look professional.
 
-PitchDocs gives your AI coding assistant the skills and knowledge to scan your codebase, find what's worth talking about, and write the whole documentation suite for you. README, CHANGELOG, CONTRIBUTING, ROADMAP, CODE_OF_CONDUCT, SECURITY, issue templates, PR templates, user guides, AI context files, and `llms.txt` — all from slash commands like `/pitchdocs:readme` and `/pitchdocs:docs-audit fix`.
+PitchDocs gives your AI coding assistant the skills and knowledge to scan your codebase, find what's worth talking about, and write the whole documentation suite for you. README, CHANGELOG, CONTRIBUTING, ROADMAP, CODE_OF_CONDUCT, SECURITY, issue templates, PR templates, user guides, and `llms.txt` — all from slash commands like `/pitchdocs:readme` and `/pitchdocs:docs-audit fix`.
+
+It also manages your AI context files — AGENTS.md, CLAUDE.md, .cursorrules, and 4 more — so every AI coding tool on your team understands your project's conventions from day one. Context files are generated using the Signal Gate principle: only what agents can't discover on their own, keeping them lean and effective. Bootstrap with `/pitchdocs:ai-context init`, patch drift with `update`, and promote Claude's auto-learned patterns to CLAUDE.md with `promote`.
 
 Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, and backed by evidence from your actual code — with professional documentation standards (the 4-question test, lobby principle, and Time to Hello World targets) baked in automatically.
 
@@ -78,12 +80,12 @@ Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, 
 
 ## 🎯 Features
 
+- 🧠 **AI context file management** — generate, maintain, and audit AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, and 3 more for 7 AI tools. Uses the Signal Gate principle to include only what agents can't discover on their own — leaner files, better AI performance. Bootstrap a new project with `init`, patch only what drifted with `update`, promote stable MEMORY.md patterns to CLAUDE.md with `promote`, and verify health with `audit`
 - 🔍 **Evidence-based feature extraction** — scans 10 signal categories, infers target personas, and extracts user benefits via auto-scan or a conversational "talk it out" path — every claim backed by a file path
 - 📋 **Full docs suite from one command** — README, CHANGELOG, CONTRIBUTING, ROADMAP, SECURITY, issue templates, and 15+ more files
 - ✅ **Professional docs without documentation expertise** — every generated doc passes the 4-question test, applies the lobby principle for progressive disclosure, and targets measurable Time to Hello World
-- 🤖 **AI context file generation** — AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, and 3 more from one codebase scan using the Signal Gate principle (only what agents can't discover on their own). Bootstrap with `init`, patch drift with `update`, and promote stable MEMORY.md patterns to CLAUDE.md for the whole team
 - 🔎 **GEO-optimised for AI citation** — structured so ChatGPT, Perplexity, and Google AI Overviews cite your project accurately
-- 📊 **Quality scoring (0–100)** — grades docs on completeness, structure, freshness, and link health — export to CI with `--min-score`
+- 📊 **Quality scoring (0–100)** — grades docs on completeness, structure, freshness, link health, and AI context health — export to CI with `--min-score`
 - 🔒 **Context Guard** — two-tier enforcement keeps AI context files in sync: a session-end nudge reminds you to update docs, and an optional pre-commit guard blocks commits with stale context files *(Claude Code only)*
 - 🛡️ **Content filter protection** — automatically handles Claude Code's API filter for CODE_OF_CONDUCT, LICENSE, and SECURITY so you never hit HTTP 400 errors *(Claude Code only)*
 - 🌐 **GitHub, GitLab, and Bitbucket** — auto-detects hosting platform and adapts badges, URLs, CI config, and Markdown rendering for each
@@ -98,7 +100,7 @@ Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, 
 | Scans codebase for features | 10 signal categories with file-level evidence | Basic directory scan | Depends on prompt quality |
 | Full docs suite (20+ files) | One command: `/pitchdocs:docs-audit fix` | README only | One file at a time |
 | GEO / AI citation optimised | Atomic sections, comparison tables, concrete stats, llms.txt | No | No |
-| AI context files | AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, and 3 more | No | No |
+| AI context management | 7 file types with Signal Gate, init/update/promote lifecycle, drift audit | No | No |
 | Quality scoring and verification | 0–100 score, broken links, freshness, heading hierarchy, badges | No | No |
 | Cross-tool compatibility | 9 AI coding tools with documented setup | CLI only | Tool-specific |
 

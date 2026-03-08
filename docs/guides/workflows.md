@@ -45,9 +45,9 @@ Generate the full documentation set for a project you're about to open-source or
    /pitchdocs:docs-audit fix
    ```
 
-5. **Generate AI context files** — help other developers' AI tools understand your project:
+5. **Bootstrap AI context files** — help other developers' AI tools understand your project (generates all 7 file types using Signal Gate — lean, effective context):
    ```
-   /pitchdocs:ai-context
+   /pitchdocs:ai-context init
    ```
 
 6. **Generate llms.txt** — make the repo AI-discoverable:
@@ -138,7 +138,8 @@ Prevent documentation drift with regular maintenance.
 | After every release | `/pitchdocs:doc-refresh` (or `/pitchdocs:doc-refresh v1.x.0`) |
 | Monthly (active projects) | `/pitchdocs:docs-verify` to check for staleness |
 | Quarterly | `/pitchdocs:features audit` to catch undocumented features |
-| After major refactors | `/pitchdocs:ai-context audit` to check context file accuracy |
+| After major refactors | `/pitchdocs:ai-context update` to patch drift, then `audit` to verify |
+| After extended Claude sessions | `/pitchdocs:ai-context promote` to move stable MEMORY.md patterns to CLAUDE.md |
 
 ### Set up Context Guard (Claude Code only)
 
@@ -209,9 +210,9 @@ After adding a feature to your codebase, update docs to reflect it.
    /pitchdocs:doc-refresh guides
    ```
 
-5. **Refresh AI context files**:
+5. **Patch AI context files** (only updates what drifted, preserves human edits):
    ```
-   /pitchdocs:doc-refresh context
+   /pitchdocs:ai-context update
    ```
 
 6. **Verify everything is consistent**:
