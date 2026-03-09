@@ -5,6 +5,19 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.19.2](https://github.com/littlebearapps/pitchdocs/compare/v1.19.1...v1.19.2) (2026-03-09)
+
+
+### Fixed
+
+* resolve Context Guard false positives and add Untether session detection ([70ba7c6](https://github.com/littlebearapps/pitchdocs/commit/70ba7c6c524565c37ccaf6df20b0f8fae81d8a7a))
+
+
+### Documentation
+
+* add website accuracy audit against v1.19.1 ([f3d4026](https://github.com/littlebearapps/pitchdocs/commit/f3d4026a931093820a73923e7a661bdc9cbf1a94))
+* replace demo screenshot TODO with showcase gallery ([b7dd753](https://github.com/littlebearapps/pitchdocs/commit/b7dd753b3c96d8f1a9b83e16efd1ffc8b820758c))
+
 ## [1.19.1](https://github.com/littlebearapps/pitchdocs/compare/v1.19.0...v1.19.1) (2026-03-09)
 
 
