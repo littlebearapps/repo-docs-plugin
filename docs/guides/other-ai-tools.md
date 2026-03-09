@@ -48,13 +48,13 @@ The source of truth lives in `.claude/`. Here's what each piece does:
 
 | Directory | Contents | Purpose | Cross-Tool? |
 |-----------|----------|---------|-------------|
-| `.claude/skills/*/SKILL.md` | 15 skill files | Reference knowledge for all doc types plus context guard installation | Yes — Claude Code, OpenCode, Codex CLI |
+| `.claude/skills/*/SKILL.md` | 18 skill files | Reference knowledge for all doc types plus context guard installation | Yes — Claude Code, OpenCode, Codex CLI |
 | `.claude/agents/docs-writer.md` | 1 agent file | Orchestration workflow: codebase scanning → feature extraction → doc writing → validation | Partial — Claude Code, OpenCode (may vary) |
-| `.claude/rules/doc-standards.md` | 1 rule file | Quality standards: 4-question framework, GEO optimisation, progressive disclosure, benefit-driven language | Auto-loaded in Claude Code; copy manually for other tools |
+| `.claude/rules/doc-standards.md` | 1 rule file | Core quality standards: 4-question framework, progressive disclosure, benefit-driven language, badges. Extended references in `visual-standards`, `geo-optimisation`, `skill-authoring` skills | Auto-loaded in Claude Code; copy manually for other tools |
 | `.claude/rules/context-quality.md` | 1 rule file | AI context file quality standards: cross-file consistency, path verification, sync points | Auto-loaded in Claude Code; copy manually for other tools |
 | `.claude/rules/content-filter.md` | 1 rule file | Content filter quick reference: risk levels, fetch commands, chunked writing for high-risk OSS files | Auto-loaded in Claude Code; copy manually for other tools |
 | `.claude/rules/docs-awareness.md` | 1 rule file | Documentation trigger map: suggests PitchDocs commands when documentation-relevant work is detected | Auto-loaded in Claude Code; copy manually for other tools |
-| `commands/*.md` | 13 command files | Slash command definitions for all PitchDocs commands | Yes — Claude Code, OpenCode |
+| `commands/*.md` | 15 command files | Slash command definitions for all PitchDocs commands | Yes — Claude Code, OpenCode |
 | `hooks/*.sh` | 5 hook scripts | Post-commit drift detection, structural change reminders, content filter write guard, session-end context nudge (Tier 1), and pre-commit context enforcement (Tier 2) | **Claude Code only** |
 
 ## Tool Compatibility Summary
@@ -63,8 +63,8 @@ Not all PitchDocs features work in every tool. Here's what's portable and what's
 
 | Feature | Claude Code | OpenCode | Codex CLI | Cursor / Windsurf / Cline / Gemini CLI |
 |---------|------------|----------|-----------|----------------------------------------|
-| Skills (15 SKILL.md files) | Native | Native (`.claude/skills/` fallback) | Copy to `.agents/skills/` | Reference on demand |
-| Slash commands (13) | Native | Native (`.claude/commands/` fallback) | Copy to prompts | Not supported |
+| Skills (18 SKILL.md files) | Native | Native (`.claude/skills/` fallback) | Copy to `.agents/skills/` | Reference on demand |
+| Slash commands (15) | Native | Native (`.claude/commands/` fallback) | Copy to prompts | Not supported |
 | Docs-writer agent | Native | Likely supported | Reference manually | Cursor: `.cursor/agents/` |
 | Doc-standards rule | Auto-loaded | Copy to context | Copy to context | Cursor: `.cursor/rules/`; others: copy to context file |
 | Context-quality rule | Auto-loaded | Copy to context | Copy to context | Copy to tool-specific context file |
@@ -80,7 +80,7 @@ Not all PitchDocs features work in every tool. Here's what's portable and what's
 
 [OpenCode](https://opencode.ai/) reads `.claude/skills/` natively — PitchDocs works out of the box with no extra setup.
 
-**Install** the same way as Claude Code (clone or add as a plugin), then invoke skills by name in your OpenCode session. The 15 SKILL.md files, the docs-writer agent, and the doc-standards rule are all picked up automatically.
+**Install** the same way as Claude Code (clone or add as a plugin), then invoke skills by name in your OpenCode session. The 18 SKILL.md files, the docs-writer agent, and the doc-standards rule are all picked up automatically.
 
 OpenCode also supports MCP servers, so if you have the GitHub MCP server configured, the docs-writer agent can access repository metadata, issues, and releases just as it does in Claude Code.
 
@@ -96,7 +96,7 @@ OpenCode also supports MCP servers, so if you have the GitHub MCP server configu
 # From your project root (not the PitchDocs repo)
 PITCHDOCS="/path/to/pitchdocs"
 
-# Copy all 15 skills
+# Copy all 18 skills
 cp -r "$PITCHDOCS/.claude/skills/"* .agents/skills/
 
 # Copy the quality standards as AGENTS.md (Codex reads this automatically)

@@ -206,11 +206,12 @@ After running all verification checks, calculate a numeric quality score. The sc
 
 | Dimension | Max | Deductions |
 |-----------|-----|-----------|
-| Completeness | 30 | -5 per missing Tier 1 file (README, LICENSE, CONTRIBUTING, issue templates, PR template), -3 per missing Tier 2 file (CHANGELOG, SECURITY, CODE_OF_CONDUCT, llms.txt, AGENTS.md), -1 per missing Tier 3 file (ROADMAP, CITATION.cff, .cursorrules) |
+| Completeness | 25 | -5 per missing Tier 1 file (README, LICENSE, CONTRIBUTING, issue templates, PR template), -3 per missing Tier 2 file (CHANGELOG, SECURITY, CODE_OF_CONDUCT, llms.txt, AGENTS.md), -1 per missing Tier 3 file (ROADMAP, CITATION.cff, .cursorrules) |
 | Structure | 20 | -5 if heading hierarchy skipped anywhere, -5 if hero missing required parts (one-liner + explanatory sentence + badges), -5 if no 4-question framework evident, -5 if single H1 rule violated |
 | Freshness | 15 | -5 per stale file (>180 days since last update), -3 per warning file (>90 days) |
-| Link Health | 20 | -5 per broken internal link (file not found), -3 per broken external link (404/5xx), -2 per broken anchor |
+| Link Health | 15 | -5 per broken internal link (file not found), -3 per broken external link (404/5xx), -2 per broken anchor |
 | Evidence | 15 | -5 if feature coverage below 70%, -5 per over-documented feature (claims without code evidence), -3 per missing benefit translation in features section |
+| GEO & Citation Readiness | 10 | -3 if README missing crisp definition in first paragraph (not standalone-extractable), -2 if no comparison table present (for projects with known alternatives), -2 if no concrete statistics with evidence pointers in features section, -2 if H2 sections lack citation-ready opening capsules (40–60 word standalone passages), -1 if headings use generic names ("Config" instead of "TypeScript Configuration") |
 
 ### Score Calculation
 
@@ -237,16 +238,17 @@ grade = lookup(score)
 Append the score to the standard verification report:
 
 ```
-📊 Documentation Quality Score: 74/100 (C — Needs work)
+📊 Documentation Quality Score: 72/100 (C — Needs work)
 
 Breakdown:
-  Completeness:   22/30  (-5 SECURITY.md missing, -3 ROADMAP.md missing)
-  Structure:      20/20  ✓
-  Freshness:      12/15  (-3 docs/guides/deployment.md stale)
-  Link Health:    15/20  (-5 README.md:89 broken internal link)
-  Evidence:        5/15  (-5 feature coverage 62%, -5 "AI-powered" claim without code evidence)
+  Completeness:          20/25  (-5 SECURITY.md missing)
+  Structure:             20/20  ✓
+  Freshness:             12/15  (-3 docs/guides/deployment.md stale)
+  Link Health:           12/15  (-3 README.md:89 broken external link)
+  Evidence:              5/15   (-5 feature coverage 62%, -5 "AI-powered" claim without code evidence)
+  GEO & Citation:        3/10   (-3 no crisp definition, -2 no comparison table, -2 no citation capsules)
 
-To reach grade B (80+): Fix the broken link (+5) and add SECURITY.md (+5).
+To reach grade B (80+): Add crisp definition (+3), comparison table (+2), and fix stale guide (+3).
 ```
 
 Always include the actionable "To reach next grade" suggestion showing the 1–2 highest-impact fixes.

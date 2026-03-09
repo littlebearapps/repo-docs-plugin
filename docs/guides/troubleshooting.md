@@ -147,8 +147,8 @@ Not all PitchDocs features work outside Claude Code:
 
 | Feature | Claude Code | OpenCode | Codex CLI | Cursor / Others |
 |---------|------------|----------|-----------|-----------------|
-| Skills (14 SKILL.md files) | Native | Native | Copy to `.agents/skills/` | Reference on demand |
-| Slash commands (12) | Native | Native | Copy to prompts | Not supported |
+| Skills (18 SKILL.md files) | Native | Native | Copy to `.agents/skills/` | Reference on demand |
+| Slash commands (15) | Native | Native | Copy to prompts | Not supported |
 | Quality rules (auto-loaded) | Yes | No | No | Cursor: `.cursor/rules/` |
 | Context Guard hooks | Yes (opt-in) | No | No | No |
 | AGENTS.md context | Loaded | Primary context | Primary context | Not used |

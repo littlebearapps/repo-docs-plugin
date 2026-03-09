@@ -135,6 +135,8 @@ Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, 
 | `/pitchdocs:launch` | Generate Dev.to articles, HN posts, Reddit posts, Twitter threads, awesome list submissions | Transform docs into platform-specific launch content |
 | `/pitchdocs:doc-refresh` | Refresh all docs after version bumps — CHANGELOG, README features, user guides, AI context, llms.txt | Never ship a release with stale documentation |
 | `/pitchdocs:platform` | Detect hosting platform (GitHub, GitLab, Bitbucket) and report feature support | Know which PitchDocs features work on your platform before you start |
+| `/pitchdocs:visual-standards` | Load visual formatting reference — emoji headings, screenshot specs, captions, image optimisation | Consistent, polished visual elements across your docs |
+| `/pitchdocs:geo` | Load GEO optimisation patterns — citation capsules, statistics, comparison tables | AI systems cite your project accurately |
 | `/pitchdocs:context-guard` | Install, uninstall, or check status of Context Guard hooks with tiered enforcement for AI context file freshness and content filter protection | Catch stale context files before they reach your repo |
 
 **Note:** `/pitchdocs:context-guard` is **Claude Code only**. All other commands work across all supported AI tools.
@@ -151,6 +153,8 @@ Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, 
 /pitchdocs:ai-context update         # Patch only what drifted
 /pitchdocs:docs-verify              # Check for broken links and stale content
 /pitchdocs:doc-refresh              # Refresh all docs for an upcoming release
+/pitchdocs:visual-standards         # Load screenshot and emoji heading specs
+/pitchdocs:geo                      # Load AI citation optimisation patterns
 ```
 
 ---

@@ -43,13 +43,13 @@ npm install project-name
 
 ### GEO: Optimising for AI Citation
 
-Follow the GEO section in the `doc-standards` rule. These README-specific additions ensure the README surfaces correctly in AI-generated answers:
+Load the `geo-optimisation` skill for the full GEO reference. README-specific essentials:
 
-1. **First paragraph as standalone definition** — The bold one-liner in the hero must work as a standalone definition if extracted with no surrounding context. LLMs quote top-of-page definitions when answering "what is X?" queries.
-2. **Comparison section** — Include a "How It Compares" section (section 6 below) with a feature comparison table. LLMs surface these when answering "X vs Y" and "best X for Y" queries.
-3. **Statistics and benchmarks** — Where evidence exists, include a benchmarks section or embed concrete numbers in feature descriptions. Content with statistics gets up to 28% more AI visibility.
-4. **Semantic heading hierarchy** — Strict H1 > H2 > H3 without skipping levels. Descriptive headings containing topic keywords improve RAG chunking accuracy.
-5. **Atomic feature descriptions** — Each feature bullet or table row should be comprehensible without reading the surrounding context. AI extractors often pull individual items, not entire sections.
+1. **First paragraph as standalone definition** — The bold one-liner must work if extracted with no surrounding context
+2. **Comparison section** — Include "How It Compares" with a feature table (LLMs surface these for "X vs Y" queries)
+3. **Statistics and benchmarks** — Embed concrete numbers in feature descriptions (28% more AI visibility)
+4. **Semantic heading hierarchy** — Strict H1 > H2 > H3, descriptive topic-keyword headings
+5. **Atomic feature descriptions** — Each bullet/row comprehensible without surrounding context
 
 ### 1. Hero Section
 
@@ -156,7 +156,7 @@ Load the `package-registry` skill for the full badge inventory and cross-rendere
 </p>
 ```
 
-**For device-specific screenshots, captions, and shadow/border styling**, see the `doc-standards` rule (auto-loaded) — it covers capture dimensions per device, HTML display patterns, cross-renderer caption formats, and baked shadow guidance.
+**For device-specific screenshots, captions, and shadow/border styling**, load the `visual-standards` skill — it covers capture dimensions per device, HTML display patterns, cross-renderer caption formats, and baked shadow guidance.
 
 **Where to store visual assets:**
 - **In-repo** (`docs/images/` or `assets/`): version-controlled, always accessible. Best for files under 5MB.

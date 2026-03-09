@@ -7,6 +7,9 @@ on:
       - 'docs/**'
       - 'llms.txt'
       - 'upstream-versions.json'
+      - '.claude/**'
+      - 'commands/**'
+      - 'tests/**'
   schedule:
     # 15th of each month at 9am UTC (staggered from check-upstream on the 1st)
     - cron: '0 9 15 * *'
@@ -47,3 +50,71 @@ jobs:
           fail: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  validate-plugin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate evaluations.json
+        run: python3 -m json.tool tests/evaluations.json > /dev/null
+
+      - name: Validate skill frontmatter
+        run: |
+          errors=0
+          for f in .claude/skills/*/SKILL.md; do
+            # Check file starts with YAML frontmatter
+            if ! head -1 "$f" | grep -q "^---"; then
+              echo "ERROR: $f — missing YAML frontmatter"
+              errors=$((errors + 1))
+              continue
+            fi
+            # Check required fields: name, description
+            frontmatter=$(sed -n '/^---$/,/^---$/p' "$f" | head -20)
+            if ! echo "$frontmatter" | grep -q "^name:"; then
+              echo "ERROR: $f — missing 'name' in frontmatter"
+              errors=$((errors + 1))
+            fi
+            if ! echo "$frontmatter" | grep -q "^description:"; then
+              echo "ERROR: $f — missing 'description' in frontmatter"
+              errors=$((errors + 1))
+            fi
+          done
+          echo "Checked $(find .claude/skills -name 'SKILL.md' | wc -l) skill files"
+          [ "$errors" -eq 0 ] && echo "All skills valid" || exit 1
+
+      - name: Validate command frontmatter
+        run: |
+          errors=0
+          for f in commands/*.md; do
+            if ! head -1 "$f" | grep -q "^---"; then
+              echo "ERROR: $f — missing YAML frontmatter"
+              errors=$((errors + 1))
+              continue
+            fi
+            frontmatter=$(sed -n '/^---$/,/^---$/p' "$f" | head -10)
+            if ! echo "$frontmatter" | grep -q "description:"; then
+              echo "ERROR: $f — missing 'description' in frontmatter"
+              errors=$((errors + 1))
+            fi
+          done
+          echo "Checked $(ls commands/*.md | wc -l) command files"
+          [ "$errors" -eq 0 ] && echo "All commands valid" || exit 1
+
+      - name: Validate agent frontmatter
+        run: |
+          errors=0
+          for f in .claude/agents/*.md; do
+            if ! head -1 "$f" | grep -q "^---"; then
+              echo "ERROR: $f — missing YAML frontmatter"
+              errors=$((errors + 1))
+              continue
+            fi
+            frontmatter=$(sed -n '/^---$/,/^---$/p' "$f" | head -10)
+            if ! echo "$frontmatter" | grep -q "^name:"; then
+              echo "ERROR: $f — missing 'name' in frontmatter"
+              errors=$((errors + 1))
+            fi
+          done
+          echo "Checked $(ls .claude/agents/*.md | wc -l) agent files"
+          [ "$errors" -eq 0 ] && echo "All agents valid" || exit 1
