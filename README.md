@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="docs/assets/pitchdocs-logo-full.svg" height="200" alt="PitchDocs" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/pitchdocs-logo-full-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/pitchdocs-logo-full.svg">
+    <img src="docs/assets/pitchdocs-logo-full.svg" height="200" alt="PitchDocs" />
+  </picture>
 </p>
 
 <p align="center">
@@ -23,6 +27,15 @@
 <p align="center">
   <a href="#-get-started">Get Started</a> · <a href="#-features">Features</a> · <a href="#%EF%B8%8F-how-pitchdocs-compares">How It Compares</a> · <a href="#-commands">Commands</a> · <a href="#-use-with-other-ai-tools">Other AI Tools</a> · <a href="CONTRIBUTING.md">Contributing</a>
 </p>
+
+<!-- TODO: Capture screenshot from Claude Desktop app on MacBook showing /pitchdocs:readme in action -->
+<!-- Target: annotated screenshot showing generated README with callouts for key sections -->
+<!-- File: docs/assets/demo-pitchdocs-readme.png -->
+<!--
+<p align="center">
+  <img src="docs/assets/demo-pitchdocs-readme.png" width="700" alt="Claude Desktop app generating a marketing-ready README with /pitchdocs:readme — showing the generated hero section, evidence-backed features, and GEO-optimised structure" />
+</p>
+-->
 
 ---
 
