@@ -12,8 +12,8 @@ Skills are loaded on-demand to provide deep reference knowledge. Each lives at `
 
 | Skill | What It Provides |
 |-------|-----------------|
-| `public-readme` | README structure with the Daytona/Banesullivan marketing framework — hero section, audience-segmented value proposition, quickstart with Time to Hello World targets, features with evidence-based benefits |
-| `feature-benefits` | 7-step codebase scanning workflow across 10 signal categories with JTBD job mapping, persona inference (5 archetypes from code signals), and two-path user benefits extraction (auto-scan or conversational "talk it out"). Extracts concrete features with file/function evidence and translates them into benefits across 5 categories (time saved, confidence gained, pain avoided, capability unlocked, cost reduced) |
+| `public-readme` | README structure with the Daytona/Banesullivan marketing framework — hero template, value proposition, quickstart with Time to Hello World targets, features with evidence-based benefits. Companion `SKILL-reference.md` has logo guidelines, registry badges, use-case framing, and visual element guidance (loaded on demand) |
+| `feature-benefits` | 7-step codebase scanning workflow with feature-to-benefit translation across 5 categories (time saved, confidence gained, pain avoided, capability unlocked, cost reduced). Companion `SKILL-signals.md` has detailed signal category scan lists, JTBD mapping, persona inference, conversational path prompts, and per-ecosystem pattern libraries (loaded on demand) |
 | `changelog` | Keep a Changelog format with language rules that rewrite conventional commits into user-facing benefit language. Maps `feat:` to Added, `fix:` to Fixed, etc. |
 | `roadmap` | Roadmap structure from GitHub milestones with emoji status indicators, mission statement, and community involvement section |
 | `pitchdocs-suite` | Full 20+ file inventory (README, CONTRIBUTING, CHANGELOG, CODE_OF_CONDUCT, SECURITY, AI context files, issue templates, PR templates, and more), GitHub metadata guidance, visual assets, licence selection framework, and ready-to-use templates |
@@ -26,20 +26,20 @@ Skills are loaded on-demand to provide deep reference knowledge. Each lives at `
 | `api-reference` | API reference generator guidance — TypeDoc, Sphinx, godoc, rustdoc configuration templates and comment conventions |
 | `doc-refresh` | Version-bump documentation orchestration — analyses git history, identifies affected docs, and delegates to existing skills for selective refresh |
 | `context-guard` | Context Guard installation reference — hook architecture, settings.json configuration, customisation, and troubleshooting *(Claude Code only)* |
-| `visual-standards` | Visual formatting — emoji heading prefixes, horizontal rules, TOC anchors, callouts, screenshot dimensions, HTML patterns, captions, shadows, image optimisation |
+| `visual-standards` | Visual formatting — emoji heading prefixes, horizontal rules, TOC anchors, callouts. Companion `SKILL-reference.md` has screenshot dimensions, HTML patterns, captions, shadows, image optimisation (loaded on demand) |
 | `geo-optimisation` | GEO patterns for AI citation — citation capsules, crisp definitions, atomic sections, comparison tables, statistics, semantic scaffolding |
 | `skill-authoring` | Token budget guidelines for writing skills — budgets by type, metadata/activation limits, measuring cost, anti-patterns |
-| `platform-profiles` | Platform-specific equivalents for GitLab and Bitbucket — template directory mapping, badge URL patterns, Markdown rendering compatibility matrix, CLI tool mapping, CI/CD alternatives, and Bitbucket graceful degradation guidance |
+| `platform-profiles` | Platform detection and Markdown rendering compatibility matrix. Companion `SKILL-tables.md` has full lookup tables for GitLab/Bitbucket — template directories, badge URLs, CLI tools, CI/CD, and Bitbucket degradation (loaded on demand) |
 
 ## Agent Pipeline
 
-PitchDocs uses a 3-agent pipeline for documentation generation:
+PitchDocs uses an adaptive agent pipeline for documentation generation:
 
 | Agent | File | Role |
 |-------|------|------|
-| `docs-researcher` | `.claude/agents/docs-researcher.md` | Codebase discovery, platform detection, feature extraction (7-step workflow across 10 signal categories), security signal scanning, lobby split planning. Produces a structured research packet. |
-| `docs-writer` | `.claude/agents/docs-writer.md` | Orchestrator — spawns researcher, writes documentation using the Daytona "4000 Stars" marketing framework with citation capsules and banned phrase avoidance, then spawns reviewer. |
-| `docs-reviewer` | `.claude/agents/docs-reviewer.md` | Post-generation quality validation — full checklist, banned phrases scan, citation capsule completeness, GEO readiness, 6-dimension quality scoring (100-point rubric). |
+| `docs-researcher` | `.claude/agents/docs-researcher.md` | Codebase discovery, platform detection, feature extraction (7-step workflow across 10 signal categories), security signal scanning, lobby split planning. Produces a structured research packet. **Only spawned for projects with 20+ files** — smaller projects use lightweight inline research. |
+| `docs-writer` | `.claude/agents/docs-writer.md` | Orchestrator — chooses lightweight (inline) or full (sub-agent) research based on project size, writes documentation using the Daytona "4000 Stars" marketing framework with citation capsules and banned phrase avoidance, conditionally spawns reviewer. |
+| `docs-reviewer` | `.claude/agents/docs-reviewer.md` | Post-generation quality validation — full checklist, banned phrases scan, citation capsule completeness, GEO readiness, 6-dimension quality scoring (100-point rubric). **Skipped for new README generation** — runs for updates, docs suites, or when explicitly requested (`--review`). |
 
 ## Workflow Commands
 
@@ -47,7 +47,7 @@ These commands are defined in `commands/*.md` and can be invoked as slash comman
 
 | Command | What It Does |
 |---------|-------------|
-| `readme` | Generate or update a marketing-friendly README.md |
+| `readme` | Generate or update a marketing-friendly README.md. Supports `--review` (force review) and `--no-review` (skip review) flags |
 | `features` | Extract features from code and translate to benefits |
 | `changelog` | Generate CHANGELOG.md from git history with user-benefit language |
 | `roadmap` | Generate ROADMAP.md from GitHub milestones and issues |

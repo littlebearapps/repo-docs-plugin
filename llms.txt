@@ -23,8 +23,10 @@
 
 ## Skills
 
-- [Public README](./.claude/skills/public-readme/SKILL.md): Three-part hero structure, audience-segmented value proposition, use-case framing, emoji+bold+em-dash features (max 8 in README), structural budgets, Time to Hello World targets, GEO patterns for AI citation, and the Daytona/Banesullivan marketing framework for README generation
-- [Feature Benefits](./.claude/skills/feature-benefits/SKILL.md): 7-step codebase scanning workflow across 10 signal categories with JTBD job mapping, persona inference, two-path user benefits extraction (auto-scan or conversational), and evidence-based benefit translation
+- [Public README](./.claude/skills/public-readme/SKILL.md): Three-part hero template, value proposition, features with evidence-based benefits, Time to Hello World targets, and the Daytona/Banesullivan marketing framework for README generation
+- [Public README Reference](./.claude/skills/public-readme/SKILL-reference.md): Extended reference — logo guidelines, registry-specific badges, credibility rows, bold-outcome bullets, use-case framing (section 3.5), visual element guidance, cross-renderer compatibility (loaded on demand)
+- [Feature Benefits](./.claude/skills/feature-benefits/SKILL.md): 7-step codebase scanning workflow with feature-to-benefit translation across 5 categories — time saved, confidence gained, pain avoided, capability unlocked, cost reduced
+- [Feature Benefits Signals](./.claude/skills/feature-benefits/SKILL-signals.md): Extended reference — detailed scan lists for 10 signal categories, JTBD mapping, persona inference tables, conversational path prompts, per-ecosystem pattern libraries, signal-to-benefit translation table (loaded on demand)
 - [Changelog](./.claude/skills/changelog/SKILL.md): Keep a Changelog format with language rules that rewrite commits into user-facing benefit language
 - [Roadmap](./.claude/skills/roadmap/SKILL.md): ROADMAP.md structure from GitHub milestones with emoji status indicators and community involvement section
 - [PitchDocs Suite](./.claude/skills/pitchdocs-suite/SKILL.md): 20+ file inventory, GitHub metadata, AI context files, visual assets, licence selection — templates extracted to companion file for token efficiency
@@ -39,20 +41,22 @@
 - [API Reference](./.claude/skills/api-reference/SKILL.md): API reference generator guidance — TypeDoc, Sphinx, godoc, rustdoc configuration templates and docstring conventions
 - [Doc Refresh](./.claude/skills/doc-refresh/SKILL.md): Version-bump documentation orchestration — change detection from git history, selective doc refresh, release-please integration, and quality score tracking
 - [Context Guard](./.claude/skills/context-guard/SKILL.md): Context Guard installation reference — hook architecture, settings.json configuration, customisation, and troubleshooting (Claude Code only)
-- [Visual Standards](./.claude/skills/visual-standards/SKILL.md): Visual formatting standards — emoji heading prefixes, horizontal rules, TOC anchors, callouts, screenshot dimensions (desktop/mobile/tablet/terminal), HTML display patterns, captions (cross-renderer and GitHub-specific), shadow/border guidance, annotation conventions, image optimisation
-- [GEO Optimisation](./.claude/skills/geo-optimisation/SKILL.md): Generative Engine Optimisation patterns for AI citation — citation capsules (40–60 word standalone passages), crisp definitions, atomic sections, concrete statistics, comparison tables, TL;DR blocks, prerequisite blocks, data density guidance, semantic scaffolding, cross-referencing
+- [Visual Standards](./.claude/skills/visual-standards/SKILL.md): Visual formatting standards — emoji heading prefixes, horizontal rules, TOC anchors, callouts
+- [Visual Standards Reference](./.claude/skills/visual-standards/SKILL-reference.md): Extended reference — screenshot dimensions (desktop/mobile/tablet/terminal), HTML display patterns, captions, shadow/border guidance, annotation conventions, image optimisation (loaded on demand)
+- [GEO Optimisation](./.claude/skills/geo-optimisation/SKILL.md): Generative Engine Optimisation patterns for AI citation — citation capsules, crisp definitions, atomic sections, concrete statistics, comparison tables, data density, semantic scaffolding
 - [Skill Authoring](./.claude/skills/skill-authoring/SKILL.md): Token budget guidelines for writing Claude Code skills — recommended budgets by skill type (reference/workflow/combined), metadata and activation content limits, measuring token cost, anti-patterns
-- [Platform Profiles](./.claude/skills/platform-profiles/SKILL.md): Platform-specific equivalents for GitLab and Bitbucket — template directory mapping, badge URL patterns, Markdown rendering compatibility matrix, CLI tool mapping, CI/CD alternatives, and Bitbucket graceful degradation guidance
+- [Platform Profiles](./.claude/skills/platform-profiles/SKILL.md): Platform detection and Markdown rendering compatibility matrix for GitHub, GitLab, and Bitbucket
+- [Platform Profiles Tables](./.claude/skills/platform-profiles/SKILL-tables.md): Extended reference — full lookup tables for template directories, badge URLs, CLI tools, CI/CD, feature availability, raw file URLs, compare URLs, and Bitbucket graceful degradation (loaded on demand)
 
 ## Agents
 
-- [Docs Writer](./.claude/agents/docs-writer.md): Orchestration agent — coordinates researcher → writer → reviewer pipeline, applies Daytona marketing framework, handles content filter mitigation
-- [Docs Researcher](./.claude/agents/docs-researcher.md): Codebase discovery agent — platform detection, feature extraction (7-step workflow across 10 signal categories), security signals, lobby split planning, outputs structured research packet
-- [Docs Reviewer](./.claude/agents/docs-reviewer.md): Quality validation agent — full checklist, banned phrases scan, citation capsule completeness, GEO readiness, 6-dimension quality scoring (100-point rubric)
+- [Docs Writer](./.claude/agents/docs-writer.md): Orchestration agent — adaptive research (inline for small projects, sub-agent for large), Daytona marketing framework, conditional reviewer (skipped for new READMEs), content filter mitigation
+- [Docs Researcher](./.claude/agents/docs-researcher.md): Codebase discovery agent — platform detection, feature extraction (7-step workflow across 10 signal categories), security signals, lobby split planning, outputs structured research packet. Only spawned for projects with 20+ files.
+- [Docs Reviewer](./.claude/agents/docs-reviewer.md): Quality validation agent — full checklist, banned phrases scan, citation capsule completeness, GEO readiness, 6-dimension quality scoring (100-point rubric). Skipped for new READMEs; runs for updates or when --review flag is passed.
 
 ## Commands
 
-- [/pitchdocs:readme](./commands/readme.md): Generate or update a marketing-friendly README.md
+- [/pitchdocs:readme](./commands/readme.md): Generate or update a marketing-friendly README.md. Supports --review (force review) and --no-review (skip review) flags
 - [/pitchdocs:features](./commands/features.md): Extract features from code and translate to benefits
 - [/pitchdocs:changelog](./commands/changelog.md): Generate CHANGELOG.md from git history
 - [/pitchdocs:roadmap](./commands/roadmap.md): Generate ROADMAP.md from GitHub milestones

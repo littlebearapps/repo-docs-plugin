@@ -53,7 +53,7 @@ Generate or update a marketing-friendly README.md.
 
 | Detail | Value |
 |--------|-------|
-| Arguments | `[project-path or description of focus]` |
+| Arguments | `[project-path or description of focus]`, `--review`, `--no-review` |
 | Generates | `README.md` |
 | Cross-tool | Yes |
 
@@ -62,9 +62,11 @@ Generate or update a marketing-friendly README.md.
 /pitchdocs:readme                              # Generate for current project
 /pitchdocs:readme packages/api                 # Generate for a specific package
 /pitchdocs:readme focus on the comparison table # Steer output to a specific section
+/pitchdocs:readme --review                     # Force the review phase (quality validation)
+/pitchdocs:readme --no-review                  # Skip the review phase
 ```
 
-If a README.md already exists, PitchDocs reads it first and improves it rather than replacing from scratch.
+If a README.md already exists, PitchDocs reads it first and improves it rather than replacing from scratch. The review phase (quality validation by the docs-reviewer agent) is skipped by default for new READMEs and runs automatically for updates — use `--review` or `--no-review` to override.
 
 ---
 

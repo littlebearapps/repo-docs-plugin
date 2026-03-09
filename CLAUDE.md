@@ -1,6 +1,6 @@
 # PitchDocs
 
-Generate high-quality public-facing repository documentation with a marketing edge. PitchDocs is a Claude Code plugin (pure Markdown, zero runtime dependencies) with 18 skills, 3 agents (researcher → writer → reviewer pipeline), 4 quality rules, 15 slash commands, and 5 opt-in hooks.
+Generate high-quality public-facing repository documentation with a marketing edge. PitchDocs is a Claude Code plugin (pure Markdown, zero runtime dependencies) with 18 skills, 3 agents (adaptive researcher → writer → reviewer pipeline), 4 quality rules, 15 slash commands, and 5 opt-in hooks.
 
 ## Project Architecture
 
@@ -35,9 +35,9 @@ hooks/*.sh                      → 5 opt-in hook scripts (Claude Code only)
 | `context-quality.md` | AI context file quality rule — cross-file consistency, path verification, sync points (Claude Code only) |
 | `content-filter.md` | Content filter quick reference rule — risk levels, fetch commands, chunked writing guidance (auto-loaded; Claude Code only) |
 | `docs-awareness.md` | Documentation trigger map rule — suggests PitchDocs commands when documentation-relevant work is detected (auto-loaded; Claude Code only) |
-| `docs-writer.md` | Orchestrator agent — coordinates docs-researcher → write → docs-reviewer pipeline with content filter mitigations |
-| `docs-researcher.md` | Codebase discovery agent — platform detection, feature extraction, security signals, lobby split planning |
-| `docs-reviewer.md` | Quality validation agent — checklist, banned phrases scan, GEO scoring, 6-dimension quality rubric |
+| `docs-writer.md` | Orchestrator agent — lightweight inline research for small projects (< 20 files), full sub-agent research for larger projects, conditional reviewer (skipped for new READMEs), content filter mitigations |
+| `docs-researcher.md` | Codebase discovery agent — platform detection, feature extraction, security signals, lobby split planning. Only spawned for projects with 20+ files. |
+| `docs-reviewer.md` | Quality validation agent — checklist, banned phrases scan, GEO scoring, 6-dimension quality rubric. Skipped for new READMEs; runs for updates or with `--review`. |
 | `hooks/*.sh` | Context Guard hooks — post-commit drift detection, structural change reminders, content filter write guard, session-end context nudge, and pre-commit context enforcement (Claude Code only, opt-in) |
 | `upstream-versions.json` | Tracks 8 pinned spec versions — checked monthly by GitHub Action |
 | `llms.txt` | AI-readable content index — must be updated when files are added/removed |
