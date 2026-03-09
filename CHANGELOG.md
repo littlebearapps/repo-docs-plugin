@@ -5,6 +5,18 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.19.1](https://github.com/littlebearapps/pitchdocs/compare/v1.19.0...v1.19.1) (2026-03-09)
+
+
+### Fixed
+
+* reduce /readme context overhead by 72% for small projects ([cd34f85](https://github.com/littlebearapps/pitchdocs/commit/cd34f856195227c71012d070f70f4615b89c2846))
+
+
+### Documentation
+
+* regenerate llms-full.txt with slimmed skills and reference files ([a9d3778](https://github.com/littlebearapps/pitchdocs/commit/a9d3778318b0302e8757342b13849d65d9518f24))
+
 ## [1.19.0](https://github.com/littlebearapps/pitchdocs/compare/v1.18.0...v1.19.0) (2026-03-09)
 
 
