@@ -1,6 +1,103 @@
+# PitchDocs
+
+> GitHub repository documentation skills and templates for AI coding assistants. A Claude Code plugin that scans codebases, extracts features with file-level evidence, and generates marketing-quality docs — README, CHANGELOG, ROADMAP, user guides, llms.txt, AI context files, launch artifacts, and 20+ files total. Includes quality scoring, security scanning, and project type auto-detection. GEO-optimised for AI citation. Pure Markdown, zero runtime dependencies. Also works with OpenCode, Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose.
+
+- [SKILL.md](./SKILL.md): Root-level skill manifest for directory submissions — plugin overview, installation, all 15 commands, and output format
+
+## Docs
+
+- [README](./README.md): Project overview, value proposition, quick start, commands table, comparison table, and features list
+- [Contributing](./CONTRIBUTING.md): Development setup, how to improve templates, add skills/commands, and submit PRs using conventional commits
+- [Changelog](./CHANGELOG.md): Version history with user-facing change descriptions
+- [AGENTS.md](./AGENTS.md): Codex CLI compatibility file with condensed skills reference and docs-writer agent overview
+- [Support](./SUPPORT.md): Getting help, common questions, contact details, and response times
+- [Claude.md](./CLAUDE.md): Claude Code project context — architecture, conventions, key files, and modification guide
+- [Docs Hub](./docs/README.md): Documentation index with command reference, skills reference, and links to all guides
+- [Getting Started Guide](./docs/guides/getting-started.md): Step-by-step installation, first README generation, and full command walkthrough
+- [Workflows Guide](./docs/guides/workflows.md): Workflow cookbook — make a repo public-ready, prepare a release, launch on a platform, keep docs fresh over time
+- [Command Reference](./docs/guides/command-reference.md): All 15 commands with arguments, generated files, cross-tool support, and examples
+- [Customising Output Guide](./docs/guides/customising-output.md): Steering PitchDocs output — prompt patterns, tone control, monorepo support, iterative refinement
+- [Concepts Guide](./docs/guides/concepts.md): How PitchDocs thinks — evidence-based features, GEO, 4-question test, Diataxis, Lobby Principle, Time to Hello World
+- [Troubleshooting Guide](./docs/guides/troubleshooting.md): Content filter errors, quality score interpretation, feature extraction issues, badge failures, cross-tool limitations, FAQ
+- [Other AI Tools Guide](./docs/guides/other-ai-tools.md): Per-tool setup instructions and compatibility matrix for Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose
+
+## Skills
+
+- [Public README](./.claude/skills/public-readme/SKILL.md): Three-part hero template, value proposition, features with evidence-based benefits, Time to Hello World targets, and the Daytona/Banesullivan marketing framework for README generation
+- [Public README Reference](./.claude/skills/public-readme/SKILL-reference.md): Extended reference — logo guidelines, registry-specific badges, credibility rows, bold-outcome bullets, use-case framing (section 3.5), visual element guidance, cross-renderer compatibility (loaded on demand)
+- [Feature Benefits](./.claude/skills/feature-benefits/SKILL.md): 7-step codebase scanning workflow with feature-to-benefit translation across 5 categories — time saved, confidence gained, pain avoided, capability unlocked, cost reduced
+- [Feature Benefits Signals](./.claude/skills/feature-benefits/SKILL-signals.md): Extended reference — detailed scan lists for 10 signal categories, JTBD mapping, persona inference tables, conversational path prompts, per-ecosystem pattern libraries, signal-to-benefit translation table (loaded on demand)
+- [Changelog](./.claude/skills/changelog/SKILL.md): Keep a Changelog format with language rules that rewrite commits into user-facing benefit language
+- [Roadmap](./.claude/skills/roadmap/SKILL.md): ROADMAP.md structure from GitHub milestones with emoji status indicators and community involvement section
+- [PitchDocs Suite](./.claude/skills/pitchdocs-suite/SKILL.md): 20+ file inventory, GitHub metadata, AI context files, visual assets, licence selection — templates extracted to companion file for token efficiency
+- [PitchDocs Suite Templates](./.claude/skills/pitchdocs-suite/SKILL-templates.md): Companion templates for CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, issue/PR templates, FUNDING, SUPPORT, release.yml, and CITATION.cff — loaded on-demand when generating specific files
+- [llms.txt](./.claude/skills/llms-txt/SKILL.md): llmstxt.org specification reference with generation patterns for repositories and documentation sites
+- [Package Registry](./.claude/skills/package-registry/SKILL.md): npm and PyPI metadata auditing, README cross-renderer compatibility, trusted publishing, and registry badges
+- [User Guides](./.claude/skills/user-guides/SKILL.md): Task-oriented how-to documentation with Diataxis framework, guide frontmatter standard, title conventions, numbered steps, copy-paste-ready code, error recovery, and cross-linked hub pages
+- [User Guide Templates](./.claude/skills/user-guides/SKILL-templates.md): Companion templates for tutorial, reference, and explanation document types (Diataxis quadrants not covered in the main user-guides skill)
+- [AI Context](./.claude/skills/ai-context/SKILL.md): AI IDE context file generation with Signal Gate principle — AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md from codebase analysis. Includes init (bootstrap), update (incremental drift patching), promote (MEMORY.md → CLAUDE.md), and audit with Context Guard status
+- [Docs Verify](./.claude/skills/docs-verify/SKILL.md): Documentation validation — broken links, stale content, llms.txt sync, heading hierarchy, badge URLs, AI context health scoring, quality scoring (0–100), security scanning, token audit, and CI-friendly output with GitHub Actions template
+- [Launch Artifacts](./.claude/skills/launch-artifacts/SKILL.md): Platform-specific launch content — Dev.to articles, Hacker News posts, Reddit posts, Twitter/X threads, awesome list submissions, and social preview guidance
+- [API Reference](./.claude/skills/api-reference/SKILL.md): API reference generator guidance — TypeDoc, Sphinx, godoc, rustdoc configuration templates and docstring conventions
+- [Doc Refresh](./.claude/skills/doc-refresh/SKILL.md): Version-bump documentation orchestration — change detection from git history, selective doc refresh, release-please integration, and quality score tracking
+- [Context Guard](./.claude/skills/context-guard/SKILL.md): Context Guard installation reference — hook architecture, settings.json configuration, customisation, and troubleshooting (Claude Code only)
+- [Visual Standards](./.claude/skills/visual-standards/SKILL.md): Visual formatting standards — emoji heading prefixes, horizontal rules, TOC anchors, callouts
+- [Visual Standards Reference](./.claude/skills/visual-standards/SKILL-reference.md): Extended reference — screenshot dimensions (desktop/mobile/tablet/terminal), HTML display patterns, captions, shadow/border guidance, annotation conventions, image optimisation (loaded on demand)
+- [GEO Optimisation](./.claude/skills/geo-optimisation/SKILL.md): Generative Engine Optimisation patterns for AI citation — citation capsules, crisp definitions, atomic sections, concrete statistics, comparison tables, data density, semantic scaffolding
+- [Skill Authoring](./.claude/skills/skill-authoring/SKILL.md): Token budget guidelines for writing Claude Code skills — recommended budgets by skill type (reference/workflow/combined), metadata and activation content limits, measuring token cost, anti-patterns
+- [Platform Profiles](./.claude/skills/platform-profiles/SKILL.md): Platform detection and Markdown rendering compatibility matrix for GitHub, GitLab, and Bitbucket
+- [Platform Profiles Tables](./.claude/skills/platform-profiles/SKILL-tables.md): Extended reference — full lookup tables for template directories, badge URLs, CLI tools, CI/CD, feature availability, raw file URLs, compare URLs, and Bitbucket graceful degradation (loaded on demand)
+
+## Agents
+
+- [Docs Writer](./.claude/agents/docs-writer.md): Orchestration agent — adaptive research (inline for small projects, sub-agent for large), Daytona marketing framework, conditional reviewer (skipped for new READMEs), content filter mitigation
+- [Docs Researcher](./.claude/agents/docs-researcher.md): Codebase discovery agent — platform detection, feature extraction (7-step workflow across 10 signal categories), security signals, lobby split planning, outputs structured research packet. Only spawned for projects with 20+ files.
+- [Docs Reviewer](./.claude/agents/docs-reviewer.md): Quality validation agent — full checklist, banned phrases scan, citation capsule completeness, GEO readiness, 6-dimension quality scoring (100-point rubric). Skipped for new READMEs; runs for updates or when --review flag is passed.
+
+## Commands
+
+- [/pitchdocs:readme](./commands/readme.md): Generate or update a marketing-friendly README.md. Supports --review (force review) and --no-review (skip review) flags
+- [/pitchdocs:features](./commands/features.md): Extract features from code and translate to benefits
+- [/pitchdocs:changelog](./commands/changelog.md): Generate CHANGELOG.md from git history
+- [/pitchdocs:roadmap](./commands/roadmap.md): Generate ROADMAP.md from GitHub milestones
+- [/pitchdocs:docs-audit](./commands/docs-audit.md): Audit docs completeness against 20+ file checklist with AI context and Diataxis coverage
+- [/pitchdocs:llms-txt](./commands/llms-txt.md): Generate llms.txt and llms-full.txt
+- [/pitchdocs:user-guide](./commands/user-guide.md): Generate task-oriented user guides with Diataxis classification
+- [/pitchdocs:ai-context](./commands/ai-context.md): Generate lean AI IDE context files using Signal Gate — supports init, update, promote, audit, and per-tool generation
+- [/pitchdocs:docs-verify](./commands/docs-verify.md): Verify documentation links, freshness, llms.txt sync, badge URLs, quality score, and security
+- [/pitchdocs:launch](./commands/launch.md): Generate platform-specific launch artifacts (Dev.to, HN, Reddit, Twitter, awesome lists)
+- [/pitchdocs:doc-refresh](./commands/doc-refresh.md): Refresh all docs after version bumps — CHANGELOG, README features, user guides, AI context files, and llms.txt
+- [/pitchdocs:platform](./commands/platform.md): Detect hosting platform (GitHub/GitLab/Bitbucket) and report feature support
+- [/pitchdocs:visual-standards](./commands/visual-standards.md): Load visual formatting standards for screenshots, emoji headings, and image specs
+- [/pitchdocs:geo](./commands/geo.md): Load GEO optimisation patterns for AI citation
+- [/pitchdocs:context-guard](./commands/context-guard.md): Install, uninstall, or check status of Context Guard hooks for AI context file freshness (Claude Code only)
+
+## Optional
+
+- [Security](./SECURITY.md): Vulnerability reporting process and response timeline
+- [Code of Conduct](./CODE_OF_CONDUCT.md): Community behaviour standards (Contributor Covenant v3.0)
+- [License](./LICENSE): MIT licence terms
+- [Plugin Manifest](./.claude-plugin/plugin.json): Plugin metadata, version, keywords, and author info
+- [Doc Standards](./.claude/rules/doc-standards.md): Auto-loaded quality rule — 4-question framework, Lobby Principle (README conciseness), progressive disclosure, benefit-driven language, badges, file naming. Extended references in `visual-standards`, `geo-optimisation`, and `skill-authoring` skills (loaded on-demand)
+- [Context Quality](./.claude/rules/context-quality.md): Auto-loaded quality rule for AI context files — cross-file consistency, path verification, version accuracy, sync points (Claude Code only)
+- [Content Filter Quick Reference](./.claude/rules/content-filter.md): Auto-loaded quick reference for content filter risk levels, fetch commands, and chunked writing strategies when generating standard OSS files (Claude Code only)
+- [Documentation Awareness](./.claude/rules/docs-awareness.md): Auto-loaded documentation trigger map — suggests PitchDocs commands when documentation-relevant work is detected (new features, version bumps, structural changes, user benefits discussions) (Claude Code only)
+- [Context Drift Check Hook](./hooks/context-drift-check.sh): PostToolUse hook that detects stale AI context files after git commits — compares timestamps, checks broken paths (Claude Code only)
+- [Context Structural Change Hook](./hooks/context-structural-change.sh): PostToolUse hook that reminds about context file updates after structural file changes (Claude Code only)
+- [Content Filter Guard Hook](./hooks/content-filter-guard.sh): PreToolUse hook that blocks Write operations on high-risk OSS files (CODE_OF_CONDUCT, LICENSE, SECURITY) and advises chunked writing for medium-risk files (Claude Code only)
+- [Context Guard Stop Hook](./hooks/context-guard-stop.sh): Stop hook that nudges Claude to update AI context files before ending a session when structural changes were made — Tier 1 Nudge (Claude Code only)
+- [Context Commit Guard Hook](./hooks/context-commit-guard.sh): PreToolUse hook that blocks git commit when structural files are staged without AI context file updates — Tier 2 Guard (Claude Code only)
+- [Upstream Versions](./upstream-versions.json): Pinned versions of 8 referenced specifications (Keep a Changelog, Contributor Covenant, Conventional Commits, Semantic Versioning, GitHub Issue Forms, npm/PyPI Trusted Publishing, AGENTS.md Spec)
+- [Cursor Rules](./.cursorrules): Cursor IDE project context — architecture, writing standards, sync requirements
+- [Copilot Instructions](./.github/copilot-instructions.md): GitHub Copilot project context — structure, conventions, sync points
+- [Windsurf Rules](./.windsurfrules): Windsurf (Cascade AI) project context — architecture, coding standards, key files
+- [Cline Rules](./.clinerules): Cline VS Code extension project context — tech stack, important paths, pre-commit checklist
+- [Gemini Context](./GEMINI.md): Gemini CLI project context — tech stack, conventions, key paths
+- [Evaluation Scenarios](./tests/evaluations.json): 20 test scenarios for command routing verification — maps commands and natural language triggers to expected skills, includes negative cases
+
 ---
-# Source: ./SKILL.md
----
+
+# Source: SKILL.md
 
 ---
 name: pitchdocs
@@ -96,10 +193,9 @@ Hero Feature: Evidence-based feature extraction
 - Content filter mitigation built in for CODE_OF_CONDUCT, LICENSE, and SECURITY files
 - All knowledge stored as structured YAML+Markdown — no JavaScript, no Python, no build step
 
+---
 
----
-# Source: ./README.md
----
+# Source: README.md
 
 <p align="center">
   <picture>
@@ -118,7 +214,7 @@ Hero Feature: Evidence-based feature extraction
 </p>
 
 <p align="center">
-  <a href="CHANGELOG.md"><img src="https://img.shields.io/static/v1?label=version&message=1.18.0&color=blue" alt="Version" /></a> <!-- x-release-please-version -->
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/static/v1?label=version&message=1.19.0&color=blue" alt="Version" /></a> <!-- x-release-please-version -->
   <a href="LICENSE"><img src="https://img.shields.io/github/license/littlebearapps/pitchdocs" alt="License" /></a>
   <a href="https://code.claude.com/docs/en/plugins"><img src="https://img.shields.io/badge/Claude_Code-Plugin-D97757?logo=claude&logoColor=white" alt="Claude Code Plugin" /></a>
   <a href="https://opencode.ai/"><img src="https://img.shields.io/badge/OpenCode-Compatible-22c55e" alt="OpenCode Compatible" /></a>
@@ -299,10 +395,9 @@ See our [Contributing Guide](CONTRIBUTING.md) to get started, or jump straight i
 
 [MIT](LICENSE) — Made by [Little Bear Apps](https://littlebearapps.com) 🐶
 
+---
 
----
-# Source: ./CONTRIBUTING.md
----
+# Source: CONTRIBUTING.md
 
 # Contributing to PitchDocs
 
@@ -436,10 +531,9 @@ This project follows the [Contributor Covenant v3.0 Code of Conduct](CODE_OF_CON
 
 Thank you for making PitchDocs better!
 
+---
 
----
-# Source: ./CHANGELOG.md
----
+# Source: CHANGELOG.md
 
 # Changelog
 
@@ -447,6 +541,23 @@ All notable changes to this project are documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.19.0](https://github.com/littlebearapps/pitchdocs/compare/v1.18.0...v1.19.0) (2026-03-09)
+
+
+### Added
+
+* reduce auto-loaded context by 41% and fix stale counts across docs ([f540de6](https://github.com/littlebearapps/pitchdocs/commit/f540de6a09de7873a8fe5bf783711d25a4047763))
+
+
+### Fixed
+
+* resolve false-positive broken path warnings in drift check hook ([5772356](https://github.com/littlebearapps/pitchdocs/commit/577235693df39da6bce35bc6d768bff24a441d8e))
+
+
+### Documentation
+
+* regenerate llms-full.txt with updated counts and slimmed rules ([63ef9a1](https://github.com/littlebearapps/pitchdocs/commit/63ef9a1f361fedb9761e2c3d94f48efcf9cb576d))
 
 ## [1.18.0](https://github.com/littlebearapps/pitchdocs/compare/v1.17.0...v1.18.0) (2026-03-09)
 
@@ -799,10 +910,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [1.1.0]: https://github.com/littlebearapps/pitchdocs/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/littlebearapps/pitchdocs/releases/tag/v1.0.0
 
+---
 
----
-# Source: ./AGENTS.md
----
+# Source: AGENTS.md
 
 # PitchDocs
 
@@ -818,8 +928,8 @@ Skills are loaded on-demand to provide deep reference knowledge. Each lives at `
 
 | Skill | What It Provides |
 |-------|-----------------|
-| `public-readme` | README structure with the Daytona/Banesullivan marketing framework — hero section, audience-segmented value proposition, quickstart with Time to Hello World targets, features with evidence-based benefits |
-| `feature-benefits` | 7-step codebase scanning workflow across 10 signal categories with JTBD job mapping, persona inference (5 archetypes from code signals), and two-path user benefits extraction (auto-scan or conversational "talk it out"). Extracts concrete features with file/function evidence and translates them into benefits across 5 categories (time saved, confidence gained, pain avoided, capability unlocked, cost reduced) |
+| `public-readme` | README structure with the Daytona/Banesullivan marketing framework — hero template, value proposition, quickstart with Time to Hello World targets, features with evidence-based benefits. Companion `SKILL-reference.md` has logo guidelines, registry badges, use-case framing, and visual element guidance (loaded on demand) |
+| `feature-benefits` | 7-step codebase scanning workflow with feature-to-benefit translation across 5 categories (time saved, confidence gained, pain avoided, capability unlocked, cost reduced). Companion `SKILL-signals.md` has detailed signal category scan lists, JTBD mapping, persona inference, conversational path prompts, and per-ecosystem pattern libraries (loaded on demand) |
 | `changelog` | Keep a Changelog format with language rules that rewrite conventional commits into user-facing benefit language. Maps `feat:` to Added, `fix:` to Fixed, etc. |
 | `roadmap` | Roadmap structure from GitHub milestones with emoji status indicators, mission statement, and community involvement section |
 | `pitchdocs-suite` | Full 20+ file inventory (README, CONTRIBUTING, CHANGELOG, CODE_OF_CONDUCT, SECURITY, AI context files, issue templates, PR templates, and more), GitHub metadata guidance, visual assets, licence selection framework, and ready-to-use templates |
@@ -832,20 +942,20 @@ Skills are loaded on-demand to provide deep reference knowledge. Each lives at `
 | `api-reference` | API reference generator guidance — TypeDoc, Sphinx, godoc, rustdoc configuration templates and comment conventions |
 | `doc-refresh` | Version-bump documentation orchestration — analyses git history, identifies affected docs, and delegates to existing skills for selective refresh |
 | `context-guard` | Context Guard installation reference — hook architecture, settings.json configuration, customisation, and troubleshooting *(Claude Code only)* |
-| `visual-standards` | Visual formatting — emoji heading prefixes, horizontal rules, TOC anchors, callouts, screenshot dimensions, HTML patterns, captions, shadows, image optimisation |
+| `visual-standards` | Visual formatting — emoji heading prefixes, horizontal rules, TOC anchors, callouts. Companion `SKILL-reference.md` has screenshot dimensions, HTML patterns, captions, shadows, image optimisation (loaded on demand) |
 | `geo-optimisation` | GEO patterns for AI citation — citation capsules, crisp definitions, atomic sections, comparison tables, statistics, semantic scaffolding |
 | `skill-authoring` | Token budget guidelines for writing skills — budgets by type, metadata/activation limits, measuring cost, anti-patterns |
-| `platform-profiles` | Platform-specific equivalents for GitLab and Bitbucket — template directory mapping, badge URL patterns, Markdown rendering compatibility matrix, CLI tool mapping, CI/CD alternatives, and Bitbucket graceful degradation guidance |
+| `platform-profiles` | Platform detection and Markdown rendering compatibility matrix. Companion `SKILL-tables.md` has full lookup tables for GitLab/Bitbucket — template directories, badge URLs, CLI tools, CI/CD, and Bitbucket degradation (loaded on demand) |
 
 ## Agent Pipeline
 
-PitchDocs uses a 3-agent pipeline for documentation generation:
+PitchDocs uses an adaptive agent pipeline for documentation generation:
 
 | Agent | File | Role |
 |-------|------|------|
-| `docs-researcher` | `.claude/agents/docs-researcher.md` | Codebase discovery, platform detection, feature extraction (7-step workflow across 10 signal categories), security signal scanning, lobby split planning. Produces a structured research packet. |
-| `docs-writer` | `.claude/agents/docs-writer.md` | Orchestrator — spawns researcher, writes documentation using the Daytona "4000 Stars" marketing framework with citation capsules and banned phrase avoidance, then spawns reviewer. |
-| `docs-reviewer` | `.claude/agents/docs-reviewer.md` | Post-generation quality validation — full checklist, banned phrases scan, citation capsule completeness, GEO readiness, 6-dimension quality scoring (100-point rubric). |
+| `docs-researcher` | `.claude/agents/docs-researcher.md` | Codebase discovery, platform detection, feature extraction (7-step workflow across 10 signal categories), security signal scanning, lobby split planning. Produces a structured research packet. **Only spawned for projects with 20+ files** — smaller projects use lightweight inline research. |
+| `docs-writer` | `.claude/agents/docs-writer.md` | Orchestrator — chooses lightweight (inline) or full (sub-agent) research based on project size, writes documentation using the Daytona "4000 Stars" marketing framework with citation capsules and banned phrase avoidance, conditionally spawns reviewer. |
+| `docs-reviewer` | `.claude/agents/docs-reviewer.md` | Post-generation quality validation — full checklist, banned phrases scan, citation capsule completeness, GEO readiness, 6-dimension quality scoring (100-point rubric). **Skipped for new README generation** — runs for updates, docs suites, or when explicitly requested (`--review`). |
 
 ## Workflow Commands
 
@@ -853,7 +963,7 @@ These commands are defined in `commands/*.md` and can be invoked as slash comman
 
 | Command | What It Does |
 |---------|-------------|
-| `readme` | Generate or update a marketing-friendly README.md |
+| `readme` | Generate or update a marketing-friendly README.md. Supports `--review` (force review) and `--no-review` (skip review) flags |
 | `features` | Extract features from code and translate to benefits |
 | `changelog` | Generate CHANGELOG.md from git history with user-benefit language |
 | `roadmap` | Generate ROADMAP.md from GitHub milestones and issues |
@@ -890,10 +1000,9 @@ This repository includes context files for multiple AI coding tools:
 - `llms.txt` — LLM-friendly content index (llmstxt.org spec)
 - `llms-full.txt` — Full concatenated documentation content for LLM ingestion (~58K tokens)
 
+---
 
----
-# Source: ./SUPPORT.md
----
+# Source: SUPPORT.md
 
 # Support
 
@@ -934,14 +1043,13 @@ PitchDocs works with Claude Code, OpenCode, Codex CLI, Cursor, Gemini CLI, Aider
 - Feature requests: reviewed within 1 week
 - Security issues: acknowledged within 48 hours, resolved within 7 days
 
+---
 
----
-# Source: ./CLAUDE.md
----
+# Source: CLAUDE.md
 
 # PitchDocs
 
-Generate high-quality public-facing repository documentation with a marketing edge. PitchDocs is a Claude Code plugin (pure Markdown, zero runtime dependencies) with 18 skills, 3 agents (researcher → writer → reviewer pipeline), 4 quality rules, 15 slash commands, and 5 opt-in hooks.
+Generate high-quality public-facing repository documentation with a marketing edge. PitchDocs is a Claude Code plugin (pure Markdown, zero runtime dependencies) with 18 skills, 3 agents (adaptive researcher → writer → reviewer pipeline), 4 quality rules, 15 slash commands, and 5 opt-in hooks.
 
 ## Project Architecture
 
@@ -976,9 +1084,9 @@ hooks/*.sh                      → 5 opt-in hook scripts (Claude Code only)
 | `context-quality.md` | AI context file quality rule — cross-file consistency, path verification, sync points (Claude Code only) |
 | `content-filter.md` | Content filter quick reference rule — risk levels, fetch commands, chunked writing guidance (auto-loaded; Claude Code only) |
 | `docs-awareness.md` | Documentation trigger map rule — suggests PitchDocs commands when documentation-relevant work is detected (auto-loaded; Claude Code only) |
-| `docs-writer.md` | Orchestrator agent — coordinates docs-researcher → write → docs-reviewer pipeline with content filter mitigations |
-| `docs-researcher.md` | Codebase discovery agent — platform detection, feature extraction, security signals, lobby split planning |
-| `docs-reviewer.md` | Quality validation agent — checklist, banned phrases scan, GEO scoring, 6-dimension quality rubric |
+| `docs-writer.md` | Orchestrator agent — lightweight inline research for small projects (< 20 files), full sub-agent research for larger projects, conditional reviewer (skipped for new READMEs), content filter mitigations |
+| `docs-researcher.md` | Codebase discovery agent — platform detection, feature extraction, security signals, lobby split planning. Only spawned for projects with 20+ files. |
+| `docs-reviewer.md` | Quality validation agent — checklist, banned phrases scan, GEO scoring, 6-dimension quality rubric. Skipped for new READMEs; runs for updates or with `--review`. |
 | `hooks/*.sh` | Context Guard hooks — post-commit drift detection, structural change reminders, content filter write guard, session-end context nudge, and pre-commit context enforcement (Claude Code only, opt-in) |
 | `upstream-versions.json` | Tracks 8 pinned spec versions — checked monthly by GitHub Action |
 | `llms.txt` | AI-readable content index — must be updated when files are added/removed |
@@ -997,10 +1105,9 @@ hooks/*.sh                      → 5 opt-in hook scripts (Claude Code only)
 
 Listing and promotion drafts, status tracking, and submission content live in `docs/promotion/`. This includes awesome list PR content, Reddit post drafts, directory submission templates, and a `STATUS.md` tracking all listings and their current state. Refer to these files when preparing new submissions or checking on existing ones.
 
+---
 
----
-# Source: ./docs/README.md
----
+# Source: docs/README.md
 
 # PitchDocs Documentation
 
@@ -1039,10 +1146,9 @@ See the [Command Reference guide](guides/command-reference.md) for all 15 comman
 
 PitchDocs includes 18 reference skills loaded on-demand. See the [Available Skills](../AGENTS.md#available-skills) table in AGENTS.md for the full inventory.
 
+---
 
----
-# Source: ./docs/guides/getting-started.md
----
+# Source: docs/guides/getting-started.md
 
 ---
 title: "Getting Started with PitchDocs"
@@ -1221,10 +1327,9 @@ Check status anytime with `/pitchdocs:context-guard status`. Uninstall with `/pi
 
 **Need help?** See [SUPPORT.md](../../SUPPORT.md) for getting help, common questions, and contact details.
 
+---
 
----
-# Source: ./docs/guides/workflows.md
----
+# Source: docs/guides/workflows.md
 
 ---
 title: "Workflow Cookbook"
@@ -1454,10 +1559,9 @@ After adding a feature to your codebase, update docs to reflect it.
 
 **Looking for command details?** See the [Command Reference](command-reference.md). Having trouble? See the [Troubleshooting guide](troubleshooting.md).
 
+---
 
----
-# Source: ./docs/guides/command-reference.md
----
+# Source: docs/guides/command-reference.md
 
 ---
 title: "Command Reference"
@@ -1514,7 +1618,7 @@ Generate or update a marketing-friendly README.md.
 
 | Detail | Value |
 |--------|-------|
-| Arguments | `[project-path or description of focus]` |
+| Arguments | `[project-path or description of focus]`, `--review`, `--no-review` |
 | Generates | `README.md` |
 | Cross-tool | Yes |
 
@@ -1523,9 +1627,11 @@ Generate or update a marketing-friendly README.md.
 /pitchdocs:readme                              # Generate for current project
 /pitchdocs:readme packages/api                 # Generate for a specific package
 /pitchdocs:readme focus on the comparison table # Steer output to a specific section
+/pitchdocs:readme --review                     # Force the review phase (quality validation)
+/pitchdocs:readme --no-review                  # Skip the review phase
 ```
 
-If a README.md already exists, PitchDocs reads it first and improves it rather than replacing from scratch.
+If a README.md already exists, PitchDocs reads it first and improves it rather than replacing from scratch. The review phase (quality validation by the docs-reviewer agent) is skipped by default for new READMEs and runs automatically for updates — use `--review` or `--no-review` to override.
 
 ---
 
@@ -1827,10 +1933,9 @@ Installs 5 hooks: drift detection (warns after commits), structural change remin
 
 **See also:** [Workflows](workflows.md) for step-by-step recipes, [Troubleshooting](troubleshooting.md) for common issues, [Getting Started](getting-started.md) for installation.
 
+---
 
----
-# Source: ./docs/guides/customising-output.md
----
+# Source: docs/guides/customising-output.md
 
 ---
 title: "Customising PitchDocs Output"
@@ -2003,10 +2108,9 @@ The transformation applies the feature-to-benefit pattern: `[Feature] so you can
 
 **See also:** [Concepts](concepts.md) for the frameworks behind PitchDocs output, [Command Reference](command-reference.md) for full argument details.
 
+---
 
----
-# Source: ./docs/guides/concepts.md
----
+# Source: docs/guides/concepts.md
 
 ---
 title: "How PitchDocs Thinks"
@@ -2208,10 +2312,9 @@ Quick start sections follow Cognitive Load Theory principles: leverage prior kno
 
 **See also:** [Customising Output](customising-output.md) to steer PitchDocs' output, [Command Reference](command-reference.md) for all commands.
 
+---
 
----
-# Source: ./docs/guides/troubleshooting.md
----
+# Source: docs/guides/troubleshooting.md
 
 ---
 title: "Troubleshooting & FAQ"
@@ -2394,10 +2497,9 @@ PitchDocs generates docs based on its quality standards, but the output is alway
 
 **Need more help?** See [SUPPORT.md](../../SUPPORT.md) for contact details and response times.
 
+---
 
----
-# Source: ./docs/guides/other-ai-tools.md
----
+# Source: docs/guides/other-ai-tools.md
 
 ---
 title: "Use PitchDocs with Other AI Tools"
@@ -2702,10 +2804,9 @@ Read /path/to/pitchdocs/llms.txt to see all available PitchDocs skills and docum
 
 This is especially useful when you're not sure which skill to use — `llms.txt` maps each file to a short description so your AI tool can pick the right one.
 
+---
 
----
-# Source: ./.claude/skills/public-readme/SKILL.md
----
+# Source: .claude/skills/public-readme/SKILL.md
 
 ---
 name: public-readme
@@ -2722,34 +2823,6 @@ version: "1.0.0"
 - Separate major sections with `---` horizontal rules
 - The numbered sections below (1–9) indicate recommended ORDER — the actual output uses H2 headings with emoji prefixes, not numbered H3s
 
-Example of how sections appear in the final README output:
-
-```markdown
----
-
-## 💡 Why ProjectName?
-
-| Problem | Solution |
-|---------|----------|
-| Manual changelog writing is tedious | Generates changelogs from conventional commits |
-
----
-
-## ⚡ Quick start
-
-\`\`\`bash
-npm install project-name
-\`\`\`
-
----
-
-## 🎯 Features
-
-| Feature | Benefit | Status |
-|---------|---------|--------|
-| Feature A | Saves 30 min per release | :white_check_mark: Stable |
-```
-
 ### GEO: Optimising for AI Citation
 
 Load the `geo-optimisation` skill for the full GEO reference. README-specific essentials:
@@ -2761,34 +2834,6 @@ Load the `geo-optimisation` skill for the full GEO reference. README-specific es
 5. **Atomic feature descriptions** — Each bullet/row comprehensible without surrounding context
 
 ### 1. Hero Section
-
-**Project logo (optional but recommended):**
-
-If the project has a logo, place it as the first element inside the centred container. A prominent logo creates instant visual identity and makes the repo feel polished and maintained.
-
-```html
-<p align="center">
-  <img src="docs/assets/logo.svg" height="200" alt="Project Name" />
-</p>
-```
-
-**Logo guidelines:**
-- **Format**: SVG preferred (scales crisply on retina displays). PNG as fallback for complex raster logos.
-- **Height**: `height="160"` to `height="240"` — scale to visual weight, not pixel count. Larger source images (1000x1000) use the lower end; smaller sources (300–500px) use the higher end. Never set both `width` and `height` unless the source aspect ratio requires it.
-- **Background**: Transparent for README headers. Solid colour backgrounds are only for listing thumbnails (DevHunt, Product Hunt).
-- **Breathing room**: Use separate `<p align="center">` blocks for the logo, tagline, badges, and links. Each `<p>` gets natural CSS margin from GitHub's stylesheet (~16px), creating consistent spacing without `<br>` hacks. Avoid `<br>` inside `<div>` blocks — GitHub's renderer collapses them unpredictably.
-- **Dark mode support**: Use `<picture>` with `prefers-color-scheme` sources when the logo doesn't render well on both light and dark backgrounds:
-  ```html
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="docs/assets/logo-light.svg">
-    <img src="docs/assets/logo-light.svg" height="200" alt="Project Name">
-  </picture>
-  ```
-- **Wordmark logos**: If the logo contains the project name (a wordmark), omit the `# Project Name` heading to avoid duplication.
-- **Storage**: `docs/assets/` or `.github/assets/` in the repo. For npm/PyPI-published packages, use absolute URLs — relative paths break on registry pages. URL pattern by platform: GitHub `https://raw.githubusercontent.com/org/repo/main/path`, GitLab `https://gitlab.com/org/repo/-/raw/main/path`, Bitbucket `https://bitbucket.org/org/repo/raw/main/path`. Load the `platform-profiles` skill for the full mapping.
-- **Bitbucket limitations**: `<picture>` tags are not supported — use a single high-contrast image. Load `platform-profiles` for the full rendering compatibility matrix.
-- **Alt text**: Always include descriptive alt text (the project name at minimum).
 
 **Full hero template:**
 
@@ -2816,7 +2861,147 @@ If the project has a logo, place it as the first element inside the centred cont
 ---
 ```
 
-The `---` after the hero creates a visual break before the content body. For READMEs with 7+ sections, add a table of contents between the hero `---` and the first content section (see `doc-standards` rule for emoji anchor format).
+The `---` after the hero creates a visual break before the content body. For READMEs with 7+ sections, add a table of contents between the hero `---` and the first content section.
+
+**Three-part hero structure:**
+
+1. **Bold one-liner** (maximum 15 words) — explains what the project provides, not just what it is. Starts with an action verb or benefit. No jargon.
+2. **Explanatory sentence** — one sentence covering scope, capabilities, and key selling points.
+3. **Badges and compatibility line** — standard shields.io badges (version, licence, CI), plus any platform/ecosystem badges.
+
+**Audience awareness:** The bold one-liner should resonate with both developers (what it does technically) and decision makers (what it achieves for the team/org).
+
+For logo guidelines, registry-specific badges, and dark mode support, load `SKILL-reference.md` from this skill directory.
+
+### 2. Visual Element (Optional but High-Impact)
+
+Place a screenshot, demo GIF, terminal recording, or architecture diagram after the hero. Keep under 800px wide. For device-specific screenshots, captions, and shadow/border styling, load the `visual-standards` skill.
+
+### 3. Value Proposition
+
+Frame the value proposition to serve two reader tracks simultaneously:
+
+**Developer/Implementer track** — Technical problem → technical solution with code evidence. "How do I use this?" focus.
+
+**Decision Maker/Ops track** — Business problem → measurable outcome. "Why should we adopt this?" focus.
+
+```markdown
+## Why Project Name?
+
+| Problem | Solution | Evidence |
+|---------|----------|----------|
+| Manual changelog writing wastes hours per release | Generates changelogs from conventional commits in seconds | `src/changelog.ts` |
+| READMEs go stale within weeks of launch | Detects drift between code and docs, suggests updates | `hooks/context-drift-check.sh` |
+```
+
+**Alternative format: Problem/solution bullets** (for libraries, APIs, and technical tools):
+
+```markdown
+## Why Project Name?
+
+- **Problem you solve** — How you solve it, and why your approach is better
+- **Another pain point** — Your elegant solution, with a specific metric if possible
+```
+
+For bold-outcome bullets, credibility rows, use-case framing (section 3.5), and format selection guidance, load `SKILL-reference.md` from this skill directory.
+
+### 4. Quick Start
+
+Must achieve the **Time to Hello World** target for the detected project type (see `doc-standards` rule for targets).
+
+**Rules:**
+- Show the SIMPLEST possible usage first
+- Include expected output in comments
+- Use TypeScript if the project supports it
+- Limit to 5–7 lines of code — move extensive tutorials to `docs/guides/getting-started.md`
+- Never require the reader to leave the page — all prereqs listed upfront, all commands copy-paste-ready
+
+### 5. Features
+
+Two formats are available:
+
+**Emoji+bold+em-dash bullets** (recommended for 5+ features):
+
+```markdown
+- 🔍 **Feature name** — benefit description with evidence
+- 📋 **Another feature** — benefit description with evidence
+```
+
+**Table with benefits column** (for structured comparisons or status tracking):
+
+```markdown
+| Feature | Benefit | Status |
+|---------|---------|--------|
+| Feature A | Saves 30 min per release | :white_check_mark: Stable |
+```
+
+#### How to Populate Features
+
+1. Load the `feature-benefits` skill and run the 7-step Feature Extraction Workflow
+2. Take all **Hero** and **Core** tier features from the classified inventory
+3. **Limit to the top 8 features in the README.** Link to a full list in docs if 10+
+4. Apply the feature-to-benefit translation — use at least 3 different benefit categories
+5. No features without file/function evidence — if you can't point to code, don't list it
+
+**One-liner generation**: Synthesise from Hero features. Pattern: "Ship [outcome] with [how]" or "[Action verb] [what users gain] — [key differentiator]."
+
+### 6. Comparison (If Applicable)
+
+Only include if there are genuine alternatives. Be honest and fair. Limit to the top 3–4 competitors and 5–8 distinguishing capabilities.
+
+### 7. Documentation Links
+
+Link to getting started guide, API reference, configuration, examples, and FAQ.
+
+### 8. Contributing
+
+Brief section with link to CONTRIBUTING.md. Include open issues link and discussion forum.
+
+### 9. License & Credits
+
+```markdown
+## License
+
+[MIT](LICENSE) — Made with care by [Author/Org](link)
+```
+
+## Anti-Patterns to Avoid
+
+- **Don't start with installation** — sell the value first
+- **Don't list every API method** — link to API docs instead
+- **Don't use "simple" or "easy"** — show, don't tell
+- **Don't include build instructions** — that's for CONTRIBUTING.md
+- **Don't include TOC for READMEs under 7 sections** — the hero quick-links row is sufficient
+- **Don't use emoji heading prefixes for READMEs under 5 sections**
+- **Don't put exhaustive content in the README** — delegate to `docs/guides/`. The README is the lobby, not the building.
+
+---
+
+# Source: .claude/skills/public-readme/SKILL-reference.md
+
+# Public README — Extended Reference
+
+Detailed examples, templates, and tables split from SKILL.md to reduce token overhead. Load on demand when generating READMEs for complex projects.
+
+## Hero Section Templates
+
+**Project logo guidelines:**
+- **Format**: SVG preferred (scales crisply on retina displays). PNG as fallback for complex raster logos.
+- **Height**: `height="160"` to `height="240"` — scale to visual weight, not pixel count. Larger source images (1000x1000) use the lower end; smaller sources (300–500px) use the higher end. Never set both `width` and `height` unless the source aspect ratio requires it.
+- **Background**: Transparent for README headers. Solid colour backgrounds are only for listing thumbnails (DevHunt, Product Hunt).
+- **Breathing room**: Use separate `<p align="center">` blocks for the logo, tagline, badges, and links. Each `<p>` gets natural CSS margin from GitHub's stylesheet (~16px), creating consistent spacing without `<br>` hacks. Avoid `<br>` inside `<div>` blocks — GitHub's renderer collapses them unpredictably.
+- **Dark mode support**: Use `<picture>` with `prefers-color-scheme` sources when the logo doesn't render well on both light and dark backgrounds:
+  ```html
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/logo-light.svg">
+    <img src="docs/assets/logo-light.svg" height="200" alt="Project Name">
+  </picture>
+  ```
+- **Wordmark logos**: If the logo contains the project name (a wordmark), omit the `# Project Name` heading to avoid duplication.
+- **Storage**: `docs/assets/` or `.github/assets/` in the repo. For npm/PyPI-published packages, use absolute URLs — relative paths break on registry pages. URL pattern by platform: GitHub `https://raw.githubusercontent.com/org/repo/main/path`, GitLab `https://gitlab.com/org/repo/-/raw/main/path`, Bitbucket `https://bitbucket.org/org/repo/raw/main/path`. Load the `platform-profiles` skill for the full mapping.
+- **Bitbucket limitations**: `<picture>` tags are not supported — use a single high-contrast image. Load `platform-profiles` for the full rendering compatibility matrix.
+- **Alt text**: Always include descriptive alt text (the project name at minimum).
 
 **Registry-specific badge guidance:**
 
@@ -2836,75 +3021,9 @@ For PyPI-published packages:
 
 Load the `package-registry` skill for the full badge inventory and cross-renderer compatibility guidance.
 
-**Three-part hero structure:**
+## Value Proposition — Extended Formats
 
-1. **Bold one-liner** (maximum 15 words) — explains what the project provides, not just what it is. Starts with an action verb or benefit. No jargon.
-   - "Ship Cloudflare Workers with confidence — cost safety, circuit breakers, and observability built in."
-   - "GitHub repository documentation skills and templates for AI coding assistants."
-   - "The fastest way to build type-safe APIs on the edge."
-
-2. **Explanatory sentence** — one sentence covering scope, capabilities, and key selling points. Mention what the tool does end-to-end and any compatibility/ecosystem signals (SEO/GEO, npm/PyPI, cross-platform, etc.).
-   - "Give your AI the knowledge to map out any codebase, extract a features-and-benefits summary, then create, enhance, and maintain professional public-facing GitHub repository docs — SEO and GEO ready with llms.txt, and npm/PyPI registry compatible."
-   - "Automatically generates changelogs from conventional commits, roadmaps from GitHub milestones, and READMEs with marketing-friendly features tables."
-
-3. **Badges and compatibility line** — standard shields.io badges (version, licence, CI), plus any platform/ecosystem badges that signal where the project fits.
-   - `[![Claude Code Plugin](badge-url)](link) [![OpenCode Compatible](badge-url)](link) [![npm & PyPI Ready](badge-url)](link)`
-
-**Audience awareness:** The bold one-liner should resonate with both developers (what it does technically) and decision makers (what it achieves for the team/org). Test by asking: "Would a developer click through?" *and* "Would a team lead forward this link?"
-
-### 2. Visual Element (Optional but High-Impact)
-
-- Screenshot, demo GIF, or terminal recording
-- Architecture diagram for infrastructure projects
-- Before/after comparison for tools
-- Keep under 800px wide, optimised for GitHub's renderer
-
-```markdown
-<p align="center">
-  <img src="docs/images/demo.gif" alt="Quick start demo showing project setup in 30 seconds" width="700" />
-</p>
-```
-
-**For device-specific screenshots, captions, and shadow/border styling**, load the `visual-standards` skill — it covers capture dimensions per device, HTML display patterns, cross-renderer caption formats, and baked shadow guidance.
-
-**Where to store visual assets:**
-- **In-repo** (`docs/images/` or `assets/`): version-controlled, always accessible. Best for files under 5MB.
-- **GitHub user-content**: drag-drop an image into any GitHub issue or PR to get a permanent `user-images.githubusercontent.com` URL. Keeps repo size small.
-- **GitHub Release assets**: for larger files (>5MB) without bloating git history.
-
-**Format guidance:**
-- SVG for diagrams and architecture charts (scales perfectly)
-- PNG for screenshots and UI captures (lossless)
-- GIF for demo recordings (<10MB GitHub limit, aim for ~10fps)
-- Always include descriptive alt text for accessibility
-
-### 3. Value Proposition
-
-Frame the value proposition to serve two reader tracks simultaneously:
-
-**Developer/Implementer track** (primary flow):
-- Technical problem → technical solution with code evidence
-- "How do I use this?" focus
-- Quick start placement immediately follows
-
-**Decision Maker/Ops track** (credibility signals and measurable outcomes):
-- Business problem → measurable outcome
-- "Why should we adopt this?" focus
-- Links to SECURITY.md, compliance, team-scale evidence
-
-Both tracks share the same section — structure serves both without duplication:
-
-```markdown
-## Why Project Name?
-
-| Problem | Solution | Evidence |
-|---------|----------|----------|
-| Manual changelog writing wastes hours per release | Generates changelogs from conventional commits in seconds | `src/changelog.ts` |
-| READMEs go stale within weeks of launch | Detects drift between code and docs, suggests updates | `hooks/context-drift-check.sh` |
-| Hard to justify adoption to team leads | Test coverage, benchmarks, and adoption stats in README | `npm test -- --coverage` |
-```
-
-For projects with security, compliance, or enterprise appeal, add a **credibility row** pattern. Place these rows inside the "Why" section (not as a separate top-level section) — they serve the decision-maker track alongside the developer-facing problem/solution rows:
+**Credibility row pattern** (for security/compliance/enterprise appeal). Place inside the "Why" section — they serve the decision-maker track alongside the developer-facing problem/solution rows:
 
 ```markdown
 | Trust signal | What it demonstrates | Where to verify |
@@ -2927,21 +3046,11 @@ For projects with security, compliance, or enterprise appeal, add a **credibilit
 - **[Outcome 3]** — mechanism description.
 ```
 
-This format works best when user benefits come from the developer's lived experience. Use the conversational path in the `feature-benefits` skill (Step 4, Path B) to capture authentic use cases — the 4-question interview surfaces real scenarios that code scanning alone can't discover.
-
-**Alternative format: Problem/solution bullets** (for libraries, APIs, and technical tools):
-
-```markdown
-## Why Project Name?
-
-- **Problem you solve** — How you solve it, and why your approach is better
-- **Another pain point** — Your elegant solution, with a specific metric if possible
-- **Third benefit** — Concrete outcome the user can expect
-```
+This format works best when user benefits come from the developer's lived experience. Use the conversational path in the `feature-benefits` skill (Step 4, Path B) to capture authentic use cases.
 
 **Choosing a format:** If the `feature-benefits` skill produced 3+ user benefits, recommend bold-outcome bullets. For purely technical projects or when fewer user benefits emerged, recommend the problem/solution table or bullets. Present both options to the developer and let them decide.
 
-### 3.5 Use-Case Framing (Optional — High Impact)
+## Use-Case Framing (Section 3.5)
 
 For projects with multiple capabilities, add a "What [Project] Does" section between the hero and the detailed features. Frame each capability as a **reader-centric scenario** — start with the user's situation, then explain how the project helps.
 
@@ -2975,158 +3084,39 @@ Great [thing] is useless if nobody finds it. ProjectName handles [discovery]:
 - Use H3 subheadings within the section for each scenario
 - Skip this section for single-purpose tools — the "Why" section is sufficient
 
-### 4. Quick Start
+## Visual Element Guidance
 
-Must achieve the **Time to Hello World** target for the detected project type (see `doc-standards` rule for targets by project type). State the TTHW explicitly where evidence supports it (e.g. "Get your first README in under 60 seconds").
-
-```markdown
-## Quick Start
-
-### Prerequisites
-
-- Node.js 20+ (or relevant runtime)
-- npm/pnpm/yarn
-
-### Install
-
-\`\`\`bash
-npm install package-name
-\`\`\`
-
-### Usage
-
-\`\`\`typescript
-import { thing } from 'package-name'
-
-// Minimal working example — 5 lines or fewer
-const result = await thing.doSomething({
-  input: 'hello'
-})
-console.log(result) // Expected output
-\`\`\`
-```
-
-**Rules:**
-- Show the SIMPLEST possible usage first
-- Include expected output in comments
-- Use TypeScript if the project supports it
-- Limit to 5–7 lines of code — move extensive tutorials to `docs/guides/getting-started.md`
-- Link to full docs for advanced usage
-- Never require the reader to leave the page — all prereqs listed upfront, all commands copy-paste-ready
-
-### 5. Features
-
-Two formats are available. Choose based on content:
-
-**Emoji+bold+em-dash bullets** (recommended for 5+ features — more scannable):
+- Screenshot, demo GIF, or terminal recording
+- Architecture diagram for infrastructure projects
+- Before/after comparison for tools
+- Keep under 800px wide, optimised for GitHub's renderer
 
 ```markdown
-## Features
-
-- 🔍 **Feature name** — benefit description with evidence
-- 📋 **Another feature** — benefit description with evidence
-- 🚀 **Third feature** — benefit description with evidence
+<p align="center">
+  <img src="docs/images/demo.gif" alt="Quick start demo showing project setup in 30 seconds" width="700" />
+</p>
 ```
 
-The emoji creates a visual anchor for each item, the bold text names the feature, and the em-dash cleanly separates "what" from "why". Choose an emoji that relates to the feature content. Use when feature descriptions vary in length or don't need structured comparison.
+**For device-specific screenshots, captions, and shadow/border styling**, load the `visual-standards` skill.
 
-**Table with benefits column** (use for structured comparisons or when status tracking is needed):
+**Where to store visual assets:**
+- **In-repo** (`docs/images/` or `assets/`): version-controlled, always accessible. Best for files under 5MB.
+- **GitHub user-content**: drag-drop an image into any GitHub issue or PR to get a permanent `user-images.githubusercontent.com` URL. Keeps repo size small.
+- **GitHub Release assets**: for larger files (>5MB) without bloating git history.
 
-```markdown
-## Features
-
-| Feature | Benefit | Status |
-|---------|---------|--------|
-| Automatic changelog generation | Save 30 minutes per release | :white_check_mark: Stable |
-| Marketing-friendly language | Your changelog becomes a release announcement | :white_check_mark: Stable |
-| GitHub integration | Pull issues, PRs, and releases automatically | :construction: Beta |
-```
-
-Use when features need status indicators, direct side-by-side comparison, or when the list is short (under 5 items).
-
-#### How to Populate Features
-
-1. Load the `feature-benefits` skill and run the 7-step Feature Extraction Workflow
-2. Take all **Hero** and **Core** tier features from the classified inventory
-3. **Limit to the top 8 features in the README.** If the project has 10+, include the top Hero and Core features here and link to a full feature list in docs (e.g. "See the [full feature list](docs/features.md) for all N capabilities")
-4. Apply the feature-to-benefit translation for each — use at least 3 different benefit categories
-5. For tables: set status from evidence (`:white_check_mark: Stable` if tested, `:construction: Beta` if experimental)
-6. No features without file/function evidence — if you can't point to code, don't list it
-
-**Rules for both formats:**
-- Every feature must have evidence (file path, function, config option)
-- Use at least 3 different benefit categories across the list
-- Feature names should be concise (2–5 words) — put detail in the benefit text
-
-**One-liner generation**: Synthesise from Hero features. Pattern: "Ship [outcome] with [how]" or "[Action verb] [what users gain] — [key differentiator]."
-
-### 6. Comparison (If Applicable)
-
-Only include if there are genuine alternatives. Be honest and fair. Limit to the top 3–4 competitors and 5–8 distinguishing capabilities — comparison tables earn their README space for GEO value, but keep them focused.
-
-```markdown
-## How It Compares
-
-| Feature | Project Name | Alternative A | Alternative B |
-|---------|-------------|---------------|---------------|
-| Marketing-friendly output | :white_check_mark: | :x: | Partial |
-| 4-question framework | :white_check_mark: | :x: | :x: |
-| GitHub MCP integration | :white_check_mark: | :x: | :white_check_mark: |
-```
-
-### 7. Documentation Links
-
-```markdown
-## Documentation
-
-- [Getting Started Guide](docs/getting-started.md)
-- [API Reference](docs/api.md)
-- [Configuration](docs/configuration.md)
-- [Examples](examples/)
-- [FAQ](docs/faq.md)
-```
-
-### 8. Contributing
-
-Brief section with link to CONTRIBUTING.md:
-
-```markdown
-## Contributing
-
-We welcome contributions! See our [Contributing Guide](CONTRIBUTING.md) for details.
-
-- [Open Issues](link) — Good first issues labelled
-- [Discussion Forum](link) — Ask questions, propose features
-```
-
-### 9. License & Credits
-
-```markdown
-## License
-
-[MIT](LICENSE) — Made with care by [Author/Org](link)
-```
-
-## Anti-Patterns to Avoid
-
-- **Don't start with installation** — sell the value first
-- **Don't list every API method** — link to API docs instead
-- **Don't use "simple" or "easy"** — show, don't tell
-- **Don't include build instructions** — that's for CONTRIBUTING.md
-- **Don't use "we" excessively** — use "you" to address the reader
-- **Don't show error handling in quickstart** — keep it minimal
-- **Don't include TOC for READMEs under 7 sections** — the hero quick-links row is sufficient for shorter docs
-- **Don't use emoji heading prefixes for READMEs under 5 sections** — the visual overhead outweighs the navigation benefit
-- **Don't put exhaustive content in the README** — per-tool setup guides, full feature inventories, architecture deep-dives, and specification references belong in `docs/guides/` or separate files. The README is the lobby, not the building.
+**Format guidance:**
+- SVG for diagrams and architecture charts (scales perfectly)
+- PNG for screenshots and UI captures (lossless)
+- GIF for demo recordings (<10MB GitHub limit, aim for ~10fps)
+- Always include descriptive alt text for accessibility
 
 ## Cross-Renderer Compatibility
 
 If published to npm or PyPI, load the `package-registry` skill for the full compatibility matrix. Key rules: use absolute image URLs, avoid GitHub callouts (`[!NOTE]`), avoid heading anchors on PyPI, test with `twine check dist/*` before PyPI upload.
 
+---
 
----
-# Source: ./.claude/skills/feature-benefits/SKILL.md
----
+# Source: .claude/skills/feature-benefits/SKILL.md
 
 ---
 name: feature-benefits
@@ -3156,65 +3146,9 @@ Also check: `Makefile`, `Dockerfile`, `docker-compose.yml`, `.github/workflows/`
 
 ### Step 2: Scan Signal Categories
 
-For each category, check the listed file patterns. Read matching files and record what you find.
+Scan the 10 signal categories: CLI Commands, Public API, Configuration, Integrations, Performance, Security, TypeScript/DX, Testing, Middleware/Plugins, Documentation.
 
-#### 2.1 CLI Commands
-- `bin/` directory, `package.json#bin`, `[project.scripts]`
-- `src/cli*`, `src/commands/`, `cmd/`
-- **What to record**: command names, flags, subcommands
-
-#### 2.2 Public API
-- `src/index.*`, `lib/index.*`, `exports` in manifest
-- `src/api/`, `routes/`, `handlers/`
-- TypeScript: `.d.ts` files, `export` statements
-- Python: `__init__.py`, `__all__`
-- **What to record**: exported functions/classes, parameter types, return types
-
-#### 2.3 Configuration
-- Config files: `*.config.js`, `*.config.ts`, `.rc` files
-- Schema files: JSON Schema, Zod schemas, Pydantic models
-- Environment: `.env.example`, `wrangler.toml`
-- **What to record**: config options, defaults, validation
-
-#### 2.4 Integrations
-- Dependencies in manifest (group by purpose: HTTP, database, auth, etc.)
-- MCP servers (`.mcp.json`), plugin systems
-- Webhook handlers, event listeners
-- **What to record**: what external systems it connects to
-
-#### 2.5 Performance
-- Caching: Redis, Memcached, in-memory cache implementations
-- Async/concurrent: worker threads, async patterns, queue systems
-- Benchmarks: `bench/`, `benchmark/`, performance tests
-- **What to record**: performance claims with evidence (benchmark results, cache strategies)
-
-#### 2.6 Security
-- Auth: OAuth, JWT, API keys, session management
-- Validation: input sanitisation, schema validation
-- Encryption, CORS, CSP, rate limiting
-- **What to record**: security features with implementation location
-
-#### 2.7 TypeScript / Developer Experience
-- Type safety: strict mode, no `any`, generics
-- Code generation, auto-completion support
-- Error messages, debug utilities
-- **What to record**: DX features that save developer time
-
-#### 2.8 Testing
-- Test files: `*.test.*`, `*.spec.*`, `test/`, `tests/`
-- Coverage config, CI test steps
-- E2E tests, integration tests
-- **What to record**: test coverage %, test types present
-
-#### 2.9 Middleware / Plugins / Extensibility
-- Plugin system, middleware chain, hook system
-- Extension points, event emitters
-- **What to record**: extensibility mechanisms and what they enable
-
-#### 2.10 Documentation
-- `docs/`, `examples/`, API docs generation
-- JSDoc/docstrings coverage
-- **What to record**: documentation completeness
+For each category, check file patterns, read matching files, and record what you find. For detailed file patterns and scan lists per category, load `SKILL-signals.md` from this skill directory.
 
 ### Step 3: Extract Concrete Features with Evidence
 
@@ -3231,161 +3165,54 @@ Category: [Signal category from Step 2]
 - No speculative features — if you can't point to code, it's not a feature
 - Be specific: "Zero-config TypeScript support" not "Good developer experience"
 
-### Step 3.5: Map to Jobs-to-be-Done
+### Step 3.5: Map to Jobs-to-be-Done (Hero features only)
 
-For richer benefit writing, identify the job each feature is hired to do before translating to a benefit sentence. JTBD adds an input lens for understanding *why* a feature matters — the 5 benefit categories remain the output classification.
-
-For each extracted feature, frame the job:
-
-```
-When I am [situation/context],
-I want [capability this feature provides],
-so I can [desired outcome].
-```
-
-Classify each job:
-- **Functional** — the practical task ("deploy to production", "generate a changelog")
-- **Emotional** — how the user wants to feel ("confident my docs are complete")
-- **Social** — how the user wants to be perceived ("my repo looks professional")
-
-**When to apply:**
-
-| Impact Tier | JTBD Depth | Rationale |
-|-------------|-----------|-----------|
-| **Hero** (1–3) | Recommended — all three job types | Hero features drive adoption; emotional and social jobs sharpen the "why switch?" narrative |
-| **Core** (4–8) | Functional job only | Core features need clear practical framing but don't need emotional/social depth |
-| **Supporting** (9+) | Skip | Supporting features are nice-to-haves — the 5 benefit categories suffice |
-
-**Rules:**
-- For projects with fewer than 5 features, skip JTBD — the 5 benefit categories suffice
-- JTBD informs the benefit sentence — the final output still uses the `[Feature] so you can [outcome] — [evidence]` pattern
+For Hero features, frame the job: `When I am [situation], I want [capability], so I can [outcome]`. Classify as Functional, Emotional, or Social. Skip JTBD for Core/Supporting tiers and projects with fewer than 5 features. For full JTBD guidance, load `SKILL-signals.md`.
 
 ### Step 3.6: Persona Inference
 
-Infer 1–2 target personas from code signals to ground benefit writing. Personas prevent generic output by anchoring benefits to specific users.
-
-| Signal Source | What to Check | Persona Implications |
-|---|---|---|
-| Integration surface | Telegram/Slack/GitHub/mobile APIs | Remote/async users |
-| Execution model | Daemon/queue/cron/webhook | Background/automation users |
-| Entry points | CLI vs SDK vs web UI | Developer maturity/context |
-| Deploy artifacts | Docker/K8s/serverless/VPS | Ops/platform users |
-| Manifest keywords | description, topics, README intro | General audience signal |
-
-Map to archetypes (1 primary, 1 secondary):
-- **Solo builder** — speed, low setup, shipping fast
-- **Team lead** — consistency, onboarding, standardisation
-- **Platform/ops engineer** — reliability, automation, deployability
-- **Power user / automator** — multi-tool, async, extensibility
-- **Compliance-aware org** — auditability, security, traceability
-
-**Rules:**
-- Infer from code signals only — don't guess from the project name
-- If signals are ambiguous, default to "Solo builder" (broadest useful persona)
-- Record the persona alongside the feature inventory — it feeds into Step 4 benefit writing
+Infer 1–2 target personas from code signals (integration surface, execution model, entry points, deploy artifacts). Map to archetypes: Solo builder, Team lead, Platform/ops engineer, Power user/automator, Compliance-aware org. Default to "Solo builder" if ambiguous. For the full persona inference table, load `SKILL-signals.md`.
 
 ### Step 4: User Benefits (the "Why?" Layer)
 
-User benefits sit above feature benefits. Feature benefits answer "What does this do for me?" (`[Feature] so you can [outcome]`). User benefits answer **"Why should I care?"** — the real-world reasons someone would choose this project.
+User benefits answer **"Why should I care?"** — the real-world reasons someone would choose this project.
 
-**Two paths are available. Both produce the same output format.**
+**Two paths available — both produce the same output format:**
 
 #### Path A: Auto-Scan (default)
 
-Synthesise outcome-first benefits from Hero features + JTBD emotional/social jobs + persona:
-
-1. Take the Hero tier features and their JTBD jobs from Steps 3–3.5
-2. Take the inferred persona from Step 3.6
-3. Apply the **signal gate** to determine aspiration level:
-   - **Standard** (default): workflow benefits — "Deploy without being at your desk", "Review changes between meetings"
-   - **Elevated** (requires mobile/async/remote/voice signals in the codebase): experiential benefits — "Start from your phone at the park, review on your laptop at home"
-4. Generate 3–7 draft benefits, each tagged with claim strength:
-   - **Strong**: code directly enables the claimed outcome (e.g., daemon process → "works while you're away")
-   - **Medium**: code supports the outcome with reasonable inference (e.g., CLI + webhook → "trigger from anywhere")
-   - **Weak**: outcome is aspirational without direct code evidence — discard these
-5. Ship only Strong + Medium benefits
+Synthesise outcome-first benefits from Hero features + JTBD + persona:
+1. Apply the **signal gate**: Standard (workflow benefits) by default; Elevated (experiential) only with mobile/async/remote/voice signals in code
+2. Generate 3–7 draft benefits, tag claim strength: Strong (code directly enables), Medium (reasonable inference), Weak (discard)
+3. Ship only Strong + Medium benefits
 
 #### Path B: Conversational ("Talk it out")
 
-The most compelling user benefits come from the developer's lived experience. This path uses interactive questions to surface authentic use cases.
+Use 4 interactive questions to surface authentic use cases, then enrich with code evidence. For the full prompt sequence, load `SKILL-signals.md`.
 
-**Prompt sequence** (for Claude Code, use `AskUserQuestion`; for other agents, present as numbered chat prompts):
-
-1. "Why do YOU use [Project]? What made you build it?" — surfaces motivation and origin story
-2. "What real-world scenarios does it enable? Where are you when you use it?" — surfaces contexts (on the train, walking the dog, between meetings)
-3. "What would you lose if [Project] didn't exist? What's the alternative?" — surfaces differentiation and pain
-4. "Who else would benefit from this, and why?" — surfaces audience expansion
-
-After collecting answers, enrich with code evidence from the Path A scan. The developer's words become the primary material; code evidence validates and strengthens each claim.
-
-#### Combined Output Format
-
-Whether auto-scanned or conversational, each user benefit follows:
+#### Output Format
 
 ```
 **[Bold user outcome]** — [mechanism/how it works]. [Constraint if needed].
 ```
 
-**Examples:**
-- **Work from anywhere** — voice notes are transcribed and queued as tasks on your VPS. Once queued, tasks continue even if your phone disconnects.
-- **Ship without context-switching** — the daemon runs in the background, so you review results when you're ready, not when the terminal demands it.
-- **Never lose a thought** — Telegram messages bridge directly to your dev environment. Ideas captured on the train arrive as actionable tasks.
-
-**Each benefit requires:**
-- A specific context ("on the train", "between meetings", "during CI")
-- An enabling mechanism ("voice notes → transcription", "daemon → background execution")
-- An evidence pointer (file path, function, or config that proves the mechanism)
+Each benefit requires: a specific context, an enabling mechanism, and an evidence pointer.
 
 ### Step 5: Classify by Impact Tier
 
 | Tier | Count | Criteria | README Placement |
 |------|-------|----------|-----------------|
-| **Hero** | 1–3 | Primary differentiators. Why someone chooses THIS over alternatives. | One-liner, Why section, first in features table |
-| **Core** | 4–8 | Expected by the target audience. Missing these would be a deal-breaker. | Features table, quick start examples |
-| **Supporting** | 9+ | Nice-to-have. Adds polish but isn't the reason someone adopts. | Mentioned briefly or linked to docs |
-
-**Classification questions:**
-- Would a user switch from an alternative for this feature? → Hero
-- Would a user leave if this feature were missing? → Core
-- Does this feature delight but isn't essential? → Supporting
+| **Hero** | 1–3 | Primary differentiators — why someone chooses THIS over alternatives | One-liner, Why section, first in features |
+| **Core** | 4–8 | Expected by the target audience — missing these would be a deal-breaker | Features table, quick start examples |
+| **Supporting** | 9+ | Nice-to-have — adds polish but isn't the reason someone adopts | Mentioned briefly or linked to docs |
 
 ### Step 6: Output Structured Feature Inventory
 
-```markdown
-## Feature Inventory: [Project Name]
-
-### Hero Features (1–3)
-| Feature | Evidence | Benefit Category | JTBD (optional) |
-|---------|----------|-----------------|-----------------|
-| ... | `src/...` | Time saved | Functional: ... |
-
-### Core Features (4–8)
-| Feature | Evidence | Benefit Category | JTBD (optional) |
-|---------|----------|-----------------|-----------------|
-| ... | `src/...` | Confidence gained | |
-
-### Supporting Features
-| Feature | Evidence | Benefit Category | JTBD (optional) |
-|---------|----------|-----------------|-----------------|
-| ... | `src/...` | Pain avoided | |
-```
-
-### Alternative Output: Emoji+Bold+Em-Dash Bullets
-
-For direct use in a README features section (especially with 5+ features), output as emoji+bold+em-dash bullets instead of a table. The emoji creates a visual anchor per item, making long lists scannable at a glance:
-
-```markdown
-- 🔍 **Feature name** — benefit description with evidence
-- 📋 **Another feature** — benefit description with evidence
-```
-
-Choose an emoji that relates to the feature content — not decorative randomness. Use this format when the `/features bullets` command is invoked, or when the feature list has 5+ items and doesn't need status tracking or side-by-side comparison.
+Output as a Markdown table with Feature, Evidence, Benefit Category, and optional JTBD columns, grouped by tier (Hero, Core, Supporting). Or use emoji+bold+em-dash bullets for direct README use.
 
 ---
 
 ## Feature-to-Benefit Translation Framework
-
-Features describe what code does. Benefits describe what users gain. Every feature in documentation must be translated into a benefit.
 
 ### The Translation Pattern
 
@@ -3393,16 +3220,9 @@ Features describe what code does. Benefits describe what users gain. Every featu
 [Technical feature] so you can [user outcome] — [evidence]
 ```
 
-**Examples:**
-- "Automatic changelog from git history **so you can** ship release notes in seconds — not hours"
-- "TypeScript-first with strict mode **so you can** catch errors before they reach production"
-- "Zero-config defaults with full override support **so you can** start fast and customise later"
-
 ### 5 Benefit Categories
 
-JTBD mapping (Step 3.5) enriches benefit writing by identifying the underlying job before choosing a category — the job's desired outcome often points directly to the right category.
-
-Use at least 3 different categories across your features table to avoid monotone docs.
+Use at least 3 different categories across your features table:
 
 | Category | Pattern | Example Benefit |
 |----------|---------|----------------|
@@ -3412,37 +3232,85 @@ Use at least 3 different categories across your features table to avoid monotone
 | **Capability unlocked** | "Now you can X" | "Scan any codebase and extract its selling points automatically" |
 | **Cost reduced** | "Save X by Y" | "One plugin replaces five separate documentation tools" |
 
-### Translation Table by Signal Category
-
-| Signal Category | Feature Pattern | Benefit Translation |
-|-----------------|----------------|-------------------|
-| CLI commands | "CLI with N subcommands" | "Do everything from your terminal — no context switching" |
-| Public API | "N exported functions with types" | "Import what you need — fully typed, tree-shakeable" |
-| Configuration | "N config options with defaults" | "Works out of the box — customise only what you need" |
-| Integrations | "Connects to X, Y, Z" | "Fits into your existing stack — not a rewrite" |
-| Performance | "Benchmarks at N ops/sec" | "Fast enough that you'll never wait for it" |
-| Security | "Built-in auth + validation" | "Security built in — not bolted on" |
-| TypeScript/DX | "Strict types, no `any`" | "Your editor knows the API — autocomplete everywhere" |
-| Testing | "N% test coverage" | "Battle-tested — every edge case covered" |
-| Middleware/Plugins | "Plugin system with N hooks" | "Extend it your way — no forking required" |
-| Documentation | "Guides, examples, API docs" | "Answers without reading source code" |
-
-### Mapping Benefits to Badges
-
-When a benefit claim maps to a verifiable metric (test coverage, bundle size, download count), load the `package-registry` skill for badge templates that make the claim visible in the README hero. Badges turn prose claims into at-a-glance proof.
-
 ### Anti-Patterns
 
-- **No "simple" or "easy"** — show simplicity through a short code example instead
+- **No "simple" or "easy"** — show simplicity through a short code example
 - **No "powerful" without evidence** — what specifically makes it powerful?
-- **No speculative benefits** — "could save you hours" requires evidence of what it replaces
-- **No feature-as-benefit** — "Has caching" is a feature, not a benefit. "Responses in <50ms after first request" is the benefit
-- **No superlatives without proof** — "fastest", "best", "most complete" need benchmarks or comparisons
-- **No benefit without context** — every user benefit needs a specific situation ("between meetings", "on the train", "during CI")
-- **No benefit without mechanism** — every user benefit needs an enabling mechanism ("voice notes → transcription", "daemon → background execution")
-- **No ungrounded lifestyle claims** — experiential benefits (elevated signal gate) only when code signals prove the enabling mechanism (mobile API, daemon, async queue)
+- **No speculative benefits** — "could save you hours" requires evidence
+- **No feature-as-benefit** — "Has caching" is a feature; "Responses in <50ms after first request" is the benefit
+- **No benefit without context** — every user benefit needs a specific situation
+- **No benefit without mechanism** — every user benefit needs an enabling mechanism
+- **No ungrounded lifestyle claims** — elevated signal gate only when code proves the mechanism
+
+For the full translation table by signal category, badge mapping, and common patterns library, load `SKILL-signals.md`.
 
 ---
+
+# Source: .claude/skills/feature-benefits/SKILL-signals.md
+
+# Feature-Benefits — Signal Categories & Patterns
+
+Detailed scanning hints and pattern libraries split from SKILL.md to reduce token overhead. Load on demand when performing deep feature extraction on large codebases.
+
+## Full Signal Category Scan Lists
+
+### 2.1 CLI Commands
+- `bin/` directory, `package.json#bin`, `[project.scripts]`
+- `src/cli*`, `src/commands/`, `cmd/`
+- **What to record**: command names, flags, subcommands
+
+### 2.2 Public API
+- `src/index.*`, `lib/index.*`, `exports` in manifest
+- `src/api/`, `routes/`, `handlers/`
+- TypeScript: `.d.ts` files, `export` statements
+- Python: `__init__.py`, `__all__`
+- **What to record**: exported functions/classes, parameter types, return types
+
+### 2.3 Configuration
+- Config files: `*.config.js`, `*.config.ts`, `.rc` files
+- Schema files: JSON Schema, Zod schemas, Pydantic models
+- Environment: `.env.example`, `wrangler.toml`
+- **What to record**: config options, defaults, validation
+
+### 2.4 Integrations
+- Dependencies in manifest (group by purpose: HTTP, database, auth, etc.)
+- MCP servers (`.mcp.json`), plugin systems
+- Webhook handlers, event listeners
+- **What to record**: what external systems it connects to
+
+### 2.5 Performance
+- Caching: Redis, Memcached, in-memory cache implementations
+- Async/concurrent: worker threads, async patterns, queue systems
+- Benchmarks: `bench/`, `benchmark/`, performance tests
+- **What to record**: performance claims with evidence (benchmark results, cache strategies)
+
+### 2.6 Security
+- Auth: OAuth, JWT, API keys, session management
+- Validation: input sanitisation, schema validation
+- Encryption, CORS, CSP, rate limiting
+- **What to record**: security features with implementation location
+
+### 2.7 TypeScript / Developer Experience
+- Type safety: strict mode, no `any`, generics
+- Code generation, auto-completion support
+- Error messages, debug utilities
+- **What to record**: DX features that save developer time
+
+### 2.8 Testing
+- Test files: `*.test.*`, `*.spec.*`, `test/`, `tests/`
+- Coverage config, CI test steps
+- E2E tests, integration tests
+- **What to record**: test coverage %, test types present
+
+### 2.9 Middleware / Plugins / Extensibility
+- Plugin system, middleware chain, hook system
+- Extension points, event emitters
+- **What to record**: extensibility mechanisms and what they enable
+
+### 2.10 Documentation
+- `docs/`, `examples/`, API docs generation
+- JSDoc/docstrings coverage
+- **What to record**: documentation completeness
 
 ## Common Patterns Library
 
@@ -3483,10 +3351,94 @@ Quick-reference scanning hints per ecosystem.
 - `.claude/rules/` → quality standards
 - `hooks/` → automated checks
 
+## JTBD Mapping Detail
+
+For richer benefit writing, identify the job each feature is hired to do before translating to a benefit sentence.
+
+For each extracted feature, frame the job:
+
+```
+When I am [situation/context],
+I want [capability this feature provides],
+so I can [desired outcome].
+```
+
+Classify each job:
+- **Functional** — the practical task ("deploy to production", "generate a changelog")
+- **Emotional** — how the user wants to feel ("confident my docs are complete")
+- **Social** — how the user wants to be perceived ("my repo looks professional")
+
+**When to apply:**
+
+| Impact Tier | JTBD Depth | Rationale |
+|-------------|-----------|-----------|
+| **Hero** (1–3) | Recommended — all three job types | Hero features drive adoption; emotional and social jobs sharpen the "why switch?" narrative |
+| **Core** (4–8) | Functional job only | Core features need clear practical framing but don't need emotional/social depth |
+| **Supporting** (9+) | Skip | Supporting features are nice-to-haves — the 5 benefit categories suffice |
+
+**Rules:**
+- For projects with fewer than 5 features, skip JTBD — the 5 benefit categories suffice
+- JTBD informs the benefit sentence — the final output still uses the `[Feature] so you can [outcome] — [evidence]` pattern
+
+## Persona Inference Detail
+
+Infer 1–2 target personas from code signals to ground benefit writing.
+
+| Signal Source | What to Check | Persona Implications |
+|---|---|---|
+| Integration surface | Telegram/Slack/GitHub/mobile APIs | Remote/async users |
+| Execution model | Daemon/queue/cron/webhook | Background/automation users |
+| Entry points | CLI vs SDK vs web UI | Developer maturity/context |
+| Deploy artifacts | Docker/K8s/serverless/VPS | Ops/platform users |
+| Manifest keywords | description, topics, README intro | General audience signal |
+
+Map to archetypes (1 primary, 1 secondary):
+- **Solo builder** — speed, low setup, shipping fast
+- **Team lead** — consistency, onboarding, standardisation
+- **Platform/ops engineer** — reliability, automation, deployability
+- **Power user / automator** — multi-tool, async, extensibility
+- **Compliance-aware org** — auditability, security, traceability
+
+**Rules:**
+- Infer from code signals only — don't guess from the project name
+- If signals are ambiguous, default to "Solo builder" (broadest useful persona)
+- Record the persona alongside the feature inventory — it feeds into Step 4 benefit writing
+
+## User Benefits — Path B Detail (Conversational)
+
+The most compelling user benefits come from the developer's lived experience. This path uses interactive questions to surface authentic use cases.
+
+**Prompt sequence** (for Claude Code, use `AskUserQuestion`; for other agents, present as numbered chat prompts):
+
+1. "Why do YOU use [Project]? What made you build it?" — surfaces motivation and origin story
+2. "What real-world scenarios does it enable? Where are you when you use it?" — surfaces contexts (on the train, walking the dog, between meetings)
+3. "What would you lose if [Project] didn't exist? What's the alternative?" — surfaces differentiation and pain
+4. "Who else would benefit from this, and why?" — surfaces audience expansion
+
+After collecting answers, enrich with code evidence from the Path A scan. The developer's words become the primary material; code evidence validates and strengthens each claim.
+
+## Translation Table by Signal Category
+
+| Signal Category | Feature Pattern | Benefit Translation |
+|-----------------|----------------|-------------------|
+| CLI commands | "CLI with N subcommands" | "Do everything from your terminal — no context switching" |
+| Public API | "N exported functions with types" | "Import what you need — fully typed, tree-shakeable" |
+| Configuration | "N config options with defaults" | "Works out of the box — customise only what you need" |
+| Integrations | "Connects to X, Y, Z" | "Fits into your existing stack — not a rewrite" |
+| Performance | "Benchmarks at N ops/sec" | "Fast enough that you'll never wait for it" |
+| Security | "Built-in auth + validation" | "Security built in — not bolted on" |
+| TypeScript/DX | "Strict types, no `any`" | "Your editor knows the API — autocomplete everywhere" |
+| Testing | "N% test coverage" | "Battle-tested — every edge case covered" |
+| Middleware/Plugins | "Plugin system with N hooks" | "Extend it your way — no forking required" |
+| Documentation | "Guides, examples, API docs" | "Answers without reading source code" |
+
+## Mapping Benefits to Badges
+
+When a benefit claim maps to a verifiable metric (test coverage, bundle size, download count), load the `package-registry` skill for badge templates that make the claim visible in the README hero. Badges turn prose claims into at-a-glance proof.
 
 ---
-# Source: ./.claude/skills/changelog/SKILL.md
----
+
+# Source: .claude/skills/changelog/SKILL.md
 
 ---
 name: changelog
@@ -3662,10 +3614,9 @@ For major versions with many breaking changes, recommend a standalone `docs/guid
 
 See the `docs-writer` agent (Content Filter Mitigation section) for the full strategy playbook.
 
+---
 
----
-# Source: ./.claude/skills/roadmap/SKILL.md
----
+# Source: .claude/skills/roadmap/SKILL.md
 
 ---
 name: roadmap
@@ -3818,10 +3769,9 @@ glab issue list --label "feature" --all --per-page 50
 - **Don't make it static** — include "last updated" date
 - **Don't forget the "get involved" section** — roadmaps are conversation starters
 
+---
 
----
-# Source: ./.claude/skills/pitchdocs-suite/SKILL.md
----
+# Source: .claude/skills/pitchdocs-suite/SKILL.md
 
 ---
 name: pitchdocs-suite
@@ -4059,10 +4009,9 @@ The plugin checks for LICENSE presence but does not generate the file content �
 - Check `license` field in `package.json`/`pyproject.toml` matches the LICENSE file content
 - Proprietary projects may omit LICENSE or include custom terms
 
+---
 
----
-# Source: ./.claude/skills/pitchdocs-suite/SKILL-templates.md
----
+# Source: .claude/skills/pitchdocs-suite/SKILL-templates.md
 
 # Documentation Templates
 
@@ -4461,10 +4410,9 @@ keywords:
   - "[keyword2]"
 ```
 
+---
 
----
-# Source: ./.claude/skills/llms-txt/SKILL.md
----
+# Source: .claude/skills/llms-txt/SKILL.md
 
 ---
 name: llms-txt
@@ -4674,10 +4622,9 @@ llms.txt should be updated when documentation changes significantly:
 - **Reference repo**: [AnswerDotAI/llms-txt](https://github.com/AnswerDotAI/llms-txt)
 - **Directory**: [llms-txt-hub](https://github.com/thedaviddias/llms-txt-hub)
 
+---
 
----
-# Source: ./.claude/skills/package-registry/SKILL.md
----
+# Source: .claude/skills/package-registry/SKILL.md
 
 ---
 name: package-registry
@@ -4915,10 +4862,9 @@ Badge order (after CI/coverage badges):
 - [ ] `[project].authors` or `[project].maintainers` present
 - [ ] README avoids PyPI-incompatible Markdown (heading anchors, relative images, callouts, details/summary)
 
+---
 
----
-# Source: ./.claude/skills/user-guides/SKILL.md
----
+# Source: .claude/skills/user-guides/SKILL.md
 
 ---
 name: user-guides
@@ -5395,10 +5341,9 @@ Each guide must link to related documents in other Diataxis quadrants:
 
 Extended templates for the remaining three Diataxis types (tutorial, reference, explanation) are in `SKILL-templates.md`. Ask Claude to load it when generating documents in those quadrants.
 
+---
 
----
-# Source: ./.claude/skills/user-guides/SKILL-templates.md
----
+# Source: .claude/skills/user-guides/SKILL-templates.md
 
 # Diátaxis Document Templates
 
@@ -5663,10 +5608,9 @@ What did this approach cost? Every design choice has downsides:
 - Don't be defensive about trade-offs — honest analysis builds trust
 - Don't write an explanation for every minor implementation detail — only for decisions that users will wonder about
 
+---
 
----
-# Source: ./.claude/skills/ai-context/SKILL.md
----
+# Source: .claude/skills/ai-context/SKILL.md
 
 ---
 name: ai-context
@@ -6169,10 +6113,9 @@ These features are under discussion and may change before stabilisation:
 - **Don't include session-specific state** — context files should be durable across sessions
 - **Don't ship auto-generated files unedited** — generated context files reduce task success by ~3% (ETH Zurich, 2026). Always curate: remove lines that fail the "would removing this cause a mistake?" test
 
+---
 
----
-# Source: ./.claude/skills/docs-verify/SKILL.md
----
+# Source: .claude/skills/docs-verify/SKILL.md
 
 ---
 name: docs-verify
@@ -6589,10 +6532,9 @@ When run with `ci` argument, output machine-readable `ERROR:`/`WARN:` lines with
 - **Don't fix docs in a separate PR from code changes** — docs updates should accompany the code that changes behaviour
 - **Don't suppress freshness warnings without reviewing** — stale docs erode trust faster than missing docs
 
+---
 
----
-# Source: ./.claude/skills/launch-artifacts/SKILL.md
----
+# Source: .claude/skills/launch-artifacts/SKILL.md
 
 ---
 name: launch-artifacts
@@ -6916,10 +6858,9 @@ GitHub uses the repository's social preview image when links are shared on Twitt
 - **Don't buy stars or upvotes** — artificial engagement is detectable and erodes trust
 - **Don't submit to awesome lists before your docs are ready** — list maintainers check quality
 
+---
 
----
-# Source: ./.claude/skills/api-reference/SKILL.md
----
+# Source: .claude/skills/api-reference/SKILL.md
 
 ---
 name: api-reference
@@ -7209,10 +7150,9 @@ And from the README documentation section:
 - **Don't skip examples** — every non-trivial function should have a usage example in its docstring
 - **Don't use `@inheritdoc` without checking** — inherited docs may not make sense in the subclass context
 
+---
 
----
-# Source: ./.claude/skills/doc-refresh/SKILL.md
----
+# Source: .claude/skills/doc-refresh/SKILL.md
 
 ---
 name: doc-refresh
@@ -7385,10 +7325,9 @@ The table below shows the split of responsibilities between your release automat
 - **Do not regenerate all AI context files** — audit first, update only the files with actual drift.
 - **Do not manually update the version badge** — release-please owns the `x-release-please-version` marker.
 
+---
 
----
-# Source: ./.claude/skills/context-guard/SKILL.md
----
+# Source: .claude/skills/context-guard/SKILL.md
 
 ---
 name: context-guard
@@ -7562,10 +7501,9 @@ Edit `context-structural-change.sh` case statement to add or remove structural f
 | Claude keeps running in a loop | Stop hook not checking `stop_hook_active` | Verify `context-guard-stop.sh` checks `stop_hook_active` flag on line 19; if broken, remove the Stop entry from `.claude/settings.json` |
 | Commit blocked but context docs don't need updating | Tier 2 false positive on config edits | Stage a context file with a minor update, or remove the PreToolUse Bash entry for `context-commit-guard.sh` from `.claude/settings.json` |
 
+---
 
----
-# Source: ./.claude/skills/visual-standards/SKILL.md
----
+# Source: .claude/skills/visual-standards/SKILL.md
 
 ---
 name: visual-standards
@@ -7577,7 +7515,7 @@ version: "1.0.0"
 
 ## Emoji Heading Prefixes
 
-Use a single emoji before each H2 heading to create visual anchors when scrolling. This helps readers scan a long document and locate sections quickly.
+Use a single emoji before each H2 heading to create visual anchors when scrolling.
 
 **Pattern:** `## {emoji} Section Title`
 
@@ -7594,73 +7532,62 @@ Use a single emoji before each H2 heading to create visual anchors when scrollin
 | Documentation links | 📚 | `## 📚 Documentation` |
 | Contributing | 🤝 | `## 🤝 Contributing` |
 | Licence / License | 📄 | `## 📄 Licence` |
-| Acknowledgements | 🙏 | `## 🙏 Acknowledgements` |
 | Security | 🔒 | `## 🔒 Security` |
 | Integrations / Plugins | 🔌 | `## 🔌 Integrations` |
 | How it compares | ⚖️ | `## ⚖️ How it compares` |
 | Roadmap | 🗺️ | `## 🗺️ Roadmap` |
 | What it does / Use cases | 🚀 | `## 🚀 What ProjectName Does` |
-| Cross-platform / Other tools | 🔀 | `## 🔀 Use with Other Tools` |
 
 **Rules:**
 - One emoji per heading — never two
 - Use the same emoji consistently for the same section type across projects
-- H3 sub-features within a Features section may also use emoji prefixes for visual grouping (`### 📡 Progress streaming`)
-- Inline bullet emoji is the recommended format for feature lists (`- 🎙️ **Voice notes** — description`)
-- Choose emoji that relate to the section content — decorative randomness hurts more than it helps
-- Skip emoji prefixes for READMEs under 5 sections — the visual overhead outweighs the navigation benefit
+- Skip emoji prefixes for READMEs under 5 sections
 
 ## Horizontal Rules as Section Separators
 
-Use `---` between major H2 sections to create visual breathing room. This is especially effective in long READMEs (200+ lines).
+Use `---` between major H2 sections to create visual breathing room (especially in 200+ line READMEs).
 
-**When to use:**
-- After the hero/badge section (before the first content section)
-- After the table of contents
-- Between each top-level H2 section
-- Before the licence/footer
-
-**When to skip:**
-- Between H3 subsections within a single H2 section
-- In short documents (under 150 lines) where they add more noise than clarity
-- In files other than README.md (CONTRIBUTING, SECURITY, etc. are typically shorter)
+**When to use:** After hero/badge section, after TOC, between H2 sections, before licence/footer.
+**When to skip:** Between H3 subsections, in short documents (under 150 lines), in non-README files.
 
 ## Table of Contents with Emoji Anchors
 
-When a README uses emoji heading prefixes and has a table of contents, the anchor links must account for the emoji. GitHub and GitLab strip the emoji character but retain the leading hyphen. Bitbucket prefixes all heading anchors with `markdown-header-` (e.g. `#markdown-header--quick-start`) — load the `platform-profiles` skill when targeting Bitbucket.
+GitHub and GitLab strip the emoji character but retain the leading hyphen. Bitbucket prefixes all heading anchors with `markdown-header-` — load the `platform-profiles` skill when targeting Bitbucket.
 
-**Pattern:**
 ```markdown
-## Table of contents
-
 - [Quick start](#-quick-start)
 - [Why ProjectName?](#-why-projectname)
 - [Features](#-features)
 - [Configuration](#%EF%B8%8F-configuration)
 ```
 
-Include a TOC for READMEs with 7+ sections. Below 7 sections, the hero quick-links row (`[Docs](link) · [Examples](link) · [Discord](link)`) is sufficient.
+Include a TOC for READMEs with 7+ sections.
 
 ## Bold Inline Callouts
 
-For brief warnings, tips, and notes within a section, use bold inline callouts rather than GitHub-specific `[!NOTE]` syntax (which breaks on npm and PyPI).
+For brief warnings, tips, and notes, use bold inline callouts rather than GitHub-specific `[!NOTE]` syntax (which breaks on npm and PyPI).
 
-**Pattern:**
 ```markdown
 **Note:** This only applies when running in production mode.
-
 **Tip:** Pass `--verbose` to see detailed output.
-
 **Warning:** Never commit this file — it contains credentials.
 ```
 
-Reserve GitHub callout syntax (`> [!NOTE]`, `> [!WARNING]`) for GitHub-only documents (issue templates, PR templates) where cross-renderer compatibility is not a concern.
+Reserve GitHub callout syntax for GitHub-only documents (issue templates, PR templates).
 
 ## Screenshots & Device Images
 
-Guidelines for including screenshots and device-specific captures in documentation. These complement the general image rules in the `pitchdocs-suite` skill (format, storage, alt text).
+For device-specific capture dimensions, HTML display patterns, retina handling, annotation conventions, captions, shadows/borders, browser chrome, file naming, and optimisation guidance, load `SKILL-reference.md` from this skill directory.
 
-### Capture Dimensions & Display Sizes
+---
+
+# Source: .claude/skills/visual-standards/SKILL-reference.md
+
+# Visual Standards — Extended Reference
+
+Detailed screenshot specs, HTML patterns, annotation conventions, and optimisation guidelines split from SKILL.md. Load on demand when working with screenshots or device-specific captures.
+
+## Capture Dimensions & Display Sizes
 
 Capture at native resolution (or 2× for retina) but always set an explicit display `width` in HTML so the image renders at a consistent, readable size across screens.
 
@@ -7671,7 +7598,7 @@ Capture at native resolution (or 2× for retina) but always set an explicit disp
 | Tablet (iPad) | 820×1180 | `width="400"` | Portrait orientation default |
 | Terminal / CLI | 80 columns wide | `width="700"` | Use `asciinema`, `vhs`, or `terminalizer` for recordings |
 
-### HTML Patterns
+## HTML Patterns
 
 **Desktop screenshot (standard):**
 ```html
@@ -7703,13 +7630,13 @@ Capture at native resolution (or 2× for retina) but always set an explicit disp
 </p>
 ```
 
-### Retina / HiDPI Handling
+## Retina / HiDPI Handling
 
 - **Capture at 2× resolution** (e.g., 2560×1600 for a desktop screenshot) to ensure crisp rendering on retina displays
 - **Always set an explicit `width`** in the HTML — without it, the 2× image displays at double size
 - Do not use `srcset` in GitHub Markdown — it is not supported. The explicit `width` attribute handles scaling.
 
-### Annotation Conventions
+## Annotation Conventions
 
 When annotating screenshots with callouts, arrows, or highlights:
 
@@ -7719,7 +7646,7 @@ When annotating screenshots with callouts, arrows, or highlights:
 - **Text labels**: white text on red background pill, 14px minimum — must be legible at the display `width`
 - **Tool recommendations**: Cleanshot X (macOS), Flameshot (Linux), or ShareX (Windows) all support annotation presets
 
-### Captions
+## Captions
 
 Add a caption beneath a screenshot when the image needs context that alt text alone can't convey — workflow diagrams, multi-part screenshots, or before/after comparisons. Captions are optional for straightforward UI screenshots.
 
@@ -7746,7 +7673,7 @@ Add a caption beneath a screenshot when the image needs context that alt text al
 - Italic formatting (`<em>`) visually distinguishes captions from body text
 - Don't caption every screenshot — only when the image needs explanation beyond its alt text
 
-### Shadows & Borders
+## Shadows & Borders
 
 GitHub strips all CSS `style` attributes, so `box-shadow` and `border` do **not** render in GitHub Markdown (or npm/PyPI). Shadows and borders must be baked into the image at capture time.
 
@@ -7765,13 +7692,13 @@ GitHub strips all CSS `style` attributes, so `box-shadow` and `border` do **not*
 - Don't use `<div>` wrapper styling — stripped on GitHub
 - Don't add shadows to terminal recordings (GIF/SVG) — dark backgrounds provide natural contrast
 
-### Browser Chrome
+## Browser Chrome
 
 - **Exclude** browser chrome (address bar, tabs) for focused UI screenshots — readers care about the app, not the browser
 - **Include** browser chrome when demonstrating URL patterns, browser extensions, or full-page context
 - **Include** browser chrome for marketing hero screenshots where the browser frame adds perceived realism
 
-### File Naming
+## File Naming
 
 Pattern: `{feature}-{device}-{variant}.{ext}`
 
@@ -7781,16 +7708,15 @@ Examples:
 - `setup-terminal.gif` — terminal recording of setup process
 - `login-tablet-annotated.png` — annotated tablet screenshot of login
 
-### Optimisation
+## Optimisation
 
 - Run PNG screenshots through `optipng` or `pngquant` before committing
 - Keep GIFs under 5MB (10MB GitHub limit, but large GIFs load slowly); prefer `vhs` SVG recordings for terminal demos
 - Target under 300KB per image where possible
 
+---
 
----
-# Source: ./.claude/skills/geo-optimisation/SKILL.md
----
+# Source: .claude/skills/geo-optimisation/SKILL.md
 
 ---
 name: geo-optimisation
@@ -7804,16 +7730,7 @@ Generative Engine Optimisation (GEO) ensures documentation surfaces correctly in
 
 ## Crisp Definitions First
 
-Put a one-sentence definition of the project at the very top of the README, before badges or navigation. LLMs preferentially quote top-of-page definitions when answering "what is X?" queries.
-
-**Pattern:**
-```markdown
-# Project Name
-
-**[One sentence that defines what this project is and who it's for.]**
-```
-
-The definition must be standalone — it should make sense if extracted from the page with no surrounding context.
+Put a one-sentence definition of the project at the very top of the README, before badges or navigation. LLMs preferentially quote top-of-page definitions when answering "what is X?" queries. The definition must be standalone — it should make sense if extracted with no surrounding context.
 
 ## Atomic Sections
 
@@ -7821,123 +7738,52 @@ Each H2 section should have **one clear intent**, answerable as a standalone sni
 
 **Rules:**
 - One topic per H2 — don't combine "Features" and "Configuration"
-- Strict heading hierarchy: H1 > H2 > H3 without skipping levels (no H1 > H3)
-- Descriptive headings that contain the topic keyword — "## TypeScript Configuration" not "## Config"
+- Strict heading hierarchy: H1 > H2 > H3 without skipping levels
+- Descriptive headings with topic keywords — "## TypeScript Configuration" not "## Config"
 - Each section should be comprehensible without reading prior sections
 
 ## Concrete Statistics
 
-Content with concrete statistics can boost visibility in AI responses by up to 28% (Aggarwal et al., "GEO: Generative Engine Optimization", 2023). Include benchmarks, performance numbers, percentages, and measurable outcomes wherever evidence exists.
-
-**Pattern:**
-```markdown
-- Reduces bundle size by 40% compared to webpack (benchmark: `npm run bench`)
-- Processes 10,000 records/second on a single worker (see `benchmarks/throughput.ts`)
-- 95% test coverage across 200+ test cases (`npm test -- --coverage`)
-```
+Content with concrete statistics can boost visibility in AI responses by up to 28% (Aggarwal et al., "GEO: Generative Engine Optimization", 2023). Include benchmarks, performance numbers, and measurable outcomes wherever evidence exists.
 
 **Rules:**
 - Every statistic must trace to actual code, a benchmark file, or a verifiable measurement
-- No speculative numbers — "blazingly fast" without evidence is worse than no claim at all
 - Prefer relative comparisons ("40% faster than X") over absolute numbers when the alternative is well-known
 
 ## Comparison Tables
 
-LLMs frequently surface comparison tables when answering "X vs Y" or "best X for Y" queries. Structure comparison sections to be extractable:
-
-**Pattern:**
-```markdown
-## How It Compares
-
-| Feature | This Project | Alternative A | Alternative B |
-|---------|-------------|---------------|---------------|
-| Specific feature | :white_check_mark: (with detail) | :x: | Partial |
-```
-
-**Rules:**
-- Use a descriptive H2 heading: "How It Compares" or "How [Project] Compares to [Category]"
-- Be factually accurate about competitors — false claims erode trust with both humans and AI
-- Include at least one quantitative row (speed, bundle size, API count) alongside qualitative ones
-- Link to sources for competitor claims where possible
+LLMs frequently surface comparison tables when answering "X vs Y" queries. Use a descriptive H2 heading ("How It Compares"), be factually accurate about competitors, and include at least one quantitative row alongside qualitative ones.
 
 ## TL;DR and Key Concepts Blocks
 
-For long guides (200+ lines), add a **TL;DR** or **Key Concepts** block immediately after the title. RAG systems often extract the first paragraph under a heading — make it count.
-
-**Pattern:**
-```markdown
-# Migration Guide
-
-> **TL;DR:** Upgrade from v1 to v2 by running `npx migrate` — the CLI handles config changes, dependency updates, and breaking API renames automatically. Manual steps are only needed for custom plugins.
-
-## Prerequisites
-...
-```
+For long guides (200+ lines), add a **TL;DR** block immediately after the title. RAG systems often extract the first paragraph under a heading — make it count.
 
 ## Prerequisite Blocks
 
-Explicit, structured prerequisite blocks improve LLM understanding of dependencies and requirements. Always use a consistent format.
-
-**Pattern:**
-```markdown
-## Prerequisites
-
-- Node.js 20+ ([install guide](https://nodejs.org/))
-- npm 10+ (included with Node.js)
-- A GitHub account with repo access
-```
-
-Never bury prerequisites in prose paragraphs — AI extractors miss them.
+Explicit, structured prerequisite blocks improve LLM understanding. Always use bullet list format — never bury prerequisites in prose paragraphs.
 
 ## Data Density Over Narrative
 
-AI systems extract concrete data, not marketing adjectives. To keep documents concise while maximising GEO value:
-
-- Replace long paragraphs explaining *why* a feature is good with a single concrete statistic or benchmark
-- Embed "by the numbers" stats directly into feature bullets as evidence — don't create a standalone stats section
-- Comparison tables earn their place (LLMs surface them for "X vs Y" queries), but limit to the top 3–4 competitors and 5–8 distinguishing capabilities
-- Be factually accurate about competitors — false claims erode trust with both humans and AI
+AI systems extract concrete data, not marketing adjectives. Replace long paragraphs with single concrete statistics. Embed stats directly into feature bullets as evidence. Comparison tables earn their place but limit to 3–4 competitors and 5–8 capabilities.
 
 ## Cross-Referencing for Semantic Scaffolding
 
-AI systems build understanding by following links between related documents. Explicit cross-references create a "semantic web" that improves citation accuracy across your documentation set.
-
-**Rules:**
-- Every guide links to at least one related guide and back to the hub page
-- Use descriptive link text — `[Configuration Guide](docs/guides/configuration.md)` not `[click here](link)`
-- README links to docs hub, docs hub links to individual guides, guides link back to README
-- Changelog links to relevant documentation for breaking changes
+Explicit cross-references create a "semantic web" that improves citation accuracy. Every guide links to at least one related guide and back to the hub page. Use descriptive link text — not "click here".
 
 ## Citation Capsules
 
-AI retrieval systems (RAG) preferentially extract the first paragraph under each heading. A **citation capsule** is a 40–60 word self-contained passage at the start of each H2 section, written so it makes sense if extracted with no surrounding context.
-
-**Pattern:**
-```markdown
-## Features
-
-PitchDocs generates marketing-grade repository documentation from codebase analysis — 18 skills covering README, changelog, roadmap, and AI context files. It runs as a pure-Markdown Claude Code plugin with zero runtime dependencies, producing docs that pass the 4-question test in under 60 seconds.
-
-### Individual feature details below...
-```
-
-**Good capsule (standalone, concrete):**
-> PitchDocs generates marketing-grade repository documentation from codebase analysis — 18 skills covering README, changelog, roadmap, and AI context files.
-
-**Poor capsule (context-dependent, vague):**
-> This section covers the main features of the project. Below you'll find details about each capability.
+A **citation capsule** is a 40–60 word self-contained passage at the start of each H2 section, written so it makes sense if extracted with no surrounding context.
 
 **Rules:**
 - Every H2 section in README must open with a citation capsule
 - Include at least one concrete fact: a number, named entity, or measurable outcome
 - The capsule must be comprehensible without reading any other section
-- Keep to 40–60 words — long enough to be informative, short enough for AI to extract whole
+- Keep to 40–60 words
 - Do not start with "This section" or "In this part" — start with the subject
 
+---
 
----
-# Source: ./.claude/skills/skill-authoring/SKILL.md
----
+# Source: .claude/skills/skill-authoring/SKILL.md
 
 ---
 name: skill-authoring
@@ -7981,10 +7827,9 @@ Multiply word count by ~1.3 to estimate tokens. A 1,000-word skill is approximat
 - **Do not include every possible edge case** — cover the 80% case and note that edge cases exist
 - **Do not duplicate content across skills** — cross-reference with "Load the `X` skill for..." instead
 
+---
 
----
-# Source: ./.claude/skills/platform-profiles/SKILL.md
----
+# Source: .claude/skills/platform-profiles/SKILL.md
 
 ---
 name: platform-profiles
@@ -7999,14 +7844,42 @@ PitchDocs defaults to GitHub conventions. Load this skill when the target reposi
 ## Platform Detection
 
 ```bash
-# Detect from CI config files
 [ -f ".gitlab-ci.yml" ] && PLATFORM="gitlab"
 [ -f "bitbucket-pipelines.yml" ] && PLATFORM="bitbucket"
 [ -d ".github" ] && PLATFORM="github"
-
-# Fallback: detect from git remote URL
-PLATFORM=$(git remote get-url origin 2>/dev/null | grep -oE '(github|gitlab|bitbucket)' | head -1)
+PLATFORM=${PLATFORM:-$(git remote get-url origin 2>/dev/null | grep -oE '(github|gitlab|bitbucket)' | head -1)}
 ```
+
+## Markdown Rendering Compatibility
+
+| Feature | GitHub | GitLab | Bitbucket |
+|---------|--------|--------|-----------|
+| `> [!NOTE]` callouts | Yes | Yes | **No** — use `**Note:**` bold inline |
+| `<p align="center">` | Yes | Yes | Limited |
+| `<picture>` dark mode | Yes | Yes | **No** — use single high-contrast image |
+| `<details>`/`<summary>` | Yes | Yes | Limited |
+| Mermaid diagrams | Yes | Yes (+ PlantUML) | **No** — use pre-rendered SVG |
+| Task lists `- [ ]` | Yes | Yes | **No** — renders as plain text |
+| Auto TOC | No (manual) | `[[_TOC_]]` | No (manual) |
+| Heading anchor format | `#slug-format` | `#slug-format` | `#markdown-header-slug-format` |
+| Nested list indentation | 2 spaces | 2 spaces | **4 spaces** |
+| HTML permissiveness | Moderate (strips `style`) | More permissive | Restrictive |
+
+## Quick Reference
+
+- **GitLab**: Encode `/` as `%2F` in shields.io paths. Self-hosted instances need `?gitlab_url=` parameter.
+- **Bitbucket**: No `<picture>`, no Mermaid, no task lists, use 4-space nested indentation, prefix heading anchors with `markdown-header-`.
+- **MCP tools**: `mcp__github__*` are GitHub-specific. For GitLab/Bitbucket, use `glab` CLI, REST API, or git history.
+
+For full lookup tables (template directory mapping, badge URLs, CLI tools, CI/CD, feature availability, raw file URLs, compare URLs, Bitbucket degradation), load `SKILL-tables.md` from this skill directory.
+
+---
+
+# Source: .claude/skills/platform-profiles/SKILL-tables.md
+
+# Platform Profiles — Lookup Tables
+
+Full lookup tables for GitLab and Bitbucket equivalents split from SKILL.md. Load on demand when the target repo is not on GitHub.
 
 ## Template Directory Mapping
 
@@ -8038,25 +7911,6 @@ PLATFORM=$(git remote get-url origin 2>/dev/null | grep -oE '(github|gitlab|bitb
 | Version/Release | `shields.io/github/v/release/ORG/REPO` | `shields.io/gitlab/v/release/ORG%2FREPO` | N/A |
 
 **GitLab note:** Encode `/` as `%2F` in shields.io paths (e.g. `org%2Frepo`). Self-hosted GitLab instances need the `?gitlab_url=` parameter.
-
-## Markdown Rendering Compatibility
-
-| Feature | GitHub | GitLab | Bitbucket |
-|---------|--------|--------|-----------|
-| `> [!NOTE]` callouts | Yes | Yes | **No** — use `**Note:**` bold inline |
-| `<p align="center">` | Yes | Yes | Limited |
-| `<picture>` dark mode | Yes | Yes | **No** — use single high-contrast image |
-| `<details>`/`<summary>` | Yes | Yes | Limited |
-| `<figure>`/`<figcaption>` | Rendered | Rendered | **No** — use `<p>` + `<em>` pattern |
-| Mermaid diagrams | Yes | Yes (+ PlantUML) | **No** — use pre-rendered SVG |
-| Math/LaTeX | Yes | Yes | **No** |
-| Task lists `- [ ]` | Yes | Yes | **No** — renders as plain text |
-| Footnotes | Yes | Yes (native) | **No** |
-| Auto TOC | No (manual) | `[[_TOC_]]` | No (manual) |
-| Heading anchor format | `#slug-format` | `#slug-format` | `#markdown-header-slug-format` |
-| Nested list indentation | 2 spaces | 2 spaces | **4 spaces** |
-| Inline diff | No | Yes (`{+ added +}`) | No |
-| HTML permissiveness | Moderate (strips `style`) | More permissive | Restrictive |
 
 ## CLI Tool Mapping
 
@@ -8114,7 +7968,7 @@ PLATFORM=$(git remote get-url origin 2>/dev/null | grep -oE '(github|gitlab|bitb
 
 When targeting Bitbucket, apply these fallbacks automatically:
 
-1. **Callouts** — Replace `> [!NOTE]` with `**Note:**` bold inline (already recommended in `doc-standards` for cross-renderer)
+1. **Callouts** — Replace `> [!NOTE]` with `**Note:**` bold inline
 2. **Mermaid** — Export diagrams as SVG and embed as `<img>` tags
 3. **Task lists** — Use plain `- item` bullets instead of `- [ ] item`
 4. **`<picture>` dark mode** — Use a single image with good contrast on both light and dark backgrounds
@@ -8125,10 +7979,9 @@ When targeting Bitbucket, apply these fallbacks automatically:
 9. **Funding/Sponsors** — Skip generation; no equivalent exists
 10. **Pages** — Recommend Confluence or external static hosting
 
+---
 
----
-# Source: ./.claude/agents/docs-writer.md
----
+# Source: .claude/agents/docs-writer.md
 
 ---
 name: docs-writer
@@ -8157,7 +8010,7 @@ tools:
 
 # Docs Writer Agent
 
-You are an expert technical writer who creates documentation that **sells** as well as it **informs**. You orchestrate a 3-phase pipeline: research → write → review.
+You are an expert technical writer who creates documentation that **sells** as well as it **informs**. You orchestrate a research → write → review pipeline.
 
 ## Core Philosophy
 
@@ -8172,7 +8025,23 @@ You write docs that balance three audiences:
 
 ### Phase 1: Research
 
-Spawn the `docs-researcher` agent to scan the codebase and produce a research packet containing:
+**Choose research mode based on project size:**
+
+**Lightweight research (< 20 files in the project):**
+Do the research inline — no sub-agent. Run these steps directly:
+1. Detect platform (`[ -d ".github" ]`, `.gitlab-ci.yml`, `bitbucket-pipelines.yml`, or git remote URL)
+2. Read the primary manifest (`package.json`, `pyproject.toml`, `Cargo.toml`, `go.mod`)
+3. Read existing README.md if present
+4. List project structure (`find . -maxdepth 3 -type f` excluding `.git`, `node_modules`, `dist`)
+5. Check git log (`git log --oneline -10`) and tags (`git tag --sort=-v:refname | head -5`)
+6. Classify: project type, language, framework, audience
+7. Extract features with evidence from the files you've read — apply the feature-to-benefit translation from the `feature-benefits` skill
+8. Note any security signals (SECURITY.md, auth patterns, validation)
+
+Output a brief research summary (classification + features by tier + any metadata gaps) and proceed directly to Phase 2.
+
+**Full research (≥ 20 files):**
+Spawn the `docs-researcher` agent to scan the codebase and produce a full research packet containing:
 - Project classification (type, language, framework, audience)
 - Platform detection (GitHub/GitLab/Bitbucket)
 - Repository metadata gaps
@@ -8185,7 +8054,7 @@ Review the research packet. If the conversational benefits path is preferred, ru
 
 ### Phase 2: Write
 
-Using the research packet, write documentation with the marketing framework.
+Using the research output, write documentation with the marketing framework.
 
 **Tone and template by project type:**
 
@@ -8215,17 +8084,18 @@ Apply the Daytona "4000 Stars" framework from the `public-readme` skill for hero
 - No banned phrases from the doc-standards Banned Phrases list
 - Always write directly to files using Write/Edit tools — never just output to chat
 
-### Phase 3: Review
+### Phase 3: Review (conditional)
 
-Spawn the `docs-reviewer` agent to validate the generated documentation. The reviewer checks:
-- Full validation checklist (structure, content quality, GEO readiness)
-- Banned phrases scan
-- Citation capsule completeness
-- Link validity and badge URLs
-- Security and safety (no leaked credentials or internal paths)
-- 6-dimension quality scoring (100-point rubric)
+**Skip the reviewer when:**
+- Generating a brand-new README (no existing README.md in the project)
+- The user passes `--no-review` or asks to skip review
 
-Fix any Critical or High severity issues flagged by the reviewer before finalising.
+**Run the reviewer when:**
+- Updating or refreshing an existing README
+- The user passes `--review` or explicitly asks for review
+- Generating a docs suite (multiple files)
+
+When running review, spawn the `docs-reviewer` agent to validate the generated documentation. Fix any Critical or High severity issues before finalising.
 
 ## Document Generation Order
 
@@ -8242,8 +8112,6 @@ When unsure about quality, reference these repositories:
 - **PostHog** — README as product landing page
 - **gofiber/fiber** — Clean, multilingual, benchmark-driven
 - **lobehub/lobe-chat** — Modern badges, visual design, ecosystem overview
-- **scalar/scalar** — Animated, responsive, light/dark mode
-- **dbt-labs/dbt-core** — Technical tool made accessible to non-technical users
 
 ## Upstream Reference Verification
 
@@ -8268,10 +8136,9 @@ Follow `.claude/rules/content-filter.md` for risk levels, fetch commands, and ch
 
 Load these skills on demand when the user requests the corresponding functionality.
 
+---
 
----
-# Source: ./.claude/agents/docs-researcher.md
----
+# Source: .claude/agents/docs-researcher.md
 
 ---
 name: docs-researcher
@@ -8446,10 +8313,9 @@ Return a structured research packet:
 - [benchmarks, test coverage, stars, production usage]
 ```
 
+---
 
----
-# Source: ./.claude/agents/docs-reviewer.md
----
+# Source: .claude/agents/docs-reviewer.md
 
 ---
 name: docs-reviewer
@@ -8582,10 +8448,9 @@ Return a structured review report:
 - [1–2 highest-impact fixes with point values]
 ```
 
+---
 
----
-# Source: ./commands/readme.md
----
+# Source: commands/readme.md
 
 ---
 description: "Generate or update a marketing-friendly README.md: $ARGUMENTS"
@@ -8609,19 +8474,21 @@ Generate or update a README.md that sells as well as it informs.
 
 ## Behaviour
 
-1. Run the `docs-writer` agent (which auto-detects the hosting platform)
-2. If GitHub MCP tools are unavailable (GitLab/Bitbucket), gather equivalent data via `glab` CLI, REST API, or git history. Load the `platform-profiles` skill for platform-specific guidance.
-3. Load the `public-readme` skill for README structure and the marketing framework
-4. Load the `feature-benefits` skill for the 7-step extraction workflow
-5. Load the `geo-optimisation` skill for citation capsules and AI-friendly structure
-6. Load the `visual-standards` skill if the README needs screenshots or emoji heading prefixes
-7. Generate README.md following the skills' structure and the auto-loaded `doc-standards` rule
+1. Run the `docs-writer` agent (which auto-detects the hosting platform and chooses lightweight or full research based on project size)
+2. Load the `public-readme` skill for README structure and the marketing framework
+3. Load the `feature-benefits` skill for the 7-step extraction workflow
+4. Load additional skills **only when needed**:
+   - `geo-optimisation` — load when writing citation capsules or optimising for AI search
+   - `visual-standards` — load only if the README needs screenshots or emoji heading prefixes (7+ sections)
+   - `platform-profiles` — load only for non-GitHub repos (GitLab/Bitbucket)
 
 ## Arguments
 
 - No arguments: generates README for current directory
 - Path argument: generates README for the specified project directory
 - Description argument: focuses the README on specific aspects (e.g., "focus on the CLI interface")
+- `--review`: force the review phase even for new READMEs
+- `--no-review`: skip the review phase even for updates
 
 ## Output
 
@@ -8635,19 +8502,13 @@ After generation, verify:
 - README follows the Lobby Principle — no more than 8 features, 5–7 examples, exhaustive content delegated to guides
 - All badge URLs are correct for this repo
 - Quick start code examples actually work
-- Links to existing docs/guides are included
-- Consistent spelling throughout
 - Features use emoji+bold+em-dash bullets or table with benefits column (evidence-based claims)
 - At least 3 different benefit categories used across the features section
-- Use-case scenarios framed with reader context (if "What X Does" section is present)
-- Cross-renderer compatibility verified if published to npm or PyPI (load `package-registry` skill)
-- Registry-specific badges included with correct package names and links
-- Image URLs use absolute paths (not relative) if published to npm or PyPI
-
+- Consistent spelling throughout
 
 ---
-# Source: ./commands/features.md
----
+
+# Source: commands/features.md
 
 ---
 description: "Extract features and benefits from a codebase: $ARGUMENTS"
@@ -8744,10 +8605,9 @@ Recommendation: Run /features table to generate an updated features section
 - No speculative claims — if you can't find evidence, don't list it
 - At least 3 different benefit categories used across the table
 
+---
 
----
-# Source: ./commands/changelog.md
----
+# Source: commands/changelog.md
 
 ---
 description: "Generate or update CHANGELOG.md from git history: $ARGUMENTS"
@@ -8812,10 +8672,9 @@ Note: The refactor is excluded — it's internal and doesn't affect users.
 
 Writes directly to `CHANGELOG.md`. Preserves existing entries when updating.
 
+---
 
----
-# Source: ./commands/roadmap.md
----
+# Source: commands/roadmap.md
 
 ---
 description: "Generate or update ROADMAP.md from GitHub milestones and issues: $ARGUMENTS"
@@ -8870,10 +8729,9 @@ Generate or update ROADMAP.md from GitHub milestones, issues, and project boards
 
 Writes directly to `ROADMAP.md`. Links issues, uses emoji status indicators, includes comparison links between versions.
 
+---
 
----
-# Source: ./commands/docs-audit.md
----
+# Source: commands/docs-audit.md
 
 ---
 description: "Audit repository documentation completeness and quality: $ARGUMENTS"
@@ -9165,10 +9023,9 @@ Recommended actions (in priority order):
 - After significant restructuring
 - Periodically (quarterly) for maintenance
 
+---
 
----
-# Source: ./commands/llms-txt.md
----
+# Source: commands/llms-txt.md
 
 ---
 description: "Generate llms.txt and llms-full.txt for LLM-friendly content curation: $ARGUMENTS"
@@ -9234,10 +9091,9 @@ Use at least 3 different benefit categories across the file (Time saved, Confide
 - After major releases (alongside changelog)
 - When preparing a project for AI tool discoverability
 
+---
 
----
-# Source: ./commands/user-guide.md
----
+# Source: commands/user-guide.md
 
 ---
 description: "Generate user guide documentation for the repository: $ARGUMENTS"
@@ -9301,10 +9157,9 @@ After generating guides, ensure:
 - Each guide links to related guides and back to the hub
 - Troubleshooting guide is referenced from other guides' error sections
 
+---
 
----
-# Source: ./commands/ai-context.md
----
+# Source: commands/ai-context.md
 
 ---
 description: "Generate lean AI IDE context files using the Signal Gate principle — only what agents cannot discover on their own: $ARGUMENTS"
@@ -9376,10 +9231,9 @@ AI Context Audit:
     ✗ Tier 2 not installed
 ```
 
+---
 
----
-# Source: ./commands/docs-verify.md
----
+# Source: commands/docs-verify.md
 
 ---
 description: "Verify documentation quality, links, freshness, and consistency: $ARGUMENTS"
@@ -9449,10 +9303,9 @@ Warnings (should fix):
    Top fix: README.md:89 broken link → fixes +5 points
 ```
 
+---
 
----
-# Source: ./commands/launch.md
----
+# Source: commands/launch.md
 
 ---
 description: "Generate platform-specific launch and promotion artifacts from README/CHANGELOG: $ARGUMENTS"
@@ -9518,10 +9371,9 @@ Timing recommendation:
   Space Reddit posts across subreddits by 24+ hours
 ```
 
+---
 
----
-# Source: ./commands/doc-refresh.md
----
+# Source: commands/doc-refresh.md
 
 ---
 description: "Refresh documentation after version bumps, feature additions, or periodic maintenance: $ARGUMENTS"
@@ -9610,10 +9462,9 @@ Refresh Plan:
 Remaining: Merge the release-please PR to complete the release.
 ```
 
+---
 
----
-# Source: ./commands/platform.md
----
+# Source: commands/platform.md
 
 ---
 description: "Detect hosting platform and report PitchDocs feature support: $ARGUMENTS"
@@ -9662,10 +9513,9 @@ Detect the repository's hosting platform and report which PitchDocs features are
 
 Print a platform report to the chat — do not write any files.
 
+---
 
----
-# Source: ./commands/visual-standards.md
----
+# Source: commands/visual-standards.md
 
 ---
 description: "Load visual formatting standards for screenshots, emoji headings, and image specs: $ARGUMENTS"
@@ -9687,10 +9537,9 @@ Load the `visual-standards` skill for visual formatting reference — emoji head
 - Checking device-specific capture dimensions
 - Working with captions, shadows, or image annotations
 
+---
 
----
-# Source: ./commands/geo.md
----
+# Source: commands/geo.md
 
 ---
 description: "Load GEO optimisation patterns for AI citation: $ARGUMENTS"
@@ -9714,10 +9563,9 @@ Load the `geo-optimisation` skill for Generative Engine Optimisation patterns �
 - Adding comparison tables for "X vs Y" queries
 - Structuring docs for RAG extraction
 
+---
 
----
-# Source: ./commands/context-guard.md
----
+# Source: commands/context-guard.md
 
 ---
 description: "Install, uninstall, or check status of Context Guard hooks for AI context file freshness: $ARGUMENTS"
@@ -9823,10 +9671,9 @@ Drift check:
   · GEMINI.md — not present
 ```
 
+---
 
----
-# Source: ./SECURITY.md
----
+# Source: SECURITY.md
 
 # Security Policy
 
@@ -9854,10 +9701,9 @@ We aim to acknowledge reports within 48 hours and provide a resolution or update
 
 This plugin references third-party specifications. If an upstream spec introduces a security-relevant change, the monthly [upstream drift check](.github/workflows/check-upstream.yml) will detect it and open an issue for review.
 
+---
 
----
-# Source: ./CODE_OF_CONDUCT.md
----
+# Source: CODE_OF_CONDUCT.md
 
 # Contributor Covenant 3.0 Code of Conduct
 
@@ -9946,10 +9792,9 @@ Contributor Covenant is stewarded by the Organisation for Ethical Source and lic
 
 For answers to common questions about Contributor Covenant, see the [FAQ](https://www.contributor-covenant.org/faq). The enforcement ladder was inspired by the work of Mozilla's code of conduct team.
 
+---
 
----
-# Source: ./LICENSE
----
+# Source: LICENSE
 
 MIT License
 
@@ -9973,14 +9818,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+---
 
----
-# Source: ./.claude-plugin/plugin.json
----
+# Source: .claude-plugin/plugin.json
 
 {
   "name": "pitchdocs",
-  "version": "1.18.0",
+  "version": "1.19.0",
   "description": "Generate high-quality public-facing repository documentation with a marketing edge. Creates READMEs that sell, changelogs that communicate value, roadmaps from GitHub Projects, AI context files for coding assistants, and audits your docs completeness. Uses benefit-driven language, GEO-optimised structure, progressive disclosure, and the Banesullivan 4-question framework.",
   "author": {
     "name": "Little Bear Apps",
@@ -10017,10 +9861,9 @@ SOFTWARE.
   ]
 }
 
+---
 
----
-# Source: ./.claude/rules/doc-standards.md
----
+# Source: .claude/rules/doc-standards.md
 
 # Documentation Standards
 
@@ -10110,10 +9953,9 @@ Hero section: logo + bold one-liner + explanatory sentence + badges. Use separat
 - **GEO optimisation** (AI citation, capsules, statistics): Load the `geo-optimisation` skill
 - **Skill authoring** (token budgets, metadata guidance): Load the `skill-authoring` skill
 
+---
 
----
-# Source: ./.claude/rules/context-quality.md
----
+# Source: .claude/rules/context-quality.md
 
 # AI Context File Quality Standards
 
@@ -10164,10 +10006,9 @@ Not all context files work in all tools. Key distinctions: `AGENTS.md` works in 
 
 For context file size guidance and the Signal Gate principle, load the `ai-context` skill.
 
+---
 
----
-# Source: ./.claude/rules/content-filter.md
----
+# Source: .claude/rules/content-filter.md
 
 # Content Filter Quick Reference
 
@@ -10227,10 +10068,9 @@ For CHANGELOG.md and CONTRIBUTING.md:
 
 The filter also triggers on non-documentation content that resembles standardised datasets: ISO country/state code lists, character mapping tables (e.g. kana-to-romaji), and large lookup tables. The same chunked-writing strategy applies.
 
+---
 
----
-# Source: ./.claude/rules/docs-awareness.md
----
+# Source: .claude/rules/docs-awareness.md
 
 # Documentation Awareness
 
@@ -10260,10 +10100,9 @@ When working on a project with PitchDocs installed, recognise documentation-rele
 - When the same suggestion was already made this session — don't repeat
 - For trivial code changes (typos, formatting) that don't affect documentation
 
+---
 
----
-# Source: ./hooks/context-drift-check.sh
----
+# Source: hooks/context-drift-check.sh
 
 #!/bin/bash
 # context-drift-check.sh
@@ -10330,7 +10169,12 @@ for CTX in "${CONTEXT_FILES[@]}"; do
   # Quick broken-path check: extract backtick-quoted file references
   while IFS= read -r REF_PATH; do
     if [ -n "$REF_PATH" ] && [ ! -e "$REF_PATH" ]; then
-      BROKEN_PATHS+=("$CTX references \`$REF_PATH\` (not found)")
+      # Fallback: check if basename exists anywhere in repo (tracked or untracked)
+      BASENAME=$(basename "$REF_PATH")
+      if ! git ls-files "*/$BASENAME" "$BASENAME" 2>/dev/null | grep -q . \
+        && ! find . -name "$BASENAME" -not -path './.git/*' -print -quit 2>/dev/null | grep -q .; then
+        BROKEN_PATHS+=("$CTX references \`$REF_PATH\` (not found)")
+      fi
     fi
   done < <(grep -oE '`[a-zA-Z][a-zA-Z0-9._/-]+\.(ts|js|py|go|rs|md|json|toml|yaml|yml|sh)`' "$CTX" 2>/dev/null \
     | tr -d '`' | sort -u | head -20)
@@ -10367,10 +10211,9 @@ else
   echo '{}'
 fi
 
+---
 
----
-# Source: ./hooks/context-structural-change.sh
----
+# Source: hooks/context-structural-change.sh
 
 #!/bin/bash
 # context-structural-change.sh
@@ -10448,10 +10291,9 @@ else
   echo '{}'
 fi
 
+---
 
----
-# Source: ./hooks/content-filter-guard.sh
----
+# Source: hooks/content-filter-guard.sh
 
 #!/bin/bash
 # content-filter-guard.sh
@@ -10539,10 +10381,9 @@ esac
 # All other files: pass through
 echo '{}'
 
+---
 
----
-# Source: ./hooks/context-guard-stop.sh
----
+# Source: hooks/context-guard-stop.sh
 
 #!/bin/bash
 # context-guard-stop.sh
@@ -10629,10 +10470,9 @@ fi
 
 echo '{}'
 
+---
 
----
-# Source: ./hooks/context-commit-guard.sh
----
+# Source: hooks/context-commit-guard.sh
 
 #!/bin/bash
 # context-commit-guard.sh
@@ -10715,10 +10555,9 @@ fi
 
 echo '{}'
 
+---
 
----
-# Source: ./upstream-versions.json
----
+# Source: upstream-versions.json
 
 {
   "description": "Pinned upstream specification versions. The check-upstream GitHub Action compares these against live sources monthly.",
@@ -10790,10 +10629,9 @@ echo '{}'
   }
 }
 
+---
 
----
-# Source: ./.cursorrules
----
+# Source: .cursorrules
 
 # PitchDocs — Cursor Rules
 
@@ -10831,10 +10669,9 @@ Pinned in `upstream-versions.json`, checked monthly by `.github/workflows/check-
 
 Structure docs for AI extraction: crisp top-of-page definitions, one topic per H2, descriptive headings with keywords, comparison tables for "X vs Y" queries, concrete statistics with evidence.
 
+---
 
----
-# Source: ./.github/copilot-instructions.md
----
+# Source: .github/copilot-instructions.md
 
 # PitchDocs — Copilot Instructions
 
@@ -10863,10 +10700,9 @@ PitchDocs is a Claude Code plugin that generates marketing-quality repository do
 
 When modifying skills or commands, keep these files in sync: README.md, AGENTS.md, llms.txt, and the bug report template component dropdown.
 
+---
 
----
-# Source: ./.windsurfrules
----
+# Source: .windsurfrules
 
 # PitchDocs — Windsurf Rules
 
@@ -10907,10 +10743,9 @@ No build or test commands — this is a pure Markdown plugin.
 - Do not bump upstream spec versions without verifying the source
 - GEO-optimise docs: crisp definitions, one topic per H2, comparison tables, concrete statistics
 
+---
 
----
-# Source: ./.clinerules
----
+# Source: .clinerules
 
 # PitchDocs
 
@@ -10950,10 +10785,9 @@ PitchDocs is a Claude Code plugin that generates marketing-quality repository do
 - [ ] No secrets or credentials in changed files
 - [ ] Sync files updated if skills/commands changed (README.md, AGENTS.md, llms.txt)
 
+---
 
----
-# Source: ./GEMINI.md
----
+# Source: GEMINI.md
 
 # PitchDocs
 
@@ -10985,10 +10819,9 @@ No build, test, or deploy commands — this is a pure Markdown plugin. Lint with
 - `.claude-plugin/plugin.json`: plugin manifest
 - `upstream-versions.json`: pinned upstream spec versions
 
+---
 
----
-# Source: ./tests/evaluations.json
----
+# Source: tests/evaluations.json
 
 [
   {
@@ -11131,4 +10964,5 @@ No build, test, or deploy commands — this is a pure Markdown plugin. Lint with
   }
 ]
 
+---
 
