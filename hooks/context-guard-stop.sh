@@ -21,6 +21,10 @@ INPUT=$(cat)
 STOP_ACTIVE=$(echo "$INPUT" | jq -r '.stop_hook_active // false' 2>/dev/null)
 [ "$STOP_ACTIVE" = "true" ] && echo '{}' && exit 0
 
+# Skip in Untether sessions — Stop hook blocks displace user-requested
+# content in Telegram's single-message output model.
+[ -n "${UNTETHER_SESSION:-}" ] && echo '{}' && exit 0
+
 # Resolve project directory
 PROJECT_DIR="${CLAUDE_PROJECT_DIR:-.}"
 cd "$PROJECT_DIR" || { echo '{}'; exit 0; }
@@ -36,6 +40,8 @@ CHANGED_FILES=$(git status --porcelain 2>/dev/null | awk '{print $NF}')
 HAS_STRUCTURAL=false
 while IFS= read -r FILE; do
   case "$FILE" in
+    # Skip Context Guard's own infrastructure — not project structural changes
+    .claude/hooks/*|.claude/rules/context-quality.md|.claude/settings.json) continue ;;
     commands/*.md) HAS_STRUCTURAL=true; break ;;
     .claude/skills/*/SKILL.md) HAS_STRUCTURAL=true; break ;;
     .agents/skills/*/SKILL.md) HAS_STRUCTURAL=true; break ;;

@@ -93,7 +93,7 @@ Get your first generated README in under 60 seconds.
 /pitchdocs:context-guard install
 ```
 
-Keeps your AI context files (AGENTS.md, CLAUDE.md, etc.) in sync as your project evolves, and prevents content filter errors when generating standard OSS files (CODE_OF_CONDUCT, LICENSE, SECURITY). Uninstall anytime with `/pitchdocs:context-guard uninstall`.
+Keeps your AI context files (AGENTS.md, CLAUDE.md, etc.) in sync as your project evolves, and prevents content filter errors when generating standard OSS files (CODE_OF_CONDUCT, LICENSE, SECURITY). Uninstall anytime with `/pitchdocs:context-guard uninstall`. If you use PitchDocs via [Untether](https://github.com/littlebearapps/untether) (Telegram bridge for AI coding agents), the session-end nudge hook automatically defers to avoid displacing your requested output — no configuration needed, and no impact on standard Claude Code sessions.
 
 OpenCode reads `.claude/skills/` natively — the same install steps (1–3) work in both tools.
 

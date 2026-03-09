@@ -161,6 +161,8 @@ Check status anytime:
 /pitchdocs:context-guard status
 ```
 
+**Note:** When running via [Untether](https://github.com/littlebearapps/untether) (Telegram bridge for AI coding agents), the session-end nudge (Tier 1) is automatically deferred to avoid displacing your requested output. Structural change reminders, drift checks, and the content filter guard all continue to work normally. This has no impact on standard Claude Code sessions.
+
 ### Add docs verification to CI
 
 Run `/pitchdocs:docs-verify ci` to get a CI-friendly output format. Add to GitHub Actions:

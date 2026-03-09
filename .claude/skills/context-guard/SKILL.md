@@ -169,3 +169,24 @@ Edit `context-structural-change.sh` case statement to add or remove structural f
 | Hook blocks legitimate writes | content-filter-guard too aggressive | Uninstall with `/context-guard uninstall`, or remove just the PreToolUse entry from `.claude/settings.json` |
 | Claude keeps running in a loop | Stop hook not checking `stop_hook_active` | Verify `context-guard-stop.sh` checks `stop_hook_active` flag on line 19; if broken, remove the Stop entry from `.claude/settings.json` |
 | Commit blocked but context docs don't need updating | Tier 2 false positive on config edits | Stage a context file with a minor update, or remove the PreToolUse Bash entry for `context-commit-guard.sh` from `.claude/settings.json` |
+| Stop hook doesn't fire in Untether sessions | By design — `UNTETHER_SESSION` env var is set by Untether | Stop hook blocks would displace user content in Telegram's single-message output. All other hooks (drift check, structural reminders, content filter guard, commit guard) still work normally. |
+
+## Untether / Headless Compatibility
+
+When Claude Code runs via [Untether](https://github.com/littlebearapps/untether) (a Telegram bridge for AI coding agents), Stop hook blocks cause content displacement — the hook's meta-commentary replaces the user's requested output in the final Telegram message.
+
+To prevent this, `context-guard-stop.sh` checks the `UNTETHER_SESSION` environment variable. When set, the Stop hook (Tier 1 session-end nudge) exits immediately without checking for structural changes.
+
+**What's affected:**
+
+| Hook | Behaviour in Untether |
+|------|-----------------------|
+| context-guard-stop.sh (Tier 1) | **Skipped** — exits immediately |
+| context-drift-check.sh | Works normally |
+| context-structural-change.sh | Works normally |
+| content-filter-guard.sh | Works normally |
+| context-commit-guard.sh (Tier 2) | Works normally |
+
+**If you don't use Untether, this has no effect.** The `UNTETHER_SESSION` env var is only set by Untether's runner environment. It is not present in standard Claude Code sessions and the check is a no-op.
+
+**Security:** The env var only affects the advisory session-end nudge. It cannot bypass the Tier 2 commit guard, disable content filter protection, or suppress structural change reminders. Setting it manually is equivalent to ignoring the nudge, which users can already do.

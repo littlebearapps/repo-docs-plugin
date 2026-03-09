@@ -46,6 +46,10 @@ case "$REL_PATH" in
   .claude/agents/*.md|.agents/agents/*.md)
     MSG="You modified an agent definition. AGENTS.md may need updating."
     ;;
+  .claude/rules/context-quality.md)
+    # Context Guard's own quality rule — not a project structural change
+    echo '{}'; exit 0
+    ;;
   .claude/rules/*.md)
     MSG="You modified a rule. CLAUDE.md and AGENTS.md may need updating if they list rules."
     ;;
