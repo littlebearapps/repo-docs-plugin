@@ -63,7 +63,12 @@ for CTX in "${CONTEXT_FILES[@]}"; do
   # Quick broken-path check: extract backtick-quoted file references
   while IFS= read -r REF_PATH; do
     if [ -n "$REF_PATH" ] && [ ! -e "$REF_PATH" ]; then
-      BROKEN_PATHS+=("$CTX references \`$REF_PATH\` (not found)")
+      # Fallback: check if basename exists anywhere in repo (tracked or untracked)
+      BASENAME=$(basename "$REF_PATH")
+      if ! git ls-files "*/$BASENAME" "$BASENAME" 2>/dev/null | grep -q . \
+        && ! find . -name "$BASENAME" -not -path './.git/*' -print -quit 2>/dev/null | grep -q .; then
+        BROKEN_PATHS+=("$CTX references \`$REF_PATH\` (not found)")
+      fi
     fi
   done < <(grep -oE '`[a-zA-Z][a-zA-Z0-9._/-]+\.(ts|js|py|go|rs|md|json|toml|yaml|yml|sh)`' "$CTX" 2>/dev/null \
     | tr -d '`' | sort -u | head -20)
