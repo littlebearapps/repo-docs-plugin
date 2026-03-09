@@ -5,6 +5,23 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.19.0](https://github.com/littlebearapps/pitchdocs/compare/v1.18.0...v1.19.0) (2026-03-09)
+
+
+### Added
+
+* reduce auto-loaded context by 41% and fix stale counts across docs ([f540de6](https://github.com/littlebearapps/pitchdocs/commit/f540de6a09de7873a8fe5bf783711d25a4047763))
+
+
+### Fixed
+
+* resolve false-positive broken path warnings in drift check hook ([5772356](https://github.com/littlebearapps/pitchdocs/commit/577235693df39da6bce35bc6d768bff24a441d8e))
+
+
+### Documentation
+
+* regenerate llms-full.txt with updated counts and slimmed rules ([63ef9a1](https://github.com/littlebearapps/pitchdocs/commit/63ef9a1f361fedb9761e2c3d94f48efcf9cb576d))
+
 ## [1.18.0](https://github.com/littlebearapps/pitchdocs/compare/v1.17.0...v1.18.0) (2026-03-09)
 
 
