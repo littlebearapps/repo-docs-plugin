@@ -5,6 +5,14 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.18.0](https://github.com/littlebearapps/pitchdocs/compare/v1.17.0...v1.18.0) (2026-03-09)
+
+
+### Added
+
+* add dark mode logo support and demo screenshot placeholder ([92c4217](https://github.com/littlebearapps/pitchdocs/commit/92c4217d888c7c06532aa80bea1d642cc9eeb19a))
+* extract on-demand skills from auto-loaded rules for 56% context token reduction ([#28](https://github.com/littlebearapps/pitchdocs/issues/28)) ([eb0ccb2](https://github.com/littlebearapps/pitchdocs/commit/eb0ccb27b71b1bfdb5d7c084a690afd33667f3d4))
+
 ## [Unreleased]
 
 ### Added
