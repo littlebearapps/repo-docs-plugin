@@ -1,0 +1,140 @@
+[
+  {
+    "id": "cmd-readme",
+    "input": "/pitchdocs:readme",
+    "expected_skill": "public-readme",
+    "expected_agent": "docs-writer",
+    "should_respond": true,
+    "description": "Direct readme command routes to public-readme skill and docs-writer agent"
+  },
+  {
+    "id": "cmd-changelog",
+    "input": "/pitchdocs:changelog",
+    "expected_skill": "changelog",
+    "should_respond": true,
+    "description": "Changelog command routes to changelog skill"
+  },
+  {
+    "id": "cmd-docs-verify",
+    "input": "/pitchdocs:docs-verify ci --min-score 80",
+    "expected_skill": "docs-verify",
+    "should_respond": true,
+    "description": "Docs verify with CI argument routes correctly"
+  },
+  {
+    "id": "cmd-features",
+    "input": "/pitchdocs:features benefits",
+    "expected_skill": "feature-benefits",
+    "should_respond": true,
+    "description": "Features command routes to feature-benefits skill"
+  },
+  {
+    "id": "cmd-ai-context",
+    "input": "/pitchdocs:ai-context audit",
+    "expected_skill": "ai-context",
+    "should_respond": true,
+    "description": "AI context audit routes to ai-context skill"
+  },
+  {
+    "id": "cmd-launch",
+    "input": "/pitchdocs:launch",
+    "expected_skill": "launch-artifacts",
+    "should_respond": true,
+    "description": "Launch command routes to launch-artifacts skill"
+  },
+  {
+    "id": "cmd-llms-txt",
+    "input": "/pitchdocs:llms-txt",
+    "expected_skill": "llms-txt",
+    "should_respond": true,
+    "description": "LLMs.txt command routes to llms-txt skill"
+  },
+  {
+    "id": "cmd-roadmap",
+    "input": "/pitchdocs:roadmap",
+    "expected_skill": "roadmap",
+    "should_respond": true,
+    "description": "Roadmap command routes to roadmap skill"
+  },
+  {
+    "id": "cmd-docs-audit",
+    "input": "/pitchdocs:docs-audit",
+    "expected_skill": "pitchdocs-suite",
+    "should_respond": true,
+    "description": "Docs audit routes to pitchdocs-suite skill"
+  },
+  {
+    "id": "cmd-doc-refresh",
+    "input": "/pitchdocs:doc-refresh",
+    "expected_skill": "doc-refresh",
+    "should_respond": true,
+    "description": "Doc refresh command routes to doc-refresh skill"
+  },
+  {
+    "id": "cmd-user-guide",
+    "input": "/pitchdocs:user-guide",
+    "expected_skill": "user-guides",
+    "should_respond": true,
+    "description": "User guide command routes to user-guides skill"
+  },
+  {
+    "id": "cmd-context-guard",
+    "input": "/pitchdocs:context-guard install",
+    "expected_skill": "context-guard",
+    "should_respond": true,
+    "description": "Context guard install routes to context-guard skill"
+  },
+  {
+    "id": "cmd-platform",
+    "input": "/pitchdocs:platform",
+    "expected_skill": "platform-profiles",
+    "should_respond": true,
+    "description": "Platform detection routes to platform-profiles skill"
+  },
+  {
+    "id": "nl-readme",
+    "input": "generate a readme for this project",
+    "expected_skill": "public-readme",
+    "should_respond": true,
+    "description": "Natural language readme request triggers public-readme skill"
+  },
+  {
+    "id": "nl-docs-audit",
+    "input": "audit this repo's documentation",
+    "expected_skill": "pitchdocs-suite",
+    "should_respond": true,
+    "description": "Natural language audit request triggers pitchdocs-suite skill"
+  },
+  {
+    "id": "nl-changelog",
+    "input": "write a changelog from git history",
+    "expected_skill": "changelog",
+    "should_respond": true,
+    "description": "Natural language changelog request triggers changelog skill"
+  },
+  {
+    "id": "nl-positioning",
+    "input": "why should someone use this project?",
+    "expected_skill": "feature-benefits",
+    "should_respond": true,
+    "description": "Positioning question triggers feature-benefits skill"
+  },
+  {
+    "id": "neg-debug",
+    "input": "debug this error in my code",
+    "should_respond": false,
+    "reason": "Debugging is not a documentation task"
+  },
+  {
+    "id": "neg-deploy",
+    "input": "deploy this to Cloudflare Workers",
+    "should_respond": false,
+    "reason": "Deployment is not a documentation task"
+  },
+  {
+    "id": "neg-test",
+    "input": "run the test suite",
+    "should_respond": false,
+    "reason": "Test execution is not a documentation task"
+  }
+]

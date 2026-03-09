@@ -2,7 +2,7 @@
 
 > GitHub repository documentation skills and templates for AI coding assistants. A Claude Code plugin that scans codebases, extracts features with file-level evidence, and generates marketing-quality docs — README, CHANGELOG, ROADMAP, user guides, llms.txt, AI context files, launch artifacts, and 20+ files total. Includes quality scoring, security scanning, and project type auto-detection. GEO-optimised for AI citation. Pure Markdown, zero runtime dependencies. Also works with OpenCode, Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose.
 
-- [SKILL.md](./SKILL.md): Root-level skill manifest for directory submissions — plugin overview, installation, all 13 commands, and output format
+- [SKILL.md](./SKILL.md): Root-level skill manifest for directory submissions — plugin overview, installation, all 15 commands, and output format
 
 ## Docs
 
@@ -15,7 +15,7 @@
 - [Docs Hub](./docs/README.md): Documentation index with command reference, skills reference, and links to all guides
 - [Getting Started Guide](./docs/guides/getting-started.md): Step-by-step installation, first README generation, and full command walkthrough
 - [Workflows Guide](./docs/guides/workflows.md): Workflow cookbook — make a repo public-ready, prepare a release, launch on a platform, keep docs fresh over time
-- [Command Reference](./docs/guides/command-reference.md): All 13 commands with arguments, generated files, cross-tool support, and examples
+- [Command Reference](./docs/guides/command-reference.md): All 15 commands with arguments, generated files, cross-tool support, and examples
 - [Customising Output Guide](./docs/guides/customising-output.md): Steering PitchDocs output — prompt patterns, tone control, monorepo support, iterative refinement
 - [Concepts Guide](./docs/guides/concepts.md): How PitchDocs thinks — evidence-based features, GEO, 4-question test, Diataxis, Lobby Principle, Time to Hello World
 - [Troubleshooting Guide](./docs/guides/troubleshooting.md): Content filter errors, quality score interpretation, feature extraction issues, badge failures, cross-tool limitations, FAQ
@@ -27,7 +27,8 @@
 - [Feature Benefits](./.claude/skills/feature-benefits/SKILL.md): 7-step codebase scanning workflow across 10 signal categories with JTBD job mapping, persona inference, two-path user benefits extraction (auto-scan or conversational), and evidence-based benefit translation
 - [Changelog](./.claude/skills/changelog/SKILL.md): Keep a Changelog format with language rules that rewrite commits into user-facing benefit language
 - [Roadmap](./.claude/skills/roadmap/SKILL.md): ROADMAP.md structure from GitHub milestones with emoji status indicators and community involvement section
-- [PitchDocs Suite](./.claude/skills/pitchdocs-suite/SKILL.md): 20+ file inventory, GitHub metadata, AI context files, visual assets, licence selection, and ready-to-use templates for the full docs suite
+- [PitchDocs Suite](./.claude/skills/pitchdocs-suite/SKILL.md): 20+ file inventory, GitHub metadata, AI context files, visual assets, licence selection — templates extracted to companion file for token efficiency
+- [PitchDocs Suite Templates](./.claude/skills/pitchdocs-suite/SKILL-templates.md): Companion templates for CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, issue/PR templates, FUNDING, SUPPORT, release.yml, and CITATION.cff — loaded on-demand when generating specific files
 - [llms.txt](./.claude/skills/llms-txt/SKILL.md): llmstxt.org specification reference with generation patterns for repositories and documentation sites
 - [Package Registry](./.claude/skills/package-registry/SKILL.md): npm and PyPI metadata auditing, README cross-renderer compatibility, trusted publishing, and registry badges
 - [User Guides](./.claude/skills/user-guides/SKILL.md): Task-oriented how-to documentation with Diataxis framework, guide frontmatter standard, title conventions, numbered steps, copy-paste-ready code, error recovery, and cross-linked hub pages
@@ -38,11 +39,16 @@
 - [API Reference](./.claude/skills/api-reference/SKILL.md): API reference generator guidance — TypeDoc, Sphinx, godoc, rustdoc configuration templates and docstring conventions
 - [Doc Refresh](./.claude/skills/doc-refresh/SKILL.md): Version-bump documentation orchestration — change detection from git history, selective doc refresh, release-please integration, and quality score tracking
 - [Context Guard](./.claude/skills/context-guard/SKILL.md): Context Guard installation reference — hook architecture, settings.json configuration, customisation, and troubleshooting (Claude Code only)
+- [Visual Standards](./.claude/skills/visual-standards/SKILL.md): Visual formatting standards — emoji heading prefixes, horizontal rules, TOC anchors, callouts, screenshot dimensions (desktop/mobile/tablet/terminal), HTML display patterns, captions (cross-renderer and GitHub-specific), shadow/border guidance, annotation conventions, image optimisation
+- [GEO Optimisation](./.claude/skills/geo-optimisation/SKILL.md): Generative Engine Optimisation patterns for AI citation — citation capsules (40–60 word standalone passages), crisp definitions, atomic sections, concrete statistics, comparison tables, TL;DR blocks, prerequisite blocks, data density guidance, semantic scaffolding, cross-referencing
+- [Skill Authoring](./.claude/skills/skill-authoring/SKILL.md): Token budget guidelines for writing Claude Code skills — recommended budgets by skill type (reference/workflow/combined), metadata and activation content limits, measuring token cost, anti-patterns
 - [Platform Profiles](./.claude/skills/platform-profiles/SKILL.md): Platform-specific equivalents for GitLab and Bitbucket — template directory mapping, badge URL patterns, Markdown rendering compatibility matrix, CLI tool mapping, CI/CD alternatives, and Bitbucket graceful degradation guidance
 
-## Agent
+## Agents
 
-- [Docs Writer](./.claude/agents/docs-writer.md): Orchestration agent that powers all commands — codebase scanning, feature extraction, lobby split planning, doc writing with marketing framework, and validation checklist with Lobby Principle compliance
+- [Docs Writer](./.claude/agents/docs-writer.md): Orchestration agent — coordinates researcher → writer → reviewer pipeline, applies Daytona marketing framework, handles content filter mitigation
+- [Docs Researcher](./.claude/agents/docs-researcher.md): Codebase discovery agent — platform detection, feature extraction (7-step workflow across 10 signal categories), security signals, lobby split planning, outputs structured research packet
+- [Docs Reviewer](./.claude/agents/docs-reviewer.md): Quality validation agent — full checklist, banned phrases scan, citation capsule completeness, GEO readiness, 6-dimension quality scoring (100-point rubric)
 
 ## Commands
 
@@ -58,6 +64,8 @@
 - [/pitchdocs:launch](./commands/launch.md): Generate platform-specific launch artifacts (Dev.to, HN, Reddit, Twitter, awesome lists)
 - [/pitchdocs:doc-refresh](./commands/doc-refresh.md): Refresh all docs after version bumps — CHANGELOG, README features, user guides, AI context files, and llms.txt
 - [/pitchdocs:platform](./commands/platform.md): Detect hosting platform (GitHub/GitLab/Bitbucket) and report feature support
+- [/pitchdocs:visual-standards](./commands/visual-standards.md): Load visual formatting standards for screenshots, emoji headings, and image specs
+- [/pitchdocs:geo](./commands/geo.md): Load GEO optimisation patterns for AI citation
 - [/pitchdocs:context-guard](./commands/context-guard.md): Install, uninstall, or check status of Context Guard hooks for AI context file freshness (Claude Code only)
 
 ## Optional
@@ -66,7 +74,7 @@
 - [Code of Conduct](./CODE_OF_CONDUCT.md): Community behaviour standards (Contributor Covenant v3.0)
 - [License](./LICENSE): MIT licence terms
 - [Plugin Manifest](./.claude-plugin/plugin.json): Plugin metadata, version, keywords, and author info
-- [Doc Standards](./.claude/rules/doc-standards.md): Auto-loaded quality rule — 4-question framework, Lobby Principle (README conciseness), GEO optimisation with data density guidance, progressive disclosure, benefit-driven language, visual formatting (device screenshot dimensions, caption patterns, shadow/border guidance), token budget guidelines
+- [Doc Standards](./.claude/rules/doc-standards.md): Auto-loaded quality rule — 4-question framework, Lobby Principle (README conciseness), progressive disclosure, benefit-driven language, badges, file naming. Extended references in `visual-standards`, `geo-optimisation`, and `skill-authoring` skills (loaded on-demand)
 - [Context Quality](./.claude/rules/context-quality.md): Auto-loaded quality rule for AI context files — cross-file consistency, path verification, version accuracy, sync points table (Claude Code only)
 - [Content Filter Quick Reference](./.claude/rules/content-filter.md): Auto-loaded quick reference for content filter risk levels, fetch commands, and chunked writing strategies when generating standard OSS files (Claude Code only)
 - [Documentation Awareness](./.claude/rules/docs-awareness.md): Auto-loaded documentation trigger map — suggests PitchDocs commands when documentation-relevant work is detected (new features, version bumps, structural changes, user benefits discussions) (Claude Code only)
@@ -81,3 +89,4 @@
 - [Windsurf Rules](./.windsurfrules): Windsurf (Cascade AI) project context — architecture, coding standards, key files
 - [Cline Rules](./.clinerules): Cline VS Code extension project context — tech stack, important paths, pre-commit checklist
 - [Gemini Context](./GEMINI.md): Gemini CLI project context — tech stack, conventions, key paths
+- [Evaluation Scenarios](./tests/evaluations.json): 20 test scenarios for command routing verification — maps commands and natural language triggers to expected skills, includes negative cases

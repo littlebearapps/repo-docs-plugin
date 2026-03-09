@@ -1,6 +1,6 @@
 ---
 title: "Command Reference"
-description: "All 13 PitchDocs commands with arguments, generated files, and examples."
+description: "All 15 PitchDocs commands with arguments, generated files, and examples."
 type: reference
 last_verified: "1.14.0"
 related:
@@ -11,7 +11,7 @@ order: 3
 
 # Command Reference
 
-> **Summary**: All 13 PitchDocs commands with arguments, generated files, and examples.
+> **Summary**: All 15 PitchDocs commands with arguments, generated files, and examples.
 
 **Note:** When installed as a plugin, all commands use the `pitchdocs:` prefix (e.g., `/pitchdocs:readme`). The short form `/readme` only works inside the pitchdocs source directory.
 
@@ -39,6 +39,8 @@ Each command maps to a skill file in `.claude/skills/`. The mapping:
 | `/pitchdocs:doc-refresh` | `.claude/skills/doc-refresh/SKILL.md` |
 | `/pitchdocs:launch` | `.claude/skills/launch-artifacts/SKILL.md` |
 | `/pitchdocs:platform` | `.claude/skills/platform-profiles/SKILL.md` |
+| `/pitchdocs:visual-standards` | `.claude/skills/visual-standards/SKILL.md` |
+| `/pitchdocs:geo` | `.claude/skills/geo-optimisation/SKILL.md` |
 | `/pitchdocs:context-guard` | `.claude/skills/context-guard/SKILL.md` (Claude Code only) |
 
 See the [Other AI Tools guide](other-ai-tools.md) for full per-tool setup instructions.
@@ -300,6 +302,44 @@ Detect hosting platform and report PitchDocs feature support.
 ```
 
 Reports template paths, badge URL patterns, CI/CD equivalents, and rendering limitations for the detected platform.
+
+---
+
+## `/pitchdocs:visual-standards`
+
+Load visual formatting standards for screenshots, emoji headings, and image specs.
+
+| Detail | Value |
+|--------|-------|
+| Arguments | `[topic: 'screenshots', 'emoji', 'captions', or general]` |
+| Generates | Loads reference knowledge (no files written) |
+| Cross-tool | Yes |
+
+**Examples:**
+```
+/pitchdocs:visual-standards                # Load full visual standards reference
+/pitchdocs:visual-standards screenshots    # Focus on screenshot dimensions and patterns
+/pitchdocs:visual-standards emoji          # Focus on emoji heading prefixes
+```
+
+---
+
+## `/pitchdocs:geo`
+
+Load GEO optimisation patterns for AI citation.
+
+| Detail | Value |
+|--------|-------|
+| Arguments | `[topic: 'capsules', 'statistics', 'comparison', or general]` |
+| Generates | Loads reference knowledge (no files written) |
+| Cross-tool | Yes |
+
+**Examples:**
+```
+/pitchdocs:geo                     # Load full GEO reference
+/pitchdocs:geo capsules            # Focus on citation capsules
+/pitchdocs:geo comparison          # Focus on comparison tables for "X vs Y" queries
+```
 
 ---
 

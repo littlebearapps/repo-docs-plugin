@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with PitchDocs"
-description: "Install PitchDocs, generate your first README, and explore all 13 commands."
+description: "Install PitchDocs, generate your first README, and explore all 15 commands."
 type: how-to
 difficulty: beginner
 time_to_complete: "5 minutes"
@@ -14,7 +14,7 @@ order: 1
 
 # Getting Started with PitchDocs
 
-> **Summary**: Install PitchDocs, generate your first README, and explore all 13 commands.
+> **Summary**: Install PitchDocs, generate your first README, and explore all 15 commands.
 
 **Time to Hello World:** Under 60 seconds for your first README. Full walkthrough below: ~5 minutes.
 

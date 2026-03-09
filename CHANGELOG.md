@@ -5,6 +5,27 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+* **visual-standards skill** — extracted emoji headings, screenshots, device image specs, and caption guidance from auto-loaded `doc-standards` rule into an on-demand skill (`/pitchdocs:visual-standards`)
+* **geo-optimisation skill** — extracted GEO patterns (citation capsules, statistics, comparison tables, atomic sections) from auto-loaded `doc-standards` rule into an on-demand skill (`/pitchdocs:geo`)
+* **skill-authoring skill** — extracted token budget guidelines for skill authors from auto-loaded `doc-standards` rule into an on-demand skill
+
+### Changed
+
+* **doc-standards rule slimmed by 56%** — reduced from 591 to 168 lines (~5,760 → ~1,872 tokens) by extracting visual, GEO, and token budget sections into on-demand skills; condensed banned phrases table to a single-line list
+* **context-quality rule condensed** — removed Signal Gate size guidance (duplicated ai-context skill), condensed tool compatibility table to prose (107 → 59 lines)
+* **command instructions deduplicated** — readme, features, and docs-audit commands now reference skills instead of repeating their workflow steps
+* **agent instructions trimmed** — removed redundant "load doc-standards rule" from all 3 agents (rules auto-load)
+* **skill cross-references updated** — public-readme and pitchdocs-suite skills reference new on-demand skills instead of duplicating content
+* **auto-loaded token budget reduced 56%** — from ~7,820 to ~3,415 tokens across all 4 rules
+
+### Documentation
+
+* updated skill/command counts across README, AGENTS.md, CLAUDE.md, llms.txt, and all 6 user guides (15 → 18 skills, 13 → 15 commands)
+
 ## [1.17.0](https://github.com/littlebearapps/pitchdocs/compare/v1.16.0...v1.17.0) (2026-03-08)
 
 

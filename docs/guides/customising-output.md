@@ -92,7 +92,9 @@ The core quality framework. Enforces:
 - **4-question test** — every doc must answer: Does this solve my problem? Can I use it? Who made it? Where do I learn more?
 - **Progressive disclosure** (Lobby Principle) — README is the lobby, not the building. Detailed content goes in separate docs.
 - **Feature-to-benefit language** — every feature claim needs evidence (file path, function, config option)
-- **Visual structure** — emoji heading prefixes, horizontal rules between sections, consistent badge ordering
+- **Badge ordering** — consistent category order (CI, coverage, version, licence, downloads, community)
+
+Extended references for visual formatting (emoji headings, screenshots, captions) are in the `visual-standards` skill, and GEO patterns (citation capsules, statistics) are in the `geo-optimisation` skill — both loaded on-demand when needed.
 
 If PitchDocs generates content you find overly structured, it's following these rules. You can ask it to simplify:
 

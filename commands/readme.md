@@ -21,20 +21,12 @@ Generate or update a README.md that sells as well as it informs.
 ## Behaviour
 
 1. Run the `docs-writer` agent (which auto-detects the hosting platform)
-2. If GitHub MCP tools are unavailable (GitLab/Bitbucket), gather equivalent data via `glab` CLI, REST API, or git history. Load the `platform-profiles` skill for platform-specific badge URLs, file paths, and rendering guidance.
-3. Load the `public-readme` skill for structure and marketing framework
-4. Load the `feature-benefits` skill for systematic feature extraction
-5. Load the `doc-standards` rule for tone, language, and badge standards
-6. Scan the codebase using the 7-step Feature Extraction Workflow — extract features with evidence, infer personas, extract user benefits (auto-scan or conversational path), classify by tier, translate to benefits
-7. Generate README.md with the full marketing framework:
-   - Hero section with three-part structure: bold one-liner + explanatory sentence + badges
-   - "What [Project] Does" with reader-centric use-case scenarios (for multi-capability projects)
-   - "Why [Project]?" with user benefits (bold-outcome bullets or problem/solution table — developer's choice)
-   - Quick start (Time to Hello World target by project type)
-   - Features section with benefits (emoji+bold+em-dash bullets for 5+ features, or table for shorter lists)
-   - Documentation links (including user guides if `docs/guides/` exists)
-   - Contributing CTA
-   - License
+2. If GitHub MCP tools are unavailable (GitLab/Bitbucket), gather equivalent data via `glab` CLI, REST API, or git history. Load the `platform-profiles` skill for platform-specific guidance.
+3. Load the `public-readme` skill for README structure and the marketing framework
+4. Load the `feature-benefits` skill for the 7-step extraction workflow
+5. Load the `geo-optimisation` skill for citation capsules and AI-friendly structure
+6. Load the `visual-standards` skill if the README needs screenshots or emoji heading prefixes
+7. Generate README.md following the skills' structure and the auto-loaded `doc-standards` rule
 
 ## Arguments
 
