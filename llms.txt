@@ -20,6 +20,7 @@
 - [Concepts Guide](./docs/guides/concepts.md): How PitchDocs thinks — evidence-based features, GEO, 4-question test, Diataxis, Lobby Principle, Time to Hello World
 - [Troubleshooting Guide](./docs/guides/troubleshooting.md): Content filter errors, quality score interpretation, feature extraction issues, badge failures, cross-tool limitations, FAQ
 - [Other AI Tools Guide](./docs/guides/other-ai-tools.md): Per-tool setup instructions and compatibility matrix for Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose
+- [Untether Integration Guide](./docs/guides/untether-integration.md): How PitchDocs Context Guard hooks adapt when Claude Code runs via Untether's Telegram bridge — hook behaviour table, UNTETHER_SESSION env var, security considerations
 
 ## Skills
 

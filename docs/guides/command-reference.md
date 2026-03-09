@@ -364,7 +364,7 @@ Install, uninstall, or check Context Guard hooks. **Claude Code only.**
 
 Installs 5 hooks: drift detection (warns after commits), structural change reminders (nudges on config changes), content filter guard (prevents HTTP 400 on high-risk files), session-end context nudge (Tier 1), and pre-commit context enforcement (Tier 2).
 
-**Untether compatibility:** The session-end nudge hook (`context-guard-stop.sh`) automatically defers when running via [Untether](https://github.com/littlebearapps/untether) to avoid displacing user content in Telegram. All other hooks work normally. This has no impact on standard Claude Code sessions. See the [context-guard skill reference](../../.claude/skills/context-guard/SKILL.md) for details.
+**Untether compatibility:** The session-end nudge defers automatically. See the [Untether integration guide](untether-integration.md) for the full hook behaviour table.
 
 ---
 

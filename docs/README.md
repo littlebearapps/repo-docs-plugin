@@ -19,6 +19,7 @@ Step-by-step instructions for common tasks:
 | [Concepts](guides/concepts.md) | How PitchDocs thinks: evidence-based features, GEO, 4-question test, Diataxis, Lobby Principle |
 | [Troubleshooting](guides/troubleshooting.md) | Content filter errors, score interpretation, badge issues, cross-tool limitations, FAQ |
 | [Other AI Tools](guides/other-ai-tools.md) | Set up PitchDocs with Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose |
+| [Untether Integration](guides/untether-integration.md) | How Context Guard hooks adapt when running via Untether's Telegram bridge |
 
 ## Quick Links
 

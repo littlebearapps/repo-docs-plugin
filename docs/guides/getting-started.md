@@ -160,7 +160,7 @@ Check status anytime with `/pitchdocs:context-guard status`. Uninstall with `/pi
 
 **Note:** These hooks are Claude Code-specific. If your team uses OpenCode or Codex CLI alongside Claude Code, the hooks are silently ignored by those tools.
 
-**Untether users:** If you run Claude Code via [Untether](https://github.com/littlebearapps/untether) (Telegram bridge for AI coding agents), the session-end nudge hook is automatically skipped to prevent it from displacing your Telegram output. All other hooks work normally. This is transparent and requires no additional configuration.
+**Untether users:** The session-end nudge is automatically skipped. See the [Untether integration guide](untether-integration.md) for details.
 
 ---
 

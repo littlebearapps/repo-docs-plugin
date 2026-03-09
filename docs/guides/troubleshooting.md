@@ -157,7 +157,7 @@ If you're using a non-Claude tool and a command or workflow doesn't behave as ex
 
 ### Why doesn't the Context Guard session-end nudge fire in Untether sessions?
 
-By design. When Claude Code runs via [Untether](https://github.com/littlebearapps/untether) (Telegram bridge for AI coding agents), the `UNTETHER_SESSION` environment variable is set. The session-end Stop hook detects this and exits immediately to avoid displacing your requested output in Telegram's single-message model. All other Context Guard hooks (drift detection, structural change reminders, content filter guard, commit guard) work normally. This has zero impact on non-Untether Claude Code sessions — the env var is simply not present.
+By design. The `UNTETHER_SESSION` env var triggers an early exit in the Stop hook. See the [Untether integration guide](untether-integration.md) for the full explanation.
 
 ---
 
