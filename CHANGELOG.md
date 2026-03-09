@@ -5,6 +5,13 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.19.3](https://github.com/littlebearapps/pitchdocs/compare/v1.19.2...v1.19.3) (2026-03-09)
+
+
+### Fixed
+
+* integrate website notification into release-please workflow ([fc7f699](https://github.com/littlebearapps/pitchdocs/commit/fc7f699464c6effc7c1d0548301e3eb5d91ec5a1))
+
 ## [1.19.2](https://github.com/littlebearapps/pitchdocs/compare/v1.19.1...v1.19.2) (2026-03-09)
 
 
