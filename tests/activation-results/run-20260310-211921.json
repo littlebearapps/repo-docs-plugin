@@ -1,140 +1,182 @@
 [
   {
     "id": "cmd-readme",
+    "run": 1,
     "input": "/pitchdocs:readme",
-    "expected_skill": "readme",
-    "expected_agent": "docs-writer",
+    "expected_skill": "public-readme",
+    "activated_skill": "none",
     "should_respond": true,
-    "description": "Direct readme command routes to public-readme skill and docs-writer agent"
+    "result": "fail"
   },
   {
     "id": "cmd-changelog",
+    "run": 1,
     "input": "/pitchdocs:changelog",
     "expected_skill": "changelog",
+    "activated_skill": "none",
     "should_respond": true,
-    "description": "Changelog command routes to changelog skill"
+    "result": "fail"
   },
   {
     "id": "cmd-docs-verify",
+    "run": 1,
     "input": "/pitchdocs:docs-verify ci --min-score 80",
     "expected_skill": "docs-verify",
+    "activated_skill": "none",
     "should_respond": true,
-    "description": "Docs verify with CI argument routes correctly"
+    "result": "fail"
   },
   {
     "id": "cmd-features",
+    "run": 1,
     "input": "/pitchdocs:features benefits",
-    "expected_skill": "feature",
+    "expected_skill": "feature-benefits",
+    "activated_skill": "none",
     "should_respond": true,
-    "description": "Features command routes to feature-benefits skill"
+    "result": "fail"
   },
   {
     "id": "cmd-ai-context-stub",
+    "run": 1,
     "input": "/pitchdocs:ai-context audit",
     "expected_skill": "ai-context",
+    "activated_skill": "none",
     "should_respond": true,
-    "description": "AI context command shows stub redirect to ContextDocs"
+    "result": "fail"
   },
   {
     "id": "cmd-launch",
+    "run": 1,
     "input": "/pitchdocs:launch",
-    "expected_skill": "launch",
+    "expected_skill": "launch-artifacts",
+    "activated_skill": "none",
     "should_respond": true,
-    "description": "Launch command routes to launch-artifacts skill"
+    "result": "fail"
   },
   {
     "id": "cmd-llms-txt",
+    "run": 1,
     "input": "/pitchdocs:llms-txt",
     "expected_skill": "llms-txt",
+    "activated_skill": "none",
     "should_respond": true,
-    "description": "LLMs.txt command routes to llms-txt skill"
+    "result": "fail"
   },
   {
     "id": "cmd-roadmap",
+    "run": 1,
     "input": "/pitchdocs:roadmap",
     "expected_skill": "roadmap",
+    "activated_skill": "none",
     "should_respond": true,
-    "description": "Roadmap command routes to roadmap skill"
+    "result": "fail"
   },
   {
     "id": "cmd-docs-audit",
+    "run": 1,
     "input": "/pitchdocs:docs-audit",
-    "expected_skill": "docs-audit",
+    "expected_skill": "pitchdocs-suite",
+    "activated_skill": "none",
     "should_respond": true,
-    "description": "Docs audit routes to pitchdocs-suite skill"
+    "result": "fail"
   },
   {
     "id": "cmd-doc-refresh",
+    "run": 1,
     "input": "/pitchdocs:doc-refresh",
     "expected_skill": "doc-refresh",
+    "activated_skill": "none",
     "should_respond": true,
-    "description": "Doc refresh command routes to doc-refresh skill"
+    "result": "fail"
   },
   {
     "id": "cmd-user-guide",
+    "run": 1,
     "input": "/pitchdocs:user-guide",
-    "expected_skill": "user-guide",
+    "expected_skill": "user-guides",
+    "activated_skill": "none",
     "should_respond": true,
-    "description": "User guide command routes to user-guides skill"
+    "result": "fail"
   },
   {
     "id": "cmd-context-guard-stub",
+    "run": 1,
     "input": "/pitchdocs:context-guard install",
     "expected_skill": "context-guard",
+    "activated_skill": "none",
     "should_respond": true,
-    "description": "Context guard command shows stub redirect to ContextDocs"
+    "result": "fail"
   },
   {
     "id": "cmd-platform",
+    "run": 1,
     "input": "/pitchdocs:platform",
     "expected_skill": "platform-profiles",
+    "activated_skill": "none",
     "should_respond": true,
-    "description": "Platform detection routes to platform-profiles skill"
+    "result": "fail"
   },
   {
     "id": "nl-readme",
+    "run": 1,
     "input": "generate a readme for this project",
-    "expected_skill": "readme",
+    "expected_skill": "public-readme",
+    "activated_skill": "none",
     "should_respond": true,
-    "description": "Natural language readme request triggers public-readme skill"
+    "result": "fail"
   },
   {
     "id": "nl-docs-audit",
+    "run": 1,
     "input": "audit this repo's documentation",
-    "expected_skill": "docs-audit",
+    "expected_skill": "pitchdocs-suite",
+    "activated_skill": "none",
     "should_respond": true,
-    "description": "Natural language audit request triggers pitchdocs-suite skill"
+    "result": "fail"
   },
   {
     "id": "nl-changelog",
+    "run": 1,
     "input": "write a changelog from git history",
     "expected_skill": "changelog",
+    "activated_skill": "none",
     "should_respond": true,
-    "description": "Natural language changelog request triggers changelog skill"
+    "result": "fail"
   },
   {
     "id": "nl-positioning",
+    "run": 1,
     "input": "why should someone use this project?",
-    "expected_skill": "feature",
+    "expected_skill": "feature-benefits",
+    "activated_skill": "none",
     "should_respond": true,
-    "description": "Positioning question triggers feature-benefits skill"
+    "result": "fail"
   },
   {
     "id": "neg-debug",
+    "run": 1,
     "input": "debug this error in my code",
+    "expected_skill": "none",
+    "activated_skill": "none",
     "should_respond": false,
-    "reason": "Debugging is not a documentation task"
+    "result": "pass"
   },
   {
     "id": "neg-deploy",
+    "run": 1,
     "input": "deploy this to Cloudflare Workers",
+    "expected_skill": "none",
+    "activated_skill": "none",
     "should_respond": false,
-    "reason": "Deployment is not a documentation task"
+    "result": "pass"
   },
   {
     "id": "neg-test",
+    "run": 1,
     "input": "run the test suite",
+    "expected_skill": "none",
+    "activated_skill": "none",
     "should_respond": false,
-    "reason": "Test execution is not a documentation task"
+    "result": "pass"
   }
 ]

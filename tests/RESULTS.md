@@ -76,45 +76,64 @@ Scanned for 23 banned AI-detectable phrases from doc-standards.md. The current R
 
 ## Phase 2: Skill Activation Testing
 
-**Status**: V5 fix applied — awaiting re-run. V4 achieved 35% (7/20), up from 0%.
+**Status**: V5 achieved **80% (16/20)**. V6 applied (final name mismatch fix).
 
 ### Run History
 
 | Run | Date | Script Version | Result | Notes |
 |-----|------|----------------|--------|-------|
-| 1 | 2026-03-10 | V1 (`--output-format json`, `--allowedTools "Skill"`) | 0/17 positive, 3/3 negative | Wrong output format, too-restrictive tool filter |
-| 2 | 2026-03-10 | V2 (`stream-json`, no tool filter, 3-strategy parser) | 0/17 positive, 3/3 negative | Missing `--verbose`, hidden by `2>/dev/null` |
-| 3 | 2026-03-10 | V2 (re-run from iTerm2/mosh) | 0/17 positive, 3/3 negative | Same issue confirmed |
-| 4 | 2026-03-10 | V3 (pre-flight check, stderr capture, `|| true`) | Pre-flight FAIL | Error revealed: `stream-json requires --verbose` |
-| 5 | 2026-03-10 | V4 (`--verbose` added) | 4/17 positive, 3/3 negative | Budget too low, plan mode, name mismatches |
+| 1 | 2026-03-10 | V1 (`--output-format json`, `--allowedTools "Skill"`) | 0/17 pos, 3/3 neg | Wrong output format, too-restrictive tool filter |
+| 2 | 2026-03-10 | V2 (`stream-json`, no tool filter, 3-strategy parser) | 0/17 pos, 3/3 neg | Missing `--verbose`, hidden by `2>/dev/null` |
+| 3 | 2026-03-10 | V2 (re-run from iTerm2/mosh) | 0/17 pos, 3/3 neg | Same issue confirmed |
+| 4 | 2026-03-10 | V3 (pre-flight check, stderr capture, `|| true`) | Pre-flight FAIL | Error: `stream-json requires --verbose` |
+| 5 | 2026-03-10 | V4 (`--verbose` added) | 4/17 pos, 3/3 neg (35%) | Budget too low, plan mode, name mismatches |
+| 6 | 2026-03-10 | V5 (`--permission-mode default`, $0.50 budget, name fixes) | **13/17 pos, 3/3 neg (80%)** | First successful run |
 
-### V4 Results Analysis (35% = 7/20)
+### V5 Results (80% = 16/20)
 
-Raw stream-json output revealed three remaining issues:
+| Category | Pass | Fail | Rate |
+|----------|------|------|------|
+| Positive (slash commands) | 11/13 | 2 | 85% |
+| Positive (natural language) | 2/4 | 2 | 50% |
+| Negative (should NOT activate) | 3/3 | 0 | 100% |
+| **Overall** | **16/20** | **4** | **80%** |
 
-**Issue A — Model falls back to Sonnet**: `--model haiku` shows in init but `modelUsage` reports `claude-sonnet-4-6`. Cache creation costs ~$0.12, exceeding the $0.10 budget before any tool executes.
+### 4 Remaining Failures
 
-**Issue B — Permission mode "plan"**: Default `permissionMode` is `"plan"`. Claude tries to explore/plan instead of invoking skills. Some Skill calls are permission-denied in non-interactive mode.
+| Test | Activated | Expected | Category |
+|------|-----------|----------|----------|
+| `cmd-features` | `feature-benefits` | `features` | Name mismatch (Skill tool used internal name) — **fixed in V6** |
+| `cmd-llms-txt` | `none` | `llms-txt` | Non-deterministic miss |
+| `cmd-docs-audit` | `none` | `docs-audit` | Non-deterministic miss |
+| `nl-positioning` | `none` | `features` | NL prompt too vague for activation |
 
-**Issue C — Name mismatch**: Skill tool reports command names (`pitchdocs:features`) but `expected_skill` used internal skill names (`feature-benefits`). 2 tests activated the correct skill but failed the grep comparison.
-
-### Fixes Applied (cumulative V3 → V5)
+### Fixes Applied (cumulative V3 → V6)
 
 | Version | Changes |
 |---------|---------|
 | V3 | `|| true`, stderr capture, pre-flight check, `--debug` flag |
 | V4 | Added `--verbose` to all `claude -p` invocations |
-| V5 | Added `--permission-mode default`, budget $0.10→$0.50, fixed 8 `expected_skill` values in evaluations.json |
+| V5 | Added `--permission-mode default`, budget $0.10→$0.50, fixed 8 `expected_skill` values |
+| V6 | Fixed `features`→`feature` for Skill tool name inconsistency (2 test cases) |
 
-### Next Steps
+### Progression
 
-Run V5 from a regular terminal:
-```bash
-cd ~/claude-code-tools/lba/apps/ai-plugins/pitchdocs
-bash tests/run-activation-evals.sh --runs 1 --debug
+```
+V1-V3: 0%  → V4: 35% → V5: 80% → V6 (expected): ~85%
 ```
 
-Target: >50% positive activation rate. Note: budget increase from $0.10 to $0.50 means each full run costs ~$10 (20 tests x $0.50). Use `--model haiku` (default) to minimise cost.
+### Key Learnings
+
+1. `claude -p --output-format stream-json` requires `--verbose` — undocumented requirement
+2. `--model haiku` falls back to Sonnet 4.6 — costs ~$0.12/test in cache creation
+3. Default permission mode "plan" blocks Skill tool execution in non-interactive mode
+4. Skill tool inconsistently uses command names vs internal skill names
+5. Non-deterministic activation: ~2/13 slash commands fail per run (85% rate)
+6. Natural language activation: ~50% without forced-eval hooks (matches research predictions)
+
+### Cost
+
+V5 run total: ~$6.50 (20 tests x ~$0.32 avg, model falls back to Sonnet)
 
 ---
 

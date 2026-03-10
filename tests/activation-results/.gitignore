@@ -1,0 +1,4 @@
+# Raw stream-json diagnostic output (large, per-run)
+raw-*/
+# Transient stderr log
+.stderr-last.log
