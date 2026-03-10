@@ -1,8 +1,8 @@
 # PitchDocs
 
-> GitHub repository documentation skills and templates for AI coding assistants. A Claude Code plugin that scans codebases, extracts features with file-level evidence, and generates marketing-quality docs — README, CHANGELOG, ROADMAP, user guides, llms.txt, AI context files, launch artifacts, and 20+ files total. Includes quality scoring, security scanning, and project type auto-detection. GEO-optimised for AI citation. Pure Markdown, zero runtime dependencies. Also works with OpenCode, Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose.
+> GitHub repository documentation skills and templates for AI coding assistants. A Claude Code plugin that scans codebases, extracts features with file-level evidence, and generates marketing-quality docs — README, CHANGELOG, ROADMAP, user guides, llms.txt, launch artifacts, and 20+ files total. Includes quality scoring, security scanning, and project type auto-detection. GEO-optimised for AI citation. Pure Markdown, zero runtime dependencies. Also works with OpenCode, Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose. For AI context file management, see [ContextDocs](https://github.com/littlebearapps/contextdocs).
 
-- [SKILL.md](./SKILL.md): Root-level skill manifest for directory submissions — plugin overview, installation, all 15 commands, and output format
+- [SKILL.md](./SKILL.md): Root-level skill manifest for directory submissions — plugin overview, installation, all commands, and output format
 
 ## Docs
 
@@ -15,11 +15,12 @@
 - [Docs Hub](./docs/README.md): Documentation index with command reference, skills reference, and links to all guides
 - [Getting Started Guide](./docs/guides/getting-started.md): Step-by-step installation, first README generation, and full command walkthrough
 - [Workflows Guide](./docs/guides/workflows.md): Workflow cookbook — make a repo public-ready, prepare a release, launch on a platform, keep docs fresh over time
-- [Command Reference](./docs/guides/command-reference.md): All 15 commands with arguments, generated files, cross-tool support, and examples
+- [Command Reference](./docs/guides/command-reference.md): All commands with arguments, generated files, cross-tool support, and examples
 - [Customising Output Guide](./docs/guides/customising-output.md): Steering PitchDocs output — prompt patterns, tone control, monorepo support, iterative refinement
 - [Concepts Guide](./docs/guides/concepts.md): How PitchDocs thinks — evidence-based features, GEO, 4-question test, Diataxis, Lobby Principle, Time to Hello World
 - [Troubleshooting Guide](./docs/guides/troubleshooting.md): Content filter errors, quality score interpretation, feature extraction issues, badge failures, cross-tool limitations, FAQ
 - [Other AI Tools Guide](./docs/guides/other-ai-tools.md): Per-tool setup instructions and compatibility matrix for Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose
+- [Untether Integration Guide](./docs/guides/untether-integration.md): How PitchDocs Context Guard hooks adapt when Claude Code runs via Untether's Telegram bridge — hook behaviour table, UNTETHER_SESSION env var, security considerations
 
 ## Skills
 
@@ -29,18 +30,16 @@
 - [Feature Benefits Signals](./.claude/skills/feature-benefits/SKILL-signals.md): Extended reference — detailed scan lists for 10 signal categories, JTBD mapping, persona inference tables, conversational path prompts, per-ecosystem pattern libraries, signal-to-benefit translation table (loaded on demand)
 - [Changelog](./.claude/skills/changelog/SKILL.md): Keep a Changelog format with language rules that rewrite commits into user-facing benefit language
 - [Roadmap](./.claude/skills/roadmap/SKILL.md): ROADMAP.md structure from GitHub milestones with emoji status indicators and community involvement section
-- [PitchDocs Suite](./.claude/skills/pitchdocs-suite/SKILL.md): 20+ file inventory, GitHub metadata, AI context files, visual assets, licence selection — templates extracted to companion file for token efficiency
+- [PitchDocs Suite](./.claude/skills/pitchdocs-suite/SKILL.md): 20+ file inventory, GitHub metadata, visual assets, licence selection — templates extracted to companion file for token efficiency
 - [PitchDocs Suite Templates](./.claude/skills/pitchdocs-suite/SKILL-templates.md): Companion templates for CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, issue/PR templates, FUNDING, SUPPORT, release.yml, and CITATION.cff — loaded on-demand when generating specific files
 - [llms.txt](./.claude/skills/llms-txt/SKILL.md): llmstxt.org specification reference with generation patterns for repositories and documentation sites
 - [Package Registry](./.claude/skills/package-registry/SKILL.md): npm and PyPI metadata auditing, README cross-renderer compatibility, trusted publishing, and registry badges
 - [User Guides](./.claude/skills/user-guides/SKILL.md): Task-oriented how-to documentation with Diataxis framework, guide frontmatter standard, title conventions, numbered steps, copy-paste-ready code, error recovery, and cross-linked hub pages
 - [User Guide Templates](./.claude/skills/user-guides/SKILL-templates.md): Companion templates for tutorial, reference, and explanation document types (Diataxis quadrants not covered in the main user-guides skill)
-- [AI Context](./.claude/skills/ai-context/SKILL.md): AI IDE context file generation with Signal Gate principle — AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md from codebase analysis. Includes init (bootstrap), update (incremental drift patching), promote (MEMORY.md → CLAUDE.md), and audit with Context Guard status
-- [Docs Verify](./.claude/skills/docs-verify/SKILL.md): Documentation validation — broken links, stale content, llms.txt sync, heading hierarchy, badge URLs, AI context health scoring, quality scoring (0–100), security scanning, token audit, and CI-friendly output with GitHub Actions template
+- [Docs Verify](./.claude/skills/docs-verify/SKILL.md): Documentation validation — broken links, stale content, llms.txt sync, heading hierarchy, badge URLs, lightweight AI context health check, quality scoring (0–100), security scanning, token audit, and CI-friendly output with GitHub Actions template
 - [Launch Artifacts](./.claude/skills/launch-artifacts/SKILL.md): Platform-specific launch content — Dev.to articles, Hacker News posts, Reddit posts, Twitter/X threads, awesome list submissions, and social preview guidance
 - [API Reference](./.claude/skills/api-reference/SKILL.md): API reference generator guidance — TypeDoc, Sphinx, godoc, rustdoc configuration templates and docstring conventions
 - [Doc Refresh](./.claude/skills/doc-refresh/SKILL.md): Version-bump documentation orchestration — change detection from git history, selective doc refresh, release-please integration, and quality score tracking
-- [Context Guard](./.claude/skills/context-guard/SKILL.md): Context Guard installation reference — hook architecture, settings.json configuration, customisation, and troubleshooting (Claude Code only)
 - [Visual Standards](./.claude/skills/visual-standards/SKILL.md): Visual formatting standards — emoji heading prefixes, horizontal rules, TOC anchors, callouts
 - [Visual Standards Reference](./.claude/skills/visual-standards/SKILL-reference.md): Extended reference — screenshot dimensions (desktop/mobile/tablet/terminal), HTML display patterns, captions, shadow/border guidance, annotation conventions, image optimisation (loaded on demand)
 - [GEO Optimisation](./.claude/skills/geo-optimisation/SKILL.md): Generative Engine Optimisation patterns for AI citation — citation capsules, crisp definitions, atomic sections, concrete statistics, comparison tables, data density, semantic scaffolding
@@ -60,17 +59,17 @@
 - [/pitchdocs:features](./commands/features.md): Extract features from code and translate to benefits
 - [/pitchdocs:changelog](./commands/changelog.md): Generate CHANGELOG.md from git history
 - [/pitchdocs:roadmap](./commands/roadmap.md): Generate ROADMAP.md from GitHub milestones
-- [/pitchdocs:docs-audit](./commands/docs-audit.md): Audit docs completeness against 20+ file checklist with AI context and Diataxis coverage
+- [/pitchdocs:docs-audit](./commands/docs-audit.md): Audit docs completeness against 20+ file checklist with Diataxis coverage
 - [/pitchdocs:llms-txt](./commands/llms-txt.md): Generate llms.txt and llms-full.txt
 - [/pitchdocs:user-guide](./commands/user-guide.md): Generate task-oriented user guides with Diataxis classification
-- [/pitchdocs:ai-context](./commands/ai-context.md): Generate lean AI IDE context files using Signal Gate — supports init, update, promote, audit, and per-tool generation
+- [/pitchdocs:ai-context](./commands/ai-context.md): Stub — redirects to ContextDocs for AI context file management
 - [/pitchdocs:docs-verify](./commands/docs-verify.md): Verify documentation links, freshness, llms.txt sync, badge URLs, quality score, and security
 - [/pitchdocs:launch](./commands/launch.md): Generate platform-specific launch artifacts (Dev.to, HN, Reddit, Twitter, awesome lists)
-- [/pitchdocs:doc-refresh](./commands/doc-refresh.md): Refresh all docs after version bumps — CHANGELOG, README features, user guides, AI context files, and llms.txt
+- [/pitchdocs:doc-refresh](./commands/doc-refresh.md): Refresh all docs after version bumps — CHANGELOG, README features, user guides, and llms.txt
 - [/pitchdocs:platform](./commands/platform.md): Detect hosting platform (GitHub/GitLab/Bitbucket) and report feature support
 - [/pitchdocs:visual-standards](./commands/visual-standards.md): Load visual formatting standards for screenshots, emoji headings, and image specs
 - [/pitchdocs:geo](./commands/geo.md): Load GEO optimisation patterns for AI citation
-- [/pitchdocs:context-guard](./commands/context-guard.md): Install, uninstall, or check status of Context Guard hooks for AI context file freshness (Claude Code only)
+- [/pitchdocs:context-guard](./commands/context-guard.md): Stub — redirects to ContextDocs for Context Guard hooks
 
 ## Optional
 
@@ -79,15 +78,10 @@
 - [License](./LICENSE): MIT licence terms
 - [Plugin Manifest](./.claude-plugin/plugin.json): Plugin metadata, version, keywords, and author info
 - [Doc Standards](./.claude/rules/doc-standards.md): Auto-loaded quality rule — 4-question framework, Lobby Principle (README conciseness), progressive disclosure, benefit-driven language, badges, file naming. Extended references in `visual-standards`, `geo-optimisation`, and `skill-authoring` skills (loaded on-demand)
-- [Context Quality](./.claude/rules/context-quality.md): Auto-loaded quality rule for AI context files — cross-file consistency, path verification, version accuracy, sync points (Claude Code only)
 - [Content Filter Quick Reference](./.claude/rules/content-filter.md): Auto-loaded quick reference for content filter risk levels, fetch commands, and chunked writing strategies when generating standard OSS files (Claude Code only)
 - [Documentation Awareness](./.claude/rules/docs-awareness.md): Auto-loaded documentation trigger map — suggests PitchDocs commands when documentation-relevant work is detected (new features, version bumps, structural changes, user benefits discussions) (Claude Code only)
-- [Context Drift Check Hook](./hooks/context-drift-check.sh): PostToolUse hook that detects stale AI context files after git commits — compares timestamps, checks broken paths (Claude Code only)
-- [Context Structural Change Hook](./hooks/context-structural-change.sh): PostToolUse hook that reminds about context file updates after structural file changes (Claude Code only)
 - [Content Filter Guard Hook](./hooks/content-filter-guard.sh): PreToolUse hook that blocks Write operations on high-risk OSS files (CODE_OF_CONDUCT, LICENSE, SECURITY) and advises chunked writing for medium-risk files (Claude Code only)
-- [Context Guard Stop Hook](./hooks/context-guard-stop.sh): Stop hook that nudges Claude to update AI context files before ending a session when structural changes were made — Tier 1 Nudge (Claude Code only)
-- [Context Commit Guard Hook](./hooks/context-commit-guard.sh): PreToolUse hook that blocks git commit when structural files are staged without AI context file updates — Tier 2 Guard (Claude Code only)
-- [Upstream Versions](./upstream-versions.json): Pinned versions of 8 referenced specifications (Keep a Changelog, Contributor Covenant, Conventional Commits, Semantic Versioning, GitHub Issue Forms, npm/PyPI Trusted Publishing, AGENTS.md Spec)
+- [Upstream Versions](./upstream-versions.json): Pinned versions of 7 referenced specifications (Keep a Changelog, Contributor Covenant, Conventional Commits, Semantic Versioning, GitHub Issue Forms, npm/PyPI Trusted Publishing)
 - [Cursor Rules](./.cursorrules): Cursor IDE project context — architecture, writing standards, sync requirements
 - [Copilot Instructions](./.github/copilot-instructions.md): GitHub Copilot project context — structure, conventions, sync points
 - [Windsurf Rules](./.windsurfrules): Windsurf (Cascade AI) project context — architecture, coding standards, key files
@@ -97,19 +91,20 @@
 
 ---
 
-# Source: SKILL.md
+## SKILL.md
+
+Source: ./SKILL.md
 
 ---
 name: pitchdocs
-description: Generate marketing-quality repository documentation from codebase analysis. Scans 10 signal categories, extracts features with file-level evidence, and produces README, CHANGELOG, ROADMAP, AI context files, and 15+ more docs. Zero runtime dependencies.
-version: "1.18.0"
+description: Generate marketing-quality repository documentation from codebase analysis. Scans 10 signal categories, extracts features with file-level evidence, and produces README, CHANGELOG, ROADMAP, and 15+ more docs. Zero runtime dependencies. For AI context file management, see ContextDocs.
+version: "2.0.0"
 author: Little Bear Apps
 tags:
   - documentation
   - readme
   - changelog
   - marketing
-  - ai-context
   - quality-scoring
   - claude-code-plugin
 ---
@@ -120,14 +115,13 @@ tags:
 
 PitchDocs is a pure Markdown Claude Code plugin that scans any codebase and generates professional, marketing-ready repository documentation. Every feature claim traces to an actual file path — no hallucinated marketing copy.
 
-18 skills, 15 slash commands, 3 agents (researcher → writer → reviewer pipeline), 4 quality rules, 5 opt-in hooks. 100% Markdown, zero runtime dependencies, MIT licensed.
+16 skills, 15 slash commands (13 active + 2 stubs), 3 agents (researcher → writer → reviewer pipeline), 3 quality rules, 1 opt-in hook. 100% Markdown, zero runtime dependencies, MIT licensed.
 
 ## When to Use
 
 - Starting a new open-source project and need professional docs fast
 - Overhauling an existing README that undersells your project
 - Preparing for a public launch or Product Hunt submission
-- Generating AI context files (AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md) for your project
 - Auditing documentation completeness across 20+ files
 - Creating changelogs, roadmaps, or user guides from existing code and git history
 
@@ -146,7 +140,7 @@ PitchDocs is a pure Markdown Claude Code plugin that scans any codebase and gene
    - `/pitchdocs:docs-audit` — Audit documentation completeness (20+ file checklist)
    - `/pitchdocs:features` — Extract features with file-level evidence
    - `/pitchdocs:changelog` — Generate CHANGELOG from git history
-   - `/pitchdocs:ai-context` — Generate AI context files for 7 tools
+   - `/pitchdocs:ai-context` — Stub: redirects to ContextDocs
    - `/pitchdocs:llms-txt` — Generate llms.txt for AI discoverability
    - `/pitchdocs:docs-verify` — Quality scoring (0-100) with link checking
    - `/pitchdocs:roadmap` — Generate ROADMAP from GitHub milestones
@@ -156,7 +150,7 @@ PitchDocs is a pure Markdown Claude Code plugin that scans any codebase and gene
    - `/pitchdocs:platform` — Detect hosting platform feature support
    - `/pitchdocs:visual-standards` — Visual formatting standards for docs
    - `/pitchdocs:geo` — GEO optimisation for AI citation readiness
-   - `/pitchdocs:context-guard` — Install context freshness hooks
+   - `/pitchdocs:context-guard` — Stub: redirects to ContextDocs
 
 ## Output Format
 
@@ -195,7 +189,9 @@ Hero Feature: Evidence-based feature extraction
 
 ---
 
-# Source: README.md
+## README
+
+Source: ./README.md
 
 <p align="center">
   <picture>
@@ -214,7 +210,7 @@ Hero Feature: Evidence-based feature extraction
 </p>
 
 <p align="center">
-  <a href="CHANGELOG.md"><img src="https://img.shields.io/static/v1?label=version&message=1.19.0&color=blue" alt="Version" /></a> <!-- x-release-please-version -->
+  <a href="CHANGELOG.md"><img src="https://img.shields.io/static/v1?label=version&message=1.19.3&color=blue" alt="Version" /></a> <!-- x-release-please-version -->
   <a href="LICENSE"><img src="https://img.shields.io/github/license/littlebearapps/pitchdocs" alt="License" /></a>
   <a href="https://code.claude.com/docs/en/plugins"><img src="https://img.shields.io/badge/Claude_Code-Plugin-D97757?logo=claude&logoColor=white" alt="Claude Code Plugin" /></a>
   <a href="https://opencode.ai/"><img src="https://img.shields.io/badge/OpenCode-Compatible-22c55e" alt="OpenCode Compatible" /></a>
@@ -227,14 +223,36 @@ Hero Feature: Evidence-based feature extraction
   <a href="#-get-started">Get Started</a> · <a href="#-features">Features</a> · <a href="#%EF%B8%8F-how-pitchdocs-compares">How It Compares</a> · <a href="#-commands">Commands</a> · <a href="#-use-with-other-ai-tools">Other AI Tools</a> · <a href="CONTRIBUTING.md">Contributing</a>
 </p>
 
-<!-- TODO: Capture screenshot from Claude Desktop app on MacBook showing /pitchdocs:readme in action -->
-<!-- Target: annotated screenshot showing generated README with callouts for key sections -->
-<!-- File: docs/assets/demo-pitchdocs-readme.png -->
-<!--
-<p align="center">
-  <img src="docs/assets/demo-pitchdocs-readme.png" width="700" alt="Claude Desktop app generating a marketing-ready README with /pitchdocs:readme — showing the generated hero section, evidence-backed features, and GEO-optimised structure" />
-</p>
--->
+<table align="center">
+  <tr>
+    <td align="center" width="200">
+      <a href="https://github.com/littlebearapps/untether">
+        <img src="https://raw.githubusercontent.com/littlebearapps/untether/master/docs/assets/logo.svg" width="80" alt="Untether logo" /><br />
+        <strong>Untether</strong>
+      </a><br />
+      <sub>Telegram bridge for AI coding agents</sub>
+    </td>
+    <td align="center" width="200">
+      <a href="https://github.com/littlebearapps/outlook-assistant">
+        <img src="https://raw.githubusercontent.com/littlebearapps/outlook-assistant/main/docs/assets/outlook-assistant-logo-icon.svg" width="80" alt="Outlook Assistant logo" /><br />
+        <strong>Outlook Assistant</strong>
+      </a><br />
+      <sub>MCP server for Outlook email, calendar, and contacts</sub>
+    </td>
+    <td align="center" width="200">
+      <a href="https://github.com/littlebearapps/pitchdocs">
+        <img src="docs/assets/pitchdocs-logo-icon.svg" width="80" alt="PitchDocs logo" /><br />
+        <strong>PitchDocs</strong>
+      </a><br />
+      <sub>This repo's own README was generated with PitchDocs</sub>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center">
+      <sub>READMEs generated by PitchDocs — click to see the full result</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -263,14 +281,9 @@ Get your first generated README in under 60 seconds.
 
 **Note:** When installed as a plugin, all commands use the `pitchdocs:` prefix (e.g., `/pitchdocs:readme`). The short form `/readme` only works inside the pitchdocs source directory.
 
-**Optional — install Context Guard hooks (Claude Code only):**
+**Optional — AI context file management:**
 
-```bash
-# 4. Install Context Guard hooks for AI context file freshness and content filter protection
-/pitchdocs:context-guard install
-```
-
-Keeps your AI context files (AGENTS.md, CLAUDE.md, etc.) in sync as your project evolves, and prevents content filter errors when generating standard OSS files (CODE_OF_CONDUCT, LICENSE, SECURITY). Uninstall anytime with `/pitchdocs:context-guard uninstall`.
+For AI context files (AGENTS.md, CLAUDE.md, .cursorrules, etc.), install [ContextDocs](https://github.com/littlebearapps/contextdocs) separately. It includes Context Guard hooks, Signal Gate generation, and drift auditing.
 
 OpenCode reads `.claude/skills/` natively — the same install steps (1–3) work in both tools.
 
@@ -284,21 +297,19 @@ Your repo is ready to go public, but the docs aren't. You need a README that sel
 
 PitchDocs gives your AI coding assistant the skills and knowledge to scan your codebase, find what's worth talking about, and write the whole documentation suite for you. README, CHANGELOG, CONTRIBUTING, ROADMAP, CODE_OF_CONDUCT, SECURITY, issue templates, PR templates, user guides, and `llms.txt` — all from slash commands like `/pitchdocs:readme` and `/pitchdocs:docs-audit fix`.
 
-It also manages your AI context files — AGENTS.md, CLAUDE.md, .cursorrules, and 4 more — so every AI coding tool on your team understands your project's conventions from day one. Context files are generated using the Signal Gate principle: only what agents can't discover on their own, keeping them lean and effective. Bootstrap with `/pitchdocs:ai-context init`, patch drift with `update`, and promote Claude's auto-learned patterns to CLAUDE.md with `promote`.
-
 Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, and backed by evidence from your actual code — with professional documentation standards (the 4-question test, lobby principle, and Time to Hello World targets) baked in automatically.
+
+For AI context file management (AGENTS.md, CLAUDE.md, .cursorrules, and more), see [ContextDocs](https://github.com/littlebearapps/contextdocs).
 
 ---
 
 ## 🎯 Features
 
-- 🧠 **AI context file management** — generate, maintain, and audit AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, and 3 more for 7 AI tools. Uses the Signal Gate principle to include only what agents can't discover on their own — leaner files, better AI performance. Bootstrap a new project with `init`, patch only what drifted with `update`, promote stable MEMORY.md patterns to CLAUDE.md with `promote`, and verify health with `audit`
 - 🔍 **Evidence-based feature extraction** — scans 10 signal categories, infers target personas, and extracts user benefits via auto-scan or a conversational "talk it out" path — every claim backed by a file path
 - 📋 **Full docs suite from one command** — README, CHANGELOG, CONTRIBUTING, ROADMAP, SECURITY, issue templates, and 15+ more files
 - ✅ **Professional docs without documentation expertise** — every generated doc passes the 4-question test, applies the lobby principle for progressive disclosure, and targets measurable Time to Hello World
 - 🔎 **GEO-optimised for AI citation** — structured so ChatGPT, Perplexity, and Google AI Overviews cite your project accurately
-- 📊 **Quality scoring (0–100)** — grades docs on completeness, structure, freshness, link health, and AI context health — export to CI with `--min-score`
-- 🔒 **Context Guard** — two-tier enforcement keeps AI context files in sync: a session-end nudge reminds you to update docs, and an optional pre-commit guard blocks commits with stale context files *(Claude Code only)*
+- 📊 **Quality scoring (0–100)** — grades docs on completeness, structure, freshness, link health, and evidence quality — export to CI with `--min-score`
 - 🛡️ **Content filter protection** — automatically handles Claude Code's API filter for CODE_OF_CONDUCT, LICENSE, and SECURITY so you never hit HTTP 400 errors *(Claude Code only)*
 - 🌐 **GitHub, GitLab, and Bitbucket** — auto-detects hosting platform and adapts badges, URLs, CI config, and Markdown rendering for each
 - 🔌 **Works with 9 AI tools** — Claude Code, OpenCode, Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, Goose
@@ -312,7 +323,6 @@ Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, 
 | Scans codebase for features | 10 signal categories with file-level evidence | Basic directory scan | Depends on prompt quality |
 | Full docs suite (20+ files) | One command: `/pitchdocs:docs-audit fix` | README only | One file at a time |
 | GEO / AI citation optimised | Atomic sections, comparison tables, concrete stats, llms.txt | No | No |
-| AI context management | 7 file types with Signal Gate, init/update/promote lifecycle, drift audit | No | No |
 | Quality scoring and verification | 0–100 score, broken links, freshness, heading hierarchy, badges | No | No |
 | Cross-tool compatibility | 9 AI coding tools with documented setup | CLI only | Tool-specific |
 
@@ -326,19 +336,17 @@ Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, 
 | `/pitchdocs:features` | Extract features and user benefits from code — output as inventory, table, bullets, or bold-outcome benefits (auto-scan or conversational) | Never miss a feature worth documenting |
 | `/pitchdocs:changelog` | Generate CHANGELOG.md from git history with user-benefit language | Users see what changed for *them*, not your commit log |
 | `/pitchdocs:roadmap` | Generate ROADMAP.md from GitHub milestones and issues | Show contributors where the project is heading |
-| `/pitchdocs:docs-audit` | Audit docs completeness, quality, GitHub metadata, visual assets, AI context files, Diataxis coverage, and npm/PyPI registry config | Catch gaps in files, metadata, images, and package registry fields before you ship |
+| `/pitchdocs:docs-audit` | Audit docs completeness, quality, GitHub metadata, visual assets, Diataxis coverage, and npm/PyPI registry config | Catch gaps in files, metadata, images, and package registry fields before you ship |
 | `/pitchdocs:llms-txt` | Generate llms.txt and llms-full.txt for AI discoverability | AI coding assistants and search engines find and understand your docs |
 | `/pitchdocs:user-guide` | Generate task-oriented user guides in `docs/guides/` with Diataxis classification | Readers find answers without reading your source code |
-| `/pitchdocs:ai-context` | Generate lean AI context files using Signal Gate — `init` bootstraps, `update` patches drift, `promote` moves MEMORY.md patterns to CLAUDE.md | AI coding assistants understand your project's conventions from day one |
-| `/pitchdocs:docs-verify` | Verify links, freshness, llms.txt sync, heading hierarchy, badge URLs, and AI context health | Catch documentation decay before it reaches users |
+| `/pitchdocs:ai-context` | **Stub** — redirects to [ContextDocs](https://github.com/littlebearapps/contextdocs) for AI context file management | Install ContextDocs separately for AI context generation |
+| `/pitchdocs:docs-verify` | Verify links, freshness, llms.txt sync, heading hierarchy, and badge URLs | Catch documentation decay before it reaches users |
 | `/pitchdocs:launch` | Generate Dev.to articles, HN posts, Reddit posts, Twitter threads, awesome list submissions | Transform docs into platform-specific launch content |
-| `/pitchdocs:doc-refresh` | Refresh all docs after version bumps — CHANGELOG, README features, user guides, AI context, llms.txt | Never ship a release with stale documentation |
+| `/pitchdocs:doc-refresh` | Refresh all docs after version bumps — CHANGELOG, README features, user guides, llms.txt | Never ship a release with stale documentation |
 | `/pitchdocs:platform` | Detect hosting platform (GitHub, GitLab, Bitbucket) and report feature support | Know which PitchDocs features work on your platform before you start |
 | `/pitchdocs:visual-standards` | Load visual formatting reference — emoji headings, screenshot specs, captions, image optimisation | Consistent, polished visual elements across your docs |
 | `/pitchdocs:geo` | Load GEO optimisation patterns — citation capsules, statistics, comparison tables | AI systems cite your project accurately |
-| `/pitchdocs:context-guard` | Install, uninstall, or check status of Context Guard hooks with tiered enforcement for AI context file freshness and content filter protection | Catch stale context files before they reach your repo |
-
-**Note:** `/pitchdocs:context-guard` is **Claude Code only**. All other commands work across all supported AI tools.
+| `/pitchdocs:context-guard` | **Stub** — redirects to [ContextDocs](https://github.com/littlebearapps/contextdocs) for Context Guard hooks | Install ContextDocs separately for context drift enforcement |
 
 ### Quick Examples
 
@@ -348,8 +356,6 @@ Every generated doc is GEO and SEO optimised, npm and PyPI registry compatible, 
 /pitchdocs:features benefits        # Extract user benefits (auto-scan or "talk it out")
 /pitchdocs:docs-audit fix           # Audit and auto-generate missing docs
 /pitchdocs:changelog full           # Generate full changelog from all tags
-/pitchdocs:ai-context init           # Bootstrap AI context for a new project
-/pitchdocs:ai-context update         # Patch only what drifted
 /pitchdocs:docs-verify              # Check for broken links and stale content
 /pitchdocs:doc-refresh              # Refresh all docs for an upcoming release
 /pitchdocs:visual-standards         # Load screenshot and emoji heading specs
@@ -397,7 +403,9 @@ See our [Contributing Guide](CONTRIBUTING.md) to get started, or jump straight i
 
 ---
 
-# Source: CONTRIBUTING.md
+## Contributing
+
+Source: ./CONTRIBUTING.md
 
 # Contributing to PitchDocs
 
@@ -533,7 +541,9 @@ Thank you for making PitchDocs better!
 
 ---
 
-# Source: CHANGELOG.md
+## Changelog
+
+Source: ./CHANGELOG.md
 
 # Changelog
 
@@ -541,6 +551,38 @@ All notable changes to this project are documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.19.3](https://github.com/littlebearapps/pitchdocs/compare/v1.19.2...v1.19.3) (2026-03-09)
+
+
+### Fixed
+
+* integrate website notification into release-please workflow ([fc7f699](https://github.com/littlebearapps/pitchdocs/commit/fc7f699464c6effc7c1d0548301e3eb5d91ec5a1))
+
+## [1.19.2](https://github.com/littlebearapps/pitchdocs/compare/v1.19.1...v1.19.2) (2026-03-09)
+
+
+### Fixed
+
+* resolve Context Guard false positives and add Untether session detection ([70ba7c6](https://github.com/littlebearapps/pitchdocs/commit/70ba7c6c524565c37ccaf6df20b0f8fae81d8a7a))
+
+
+### Documentation
+
+* add website accuracy audit against v1.19.1 ([f3d4026](https://github.com/littlebearapps/pitchdocs/commit/f3d4026a931093820a73923e7a661bdc9cbf1a94))
+* replace demo screenshot TODO with showcase gallery ([b7dd753](https://github.com/littlebearapps/pitchdocs/commit/b7dd753b3c96d8f1a9b83e16efd1ffc8b820758c))
+
+## [1.19.1](https://github.com/littlebearapps/pitchdocs/compare/v1.19.0...v1.19.1) (2026-03-09)
+
+
+### Fixed
+
+* reduce /readme context overhead by 72% for small projects ([cd34f85](https://github.com/littlebearapps/pitchdocs/commit/cd34f856195227c71012d070f70f4615b89c2846))
+
+
+### Documentation
+
+* regenerate llms-full.txt with slimmed skills and reference files ([a9d3778](https://github.com/littlebearapps/pitchdocs/commit/a9d3778318b0302e8757342b13849d65d9518f24))
 
 ## [1.19.0](https://github.com/littlebearapps/pitchdocs/compare/v1.18.0...v1.19.0) (2026-03-09)
 
@@ -912,11 +954,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-# Source: AGENTS.md
+## AGENTS.md
+
+Source: ./AGENTS.md
 
 # PitchDocs
 
-Generate high-quality public-facing repository documentation with a marketing edge. PitchDocs creates READMEs that sell, changelogs that communicate value, roadmaps from GitHub milestones, AI context files for coding assistants, and audits your docs completeness — with GEO-optimised structure for AI citation and launch artifacts for promotion.
+Generate high-quality public-facing repository documentation with a marketing edge. PitchDocs creates READMEs that sell, changelogs that communicate value, roadmaps from GitHub milestones, and audits your docs completeness — with GEO-optimised structure for AI citation and launch artifacts for promotion. For AI context file management, see [ContextDocs](https://github.com/littlebearapps/contextdocs).
 
 ## Documentation Standards
 
@@ -924,7 +968,7 @@ Australian English (realise, colour). Conventional commits. Benefit-driven langu
 
 ## Available Skills
 
-Skills are loaded on-demand to provide deep reference knowledge. Each lives at `.claude/skills/<name>/SKILL.md` (or `.agents/skills/<name>/SKILL.md` if you've copied them for Codex CLI). There are 18 skills in total.
+Skills are loaded on-demand to provide deep reference knowledge. Each lives at `.claude/skills/<name>/SKILL.md` (or `.agents/skills/<name>/SKILL.md` if you've copied them for Codex CLI). There are 16 skills in total.
 
 | Skill | What It Provides |
 |-------|-----------------|
@@ -936,12 +980,10 @@ Skills are loaded on-demand to provide deep reference knowledge. Each lives at `
 | `llms-txt` | llmstxt.org specification reference for generating `llms.txt` and `llms-full.txt` — LLM-friendly content indices for AI coding assistants |
 | `package-registry` | npm and PyPI metadata field auditing, cross-renderer README compatibility (GitHub vs npm vs PyPI), trusted publishing guidance, and registry-specific badges |
 | `user-guides` | Task-oriented how-to documentation with Diataxis framework, guide frontmatter standard, title conventions, numbered steps, copy-paste-ready code, error recovery, and cross-linked hub pages. Companion file `SKILL-templates.md` provides tutorial, reference, and explanation templates. |
-| `ai-context` | AI IDE context file generation with Signal Gate principle — AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md from codebase analysis. Includes init (bootstrap), update (incremental drift patching), promote (MEMORY.md → CLAUDE.md), and audit with Context Guard status |
-| `docs-verify` | Documentation validation — broken links, stale content, llms.txt sync, heading hierarchy, badge URLs, AI context health scoring, and CI-friendly output |
+| `docs-verify` | Documentation validation — broken links, stale content, llms.txt sync, heading hierarchy, badge URLs, lightweight AI context health check, and CI-friendly output |
 | `launch-artifacts` | Platform-specific launch content — Dev.to articles, HN posts, Reddit posts, Twitter threads, awesome list submissions |
 | `api-reference` | API reference generator guidance — TypeDoc, Sphinx, godoc, rustdoc configuration templates and comment conventions |
-| `doc-refresh` | Version-bump documentation orchestration — analyses git history, identifies affected docs, and delegates to existing skills for selective refresh |
-| `context-guard` | Context Guard installation reference — hook architecture, settings.json configuration, customisation, and troubleshooting *(Claude Code only)* |
+| `doc-refresh` | Version-bump documentation orchestration — analyses git history, identifies affected docs, delegates AI context refresh to ContextDocs if installed |
 | `visual-standards` | Visual formatting — emoji heading prefixes, horizontal rules, TOC anchors, callouts. Companion `SKILL-reference.md` has screenshot dimensions, HTML patterns, captions, shadows, image optimisation (loaded on demand) |
 | `geo-optimisation` | GEO patterns for AI citation — citation capsules, crisp definitions, atomic sections, comparison tables, statistics, semantic scaffolding |
 | `skill-authoring` | Token budget guidelines for writing skills — budgets by type, metadata/activation limits, measuring cost, anti-patterns |
@@ -970,21 +1012,21 @@ These commands are defined in `commands/*.md` and can be invoked as slash comman
 | `docs-audit` | Audit docs completeness, quality, GitHub metadata, AI context files, Diataxis coverage, and registry config |
 | `llms-txt` | Generate llms.txt and llms-full.txt for AI discoverability |
 | `user-guide` | Generate task-oriented user guides in `docs/guides/` with Diataxis classification |
-| `ai-context` | Generate AI context files using Signal Gate — supports `all`, `claude`, `agents`, `cursor`, `copilot`, `windsurf`, `cline`, `gemini`, `init`, `update`, `promote`, `audit` |
-| `docs-verify` | Verify links, freshness, llms.txt sync, heading hierarchy, badge URLs, and AI context health |
+| `ai-context` | **Stub** — redirects to [ContextDocs](https://github.com/littlebearapps/contextdocs) for AI context file management |
+| `docs-verify` | Verify links, freshness, llms.txt sync, heading hierarchy, badge URLs, and lightweight AI context health |
 | `launch` | Generate Dev.to articles, HN posts, Reddit posts, Twitter threads, awesome list submissions |
-| `doc-refresh` | Refresh all docs after version bumps — CHANGELOG, README features, user guides, AI context, llms.txt |
+| `doc-refresh` | Refresh all docs after version bumps — CHANGELOG, README features, user guides, llms.txt (AI context delegated to ContextDocs) |
 | `platform` | Detect hosting platform (GitHub/GitLab/Bitbucket) and report feature support |
 | `visual-standards` | Load visual formatting standards for screenshots, emoji headings, and image specs |
 | `geo` | Load GEO optimisation patterns for AI citation |
-| `context-guard` | Install, uninstall, or check status of Context Guard hooks for AI context file freshness and content filter protection *(Claude Code only)* |
+| `context-guard` | **Stub** — redirects to [ContextDocs](https://github.com/littlebearapps/contextdocs) for Context Guard hooks |
 
 ## Rules and Hooks (Claude Code Only)
 
 PitchDocs includes features that are specific to Claude Code and do not work in OpenCode, Codex CLI, or other tools:
 
-- **Rules** (4): `.claude/rules/doc-standards.md` (core quality standards — 4-question framework, benefits writing, badges; extended references in `visual-standards`, `geo-optimisation`, `skill-authoring` skills, auto-loaded), `.claude/rules/context-quality.md` (AI context file quality, auto-loaded), `.claude/rules/content-filter.md` (content filter quick reference, auto-loaded), and `.claude/rules/docs-awareness.md` (documentation trigger map — suggests PitchDocs commands when documentation-relevant work is detected, auto-loaded)
-- **Hooks** (5): `hooks/context-drift-check.sh` (post-commit drift detection), `hooks/context-structural-change.sh` (structural change reminders), `hooks/content-filter-guard.sh` (Write guard for high-risk OSS files), `hooks/context-guard-stop.sh` (session-end context doc nudge — Tier 1), and `hooks/context-commit-guard.sh` (pre-commit context doc enforcement — Tier 2) — opt-in via `/pitchdocs:context-guard install` (Claude Code)
+- **Rules** (3): `.claude/rules/doc-standards.md` (core quality standards — 4-question framework, benefits writing, badges; extended references in `visual-standards`, `geo-optimisation`, `skill-authoring` skills, auto-loaded), `.claude/rules/content-filter.md` (content filter quick reference, auto-loaded), and `.claude/rules/docs-awareness.md` (documentation trigger map — suggests PitchDocs commands when documentation-relevant work is detected, auto-loaded)
+- **Hooks** (1): `hooks/content-filter-guard.sh` (Write guard for high-risk OSS files) — opt-in via `/pitchdocs:context-guard install` redirects to ContextDocs for context-specific hooks
 
 ## AI Context Files
 
@@ -1002,7 +1044,9 @@ This repository includes context files for multiple AI coding tools:
 
 ---
 
-# Source: SUPPORT.md
+## Support
+
+Source: ./SUPPORT.md
 
 # Support
 
@@ -1045,11 +1089,13 @@ PitchDocs works with Claude Code, OpenCode, Codex CLI, Cursor, Gemini CLI, Aider
 
 ---
 
-# Source: CLAUDE.md
+## Claude.md
+
+Source: ./CLAUDE.md
 
 # PitchDocs
 
-Generate high-quality public-facing repository documentation with a marketing edge. PitchDocs is a Claude Code plugin (pure Markdown, zero runtime dependencies) with 18 skills, 3 agents (adaptive researcher → writer → reviewer pipeline), 4 quality rules, 15 slash commands, and 5 opt-in hooks.
+Generate high-quality public-facing repository documentation with a marketing edge. PitchDocs is a Claude Code plugin (pure Markdown, zero runtime dependencies) with 16 skills, 3 agents (adaptive researcher → writer → reviewer pipeline), 3 quality rules, 13 slash commands (+2 stubs redirecting to ContextDocs), and 1 opt-in hook.
 
 ## Project Architecture
 
@@ -1057,16 +1103,15 @@ This is a **100% Markdown-based plugin** — no JavaScript, no Python, no build 
 
 ```
 .claude-plugin/plugin.json      → Plugin manifest (name, version, keywords)
-.claude/skills/*/SKILL.md       → 18 reference knowledge modules (loaded on-demand)
+.claude/skills/*/SKILL.md       → 16 reference knowledge modules (loaded on-demand)
 .claude/agents/docs-writer.md   → Orchestration agent (coordinates researcher → write → reviewer pipeline)
 .claude/agents/docs-researcher.md → Codebase discovery and feature extraction agent
 .claude/agents/docs-reviewer.md → Post-generation quality validation agent
 .claude/rules/doc-standards.md  → Quality standards (auto-loaded every session)
-.claude/rules/context-quality.md → AI context file quality standards (auto-loaded; Claude Code only)
 .claude/rules/content-filter.md → Content filter quick reference (auto-loaded; Claude Code only)
 .claude/rules/docs-awareness.md → Documentation trigger map (auto-loaded; Claude Code only)
-commands/*.md                   → 15 slash command definitions
-hooks/*.sh                      → 5 opt-in hook scripts (Claude Code only)
+commands/*.md                   → 13 slash command definitions (+2 stubs redirecting to ContextDocs)
+hooks/*.sh                      → 1 opt-in hook script (Claude Code only)
 ```
 
 ## Conventions
@@ -1081,14 +1126,13 @@ hooks/*.sh                      → 5 opt-in hook scripts (Claude Code only)
 |------|---------|
 | `plugin.json` | Version, description, keywords — update on every release |
 | `doc-standards.md` | Quality rule auto-loaded in every session — core standards for tone, benefits, badges. Extended references in `visual-standards`, `geo-optimisation`, and `skill-authoring` skills |
-| `context-quality.md` | AI context file quality rule — cross-file consistency, path verification, sync points (Claude Code only) |
 | `content-filter.md` | Content filter quick reference rule — risk levels, fetch commands, chunked writing guidance (auto-loaded; Claude Code only) |
 | `docs-awareness.md` | Documentation trigger map rule — suggests PitchDocs commands when documentation-relevant work is detected (auto-loaded; Claude Code only) |
 | `docs-writer.md` | Orchestrator agent — lightweight inline research for small projects (< 20 files), full sub-agent research for larger projects, conditional reviewer (skipped for new READMEs), content filter mitigations |
 | `docs-researcher.md` | Codebase discovery agent — platform detection, feature extraction, security signals, lobby split planning. Only spawned for projects with 20+ files. |
 | `docs-reviewer.md` | Quality validation agent — checklist, banned phrases scan, GEO scoring, 6-dimension quality rubric. Skipped for new READMEs; runs for updates or with `--review`. |
-| `hooks/*.sh` | Context Guard hooks — post-commit drift detection, structural change reminders, content filter write guard, session-end context nudge, and pre-commit context enforcement (Claude Code only, opt-in) |
-| `upstream-versions.json` | Tracks 8 pinned spec versions — checked monthly by GitHub Action |
+| `hooks/*.sh` | Content filter write guard (Claude Code only, opt-in) |
+| `upstream-versions.json` | Tracks 7 pinned spec versions — checked monthly by GitHub Action |
 | `llms.txt` | AI-readable content index — must be updated when files are added/removed |
 | `AGENTS.md` | Cross-tool AI context (Codex CLI format) — must stay in sync with skills/commands |
 
@@ -1101,13 +1145,19 @@ hooks/*.sh                      → 5 opt-in hook scripts (Claude Code only)
 5. **Adding platform support**: Update the `platform-profiles` skill for new platform equivalents. Existing skills reference it via cross-link.
 6. **Bumping version**: Handled automatically by release-please from conventional commit messages
 
+## Relationship to ContextDocs
+
+AI context file management (AGENTS.md, CLAUDE.md, .cursorrules, etc.) has moved to [ContextDocs](https://github.com/littlebearapps/contextdocs). PitchDocs retains `/pitchdocs:ai-context` and `/pitchdocs:context-guard` as stub commands that redirect users to install ContextDocs. The `doc-refresh` skill delegates Step 5 to ContextDocs if installed. The `docs-verify` skill uses a lightweight context health check; full scoring requires ContextDocs.
+
 ## Promotion
 
 Listing and promotion drafts, status tracking, and submission content live in `docs/promotion/`. This includes awesome list PR content, Reddit post drafts, directory submission templates, and a `STATUS.md` tracking all listings and their current state. Refer to these files when preparing new submissions or checking on existing ones.
 
 ---
 
-# Source: docs/README.md
+## Docs Hub
+
+Source: ./docs/README.md
 
 # PitchDocs Documentation
 
@@ -1130,6 +1180,7 @@ Step-by-step instructions for common tasks:
 | [Concepts](guides/concepts.md) | How PitchDocs thinks: evidence-based features, GEO, 4-question test, Diataxis, Lobby Principle |
 | [Troubleshooting](guides/troubleshooting.md) | Content filter errors, score interpretation, badge issues, cross-tool limitations, FAQ |
 | [Other AI Tools](guides/other-ai-tools.md) | Set up PitchDocs with Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose |
+| [Untether Integration](guides/untether-integration.md) | PitchDocs with Untether — Context Guard moved to ContextDocs |
 
 ## Quick Links
 
@@ -1148,7 +1199,9 @@ PitchDocs includes 18 reference skills loaded on-demand. See the [Available Skil
 
 ---
 
-# Source: docs/guides/getting-started.md
+## Getting Started Guide
+
+Source: ./docs/guides/getting-started.md
 
 ---
 title: "Getting Started with PitchDocs"
@@ -1263,8 +1316,6 @@ Use any command on its own for specific doc types:
 /pitchdocs:roadmap            # ROADMAP.md from GitHub milestones
 /pitchdocs:user-guide         # User guides in docs/guides/
 /pitchdocs:llms-txt           # llms.txt for AI discoverability
-/pitchdocs:ai-context init    # Bootstrap AGENTS.md, CLAUDE.md, .cursorrules, and 4 more (Signal Gate filtered)
-/pitchdocs:ai-context update  # Patch only what drifted since last update
 /pitchdocs:docs-verify        # Validate links, freshness, and consistency
 /pitchdocs:launch             # Dev.to articles, HN posts, Reddit posts, Twitter threads
 ```
@@ -1286,37 +1337,27 @@ This checks for:
 - Heading hierarchy issues (no level skipping)
 - Badge URL validity
 - Security issues (leaked credentials, internal paths, internal hostnames)
-- AI context health (line budgets, discoverable content, stale paths, cross-file consistency)
-- Quality score (0–100 across 5 dimensions with A–F grade bands)
+- AI context health (lightweight presence and staleness check — install [ContextDocs](https://github.com/littlebearapps/contextdocs) for full scoring)
+- Quality score (0–100 across 6 dimensions with A–F grade bands)
 - Token budget compliance (skill files within size targets)
 
 ---
 
-## 7. Install Context Guard Hooks (Optional, Claude Code Only)
+## 7. AI Context Files and Context Guard (Optional)
 
-Context Guard adds five hooks to your project that run automatically during your Claude Code sessions:
+For AI context file management (AGENTS.md, CLAUDE.md, .cursorrules, etc.) and Context Guard hooks, install [ContextDocs](https://github.com/littlebearapps/contextdocs) separately:
 
 ```bash
-/pitchdocs:context-guard install
+/plugin install contextdocs@lba-plugins
+/contextdocs:ai-context init          # Bootstrap all 7 context file types
+/contextdocs:context-guard install    # Install drift detection hooks (Claude Code only)
 ```
-
-What it installs:
-
-- **Drift detection** — warns after commits if AI context files (AGENTS.md, CLAUDE.md) are stale
-- **Structural change reminders** — nudges you to update context files when you modify commands, skills, or config
-- **Content filter guard** — prevents content filter errors (HTTP 400) by intercepting Write operations on files like CODE_OF_CONDUCT.md, LICENSE, and SECURITY.md, advising you to fetch them from canonical URLs instead
-- **Session-end context nudge (Tier 1)** — reminds you to update AI context files before ending a session when structural changes were made
-- **Pre-commit context enforcement (Tier 2)** — blocks commits with stale AI context files when structural files are staged
-
-Check status anytime with `/pitchdocs:context-guard status`. Uninstall with `/pitchdocs:context-guard uninstall`.
-
-**Note:** These hooks are Claude Code-specific. If your team uses OpenCode or Codex CLI alongside Claude Code, the hooks are silently ignored by those tools.
 
 ---
 
 ## What's Next?
 
-- **Manage AI context files** — Run `/pitchdocs:ai-context init` to bootstrap all 7 context files, or `update` to patch only what drifted. Use `promote` to move stable patterns from Claude's auto-memory to CLAUDE.md for the whole team.
+- **Manage AI context files** — Install [ContextDocs](https://github.com/littlebearapps/contextdocs) for AI context file generation, drift detection, and MEMORY.md promotion.
 - **Improve your README further** — Run `/pitchdocs:readme` again with specific focus areas (e.g., `/pitchdocs:readme focus on the comparison table`)
 - **Check your quality score** — Run `/pitchdocs:docs-verify score` to get a numeric rating and actionable suggestions for improvement
 - **Set up CI verification** — The `/pitchdocs:docs-verify` command outputs CI-friendly results for GitHub Actions
@@ -1329,7 +1370,9 @@ Check status anytime with `/pitchdocs:context-guard status`. Uninstall with `/pi
 
 ---
 
-# Source: docs/guides/workflows.md
+## Workflows Guide
+
+Source: ./docs/guides/workflows.md
 
 ---
 title: "Workflow Cookbook"
@@ -1378,9 +1421,10 @@ Generate the full documentation set for a project you're about to open-source or
    /pitchdocs:docs-audit fix
    ```
 
-5. **Bootstrap AI context files** — help other developers' AI tools understand your project (generates all 7 file types using Signal Gate — lean, effective context):
+5. **Bootstrap AI context files** — for AI context file management, install [ContextDocs](https://github.com/littlebearapps/contextdocs):
    ```
-   /pitchdocs:ai-context init
+   /plugin install contextdocs@lba-plugins
+   /contextdocs:ai-context init
    ```
 
 6. **Generate llms.txt** — make the repo AI-discoverable:
@@ -1471,28 +1515,8 @@ Prevent documentation drift with regular maintenance.
 | After every release | `/pitchdocs:doc-refresh` (or `/pitchdocs:doc-refresh v1.x.0`) |
 | Monthly (active projects) | `/pitchdocs:docs-verify` to check for staleness |
 | Quarterly | `/pitchdocs:features audit` to catch undocumented features |
-| After major refactors | `/pitchdocs:ai-context update` to patch drift, then `audit` to verify |
-| After extended Claude sessions | `/pitchdocs:ai-context promote` to move stable MEMORY.md patterns to CLAUDE.md |
-
-### Set up Context Guard (Claude Code only)
-
-Install hooks that automatically warn about stale docs:
-
-```
-/pitchdocs:context-guard install
-```
-
-This adds five hooks:
-- **Drift detection** — warns after commits if AI context files are stale
-- **Structural change reminders** — nudges you when commands, skills, or config change
-- **Content filter guard** — prevents HTTP 400 errors on high-risk file writes
-- **Session-end context nudge (Tier 1)** — reminds you to update context files before ending a session
-- **Pre-commit context enforcement (Tier 2)** — blocks commits when structural files are staged without context updates
-
-Check status anytime:
-```
-/pitchdocs:context-guard status
-```
+| After major refactors | Install [ContextDocs](https://github.com/littlebearapps/contextdocs) and run `/contextdocs:ai-context update` to patch drift |
+| After extended Claude sessions | Install ContextDocs and run `/contextdocs:ai-context promote` to move MEMORY.md patterns to CLAUDE.md |
 
 ### Add docs verification to CI
 
@@ -1545,9 +1569,9 @@ After adding a feature to your codebase, update docs to reflect it.
    /pitchdocs:doc-refresh guides
    ```
 
-5. **Patch AI context files** (only updates what drifted, preserves human edits):
+5. **Patch AI context files** (if [ContextDocs](https://github.com/littlebearapps/contextdocs) installed):
    ```
-   /pitchdocs:ai-context update
+   /contextdocs:ai-context update
    ```
 
 6. **Verify everything is consistent**:
@@ -1561,7 +1585,9 @@ After adding a feature to your codebase, update docs to reflect it.
 
 ---
 
-# Source: docs/guides/command-reference.md
+## Command Reference
+
+Source: ./docs/guides/command-reference.md
 
 ---
 title: "Command Reference"
@@ -1600,13 +1626,13 @@ Each command maps to a skill file in `.claude/skills/`. The mapping:
 | `/pitchdocs:roadmap` | `.claude/skills/roadmap/SKILL.md` |
 | `/pitchdocs:user-guide` | `.claude/skills/user-guides/SKILL.md` |
 | `/pitchdocs:llms-txt` | `.claude/skills/llms-txt/SKILL.md` |
-| `/pitchdocs:ai-context` | `.claude/skills/ai-context/SKILL.md` |
+| `/pitchdocs:ai-context` | Stub — redirects to [ContextDocs](https://github.com/littlebearapps/contextdocs) |
 | `/pitchdocs:doc-refresh` | `.claude/skills/doc-refresh/SKILL.md` |
 | `/pitchdocs:launch` | `.claude/skills/launch-artifacts/SKILL.md` |
 | `/pitchdocs:platform` | `.claude/skills/platform-profiles/SKILL.md` |
 | `/pitchdocs:visual-standards` | `.claude/skills/visual-standards/SKILL.md` |
 | `/pitchdocs:geo` | `.claude/skills/geo-optimisation/SKILL.md` |
-| `/pitchdocs:context-guard` | `.claude/skills/context-guard/SKILL.md` (Claude Code only) |
+| `/pitchdocs:context-guard` | Stub — redirects to [ContextDocs](https://github.com/littlebearapps/contextdocs) (Claude Code only) |
 
 See the [Other AI Tools guide](other-ai-tools.md) for full per-tool setup instructions.
 
@@ -1784,23 +1810,11 @@ Follows the [llmstxt.org](https://llmstxt.org/) specification.
 
 ## `/pitchdocs:ai-context`
 
-Generate lean AI IDE context files using the Signal Gate principle — only what agents cannot discover on their own.
+**Stub** — this command redirects to [ContextDocs](https://github.com/littlebearapps/contextdocs) for AI context file management. Install ContextDocs separately:
 
-| Detail | Value |
-|--------|-------|
-| Arguments | **Generate:** `claude`, `agents`, `cursor`, `copilot`, `windsurf`, `cline`, `gemini`, `all` — **Lifecycle:** `init`, `update`, `promote`, `audit` |
-| Generates | Up to 7 files (AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md) |
-| Cross-tool | Yes |
-
-**Examples:**
 ```
-/pitchdocs:ai-context              # Generate all 7 context files
-/pitchdocs:ai-context agents       # AGENTS.md only
-/pitchdocs:ai-context cursor       # .cursorrules only
-/pitchdocs:ai-context init         # Bootstrap: generate missing files, offer hooks, run audit
-/pitchdocs:ai-context update       # Patch only what drifted (preserves human edits)
-/pitchdocs:ai-context promote      # Scan MEMORY.md for patterns to promote to CLAUDE.md
-/pitchdocs:ai-context audit        # Check for drift, stale paths, and Context Guard status
+/plugin install contextdocs@lba-plugins
+/contextdocs:ai-context init
 ```
 
 ---
@@ -1912,22 +1926,12 @@ Load GEO optimisation patterns for AI citation.
 
 ## `/pitchdocs:context-guard`
 
-Install, uninstall, or check Context Guard hooks. **Claude Code only.**
+**Stub** — this command redirects to [ContextDocs](https://github.com/littlebearapps/contextdocs) for Context Guard hooks. Install ContextDocs separately:
 
-| Detail | Value |
-|--------|-------|
-| Arguments | `install`, `uninstall`, `status` |
-| Generates | `.claude/hooks/*.sh`, entries in `.claude/settings.json` |
-| Cross-tool | **No — Claude Code only** |
-
-**Examples:**
 ```
-/pitchdocs:context-guard install   # Install 5 hooks into the current project
-/pitchdocs:context-guard status    # Check installation state and run drift check
-/pitchdocs:context-guard uninstall # Remove hooks (preserves other hooks)
+/plugin install contextdocs@lba-plugins
+/contextdocs:context-guard install
 ```
-
-Installs 5 hooks: drift detection (warns after commits), structural change reminders (nudges on config changes), content filter guard (prevents HTTP 400 on high-risk files), session-end context nudge (Tier 1), and pre-commit context enforcement (Tier 2).
 
 ---
 
@@ -1935,7 +1939,9 @@ Installs 5 hooks: drift detection (warns after commits), structural change remin
 
 ---
 
-# Source: docs/guides/customising-output.md
+## Customising Output Guide
+
+Source: ./docs/guides/customising-output.md
 
 ---
 title: "Customising PitchDocs Output"
@@ -2077,9 +2083,6 @@ After a release, you don't always need to refresh everything. Target specific ar
 /pitchdocs:doc-refresh changelog         # Only CHANGELOG.md
 /pitchdocs:doc-refresh readme            # Only README.md features and metrics
 /pitchdocs:doc-refresh guides            # Only affected user guides
-/pitchdocs:doc-refresh context           # Only AI context files and llms.txt
-/pitchdocs:ai-context update             # Patch only what drifted (preserves human edits)
-/pitchdocs:ai-context promote            # Move stable MEMORY.md patterns to CLAUDE.md
 /pitchdocs:doc-refresh release-notes     # Only GitHub release body
 ```
 
@@ -2110,7 +2113,9 @@ The transformation applies the feature-to-benefit pattern: `[Feature] so you can
 
 ---
 
-# Source: docs/guides/concepts.md
+## Concepts Guide
+
+Source: ./docs/guides/concepts.md
 
 ---
 title: "How PitchDocs Thinks"
@@ -2270,28 +2275,7 @@ AI context files (AGENTS.md, CLAUDE.md, .cursorrules, etc.) tell AI coding assis
 
 **Exclude (discoverable):** Directory listings, dependency lists, file trees, framework conventions, architecture overviews — agents discover these by reading the codebase.
 
-PitchDocs applies Signal Gate when generating context files via `/pitchdocs:ai-context`. The result: leaner files that stay within recommended line budgets (CLAUDE.md under 80 lines, AGENTS.md under 120 lines) and contain only high-signal content.
-
----
-
-## Context Drift Detection
-
-AI coding assistants (Claude Code, Cursor, Copilot, Windsurf) rely on context files to understand your project's conventions, architecture, and constraints. When your code changes but context files don't, the AI operates on stale information — suggesting deprecated patterns, referencing moved files, or missing new commands.
-
-**What drifts:**
-- File paths referenced in AGENTS.md or CLAUDE.md that no longer exist
-- Commands listed in context files that were renamed or removed
-- Architecture descriptions that don't reflect recent refactors
-
-**How PitchDocs detects it:**
-PitchDocs' Context Guard hooks (Claude Code only) run automatically after commits and file edits:
-
-- **Post-commit check** — compares modification dates of context files against code changes and flags stale references
-- **Structural change reminder** — fires when you modify commands, skills, agents, or rules and reminds you which context files need updating
-
-Install with `/pitchdocs:context-guard install`. See [Workflows — Set Up Context Guard](workflows.md#set-up-context-guard) for details.
-
-**Fixing drift:** Run `/pitchdocs:ai-context update` to patch only what drifted (preserves human edits). Run `/pitchdocs:ai-context audit` to check drift without making changes. Use `/pitchdocs:ai-context promote` to move stable patterns from Claude's auto-memory (MEMORY.md) into CLAUDE.md for the whole team.
+For AI context file generation and management using the Signal Gate principle, install [ContextDocs](https://github.com/littlebearapps/contextdocs) — it handles context file generation, drift detection, Context Guard hooks, and MEMORY.md promotion.
 
 ---
 
@@ -2314,7 +2298,9 @@ Quick start sections follow Cognitive Load Theory principles: leverage prior kno
 
 ---
 
-# Source: docs/guides/troubleshooting.md
+## Troubleshooting Guide
+
+Source: ./docs/guides/troubleshooting.md
 
 ---
 title: "Troubleshooting & FAQ"
@@ -2465,13 +2451,17 @@ Not all PitchDocs features work outside Claude Code:
 
 | Feature | Claude Code | OpenCode | Codex CLI | Cursor / Others |
 |---------|------------|----------|-----------|-----------------|
-| Skills (18 SKILL.md files) | Native | Native | Copy to `.agents/skills/` | Reference on demand |
+| Skills (16 SKILL.md files) | Native | Native | Copy to `.agents/skills/` | Reference on demand |
 | Slash commands (15) | Native | Native | Copy to prompts | Not supported |
 | Quality rules (auto-loaded) | Yes | No | No | Cursor: `.cursor/rules/` |
-| Context Guard hooks | Yes (opt-in) | No | No | No |
+| Content filter hook | Yes (opt-in) | No | No | No |
 | AGENTS.md context | Loaded | Primary context | Primary context | Not used |
 
 If you're using a non-Claude tool and a command or workflow doesn't behave as expected, check the [Other AI Tools guide](other-ai-tools.md) for tool-specific setup instructions.
+
+### Where did Context Guard and AI context commands go?
+
+They moved to [ContextDocs](https://github.com/littlebearapps/contextdocs) in PitchDocs v2.0.0. Install it separately with `/plugin install contextdocs@lba-plugins`.
 
 ---
 
@@ -2499,7 +2489,9 @@ PitchDocs generates docs based on its quality standards, but the output is alway
 
 ---
 
-# Source: docs/guides/other-ai-tools.md
+## Other AI Tools Guide
+
+Source: ./docs/guides/other-ai-tools.md
 
 ---
 title: "Use PitchDocs with Other AI Tools"
@@ -2566,14 +2558,13 @@ Not all PitchDocs features work in every tool. Here's what's portable and what's
 
 | Feature | Claude Code | OpenCode | Codex CLI | Cursor / Windsurf / Cline / Gemini CLI |
 |---------|------------|----------|-----------|----------------------------------------|
-| Skills (18 SKILL.md files) | Native | Native (`.claude/skills/` fallback) | Copy to `.agents/skills/` | Reference on demand |
+| Skills (16 SKILL.md files) | Native | Native (`.claude/skills/` fallback) | Copy to `.agents/skills/` | Reference on demand |
 | Slash commands (15) | Native | Native (`.claude/commands/` fallback) | Copy to prompts | Not supported |
 | Docs-writer agent | Native | Likely supported | Reference manually | Cursor: `.cursor/agents/` |
 | Doc-standards rule | Auto-loaded | Copy to context | Copy to context | Cursor: `.cursor/rules/`; others: copy to context file |
-| Context-quality rule | Auto-loaded | Copy to context | Copy to context | Copy to tool-specific context file |
 | Content-filter rule | Auto-loaded | Copy to context | Copy to context | Copy to tool-specific context file |
 | Docs-awareness rule | Auto-loaded | Not applicable | Not applicable | Not applicable |
-| Context Guard hooks (5) | Native (opt-in) | Not supported | Not supported | Not supported |
+| Content filter hook (1) | Native (opt-in) | Not supported | Not supported | Not supported |
 | AGENTS.md | Loaded | Primary context file | Primary context file | Not used |
 | CLAUDE.md | Loaded | Fallback (if no AGENTS.md) | Not used | Not used |
 
@@ -2583,7 +2574,7 @@ Not all PitchDocs features work in every tool. Here's what's portable and what's
 
 [OpenCode](https://opencode.ai/) reads `.claude/skills/` natively — PitchDocs works out of the box with no extra setup.
 
-**Install** the same way as Claude Code (clone or add as a plugin), then invoke skills by name in your OpenCode session. The 18 SKILL.md files, the docs-writer agent, and the doc-standards rule are all picked up automatically.
+**Install** the same way as Claude Code (clone or add as a plugin), then invoke skills by name in your OpenCode session. The 16 SKILL.md files, the docs-writer agent, and the doc-standards rule are all picked up automatically.
 
 OpenCode also supports MCP servers, so if you have the GitHub MCP server configured, the docs-writer agent can access repository metadata, issues, and releases just as it does in Claude Code.
 
@@ -2599,7 +2590,7 @@ OpenCode also supports MCP servers, so if you have the GitHub MCP server configu
 # From your project root (not the PitchDocs repo)
 PITCHDOCS="/path/to/pitchdocs"
 
-# Copy all 18 skills
+# Copy all 16 skills
 cp -r "$PITCHDOCS/.claude/skills/"* .agents/skills/
 
 # Copy the quality standards as AGENTS.md (Codex reads this automatically)
@@ -2681,7 +2672,7 @@ Create `.windsurfrules` in your project root:
 cp /path/to/pitchdocs/.claude/rules/doc-standards.md .windsurfrules
 ```
 
-Or use `/ai-context windsurf` in Claude Code to generate a tailored `.windsurfrules` from your codebase analysis.
+Or install [ContextDocs](https://github.com/littlebearapps/contextdocs) and use `/contextdocs:ai-context windsurf` to generate a tailored `.windsurfrules` from your codebase analysis.
 
 **Step 2 — Reference skills on demand:**
 
@@ -2706,7 +2697,7 @@ Create `.clinerules` in your project root:
 cp /path/to/pitchdocs/.claude/rules/doc-standards.md .clinerules
 ```
 
-Or use `/ai-context cline` in Claude Code to generate a tailored `.clinerules` from your codebase analysis.
+Or install [ContextDocs](https://github.com/littlebearapps/contextdocs) and use `/contextdocs:ai-context cline` to generate a tailored `.clinerules` from your codebase analysis.
 
 **Step 2 — Reference skills on demand:**
 
@@ -2806,7 +2797,40 @@ This is especially useful when you're not sure which skill to use — `llms.txt`
 
 ---
 
-# Source: .claude/skills/public-readme/SKILL.md
+## Untether Integration Guide
+
+Source: ./docs/guides/untether-integration.md
+
+---
+title: "PitchDocs with Untether"
+description: "Context Guard hooks have moved to ContextDocs. This page redirects to the new location."
+type: explanation
+difficulty: beginner
+last_verified: "2.0.0"
+related:
+  - guides/getting-started.md
+  - guides/workflows.md
+order: 8
+---
+
+# PitchDocs with Untether
+
+Context Guard hooks and AI context file management have moved to [ContextDocs](https://github.com/littlebearapps/contextdocs).
+
+All other PitchDocs commands (README generation, changelog, features, docs-audit, docs-verify, launch artifacts, etc.) work identically in [Untether](https://github.com/littlebearapps/untether) sessions — no configuration needed.
+
+For Context Guard's Untether-aware session-end nudge behaviour, see the ContextDocs documentation after installing:
+
+```
+/plugin install contextdocs@lba-plugins
+/contextdocs:context-guard install
+```
+
+---
+
+## Public README
+
+Source: ./.claude/skills/public-readme/SKILL.md
 
 ---
 name: public-readme
@@ -2977,7 +3001,9 @@ Brief section with link to CONTRIBUTING.md. Include open issues link and discuss
 
 ---
 
-# Source: .claude/skills/public-readme/SKILL-reference.md
+## Public README Reference
+
+Source: ./.claude/skills/public-readme/SKILL-reference.md
 
 # Public README — Extended Reference
 
@@ -3116,7 +3142,9 @@ If published to npm or PyPI, load the `package-registry` skill for the full comp
 
 ---
 
-# Source: .claude/skills/feature-benefits/SKILL.md
+## Feature Benefits
+
+Source: ./.claude/skills/feature-benefits/SKILL.md
 
 ---
 name: feature-benefits
@@ -3246,7 +3274,9 @@ For the full translation table by signal category, badge mapping, and common pat
 
 ---
 
-# Source: .claude/skills/feature-benefits/SKILL-signals.md
+## Feature Benefits Signals
+
+Source: ./.claude/skills/feature-benefits/SKILL-signals.md
 
 # Feature-Benefits — Signal Categories & Patterns
 
@@ -3438,7 +3468,9 @@ When a benefit claim maps to a verifiable metric (test coverage, bundle size, do
 
 ---
 
-# Source: .claude/skills/changelog/SKILL.md
+## Changelog
+
+Source: ./.claude/skills/changelog/SKILL.md
 
 ---
 name: changelog
@@ -3616,7 +3648,9 @@ See the `docs-writer` agent (Content Filter Mitigation section) for the full str
 
 ---
 
-# Source: .claude/skills/roadmap/SKILL.md
+## Roadmap
+
+Source: ./.claude/skills/roadmap/SKILL.md
 
 ---
 name: roadmap
@@ -3771,7 +3805,9 @@ glab issue list --label "feature" --all --per-page 50
 
 ---
 
-# Source: .claude/skills/pitchdocs-suite/SKILL.md
+## PitchDocs Suite
+
+Source: ./.claude/skills/pitchdocs-suite/SKILL.md
 
 ---
 name: pitchdocs-suite
@@ -3807,10 +3843,10 @@ A well-documented public repository should have these files:
 | `SUPPORT.md` | Where to get help — issues, discussions, external channels | This skill |
 | `.github/release.yml` | Auto-generated release note categories | This skill |
 | `llms.txt` | LLM-friendly content index for AI tools (Cursor, Windsurf, Claude Code) | `llms-txt` skill |
-| `AGENTS.md` | Cross-tool AI agent context — conventions, architecture, key commands | `ai-context` skill |
-| `.github/copilot-instructions.md` | GitHub Copilot repository-level instructions | `ai-context` skill |
-| `.windsurfrules` | Windsurf (Cascade AI) project-level context | `ai-context` skill |
-| `.clinerules` | Cline VS Code extension project-level context | `ai-context` skill |
+| `AGENTS.md` | Cross-tool AI agent context — conventions, architecture, key commands | [ContextDocs](https://github.com/littlebearapps/contextdocs) plugin (install separately) |
+| `.github/copilot-instructions.md` | GitHub Copilot repository-level instructions | [ContextDocs](https://github.com/littlebearapps/contextdocs) plugin (install separately) |
+| `.windsurfrules` | Windsurf (Cascade AI) project-level context | [ContextDocs](https://github.com/littlebearapps/contextdocs) plugin (install separately) |
+| `.clinerules` | Cline VS Code extension project-level context | [ContextDocs](https://github.com/littlebearapps/contextdocs) plugin (install separately) |
 | `CODE_OF_CONDUCT.md` | Community behaviour standards | This skill |
 | `SECURITY.md` | Vulnerability reporting process | This skill |
 | `.github/ISSUE_TEMPLATE/config.yml` | Issue template chooser config | This skill |
@@ -3823,9 +3859,9 @@ A well-documented public repository should have these files:
 | File | Purpose | Generator |
 |------|---------|-----------|
 | `ROADMAP.md` | Public development roadmap | `roadmap` skill |
-| `CLAUDE.md` | Project-specific Claude Code context — coding standards, architecture, key paths | `ai-context` skill |
-| `.cursorrules` | Cursor-specific rules derived from codebase conventions | `ai-context` skill |
-| `GEMINI.md` | Gemini CLI project context (or `.gemini/GEMINI.md`) | `ai-context` skill |
+| `CLAUDE.md` | Project-specific Claude Code context — coding standards, architecture, key paths | [ContextDocs](https://github.com/littlebearapps/contextdocs) plugin (install separately) |
+| `.cursorrules` | Cursor-specific rules derived from codebase conventions | [ContextDocs](https://github.com/littlebearapps/contextdocs) plugin (install separately) |
+| `GEMINI.md` | Gemini CLI project context (or `.gemini/GEMINI.md`) | [ContextDocs](https://github.com/littlebearapps/contextdocs) plugin (install separately) |
 | `docs/guides/configuration.md` | All config options explained | `user-guides` skill |
 | `docs/guides/deployment.md` | Production deployment guide | `user-guides` skill |
 | `docs/guides/troubleshooting.md` | Common issues and solutions | `user-guides` skill |
@@ -4011,7 +4047,9 @@ The plugin checks for LICENSE presence but does not generate the file content �
 
 ---
 
-# Source: .claude/skills/pitchdocs-suite/SKILL-templates.md
+## PitchDocs Suite Templates
+
+Source: ./.claude/skills/pitchdocs-suite/SKILL-templates.md
 
 # Documentation Templates
 
@@ -4412,7 +4450,9 @@ keywords:
 
 ---
 
-# Source: .claude/skills/llms-txt/SKILL.md
+## llms.txt
+
+Source: ./.claude/skills/llms-txt/SKILL.md
 
 ---
 name: llms-txt
@@ -4624,7 +4664,9 @@ llms.txt should be updated when documentation changes significantly:
 
 ---
 
-# Source: .claude/skills/package-registry/SKILL.md
+## Package Registry
+
+Source: ./.claude/skills/package-registry/SKILL.md
 
 ---
 name: package-registry
@@ -4864,7 +4906,9 @@ Badge order (after CI/coverage badges):
 
 ---
 
-# Source: .claude/skills/user-guides/SKILL.md
+## User Guides
+
+Source: ./.claude/skills/user-guides/SKILL.md
 
 ---
 name: user-guides
@@ -5343,7 +5387,9 @@ Extended templates for the remaining three Diataxis types (tutorial, reference, 
 
 ---
 
-# Source: .claude/skills/user-guides/SKILL-templates.md
+## User Guide Templates
+
+Source: ./.claude/skills/user-guides/SKILL-templates.md
 
 # Diátaxis Document Templates
 
@@ -5610,512 +5656,9 @@ What did this approach cost? Every design choice has downsides:
 
 ---
 
-# Source: .claude/skills/ai-context/SKILL.md
+## Docs Verify
 
----
-name: ai-context
-description: Generates lean AI IDE context files (AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md) from codebase analysis. Applies the Signal Gate principle — only includes what agents cannot discover on their own. Use when setting up, auditing, or updating AI tool context for a repository.
-version: "2.0.0"
----
-
-# AI Context File Generator
-
-## Philosophy
-
-AI coding assistants work better when they understand a project's conventions, architecture, and constraints. Context files tell AI tools **how** to work with the codebase — the things they cannot discover on their own.
-
-This skill generates context files for multiple AI tools from a single codebase analysis. The same scan produces output for Claude Code, Codex CLI, Cursor, GitHub Copilot, and Gemini CLI.
-
-## The Signal Gate
-
-Research shows that auto-generated context files **reduce** AI task success by ~3% and increase token costs by 20% (ETH Zurich, Feb 2026). Overstuffed files cause agents to ignore the instructions that matter. Less is more.
-
-**The test for every line:** Would removing this cause the AI to make a mistake? If not, cut it.
-
-### What to Include (Non-Discoverable)
-
-Only include information the agent **cannot** figure out by reading source code:
-
-- **Non-obvious conventions** — import order that differs from defaults, naming patterns that break from language norms, spelling locale (e.g., Australian English)
-- **Hard constraints** — "never use `any`", "always use `direnv exec`", "no commits to main"
-- **Key commands** — test, build, deploy, lint (agents cannot guess these without running them)
-- **Security rules** — secret management, credential handling, input validation requirements
-- **Environment quirks** — required env vars, non-standard tooling (e.g., `uv` instead of `pip`, `bun` instead of `npm`)
-
-### What to Exclude (Discoverable)
-
-Agents discover these by reading files — including them wastes tokens and dilutes signal:
-
-- **Directory listings / file trees** — agents can `ls` and `find`
-- **Dependency lists** — agents read `package.json`, `pyproject.toml`, `go.mod`
-- **Architecture overviews** — agents read source code and infer structure
-- **Framework conventions** — agents already know React, Express, Django, etc.
-- **API patterns visible in source** — agents read the code directly
-- **Key file tables** — agents discover entry points and configs via manifest files
-
-### Framing
-
-Each line in a context file signals something confusing enough to trip an AI agent. Consider fixing the root cause rather than documenting the workaround (Osmani, 2026). Describe the **end state** you want, not step-by-step instructions (Spotify Honk, 2025).
-
-### Line Budgets
-
-| File | Target | Hard Max |
-|------|--------|----------|
-| CLAUDE.md | Under 80 lines | 120 lines |
-| AGENTS.md | Under 120 lines | 160 lines |
-| Other context files | Under 60 lines | 100 lines |
-
-## Supported Context Files
-
-| File | AI Tool | Purpose | Adoption |
-|------|---------|---------|----------|
-| `AGENTS.md` | Codex CLI, Cursor, Gemini CLI, Claude Code, OpenCode, Copilot, RooCode | Cross-tool agent context — identity, capabilities, conventions | 60,000+ repos |
-| `CLAUDE.md` | Claude Code | Project-specific instructions loaded on every session | Native to Claude Code |
-| `.cursorrules` | Cursor | Editor-specific rules for code generation | Native to Cursor |
-| `.github/copilot-instructions.md` | GitHub Copilot | Repository-level instructions for Copilot suggestions | Native to Copilot |
-| `.windsurfrules` | Windsurf | Project-specific rules for Windsurf's Cascade AI | Native to Windsurf |
-| `.clinerules` | Cline (VS Code extension) | Project context for autonomous Cline tasks | Native to Cline |
-| `GEMINI.md` | Gemini CLI | Project context loaded at the start of every Gemini CLI session | Native to Gemini CLI |
-
-### CLAUDE.md vs Auto-Memory (Claude Code)
-
-Claude Code maintains three knowledge layers. PitchDocs generates CLAUDE.md — never MEMORY.md.
-
-| Layer | File | Who Writes | Shared via Git? |
-|-------|------|-----------|-----------------|
-| Project instructions | `CLAUDE.md` | Developer / PitchDocs | Yes |
-| Auto-memory | `~/.claude/.../MEMORY.md` | Claude itself | No (local only) |
-| Session memory | (in-context) | Claude itself | No |
-
-**Boundary rule:** CLAUDE.md contains instructions *for* Claude. MEMORY.md contains notes *by* Claude. If the same insight keeps appearing in MEMORY.md across sessions, promote it to CLAUDE.md.
-
-## Codebase Analysis Workflow
-
-### Step 1: Detect Project Profile
-
-```bash
-# Language and runtime
-ls package.json pyproject.toml Cargo.toml go.mod pom.xml build.gradle 2>/dev/null
-
-# Framework detection
-cat package.json 2>/dev/null | grep -E '"(react|next|express|fastify|hono|astro|svelte)"'
-cat pyproject.toml 2>/dev/null | grep -E '(fastapi|django|flask|starlette)'
-
-# Test runner
-ls jest.config* vitest.config* pytest.ini pyproject.toml .mocharc* 2>/dev/null
-grep -l "test" package.json 2>/dev/null
-
-# Linter/formatter
-ls .eslintrc* eslint.config* .prettierrc* biome.json ruff.toml .flake8 2>/dev/null
-
-# TypeScript configuration
-ls tsconfig*.json 2>/dev/null
-
-# Monorepo detection
-ls pnpm-workspace.yaml lerna.json nx.json turbo.json 2>/dev/null
-
-# CI/CD
-ls .github/workflows/*.yml 2>/dev/null
-```
-
-### Step 2: Extract Conventions
-
-From the codebase analysis, extract:
-
-1. **Language version** — Node.js version from `.nvmrc`/`engines`, Python from `requires-python`, Go from `go.mod`
-2. **Import conventions** — ESM vs CommonJS, absolute vs relative imports, path aliases (`@/`)
-3. **Naming patterns** — camelCase/snake_case for variables, PascalCase for types, file naming
-4. **Directory structure** — where source, tests, config, and docs live
-5. **Test patterns** — test file location (`__tests__/`, `*.test.ts`, `tests/`), test runner, assertion style
-6. **Build/deploy** — build command, deploy target (Cloudflare, Vercel, AWS, etc.)
-7. **Error handling** — custom error classes, Result types, try-catch patterns
-8. **Security rules** — .gitignore patterns, secret management, input validation
-
-### Step 3: Generate Context Files
-
-#### AGENTS.md Structure
-
-Target: under 120 lines. Only include what agents cannot discover by reading source code.
-
-```markdown
-# AGENTS.md
-
-## Identity
-
-[Project name] is a [brief description]. Built with [language/framework].
-
-## Conventions
-
-- [Language]: [version]
-- Style: [naming conventions, import order]
-- Types: [strict mode, no any, explicit returns — if TypeScript]
-- Tests: [runner, location, naming pattern]
-- Commits: [conventional commits, branch naming]
-
-## Commands
-
-```bash
-[install command]
-[test command]
-[build command]
-[lint command]
-[deploy command]
-```
-
-## Rules
-
-- [Critical rule 1 — e.g., never commit secrets]
-- [Critical rule 2 — e.g., all public functions need tests]
-- [Critical rule 3 — e.g., use direnv exec for deploy commands]
-```
-
-**Omit** Project Structure, Architecture, and Important Files sections — agents discover these by reading the codebase. Only add them back if the project has non-obvious structure that would genuinely trip an agent.
-
-#### CLAUDE.md Structure
-
-Claude Code loads this file at the start of every session. Target: under 80 lines. For each line, ask: would removing this cause Claude to make a mistake?
-
-```markdown
-# [Project Name]
-
-[One sentence: what this project is]
-
-## Commands
-
-- **Test**: `[test command]`
-- **Build**: `[build command]`
-- **Deploy**: `[deploy command]`
-
-## Conventions
-
-[3-5 bullet points — only conventions that differ from language/framework defaults]
-
-## Rules
-
-[Critical do/don't rules that prevent common mistakes]
-```
-
-**Omit** Architecture, Key Paths, and directory listings — Claude reads the codebase directly. Only include paths if they are genuinely non-obvious (e.g., deploy scripts in an unusual location).
-
-#### .cursorrules Structure
-
-Cursor rules are plain text, loaded when editing files in the project. Target: under 60 lines.
-
-```
-You are working on [project name], a [description].
-
-Language: [X] with [framework]
-Style: [conventions that differ from defaults]
-
-Key rules:
-- [Rule 1]
-- [Rule 2]
-- [Rule 3]
-
-When writing code:
-- [Non-default pattern 1]
-- [Non-default pattern 2]
-
-When writing tests:
-- [Test pattern 1]
-- [Test pattern 2]
-```
-
-**Omit** file structure listings — Cursor can read the project tree.
-
-#### .github/copilot-instructions.md Structure
-
-```markdown
-# Copilot Instructions
-
-## Project Context
-
-This is a [description] built with [language/framework].
-
-## Coding Standards
-
-- [Convention 1]
-- [Convention 2]
-- [Convention 3]
-
-## Patterns to Follow
-
-- [Pattern 1]
-- [Pattern 2]
-
-## Patterns to Avoid
-
-- [Anti-pattern 1]
-- [Anti-pattern 2]
-```
-
-#### .windsurfrules Structure
-
-Windsurf's Cascade AI reads `.windsurfrules` from the project root. Format is plain text — similar to `.cursorrules`. Target: under 60 lines.
-
-```
-# [Project Name] — Windsurf Rules
-
-[Project name] is a [description]. Built with [language/framework].
-
-## Conventions
-
-- [Convention that differs from defaults 1]
-- [Convention that differs from defaults 2]
-- [Convention that differs from defaults 3]
-
-## Commands
-
-[test command]
-[build command]
-[deploy command]
-
-## Rules
-
-- [Critical rule 1]
-- [Critical rule 2]
-```
-
-**Omit** Key Files and Project Context sections — Windsurf reads the project tree directly.
-
-#### .clinerules Structure
-
-Cline reads `.clinerules` from the project root. Supports task checklists. Target: under 60 lines.
-
-```markdown
-# [Project Name]
-
-[1-2 sentence description of what the project is and does]
-
-## Conventions
-
-- [Non-default convention 1]
-- [Non-default convention 2]
-- [Non-default convention 3]
-
-## Commands
-
-- Test: `[test command]`
-- Build: `[build command]`
-- Lint: `[lint command]`
-
-## Before Committing
-
-- [ ] Tests pass (`[test command]`)
-- [ ] Linting passes (`[lint command]`)
-- [ ] No secrets or credentials in changed files
-```
-
-**Omit** Tech Stack and Important Paths sections — Cline reads manifests and the file tree directly.
-
-#### GEMINI.md Structure
-
-Gemini CLI reads `GEMINI.md` from the project root (or `.gemini/GEMINI.md`). Target: under 60 lines. Gemini CLI also supports Claude Code Skills (same SKILL.md format).
-
-```markdown
-# [Project Name]
-
-[One sentence: what is this project and who is it for]
-
-## Commands
-
-[test command]
-[build command]
-[deploy command]
-
-## Conventions
-
-- [Non-default convention 1]
-- [Non-default convention 2]
-- [Non-default convention 3]
-
-## Rules
-
-- [Critical rule 1]
-- [Critical rule 2]
-```
-
-**Omit** Tech Stack and Key Paths sections — Gemini CLI reads manifests and the file tree directly.
-
-## MEMORY.md Promotion
-
-When running with `promote` argument, scan Claude Code's auto-memory for stable patterns that belong in CLAUDE.md.
-
-### Workflow
-
-1. **Locate MEMORY.md** for the current project:
-
-```bash
-find ~/.claude/projects -name "MEMORY.md" -path "*$(basename $(pwd))*" 2>/dev/null
-```
-
-2. **Parse for convention patterns** — lines that look like project rules:
-   - Lines starting with "Always", "Never", "Use", "Don't", "Prefer"
-   - Lines mentioning commands, file paths, or naming conventions
-   - Lines that describe patterns or constraints
-
-3. **Cross-reference against CLAUDE.md** — skip any insights already present
-
-4. **Present candidates** with recommendation:
-
-```
-MEMORY.md Promotion Candidates:
-  → "Always use direnv exec for deploy commands" — not in CLAUDE.md (promote)
-  → "Import order: external → types → @/ → ./" — already in CLAUDE.md (skip)
-  → "Use Australian English (realise, colour)" — not in CLAUDE.md (promote)
-
-Promote 2 insights to CLAUDE.md? (Will append to ## Conventions section)
-```
-
-5. **Append promoted insights** to the appropriate CLAUDE.md section, deduplicating. Use Edit (not Write) to preserve existing content.
-
-**Boundary rule:** Only promote insights that pass the signal gate test — would removing this cause the AI to make a mistake? Workflow observations, debugging notes, and session-specific state stay in MEMORY.md.
-
-## Init Mode
-
-When running with `init` argument, bootstrap AI context for a new project in one step.
-
-### Workflow
-
-1. Run codebase analysis (Step 1 and Step 2 above)
-2. Detect which context files already exist — **skip existing files** (never overwrite)
-3. Generate missing context files using signal-gate-filtered templates
-4. Offer Context Guard hook installation (Claude Code only)
-5. Run a quick audit pass on generated files (verify paths and commands)
-6. Report summary:
-
-```
-AI Context Init:
-  Created:
-    ✓ AGENTS.md (48 lines)
-    ✓ CLAUDE.md (35 lines)
-    ✓ .cursorrules (28 lines)
-  Skipped (already exist):
-    · GEMINI.md
-  Context Guard:
-    ✓ Tier 1 hooks installed (Claude Code only)
-  Audit:
-    ✓ All paths valid
-    ✓ Commands verified
-```
-
-## Incremental Update
-
-When running with `update` argument, patch only what drifted — preserving human edits to context files.
-
-### Workflow
-
-1. **Detect changes** since context files were last modified:
-
-```bash
-# Find when each context file was last touched
-git log -1 --format=%H -- CLAUDE.md
-git log -1 --format=%H -- AGENTS.md
-
-# What source files changed since then
-git diff --name-only <last-context-commit>..HEAD
-```
-
-2. **Classify changes** by their impact on context files:
-   - `package.json` scripts changed → update Commands sections
-   - `tsconfig.json` / linter config changed → update Conventions sections
-   - Source files renamed/moved → fix path references
-   - New commands/skills/agents added → update relevant listings
-
-3. **Apply surgical edits** using Edit (not Write) — only touching affected sections
-
-4. **Report** what was patched:
-
-```
-AI Context Update:
-  CLAUDE.md:
-    → Updated "Commands" (package.json scripts changed)
-    → Fixed path: src/index.ts → src/main.ts
-  AGENTS.md:
-    → Updated "Commands" section
-  .cursorrules:
-    → No drift detected (skipped)
-```
-
-## Staleness Audit
-
-When running in `audit` mode, check existing context files for drift:
-
-1. **Version mismatch** — Does the context file reference the correct language/framework version?
-2. **Missing commands** — Are test/build/deploy commands still accurate? Run them to verify.
-3. **Stale paths** — Do referenced file paths still exist?
-4. **New conventions** — Has the project adopted new patterns (e.g., added ESLint, switched to Vitest) that aren't reflected?
-5. **Memory drift** — If a MEMORY.md exists for this project, check whether it records conventions or patterns that should be promoted to CLAUDE.md. Flag as `ℹ MEMORY.md contains project conventions that may belong in CLAUDE.md`.
-6. **Context Guard status** — Check if Context Guard hooks are installed and healthy:
-
-```bash
-# Check for hook scripts
-ls .claude/hooks/context-*.sh 2>/dev/null
-
-# Check settings.json for hook entries
-grep -l "context-" .claude/settings.json 2>/dev/null
-```
-
-Report format:
-```
-AI Context Audit:
-  ✓ AGENTS.md — up to date (last modified: 2 days ago)
-  ⚠ CLAUDE.md — references jest but vitest.config.ts detected
-  ✗ .cursorrules — references src/index.ts but file moved to src/main.ts
-  · .github/copilot-instructions.md — not present
-  · .windsurfrules — not present (recommend generating)
-  · .clinerules — not present (recommend generating)
-  · GEMINI.md — not present (recommend generating)
-
-  Context Guard:
-    ✓ Tier 1 active (Stop hook)
-    ✗ Tier 2 not installed (recommend /context-guard install strict)
-    ✓ 4/4 hook scripts executable
-```
-
-## AGENTS.md Spec Version Tracking
-
-The AGENTS.md format is defined by the [agents.md spec](https://github.com/agentsmd/agents.md). PitchDocs tracks the pinned version in `upstream-versions.json`.
-
-### Current Stable: v1.0
-
-The v1.0 spec defines these standard sections:
-
-| Section | Purpose |
-|---------|---------|
-| Identity | Project name, description, what it does |
-| Project Structure | Key directories and their purposes |
-| Conventions | Coding standards, naming, commit conventions |
-| Commands | Test, build, deploy, lint commands |
-| Architecture | System design, data flow, key abstractions |
-| Files | Important files and their roles |
-| Rules | Hard constraints (security, compatibility) |
-
-### Proposed v1.1 Features (Draft — Do Not Implement)
-
-These features are under discussion and may change before stabilisation:
-
-| Feature | Status | Notes |
-|---------|--------|-------|
-| Sub-agents section | Draft | Nested agent definitions within AGENTS.md |
-| Tool permissions | Proposed | Declaring which tools an agent can use |
-| `.agent/` directory | Proposed | Directory-based agent definitions (alternative to single file) |
-| `when:` frontmatter | Draft | Trigger conditions for agent activation |
-
-**Guidance:** Do not generate these proposed sections until they reach stable status. Monitor the [agents.md releases](https://github.com/agentsmd/agents.md/releases) for v1.1 announcement. The `check-upstream` GitHub Action will flag when a new version is available. When v1.1 reaches stable, update the pinned version in `upstream-versions.json` and add the new sections to the generation templates above.
-
-## Anti-Patterns
-
-- **Don't include discoverable content** — directory listings, file trees, dependency lists, and architecture overviews waste tokens (see Signal Gate above)
-- **Don't include secrets** — no API keys, tokens, or credentials in context files
-- **Don't repeat framework docs** — agents already know React, Express, Django conventions
-- **Don't over-constrain** — provide patterns, not rigid rules that prevent creative problem-solving
-- **Don't include session-specific state** — context files should be durable across sessions
-- **Don't ship auto-generated files unedited** — generated context files reduce task success by ~3% (ETH Zurich, 2026). Always curate: remove lines that fail the "would removing this cause a mistake?" test
-
----
-
-# Source: .claude/skills/docs-verify/SKILL.md
+Source: ./.claude/skills/docs-verify/SKILL.md
 
 ---
 name: docs-verify
@@ -6454,72 +5997,34 @@ Security Scan:
   ✗ CLAUDE.md:12 — credential pattern: "token: ghp_abc123..." — review immediately
 ```
 
-### 11. AI Context Health
+### 11. AI Context Health (Lightweight)
 
-Score the signal-to-noise ratio and freshness of AI context files (CLAUDE.md, AGENTS.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md). Research shows overstuffed context files reduce AI task success (ETH Zurich, 2026).
-
-**Checks:**
-
-1. **Line count** — context files over budget consume tokens without adding value:
+Basic presence and staleness check for AI context files. For full signal-gate scoring, line budget analysis, discoverable content detection, and MEMORY.md drift analysis, install [ContextDocs](https://github.com/littlebearapps/contextdocs) and use `/contextdocs:context-verify`.
 
 ```bash
-# Check line counts against budgets
+# Check which context files exist and their age
 for f in CLAUDE.md AGENTS.md .cursorrules .github/copilot-instructions.md .windsurfrules .clinerules GEMINI.md; do
-  [ -f "$f" ] && echo "$f: $(wc -l < "$f") lines"
+  if [ -f "$f" ]; then
+    DAYS_OLD=$(( ($(date +%s) - $(git log -1 --format=%ct -- "$f" 2>/dev/null || echo "0")) / 86400 ))
+    echo "$f: exists ($DAYS_OLD days since last update)"
+  else
+    echo "$f: not present"
+  fi
 done
 ```
-
-| File | Warning | Deduction |
-|------|---------|-----------|
-| CLAUDE.md | >80 lines | -2 warning, -5 if >120 |
-| AGENTS.md | >120 lines | -2 warning, -5 if >160 |
-| Other context files | >60 lines | -1 warning, -3 if >100 |
-
-2. **Discoverable content** — directory listings, file trees, and dependency lists waste tokens because agents discover these on their own:
-
-```bash
-# Grep for file tree characters and common discoverable patterns
-grep -c -E '(├──|└──|│   |src/.*—|tests/.*—)' CLAUDE.md AGENTS.md 2>/dev/null
-```
-
-Deduct -1 per instance of discoverable content (max -5). Flag with specific line numbers.
-
-3. **Stale paths** — every backtick-quoted path in a context file must exist on disk:
-
-```bash
-# Extract backtick-quoted paths and verify
-grep -oE '`[^`]*\.[a-z]+`' CLAUDE.md AGENTS.md 2>/dev/null | tr -d '`' | while read -r p; do
-  [ -f "$p" ] || echo "STALE: $p"
-done
-```
-
-Deduct -2 per stale path (max -10).
-
-4. **Cross-file consistency** — key commands (test, build, deploy) must match across all context files:
-
-Compare command strings extracted from each context file. Deduct -3 if test/build/deploy commands differ between CLAUDE.md and AGENTS.md.
-
-5. **MEMORY.md drift** — if a MEMORY.md exists for this project, check whether it contains conventions not yet promoted to CLAUDE.md:
-
-```bash
-# Locate project MEMORY.md
-find ~/.claude -name "MEMORY.md" -path "*$(basename $(pwd))*" 2>/dev/null
-```
-
-Deduct -2 if MEMORY.md contains convention-like patterns (lines starting with "Always", "Never", "Use") that don't appear in CLAUDE.md.
 
 Report format:
 ```
-AI Context Health:
-  ✓ CLAUDE.md — 62 lines (within 80-line budget)
-  ⚠ AGENTS.md — 145 lines (over 120-line budget, -2)
-  ✗ CLAUDE.md:34 — stale path: `src/old-module.ts` not found (-2)
-  ⚠ CLAUDE.md:12,18 — discoverable content: file tree listings (-2)
-  ⚠ MEMORY.md — 2 conventions not yet promoted to CLAUDE.md (-2)
-  ✓ Cross-file consistency — commands match across all context files
+AI Context Health (lightweight):
+  ✓ CLAUDE.md — present (12 days old)
+  ✓ AGENTS.md — present (12 days old)
+  ⚠ .cursorrules — present (95 days old — may be stale)
+  · .windsurfrules — not present
+  · .clinerules — not present
+  ℹ For full context health scoring, install ContextDocs: /plugin install contextdocs@lba-plugins
 ```
 
-**Scoring**: Deductions apply to the Completeness dimension (context files are part of a complete, well-maintained documentation set).
+**Scoring**: Deduct -2 per context file older than 90 days, -1 per missing context file that exists in the project's tool ecosystem. Full scoring (line budgets, signal quality, path accuracy) requires ContextDocs.
 
 ## CI Integration
 
@@ -6534,7 +6039,9 @@ When run with `ci` argument, output machine-readable `ERROR:`/`WARN:` lines with
 
 ---
 
-# Source: .claude/skills/launch-artifacts/SKILL.md
+## Launch Artifacts
+
+Source: ./.claude/skills/launch-artifacts/SKILL.md
 
 ---
 name: launch-artifacts
@@ -6860,7 +6367,9 @@ GitHub uses the repository's social preview image when links are shared on Twitt
 
 ---
 
-# Source: .claude/skills/api-reference/SKILL.md
+## API Reference
+
+Source: ./.claude/skills/api-reference/SKILL.md
 
 ---
 name: api-reference
@@ -7152,7 +6661,9 @@ And from the README documentation section:
 
 ---
 
-# Source: .claude/skills/doc-refresh/SKILL.md
+## Doc Refresh
+
+Source: ./.claude/skills/doc-refresh/SKILL.md
 
 ---
 name: doc-refresh
@@ -7272,9 +6783,22 @@ Load the `feature-benefits` skill. Run a features audit to compare current READM
 
 Load the `user-guides` skill. Identify which guides are affected by checking if changed files relate to documented workflows. Update affected sections. Add new guides if a major new feature warrants one. Update the docs hub page if guides were added.
 
-### Step 5: AI Context Files
+### Step 5: AI Context Files (ContextDocs)
 
-Load the `ai-context` skill. Run audit mode first to identify drift across CLAUDE.md, AGENTS.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md. Update **only files with actual drift** — do not regenerate all 7 when only one is stale.
+If [ContextDocs](https://github.com/littlebearapps/contextdocs) is installed (`[ -d ".claude/skills/ai-context" ]`), delegate to it:
+
+```bash
+# Check if ContextDocs is available
+if [ -d ".claude/skills/ai-context" ]; then
+  echo "ContextDocs detected — run /contextdocs:ai-context audit to check for drift"
+fi
+```
+
+If ContextDocs is not installed, print an advisory:
+```
+ℹ AI context file refresh skipped — install ContextDocs for AI context management:
+  /plugin install contextdocs@lba-plugins
+```
 
 ### Step 6: llms.txt
 
@@ -7327,183 +6851,9 @@ The table below shows the split of responsibilities between your release automat
 
 ---
 
-# Source: .claude/skills/context-guard/SKILL.md
+## Visual Standards
 
----
-name: context-guard
-description: Installs opt-in Claude Code hooks with two-tier enforcement for AI context file freshness. Tier 1 (Nudge) uses a Stop hook to remind about context updates before session end. Tier 2 (Guard) uses a PreToolUse hook to block commits with stale context docs. Also includes post-commit drift detection, structural change reminders, content filter write guards, and a quality rule. Claude Code only — hooks do not work in OpenCode, Codex CLI, or other tools.
-version: "1.1.0"
----
-
-# Context Guard
-
-## What It Does
-
-Context Guard adds hooks and a quality rule to keep AI context files (CLAUDE.md, AGENTS.md, GEMINI.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules) in sync with the codebase. It prevents content filter errors when generating standard OSS files, and provides two-tier enforcement for context doc freshness.
-
-**Claude Code only.** These hooks use Claude Code's hook system (PreToolUse, PostToolUse, and Stop events via `.claude/settings.json`). OpenCode, Codex CLI, Cursor, Windsurf, Cline, and Gemini CLI do not support Claude Code hooks. The quality rule (`.claude/rules/context-quality.md`) is also Claude Code-specific.
-
-Cross-tool features like skills (`.claude/skills/`) and AGENTS.md work in OpenCode and Codex CLI without Context Guard.
-
-## Enforcement Tiers
-
-| Tier | Name | Mechanism | Behaviour |
-|------|------|-----------|-----------|
-| 1 | Nudge | Stop hook | Advisory — suggests updating context docs before session ends. Claude can still stop if docs genuinely don't need changes. |
-| 2 | Guard | PreToolUse on `git commit` | Blocking — prevents commits when structural files are staged without context doc updates. Exit code 2 blocks the commit. |
-
-**Default install** (`/context-guard install`) activates Tier 1 only. Add Tier 2 with `/context-guard install strict`.
-
-## Components
-
-### Hook: context-drift-check.sh
-
-- **Event:** PostToolUse on `Bash` (filters for `git commit` commands)
-- **Fires:** After a successful git commit
-- **Checks:**
-  1. Compares each context file's last-modified commit vs the most recent source-code commit
-  2. Detects broken file-path references inside context files
-  3. Flags when `package.json` or `pyproject.toml` changed more recently than context files
-- **Output:** Lists stale files and recommends `/ai-context audit`, or stays silent if everything is current
-- **Throttle:** Max once per hour via `.git/.context-guard-last-check` timestamp
-
-### Hook: context-structural-change.sh
-
-- **Event:** PostToolUse on `Write|Edit`
-- **Fires:** After creating or editing structural files (commands, skills, agents, rules, manifests, config)
-- **Reminds:** Which context files may need updating based on the type of change
-- **File patterns:**
-  - `commands/*.md` → AGENTS.md, CLAUDE.md, llms.txt
-  - `.claude/skills/*/SKILL.md` → AGENTS.md, CLAUDE.md, llms.txt
-  - `.claude/agents/*.md` → AGENTS.md
-  - `.claude/rules/*.md` → CLAUDE.md, AGENTS.md
-  - `package.json`, `pyproject.toml`, config files → all context files
-
-### Hook: content-filter-guard.sh
-
-- **Event:** PreToolUse on `Write`
-- **Fires:** Before Claude Code writes a file
-- **HIGH-risk files** (CODE_OF_CONDUCT.md, LICENSE, SECURITY.md):
-  - Blocks the write (exit non-zero)
-  - Returns fetch commands for the canonical URL
-- **MEDIUM-risk files** (CHANGELOG.md, CONTRIBUTING.md):
-  - Allows the write
-  - Returns advisory about chunked writing (5–10 entries at a time)
-- **All other files:** Passes through silently
-
-### Hook: context-guard-stop.sh (Tier 1)
-
-- **Event:** Stop (no matcher — fires on every session end)
-- **Fires:** When Claude considers ending the conversation
-- **Checks:**
-  1. Whether structural files (commands, skills, rules, config) have uncommitted changes
-  2. Whether any context files (CLAUDE.md, AGENTS.md, llms.txt, etc.) were also modified
-- **Loop prevention:** Checks `stop_hook_active` flag — if `true`, exits immediately to allow Claude to stop (prevents infinite loops)
-- **Output:** Returns `{"decision": "block"}` with reason if structural changes exist without context updates, or stays silent
-
-### Hook: context-commit-guard.sh (Tier 2)
-
-- **Event:** PreToolUse on `Bash` (filters for `git commit` commands)
-- **Fires:** Before a git commit command executes
-- **Checks:**
-  1. Whether structural files are in the staging area (`git diff --cached`)
-  2. Whether any context files are also staged
-- **Output:** Exit code 2 with stderr message to block the commit, or exit 0 to allow
-
-### Rule: context-quality.md
-
-Auto-loaded every session. Establishes cross-file consistency, path verification, version accuracy, command accuracy, context doc size guidance, and a sync-points table mapping project changes to context files.
-
-## Installation
-
-The `/context-guard install` command (Tier 1):
-
-1. Copies 4 hook scripts to `.claude/hooks/` in the target project
-2. Merges hook configuration into `.claude/settings.json`
-3. Copies the quality rule to `.claude/rules/context-quality.md`
-4. Makes hook scripts executable
-
-The `/context-guard install strict` command (Tier 1 + Tier 2):
-
-1. Performs all steps from `install` above
-2. Additionally copies `context-commit-guard.sh` to `.claude/hooks/`
-3. Adds a PreToolUse Bash entry for the commit guard to `.claude/settings.json`
-
-### Settings.json Configuration (Tier 1 only)
-
-```json
-{
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Write",
-        "hooks": [{ "type": "command", "command": ".claude/hooks/content-filter-guard.sh" }]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [{ "type": "command", "command": ".claude/hooks/context-drift-check.sh" }]
-      },
-      {
-        "matcher": "Write|Edit",
-        "hooks": [{ "type": "command", "command": ".claude/hooks/context-structural-change.sh" }]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [{ "type": "command", "command": ".claude/hooks/context-guard-stop.sh" }]
-      }
-    ]
-  }
-}
-```
-
-### Additional Settings.json Entry (Tier 2 — strict)
-
-```json
-{
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [{ "type": "command", "command": ".claude/hooks/context-commit-guard.sh" }]
-      }
-    ]
-  }
-}
-```
-
-## Uninstallation
-
-The `/context-guard uninstall` command removes all hook scripts (context-drift-check.sh, context-structural-change.sh, content-filter-guard.sh, context-guard-stop.sh, context-commit-guard.sh), settings.json entries (PreToolUse, PostToolUse, and Stop), and the quality rule.
-
-## Customisation
-
-### Throttle Interval
-
-Edit `context-drift-check.sh` line with `3600` (seconds) to change the check interval. Set to `0` to check on every commit.
-
-### File Patterns
-
-Edit `context-structural-change.sh` case statement to add or remove structural file patterns.
-
-## Troubleshooting
-
-| Issue | Cause | Fix |
-|-------|-------|-----|
-| Hooks not firing | Scripts not executable | `chmod +x .claude/hooks/*.sh` |
-| No output after commit | Throttle active | Delete `.git/.context-guard-last-check` to reset |
-| "jq: command not found" | jq not installed | Install jq: `apt install jq` or `brew install jq` |
-| Hooks fail silently | jq receives malformed JSON | Run `.claude/hooks/context-drift-check.sh` manually and check for JSON parse errors — common when `settings.json` has trailing commas or comments |
-| Hook errors in logs | Wrong project directory | Check `CLAUDE_PROJECT_DIR` is set correctly |
-| Hook blocks legitimate writes | content-filter-guard too aggressive | Uninstall with `/context-guard uninstall`, or remove just the PreToolUse entry from `.claude/settings.json` |
-| Claude keeps running in a loop | Stop hook not checking `stop_hook_active` | Verify `context-guard-stop.sh` checks `stop_hook_active` flag on line 19; if broken, remove the Stop entry from `.claude/settings.json` |
-| Commit blocked but context docs don't need updating | Tier 2 false positive on config edits | Stage a context file with a minor update, or remove the PreToolUse Bash entry for `context-commit-guard.sh` from `.claude/settings.json` |
-
----
-
-# Source: .claude/skills/visual-standards/SKILL.md
+Source: ./.claude/skills/visual-standards/SKILL.md
 
 ---
 name: visual-standards
@@ -7581,7 +6931,9 @@ For device-specific capture dimensions, HTML display patterns, retina handling, 
 
 ---
 
-# Source: .claude/skills/visual-standards/SKILL-reference.md
+## Visual Standards Reference
+
+Source: ./.claude/skills/visual-standards/SKILL-reference.md
 
 # Visual Standards — Extended Reference
 
@@ -7716,7 +7068,9 @@ Examples:
 
 ---
 
-# Source: .claude/skills/geo-optimisation/SKILL.md
+## GEO Optimisation
+
+Source: ./.claude/skills/geo-optimisation/SKILL.md
 
 ---
 name: geo-optimisation
@@ -7783,7 +7137,9 @@ A **citation capsule** is a 40–60 word self-contained passage at the start of 
 
 ---
 
-# Source: .claude/skills/skill-authoring/SKILL.md
+## Skill Authoring
+
+Source: ./.claude/skills/skill-authoring/SKILL.md
 
 ---
 name: skill-authoring
@@ -7829,7 +7185,9 @@ Multiply word count by ~1.3 to estimate tokens. A 1,000-word skill is approximat
 
 ---
 
-# Source: .claude/skills/platform-profiles/SKILL.md
+## Platform Profiles
+
+Source: ./.claude/skills/platform-profiles/SKILL.md
 
 ---
 name: platform-profiles
@@ -7875,7 +7233,9 @@ For full lookup tables (template directory mapping, badge URLs, CLI tools, CI/CD
 
 ---
 
-# Source: .claude/skills/platform-profiles/SKILL-tables.md
+## Platform Profiles Tables
+
+Source: ./.claude/skills/platform-profiles/SKILL-tables.md
 
 # Platform Profiles — Lookup Tables
 
@@ -7981,7 +7341,9 @@ When targeting Bitbucket, apply these fallbacks automatically:
 
 ---
 
-# Source: .claude/agents/docs-writer.md
+## Docs Writer
+
+Source: ./.claude/agents/docs-writer.md
 
 ---
 name: docs-writer
@@ -8103,7 +7465,7 @@ When generating multiple docs:
 1. README.md (highest impact)
 2. CONTRIBUTING.md (most referenced)
 3. CHANGELOG.md (most maintained)
-4. AI context files (AGENTS.md, CLAUDE.md)
+4. AI context files — delegate to [ContextDocs](https://github.com/littlebearapps/contextdocs) if installed, or suggest installation
 5. Others as needed
 
 ## Gold Standard Examples
@@ -8128,17 +7490,19 @@ Follow `.claude/rules/content-filter.md` for risk levels, fetch commands, and ch
 
 ## Additional Skills
 
-- **`ai-context`** — AI IDE context files. Use `/ai-context` to generate.
 - **`docs-verify`** — Documentation quality validation. Use `/docs-verify` to run checks.
 - **`launch-artifacts`** — Platform-specific launch content. Use `/launch` to generate.
 - **`api-reference`** — API reference documentation generators.
 - **`doc-refresh`** — Post-version-bump documentation refresh. Use `/doc-refresh` to run.
+- **AI context files** — for AI context file management (AGENTS.md, CLAUDE.md, .cursorrules, etc.), install [ContextDocs](https://github.com/littlebearapps/contextdocs) and use `/contextdocs:ai-context`
 
 Load these skills on demand when the user requests the corresponding functionality.
 
 ---
 
-# Source: .claude/agents/docs-researcher.md
+## Docs Researcher
+
+Source: ./.claude/agents/docs-researcher.md
 
 ---
 name: docs-researcher
@@ -8315,7 +7679,9 @@ Return a structured research packet:
 
 ---
 
-# Source: .claude/agents/docs-reviewer.md
+## Docs Reviewer
+
+Source: ./.claude/agents/docs-reviewer.md
 
 ---
 name: docs-reviewer
@@ -8450,7 +7816,9 @@ Return a structured review report:
 
 ---
 
-# Source: commands/readme.md
+## /pitchdocs:readme
+
+Source: ./commands/readme.md
 
 ---
 description: "Generate or update a marketing-friendly README.md: $ARGUMENTS"
@@ -8508,7 +7876,9 @@ After generation, verify:
 
 ---
 
-# Source: commands/features.md
+## /pitchdocs:features
+
+Source: ./commands/features.md
 
 ---
 description: "Extract features and benefits from a codebase: $ARGUMENTS"
@@ -8607,7 +7977,9 @@ Recommendation: Run /features table to generate an updated features section
 
 ---
 
-# Source: commands/changelog.md
+## /pitchdocs:changelog
+
+Source: ./commands/changelog.md
 
 ---
 description: "Generate or update CHANGELOG.md from git history: $ARGUMENTS"
@@ -8674,7 +8046,9 @@ Writes directly to `CHANGELOG.md`. Preserves existing entries when updating.
 
 ---
 
-# Source: commands/roadmap.md
+## /pitchdocs:roadmap
+
+Source: ./commands/roadmap.md
 
 ---
 description: "Generate or update ROADMAP.md from GitHub milestones and issues: $ARGUMENTS"
@@ -8731,7 +8105,9 @@ Writes directly to `ROADMAP.md`. Links issues, uses emoji status indicators, inc
 
 ---
 
-# Source: commands/docs-audit.md
+## /pitchdocs:docs-audit
+
+Source: ./commands/docs-audit.md
 
 ---
 description: "Audit repository documentation completeness and quality: $ARGUMENTS"
@@ -8804,8 +8180,8 @@ Report format:
 AI Context Files:
   ✓ AGENTS.md — present, references TypeScript + Vitest (matches codebase)
   ⚠ CLAUDE.md — references src/index.ts but file is now src/main.ts
-  · .cursorrules — not present (recommend: run /ai-context cursor)
-  · .github/copilot-instructions.md — not present (recommend: run /ai-context copilot)
+  · .cursorrules — not present (recommend: install ContextDocs and run /contextdocs:ai-context cursor)
+  · .github/copilot-instructions.md — not present (recommend: install ContextDocs and run /contextdocs:ai-context copilot)
 ```
 
 ### Diataxis Coverage Check
@@ -9025,7 +8401,9 @@ Recommended actions (in priority order):
 
 ---
 
-# Source: commands/llms-txt.md
+## /pitchdocs:llms-txt
+
+Source: ./commands/llms-txt.md
 
 ---
 description: "Generate llms.txt and llms-full.txt for LLM-friendly content curation: $ARGUMENTS"
@@ -9093,7 +8471,9 @@ Use at least 3 different benefit categories across the file (Time saved, Confide
 
 ---
 
-# Source: commands/user-guide.md
+## /pitchdocs:user-guide
+
+Source: ./commands/user-guide.md
 
 ---
 description: "Generate user guide documentation for the repository: $ARGUMENTS"
@@ -9159,81 +8539,43 @@ After generating guides, ensure:
 
 ---
 
-# Source: commands/ai-context.md
+## /pitchdocs:ai-context
+
+Source: ./commands/ai-context.md
 
 ---
-description: "Generate lean AI IDE context files using the Signal Gate principle — only what agents cannot discover on their own: $ARGUMENTS"
-argument-hint: "[claude|agents|cursor|copilot|windsurf|cline|gemini|all|init|update|promote|audit] or no args for all"
-allowed-tools:
-  - Read
-  - Glob
-  - Grep
-  - Bash
-  - Write
-  - Edit
+description: "AI context file management has moved to ContextDocs: $ARGUMENTS"
+argument-hint: "Install ContextDocs: /plugin install contextdocs@lba-plugins"
+allowed-tools: []
 ---
 
-# /ai-context
+# /ai-context — Moved to ContextDocs
 
-Generate lean context files that help AI coding assistants understand your project's non-obvious conventions and constraints. Applies the Signal Gate principle — excludes discoverable content (directory listings, file trees, architecture overviews) that research shows reduces AI task success.
+AI context file management (AGENTS.md, CLAUDE.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md) has moved to the [ContextDocs](https://github.com/littlebearapps/contextdocs) plugin.
 
-## Behaviour
+## Install ContextDocs
 
-1. Load the `ai-context` skill for templates, the Signal Gate, and the codebase analysis workflow
-2. Load the `doc-standards` rule for quality criteria
-3. Run the codebase analysis: detect language, framework, test runner, linter, conventions
-4. Generate the requested context file(s) from the analysis results, filtering through the Signal Gate
-
-## Arguments
-
-### Generate
-- **No arguments** / `all`: Generate all applicable context files (AGENTS.md, CLAUDE.md, .cursorrules, .github/copilot-instructions.md, .windsurfrules, .clinerules, GEMINI.md)
-- `claude`: Generate CLAUDE.md only
-- `agents`: Generate AGENTS.md only
-- `cursor`: Generate .cursorrules only
-- `copilot`: Generate .github/copilot-instructions.md only
-- `windsurf`: Generate .windsurfrules only
-- `cline`: Generate .clinerules only
-- `gemini`: Generate GEMINI.md only
-
-### Lifecycle
-- `init`: Bootstrap a new project — generate missing context files, offer Context Guard hooks, run audit. Skips existing files.
-- `update`: Patch only what drifted since the last context update, using git change detection. Preserves human edits.
-- `promote`: Scan Claude Code's auto-memory (MEMORY.md) for stable patterns and assist promoting them to CLAUDE.md.
-- `audit`: Check existing context files for staleness, drift, discoverable content, and Context Guard status.
-
-## Output
-
-Each generated file is written directly to disk. Line counts should stay within the Signal Gate budgets (CLAUDE.md <80, AGENTS.md <120, others <60).
-
-```
-AI Context Files:
-  ✓ AGENTS.md — generated (48 lines)
-  ✓ CLAUDE.md — generated (35 lines)
-  ✓ .cursorrules — generated (28 lines)
-  ✓ .github/copilot-instructions.md — generated (25 lines)
-  ✓ .windsurfrules — generated (22 lines)
-  ✓ .clinerules — generated (30 lines)
-  ✓ GEMINI.md — generated (24 lines)
+```bash
+/plugin install contextdocs@lba-plugins
 ```
 
-Audit mode:
-```
-AI Context Audit:
-  ✓ AGENTS.md — up to date (48 lines, within budget)
-  ⚠ CLAUDE.md — references jest but vitest.config.ts detected
-  ✗ .cursorrules — references src/index.ts but file moved to src/main.ts
-  · GEMINI.md — not present (recommend generating)
-  ℹ MEMORY.md — contains 3 conventions that may belong in CLAUDE.md (run /ai-context promote)
+## Then Use
 
-  Context Guard:
-    ✓ Tier 1 active (Stop hook)
-    ✗ Tier 2 not installed
+```bash
+/contextdocs:ai-context              # Generate all context files
+/contextdocs:ai-context init         # Bootstrap a new project
+/contextdocs:ai-context update       # Patch only what drifted
+/contextdocs:ai-context promote      # Promote MEMORY.md patterns to CLAUDE.md
+/contextdocs:ai-context audit        # Check for staleness and drift
 ```
+
+ContextDocs uses the same Signal Gate principle and all the same features — it's the same skill, now in its own focused plugin.
 
 ---
 
-# Source: commands/docs-verify.md
+## /pitchdocs:docs-verify
+
+Source: ./commands/docs-verify.md
 
 ---
 description: "Verify documentation quality, links, freshness, and consistency: $ARGUMENTS"
@@ -9305,7 +8647,9 @@ Warnings (should fix):
 
 ---
 
-# Source: commands/launch.md
+## /pitchdocs:launch
+
+Source: ./commands/launch.md
 
 ---
 description: "Generate platform-specific launch and promotion artifacts from README/CHANGELOG: $ARGUMENTS"
@@ -9373,7 +8717,9 @@ Timing recommendation:
 
 ---
 
-# Source: commands/doc-refresh.md
+## /pitchdocs:doc-refresh
+
+Source: ./commands/doc-refresh.md
 
 ---
 description: "Refresh documentation after version bumps, feature additions, or periodic maintenance: $ARGUMENTS"
@@ -9464,7 +8810,9 @@ Remaining: Merge the release-please PR to complete the release.
 
 ---
 
-# Source: commands/platform.md
+## /pitchdocs:platform
+
+Source: ./commands/platform.md
 
 ---
 description: "Detect hosting platform and report PitchDocs feature support: $ARGUMENTS"
@@ -9515,7 +8863,9 @@ Print a platform report to the chat — do not write any files.
 
 ---
 
-# Source: commands/visual-standards.md
+## /pitchdocs:visual-standards
+
+Source: ./commands/visual-standards.md
 
 ---
 description: "Load visual formatting standards for screenshots, emoji headings, and image specs: $ARGUMENTS"
@@ -9539,7 +8889,9 @@ Load the `visual-standards` skill for visual formatting reference — emoji head
 
 ---
 
-# Source: commands/geo.md
+## /pitchdocs:geo
+
+Source: ./commands/geo.md
 
 ---
 description: "Load GEO optimisation patterns for AI citation: $ARGUMENTS"
@@ -9565,115 +8917,42 @@ Load the `geo-optimisation` skill for Generative Engine Optimisation patterns �
 
 ---
 
-# Source: commands/context-guard.md
+## /pitchdocs:context-guard
+
+Source: ./commands/context-guard.md
 
 ---
-description: "Install, uninstall, or check status of Context Guard hooks for AI context file freshness: $ARGUMENTS"
-argument-hint: "[install|install strict|uninstall|status] — Claude Code only"
-allowed-tools:
-  - Read
-  - Glob
-  - Grep
-  - Bash
-  - Write
-  - Edit
+description: "Context Guard hooks have moved to ContextDocs: $ARGUMENTS"
+argument-hint: "Install ContextDocs: /plugin install contextdocs@lba-plugins"
+allowed-tools: []
 ---
 
-# /context-guard
+# /context-guard — Moved to ContextDocs
 
-Install opt-in hooks that detect stale AI context files, remind you to update them, and prevent content filter errors when generating standard OSS files. **Claude Code only** — these hooks use Claude Code's PreToolUse, PostToolUse, and Stop hook system, which is not supported by OpenCode, Codex CLI, or other AI coding tools.
+Context Guard hooks for AI context file freshness have moved to the [ContextDocs](https://github.com/littlebearapps/contextdocs) plugin.
 
-Context Guard has two enforcement tiers:
+## Install ContextDocs
 
-- **Tier 1 — Nudge** (default): Advisory. A Stop hook suggests updating context docs before the session ends. Claude can still stop if context docs genuinely don't need changes.
-- **Tier 2 — Guard** (opt-in): Blocking. A PreToolUse hook blocks `git commit` when structural files are staged without context doc updates.
-
-## Behaviour
-
-1. Load the `context-guard` skill for reference
-2. Execute the requested action: `install`, `install strict`, `uninstall`, or `status`
-
-## Arguments
-
-- **`install`**: Install Context Guard (Tier 1) into the current project:
-  1. Create `.claude/hooks/` directory if it does not exist
-  2. Copy `context-drift-check.sh`, `context-structural-change.sh`, `content-filter-guard.sh`, and `context-guard-stop.sh` from the plugin's `hooks/` directory to `.claude/hooks/`
-  3. Make the scripts executable (`chmod +x`)
-  4. Merge PreToolUse, PostToolUse, and Stop hook entries into `.claude/settings.json` (create the file if needed; if entries already exist, append without overwriting)
-  5. Copy `context-quality.md` to `.claude/rules/context-quality.md` (create directory if needed)
-  6. Report what was installed
-
-- **`install strict`**: Install Context Guard (Tier 1 + Tier 2) into the current project:
-  1. Perform all steps from `install` above
-  2. Additionally copy `context-commit-guard.sh` from the plugin's `hooks/` directory to `.claude/hooks/`
-  3. Add a PreToolUse Bash hook entry for `context-commit-guard.sh` to `.claude/settings.json`
-  4. Report what was installed, noting Tier 2 is active
-
-- **`uninstall`**: Remove all Context Guard hooks from the current project:
-  1. Remove `.claude/hooks/context-drift-check.sh`, `.claude/hooks/context-structural-change.sh`, `.claude/hooks/content-filter-guard.sh`, `.claude/hooks/context-guard-stop.sh`, and `.claude/hooks/context-commit-guard.sh`
-  2. Remove all Context Guard hook entries (PreToolUse, PostToolUse, and Stop) from `.claude/settings.json` (preserve other hooks)
-  3. Remove `.claude/rules/context-quality.md`
-  4. Report what was removed
-
-- **`status`**: Check installation state and current drift:
-  1. Check if hook scripts exist in `.claude/hooks/`
-  2. Check if hook entries are present in `.claude/settings.json`
-  3. Check if the quality rule exists in `.claude/rules/`
-  4. Determine which tier is active (Tier 1 if Stop hook present, Tier 2 if commit guard also present)
-  5. Run a quick drift check (same logic as `/ai-context audit`) to report current staleness
-  6. Report findings
-
-## Output
-
-### Install
-```
-Context Guard installed (Tier 1 — Nudge):
-  ✓ .claude/hooks/context-drift-check.sh — warns after commits if context files are stale
-  ✓ .claude/hooks/context-structural-change.sh — reminds after structural file changes
-  ✓ .claude/hooks/content-filter-guard.sh — blocks Write on high-risk OSS files, advises on medium-risk
-  ✓ .claude/hooks/context-guard-stop.sh — nudges to update context docs before session ends
-  ✓ .claude/rules/context-quality.md — auto-loaded quality standards for context files
-  ✓ .claude/settings.json — PreToolUse, PostToolUse, and Stop hooks registered
-
-Tier 2 (Guard) not installed. Run /context-guard install strict to also
-block commits when structural files change without context doc updates.
-
-Note: These hooks are Claude Code-specific. If your team also uses OpenCode or
-Codex CLI, the hooks will be ignored by those tools (no errors, just no effect).
-Add .claude/hooks/ to .gitignore if you prefer hooks to be per-developer.
+```bash
+/plugin install contextdocs@lba-plugins
 ```
 
-### Install Strict
-```
-Context Guard installed (Tier 1 + Tier 2 — Nudge + Guard):
-  ✓ .claude/hooks/context-drift-check.sh — warns after commits if context files are stale
-  ✓ .claude/hooks/context-structural-change.sh — reminds after structural file changes
-  ✓ .claude/hooks/content-filter-guard.sh — blocks Write on high-risk OSS files, advises on medium-risk
-  ✓ .claude/hooks/context-guard-stop.sh — nudges to update context docs before session ends
-  ✓ .claude/hooks/context-commit-guard.sh — blocks commits with stale context docs
-  ✓ .claude/rules/context-quality.md — auto-loaded quality standards for context files
-  ✓ .claude/settings.json — PreToolUse, PostToolUse, and Stop hooks registered
+## Then Use
+
+```bash
+/contextdocs:context-guard install          # Tier 1 — Nudge (session-end reminder)
+/contextdocs:context-guard install strict   # Tier 1 + Tier 2 (commit blocking)
+/contextdocs:context-guard uninstall        # Remove all hooks
+/contextdocs:context-guard status           # Check installation state and drift
 ```
 
-### Status
-```
-Context Guard Status:
-  ✓ Tier 1 — Nudge (Stop hook active — reminds about context docs before session end)
-  ✓ Tier 2 — Guard (commit blocker active — blocks commits with stale context)
-  ✓ Base hooks installed (3/3 scripts in .claude/hooks/)
-  ✓ Settings configured (PreToolUse, PostToolUse, and Stop entries in .claude/settings.json)
-  ✓ Quality rule active (.claude/rules/context-quality.md)
-
-Drift check:
-  ✓ CLAUDE.md — up to date
-  ⚠ AGENTS.md — 12 source commits since last update
-  ✓ .cursorrules — up to date
-  · GEMINI.md — not present
-```
+Context Guard includes the same two-tier enforcement, content filter protection, and Untether compatibility — now in its own focused plugin.
 
 ---
 
-# Source: SECURITY.md
+## Security
+
+Source: ./SECURITY.md
 
 # Security Policy
 
@@ -9703,7 +8982,9 @@ This plugin references third-party specifications. If an upstream spec introduce
 
 ---
 
-# Source: CODE_OF_CONDUCT.md
+## Code of Conduct
+
+Source: ./CODE_OF_CONDUCT.md
 
 # Contributor Covenant 3.0 Code of Conduct
 
@@ -9794,7 +9075,9 @@ For answers to common questions about Contributor Covenant, see the [FAQ](https:
 
 ---
 
-# Source: LICENSE
+## License
+
+Source: ./LICENSE
 
 MIT License
 
@@ -9820,12 +9103,14 @@ SOFTWARE.
 
 ---
 
-# Source: .claude-plugin/plugin.json
+## Plugin Manifest
+
+Source: ./.claude-plugin/plugin.json
 
 {
   "name": "pitchdocs",
-  "version": "1.19.0",
-  "description": "Generate high-quality public-facing repository documentation with a marketing edge. Creates READMEs that sell, changelogs that communicate value, roadmaps from GitHub Projects, AI context files for coding assistants, and audits your docs completeness. Uses benefit-driven language, GEO-optimised structure, progressive disclosure, and the Banesullivan 4-question framework.",
+  "version": "2.0.0",
+  "description": "Generate high-quality public-facing repository documentation with a marketing edge. Creates READMEs that sell, changelogs that communicate value, roadmaps from GitHub milestones, and audits your docs completeness. Uses benefit-driven language, GEO-optimised structure, progressive disclosure, and the Banesullivan 4-question framework.",
   "author": {
     "name": "Little Bear Apps",
     "email": "hello@littlebearapps.com"
@@ -9845,16 +9130,12 @@ SOFTWARE.
     "little-bear-apps",
     "seo",
     "geo",
-    "ai-context",
-    "agents-md",
     "diataxis",
     "quality-scoring",
     "security-scan",
     "token-budget",
     "docs-ci",
     "hooks",
-    "context-guard",
-    "context-freshness",
     "gitlab",
     "bitbucket",
     "multi-platform"
@@ -9863,7 +9144,9 @@ SOFTWARE.
 
 ---
 
-# Source: .claude/rules/doc-standards.md
+## Doc Standards
+
+Source: ./.claude/rules/doc-standards.md
 
 # Documentation Standards
 
@@ -9955,60 +9238,9 @@ Hero section: logo + bold one-liner + explanatory sentence + badges. Use separat
 
 ---
 
-# Source: .claude/rules/context-quality.md
+## Content Filter Quick Reference
 
-# AI Context File Quality Standards
-
-When generating or updating AI context files (CLAUDE.md, AGENTS.md, GEMINI.md, .cursorrules, copilot-instructions.md, .windsurfrules, .clinerules), follow these standards.
-
-## Cross-File Consistency
-
-All context files for a project must agree on:
-
-- Language and framework version
-- Key commands (test, build, lint, deploy)
-- Directory structure and key file paths
-- Naming conventions and coding standards
-- Critical rules and constraints
-
-When updating one context file, check if the same information appears in others and update them too.
-
-## Path Verification
-
-Every file path mentioned in a context file must exist on disk. Before writing a context file, verify referenced paths:
-
-```bash
-test -f "path/to/file" || echo "WARN: path does not exist"
-```
-
-Never reference deleted files, renamed modules, or moved directories without checking first.
-
-## Version Accuracy
-
-Context files must reference the correct:
-
-- Language runtime version (from `.nvmrc`, `engines`, `requires-python`, `go.mod`)
-- Framework version (from `package.json`, `pyproject.toml`)
-- Test runner (jest vs vitest vs pytest vs go test)
-- Linter/formatter (eslint vs biome, ruff vs flake8)
-
-## Command Accuracy
-
-Every command listed in a context file (test, build, lint, deploy) must be runnable. Verify against `package.json` scripts, `Makefile` targets, or `pyproject.toml` scripts before writing.
-
-## Sync Points
-
-When project structure, dependencies, commands, or conventions change, update all context files that reference the affected content. Load the `ai-context` skill for the full sync matrix.
-
-## Tool Compatibility
-
-Not all context files work in all tools. Key distinctions: `AGENTS.md` works in Claude Code, OpenCode, Codex CLI, and Gemini CLI. `CLAUDE.md` works in Claude Code and OpenCode. `.cursorrules`, `.windsurfrules`, `.clinerules`, `GEMINI.md`, and `.github/copilot-instructions.md` are tool-specific. `.claude/rules/*.md` and hooks are Claude Code only. `MEMORY.md` is auto-written by Claude — not user-authored, not version-controlled. For GitLab/Bitbucket projects, generate only tool-agnostic context files.
-
-For context file size guidance and the Signal Gate principle, load the `ai-context` skill.
-
----
-
-# Source: .claude/rules/content-filter.md
+Source: ./.claude/rules/content-filter.md
 
 # Content Filter Quick Reference
 
@@ -10070,7 +9302,9 @@ The filter also triggers on non-documentation content that resembles standardise
 
 ---
 
-# Source: .claude/rules/docs-awareness.md
+## Documentation Awareness
+
+Source: ./.claude/rules/docs-awareness.md
 
 # Documentation Awareness
 
@@ -10087,10 +9321,7 @@ When working on a project with PitchDocs installed, recognise documentation-rele
 | Project going public (no README or thin README) | `/pitchdocs:readme` | First impressions — generate the full marketing framework |
 | Missing docs detected (no `docs/guides/`, no llms.txt) | `/pitchdocs:docs-audit` | Identify all documentation gaps at once |
 | User asks "why should someone use this?" or discusses positioning | `/pitchdocs:features benefits` | Surface the two-path user benefits extraction (auto-scan or conversational) |
-| Structural files changed (skills, commands, agents, rules, config) | `/pitchdocs:ai-context audit` | AI context files may reference stale paths or counts |
-| New dependency or framework added | `/pitchdocs:ai-context` | Context files should reflect the current tech stack |
 | README section growing beyond 2 paragraphs or 8-row table | Suggest delegating to `docs/guides/` | Lobby Principle — keep README scannable |
-| MEMORY.md contains repeated project conventions or stable patterns | `/pitchdocs:ai-context claude` | Promote stable auto-memory insights to CLAUDE.md where the whole team benefits |
 | User mentions "talk it out" or wants to explain their project's value | `/pitchdocs:features benefits` (conversational path) | The 4-question interview produces the most authentic user benefits |
 
 ## When NOT to Suggest
@@ -10102,198 +9333,9 @@ When working on a project with PitchDocs installed, recognise documentation-rele
 
 ---
 
-# Source: hooks/context-drift-check.sh
+## Content Filter Guard Hook
 
-#!/bin/bash
-# context-drift-check.sh
-# Hook: PostToolUse (Bash, matching git commit)
-# Purpose: Detect stale AI context files after commits
-# Installed by: /context-guard install
-#
-# Claude Code only — OpenCode, Codex CLI, Cursor, and other tools
-# do not support Claude Code hooks.
-
-set -euo pipefail
-
-# Read hook input from stdin
-INPUT=$(cat)
-TOOL_NAME=$(echo "$INPUT" | jq -r '.tool_name // empty' 2>/dev/null)
-COMMAND=$(echo "$INPUT" | jq -r '.tool_input.command // empty' 2>/dev/null)
-
-# Only process successful git commit commands
-[ "$TOOL_NAME" != "Bash" ] && echo '{}' && exit 0
-[[ "$COMMAND" != *"git commit"* ]] && echo '{}' && exit 0
-
-# Resolve project directory
-PROJECT_DIR="${CLAUDE_PROJECT_DIR:-.}"
-cd "$PROJECT_DIR" || { echo '{}'; exit 0; }
-
-# Must be inside a git repository
-git rev-parse --is-inside-work-tree &>/dev/null || { echo '{}'; exit 0; }
-
-# Throttle: skip if checked less than 1 hour ago
-THROTTLE_FILE=".git/.context-guard-last-check"
-if [ -f "$THROTTLE_FILE" ]; then
-  LAST_CHECK=$(cat "$THROTTLE_FILE" 2>/dev/null || echo "0")
-  NOW=$(date +%s)
-  ELAPSED=$((NOW - LAST_CHECK))
-  [ "$ELAPSED" -lt 3600 ] && echo '{}' && exit 0
-fi
-
-# Context files to check
-CONTEXT_FILES=("CLAUDE.md" "AGENTS.md" "GEMINI.md" ".cursorrules"
-               ".github/copilot-instructions.md" ".windsurfrules" ".clinerules")
-
-STALE=()
-BROKEN_PATHS=()
-
-for CTX in "${CONTEXT_FILES[@]}"; do
-  [ ! -f "$CTX" ] && continue
-
-  # Last commit that touched this context file
-  CTX_COMMIT_TIME=$(git log -1 --format=%ct -- "$CTX" 2>/dev/null || echo "0")
-
-  # Last commit that touched source files (excluding docs)
-  SRC_COMMIT_TIME=$(git log -1 --format=%ct -- \
-    '*.ts' '*.js' '*.py' '*.go' '*.rs' '*.json' '*.toml' '*.yaml' '*.yml' \
-    ':!*.md' ':!CHANGELOG.md' ':!README.md' ':!docs/*' 2>/dev/null || echo "0")
-
-  if [ "$SRC_COMMIT_TIME" -gt "$CTX_COMMIT_TIME" ] 2>/dev/null; then
-    CTX_HASH=$(git log -1 --format=%H -- "$CTX" 2>/dev/null || echo "HEAD")
-    COMMITS_BEHIND=$(git rev-list --count "$CTX_HASH"..HEAD -- \
-      '*.ts' '*.js' '*.py' '*.go' '*.rs' '*.json' '*.toml' '*.yaml' '*.yml' \
-      ':!*.md' 2>/dev/null || echo "?")
-    STALE+=("$CTX: $COMMITS_BEHIND source commits since last update")
-  fi
-
-  # Quick broken-path check: extract backtick-quoted file references
-  while IFS= read -r REF_PATH; do
-    if [ -n "$REF_PATH" ] && [ ! -e "$REF_PATH" ]; then
-      # Fallback: check if basename exists anywhere in repo (tracked or untracked)
-      BASENAME=$(basename "$REF_PATH")
-      if ! git ls-files "*/$BASENAME" "$BASENAME" 2>/dev/null | grep -q . \
-        && ! find . -name "$BASENAME" -not -path './.git/*' -print -quit 2>/dev/null | grep -q .; then
-        BROKEN_PATHS+=("$CTX references \`$REF_PATH\` (not found)")
-      fi
-    fi
-  done < <(grep -oE '`[a-zA-Z][a-zA-Z0-9._/-]+\.(ts|js|py|go|rs|md|json|toml|yaml|yml|sh)`' "$CTX" 2>/dev/null \
-    | tr -d '`' | sort -u | head -20)
-done
-
-# Update throttle timestamp
-date +%s > "$THROTTLE_FILE" 2>/dev/null
-
-# Build output
-ISSUES=()
-for S in "${STALE[@]}"; do ISSUES+=("  - $S"); done
-for B in "${BROKEN_PATHS[@]}"; do ISSUES+=("  - $B"); done
-
-if [ ${#ISSUES[@]} -gt 0 ]; then
-  # Build multiline message
-  MSG="AI CONTEXT DRIFT DETECTED:"
-  for I in "${ISSUES[@]}"; do
-    MSG="$MSG\n$I"
-  done
-  MSG="$MSG\nRun /ai-context audit to check, or /ai-context to regenerate."
-
-  # Escape for JSON
-  MSG_JSON=$(printf '%s' "$MSG" | sed 's/"/\\"/g')
-
-  cat << EOF
-{
-  "hookSpecificOutput": {
-    "hookEventName": "PostToolUse",
-    "additionalContext": "$MSG_JSON"
-  }
-}
-EOF
-else
-  echo '{}'
-fi
-
----
-
-# Source: hooks/context-structural-change.sh
-
-#!/bin/bash
-# context-structural-change.sh
-# Hook: PostToolUse (Write|Edit, matching structural files)
-# Purpose: Remind about context file updates after structural changes
-# Installed by: /context-guard install
-#
-# Claude Code only — OpenCode, Codex CLI, Cursor, and other tools
-# do not support Claude Code hooks.
-
-set -euo pipefail
-
-# Read hook input from stdin
-INPUT=$(cat)
-TOOL_NAME=$(echo "$INPUT" | jq -r '.tool_name // empty' 2>/dev/null)
-FILE_PATH=$(echo "$INPUT" | jq -r '.tool_input.file_path // empty' 2>/dev/null)
-
-# Only process Write and Edit
-[[ "$TOOL_NAME" != "Write" && "$TOOL_NAME" != "Edit" ]] && echo '{}' && exit 0
-[ -z "$FILE_PATH" ] && echo '{}' && exit 0
-
-# Resolve project directory
-PROJECT_DIR="${CLAUDE_PROJECT_DIR:-.}"
-cd "$PROJECT_DIR" || { echo '{}'; exit 0; }
-
-# Check if any context files exist (no point reminding if none are tracked)
-HAS_CONTEXT=false
-for CTX in CLAUDE.md AGENTS.md GEMINI.md .cursorrules .windsurfrules .clinerules; do
-  [ -f "$CTX" ] && HAS_CONTEXT=true && break
-done
-[ "$HAS_CONTEXT" = false ] && echo '{}' && exit 0
-
-# Determine what type of structural change this is
-MSG=""
-# Extract just the filename/relative portion for matching
-# Claude Code may pass absolute or relative paths
-REL_PATH="${FILE_PATH##"$PROJECT_DIR"/}"
-REL_PATH="${REL_PATH#/}"
-
-case "$REL_PATH" in
-  commands/*.md)
-    MSG="You modified a command definition. AGENTS.md, CLAUDE.md, and llms.txt may need their command tables updated."
-    ;;
-  .claude/skills/*/SKILL.md|.agents/skills/*/SKILL.md)
-    MSG="You modified a skill. AGENTS.md, CLAUDE.md, and llms.txt may need their skill listings updated."
-    ;;
-  .claude/agents/*.md|.agents/agents/*.md)
-    MSG="You modified an agent definition. AGENTS.md may need updating."
-    ;;
-  .claude/rules/*.md)
-    MSG="You modified a rule. CLAUDE.md and AGENTS.md may need updating if they list rules."
-    ;;
-  package.json|*/package.json|pyproject.toml|*/pyproject.toml|Cargo.toml|*/Cargo.toml|go.mod|*/go.mod)
-    MSG="Project manifest changed. AI context files may reference outdated dependencies or commands."
-    ;;
-  tsconfig*.json|*/tsconfig*.json|wrangler.toml|*/wrangler.toml|vitest.config*|*/vitest.config*|jest.config*|*/jest.config*|eslint.config*|*/eslint.config*|biome.json|*/biome.json)
-    MSG="Build/test/lint configuration changed. AI context files may reference outdated tooling."
-    ;;
-  *)
-    echo '{}'; exit 0
-    ;;
-esac
-
-if [ -n "$MSG" ]; then
-  MSG_JSON=$(printf '%s' "$MSG" | sed 's/"/\\"/g')
-  cat << EOF
-{
-  "hookSpecificOutput": {
-    "hookEventName": "PostToolUse",
-    "additionalContext": "CONTEXT REMINDER: $MSG_JSON Run /ai-context audit to check."
-  }
-}
-EOF
-else
-  echo '{}'
-fi
-
----
-
-# Source: hooks/content-filter-guard.sh
+Source: ./hooks/content-filter-guard.sh
 
 #!/bin/bash
 # content-filter-guard.sh
@@ -10383,181 +9425,9 @@ echo '{}'
 
 ---
 
-# Source: hooks/context-guard-stop.sh
+## Upstream Versions
 
-#!/bin/bash
-# context-guard-stop.sh
-# Hook: Stop
-# Purpose: Nudge Claude to update AI context files before ending a session
-#          when structural files (commands, skills, rules, config) were modified
-#          but context docs (CLAUDE.md, AGENTS.md, etc.) were not.
-# Tier: 1 (Nudge) — advisory, does not force; Claude can still stop
-# Installed by: /context-guard install
-#
-# Claude Code only — OpenCode, Codex CLI, Cursor, and other tools
-# do not support Claude Code hooks.
-
-set -euo pipefail
-
-# Read hook input from stdin
-INPUT=$(cat)
-
-# CRITICAL: Prevent infinite loops.
-# When stop_hook_active is true, Claude is already continuing due to a previous
-# Stop hook block. Allow it to stop this time.
-STOP_ACTIVE=$(echo "$INPUT" | jq -r '.stop_hook_active // false' 2>/dev/null)
-[ "$STOP_ACTIVE" = "true" ] && echo '{}' && exit 0
-
-# Resolve project directory
-PROJECT_DIR="${CLAUDE_PROJECT_DIR:-.}"
-cd "$PROJECT_DIR" || { echo '{}'; exit 0; }
-
-# Must be inside a git repository
-git rev-parse --is-inside-work-tree &>/dev/null || { echo '{}'; exit 0; }
-
-# Check working tree + staged changes for structural file patterns
-CHANGED_FILES=$(git status --porcelain 2>/dev/null | awk '{print $NF}')
-[ -z "$CHANGED_FILES" ] && echo '{}' && exit 0
-
-# Structural file patterns that warrant context doc updates
-HAS_STRUCTURAL=false
-while IFS= read -r FILE; do
-  case "$FILE" in
-    commands/*.md) HAS_STRUCTURAL=true; break ;;
-    .claude/skills/*/SKILL.md) HAS_STRUCTURAL=true; break ;;
-    .agents/skills/*/SKILL.md) HAS_STRUCTURAL=true; break ;;
-    .claude/agents/*.md) HAS_STRUCTURAL=true; break ;;
-    .agents/agents/*.md) HAS_STRUCTURAL=true; break ;;
-    .claude/rules/*.md) HAS_STRUCTURAL=true; break ;;
-    package.json) HAS_STRUCTURAL=true; break ;;
-    pyproject.toml) HAS_STRUCTURAL=true; break ;;
-    Cargo.toml) HAS_STRUCTURAL=true; break ;;
-    go.mod) HAS_STRUCTURAL=true; break ;;
-    tsconfig*.json) HAS_STRUCTURAL=true; break ;;
-    wrangler.toml) HAS_STRUCTURAL=true; break ;;
-    vitest.config*) HAS_STRUCTURAL=true; break ;;
-    jest.config*) HAS_STRUCTURAL=true; break ;;
-    eslint.config*) HAS_STRUCTURAL=true; break ;;
-    biome.json) HAS_STRUCTURAL=true; break ;;
-    .claude-plugin/plugin.json) HAS_STRUCTURAL=true; break ;;
-  esac
-done <<< "$CHANGED_FILES"
-
-# Fast exit if no structural files changed (most sessions)
-[ "$HAS_STRUCTURAL" = false ] && echo '{}' && exit 0
-
-# Check if any context files were also modified
-HAS_CONTEXT=false
-while IFS= read -r FILE; do
-  case "$FILE" in
-    CLAUDE.md|AGENTS.md|GEMINI.md) HAS_CONTEXT=true; break ;;
-    .cursorrules|.windsurfrules|.clinerules) HAS_CONTEXT=true; break ;;
-    .github/copilot-instructions.md) HAS_CONTEXT=true; break ;;
-    llms.txt) HAS_CONTEXT=true; break ;;
-  esac
-done <<< "$CHANGED_FILES"
-
-# If structural changes exist without context updates, nudge
-if [ "$HAS_CONTEXT" = false ]; then
-  cat << 'EOF'
-{
-  "decision": "block",
-  "reason": "CONTEXT DOC NUDGE: You modified structural files (commands, skills, rules, or config) but no AI context files (CLAUDE.md, AGENTS.md, llms.txt, etc.) were updated. Consider updating relevant context docs before finishing. Run /ai-context audit to check what needs updating, or /ai-context to regenerate. If context docs genuinely don't need changes, you can finish — this is advisory only."
-}
-EOF
-  exit 0
-fi
-
-echo '{}'
-
----
-
-# Source: hooks/context-commit-guard.sh
-
-#!/bin/bash
-# context-commit-guard.sh
-# Hook: PreToolUse (Bash, matching git commit)
-# Purpose: Block git commit when structural files are staged without
-#          corresponding AI context file updates.
-# Tier: 2 (Guard) — blocks the commit until context docs are staged
-# Installed by: /context-guard install strict
-#
-# Claude Code only — OpenCode, Codex CLI, Cursor, and other tools
-# do not support Claude Code hooks.
-
-set -euo pipefail
-
-# Read hook input from stdin
-INPUT=$(cat)
-TOOL_NAME=$(echo "$INPUT" | jq -r '.tool_name // empty' 2>/dev/null)
-COMMAND=$(echo "$INPUT" | jq -r '.tool_input.command // empty' 2>/dev/null)
-
-# Only process Bash tool
-[ "$TOOL_NAME" != "Bash" ] && echo '{}' && exit 0
-
-# Only process git commit commands (including --amend, -m, etc.)
-[[ "$COMMAND" != *"git commit"* ]] && echo '{}' && exit 0
-
-# Resolve project directory
-PROJECT_DIR="${CLAUDE_PROJECT_DIR:-.}"
-cd "$PROJECT_DIR" || { echo '{}'; exit 0; }
-
-# Must be inside a git repository
-git rev-parse --is-inside-work-tree &>/dev/null || { echo '{}'; exit 0; }
-
-# Get staged files
-STAGED_FILES=$(git diff --cached --name-only 2>/dev/null)
-[ -z "$STAGED_FILES" ] && echo '{}' && exit 0
-
-# Check for structural file patterns in staging area
-HAS_STRUCTURAL=false
-while IFS= read -r FILE; do
-  case "$FILE" in
-    commands/*.md) HAS_STRUCTURAL=true; break ;;
-    .claude/skills/*/SKILL.md) HAS_STRUCTURAL=true; break ;;
-    .agents/skills/*/SKILL.md) HAS_STRUCTURAL=true; break ;;
-    .claude/agents/*.md) HAS_STRUCTURAL=true; break ;;
-    .agents/agents/*.md) HAS_STRUCTURAL=true; break ;;
-    .claude/rules/*.md) HAS_STRUCTURAL=true; break ;;
-    package.json) HAS_STRUCTURAL=true; break ;;
-    pyproject.toml) HAS_STRUCTURAL=true; break ;;
-    Cargo.toml) HAS_STRUCTURAL=true; break ;;
-    go.mod) HAS_STRUCTURAL=true; break ;;
-    tsconfig*.json) HAS_STRUCTURAL=true; break ;;
-    wrangler.toml) HAS_STRUCTURAL=true; break ;;
-    vitest.config*) HAS_STRUCTURAL=true; break ;;
-    jest.config*) HAS_STRUCTURAL=true; break ;;
-    eslint.config*) HAS_STRUCTURAL=true; break ;;
-    biome.json) HAS_STRUCTURAL=true; break ;;
-    .claude-plugin/plugin.json) HAS_STRUCTURAL=true; break ;;
-  esac
-done <<< "$STAGED_FILES"
-
-# No structural files staged — allow commit
-[ "$HAS_STRUCTURAL" = false ] && echo '{}' && exit 0
-
-# Check if any context files are also staged
-HAS_CONTEXT=false
-while IFS= read -r FILE; do
-  case "$FILE" in
-    CLAUDE.md|AGENTS.md|GEMINI.md) HAS_CONTEXT=true; break ;;
-    .cursorrules|.windsurfrules|.clinerules) HAS_CONTEXT=true; break ;;
-    .github/copilot-instructions.md) HAS_CONTEXT=true; break ;;
-    llms.txt) HAS_CONTEXT=true; break ;;
-  esac
-done <<< "$STAGED_FILES"
-
-# Block commit if structural changes without context updates
-if [ "$HAS_CONTEXT" = false ]; then
-  echo "COMMIT BLOCKED: Structural files (commands, skills, rules, or config) are staged but no AI context docs (CLAUDE.md, AGENTS.md, llms.txt, etc.) were updated. Update and stage the relevant context files before committing. Run /ai-context audit to check what needs updating, or /ai-context to regenerate." >&2
-  exit 2
-fi
-
-echo '{}'
-
----
-
-# Source: upstream-versions.json
+Source: ./upstream-versions.json
 
 {
   "description": "Pinned upstream specification versions. The check-upstream GitHub Action compares these against live sources monthly.",
@@ -10617,21 +9487,15 @@ echo '{}'
       "check_url": null,
       "last_verified": "2026-02-25",
       "stability": "evolving — feature additions expected"
-    },
-    "agents-md": {
-      "version": "1.0",
-      "url": "https://github.com/agentsmd/agents.md",
-      "repo": "agentsmd/agents.md",
-      "check_url": "https://api.github.com/repos/agentsmd/agents.md/releases/latest",
-      "last_verified": "2026-02-27",
-      "stability": "evolving — v1.1 proposals in progress"
     }
   }
 }
 
 ---
 
-# Source: .cursorrules
+## Cursor Rules
+
+Source: ./.cursorrules
 
 # PitchDocs — Cursor Rules
 
@@ -10639,11 +9503,11 @@ You are working on PitchDocs, a Claude Code plugin that generates marketing-qual
 
 ## Architecture
 
-- **Skills** (15): `.claude/skills/*/SKILL.md` — reference knowledge loaded on-demand
-- **Agent** (1): `.claude/agents/docs-writer.md` — orchestration workflow
-- **Rules** (3): `.claude/rules/*.md` — doc-standards (cross-tool), context-quality (Claude Code only), content-filter (Claude Code only)
-- **Commands** (13): `commands/*.md` — slash command definitions
-- **Hooks** (3): `hooks/*.sh` — Context Guard post-commit, structural change, and content filter write guard hooks (Claude Code only, opt-in)
+- **Skills** (16): `.claude/skills/*/SKILL.md` — reference knowledge loaded on-demand
+- **Agents** (3): `.claude/agents/*.md` — docs-writer (orchestrator), docs-researcher, docs-reviewer
+- **Rules** (3): `.claude/rules/*.md` — doc-standards (cross-tool), content-filter (Claude Code only), docs-awareness (Claude Code only)
+- **Commands** (15): `commands/*.md` — 13 active + 2 stubs redirecting to [ContextDocs](https://github.com/littlebearapps/contextdocs)
+- **Hooks** (1): `hooks/content-filter-guard.sh` — content filter write guard (Claude Code only, opt-in)
 
 ## Writing Standards
 
@@ -10671,7 +9535,9 @@ Structure docs for AI extraction: crisp top-of-page definitions, one topic per H
 
 ---
 
-# Source: .github/copilot-instructions.md
+## Copilot Instructions
+
+Source: ./.github/copilot-instructions.md
 
 # PitchDocs — Copilot Instructions
 
@@ -10679,13 +9545,13 @@ PitchDocs is a Claude Code plugin that generates marketing-quality repository do
 
 ## Project Structure
 
-- `.claude/skills/*/SKILL.md` — 15 reference knowledge modules (README, features, changelog, roadmap, docs suite, llms.txt, package registry, user guides, AI context, docs verify, launch artifacts, API reference, doc refresh, context guard, platform profiles)
-- `.claude/agents/docs-writer.md` — orchestration agent (scan → extract → write → validate)
+- `.claude/skills/*/SKILL.md` — 16 reference knowledge modules (README, features, changelog, roadmap, docs suite, llms.txt, package registry, user guides, docs verify, launch artifacts, API reference, doc refresh, visual standards, GEO optimisation, skill authoring, platform profiles)
+- `.claude/agents/*.md` — 3 agents (docs-writer orchestrator, docs-researcher, docs-reviewer)
 - `.claude/rules/doc-standards.md` — quality standards rule (auto-loaded, Claude Code only)
-- `.claude/rules/context-quality.md` — AI context file quality rule (auto-loaded, Claude Code only)
 - `.claude/rules/content-filter.md` — content filter quick reference rule (auto-loaded, Claude Code only)
-- `commands/*.md` — 15 slash command definitions
-- `hooks/*.sh` — 5 Context Guard hook scripts (Claude Code only, opt-in via `/pitchdocs:context-guard install`)
+- `.claude/rules/docs-awareness.md` — documentation trigger map (auto-loaded, Claude Code only)
+- `commands/*.md` — 15 command definitions (13 active + 2 stubs redirecting to ContextDocs)
+- `hooks/content-filter-guard.sh` — content filter write guard (Claude Code only, opt-in)
 - `.claude-plugin/plugin.json` — plugin manifest
 
 ## Conventions
@@ -10702,7 +9568,9 @@ When modifying skills or commands, keep these files in sync: README.md, AGENTS.m
 
 ---
 
-# Source: .windsurfrules
+## Windsurf Rules
+
+Source: ./.windsurfrules
 
 # PitchDocs — Windsurf Rules
 
@@ -10712,11 +9580,11 @@ PitchDocs is a Claude Code plugin that generates marketing-quality repository do
 
 ## Architecture
 
-- Skills (15): `.claude/skills/*/SKILL.md` — reference knowledge loaded on-demand
-- Agent (1): `.claude/agents/docs-writer.md` — orchestration workflow (scan, extract, write, validate)
-- Rules (3): `.claude/rules/*.md` — doc-standards, context-quality, content-filter (Claude Code only)
-- Commands (13): `commands/*.md` — slash command definitions
-- Hooks (3): `hooks/*.sh` — Context Guard hooks (Claude Code only, opt-in)
+- Skills (16): `.claude/skills/*/SKILL.md` — reference knowledge loaded on-demand
+- Agents (3): `.claude/agents/*.md` — docs-writer (orchestrator), docs-researcher, docs-reviewer
+- Rules (3): `.claude/rules/*.md` — doc-standards, content-filter, docs-awareness (Claude Code only)
+- Commands (15): `commands/*.md` — 13 active + 2 stubs redirecting to [ContextDocs](https://github.com/littlebearapps/contextdocs)
+- Hooks (1): `hooks/content-filter-guard.sh` — content filter write guard (Claude Code only, opt-in)
 
 ## Coding Standards
 
@@ -10745,13 +9613,15 @@ No build or test commands — this is a pure Markdown plugin.
 
 ---
 
-# Source: .clinerules
+## Cline Rules
+
+Source: ./.clinerules
 
 # PitchDocs
 
 ## Project Overview
 
-PitchDocs is a Claude Code plugin that generates marketing-quality repository documentation — READMEs, changelogs, AI context files, and 15+ more doc types from slash commands. Pure Markdown, no runtime dependencies.
+PitchDocs is a Claude Code plugin that generates marketing-quality repository documentation — READMEs, changelogs, and 15+ more doc types from slash commands. Pure Markdown, no runtime dependencies. For AI context file management, see [ContextDocs](https://github.com/littlebearapps/contextdocs).
 
 ## Tech Stack
 
@@ -10771,11 +9641,11 @@ PitchDocs is a Claude Code plugin that generates marketing-quality repository do
 
 ## Important Paths
 
-- `.claude/skills/*/SKILL.md` — 15 reference knowledge modules
-- `.claude/agents/docs-writer.md` — orchestration agent (scan, extract, write, validate)
-- `.claude/rules/doc-standards.md` — quality standards rule (Claude Code only)
-- `commands/*.md` — 15 slash command definitions
-- `hooks/*.sh` — 5 Context Guard hook scripts (Claude Code only, opt-in)
+- `.claude/skills/*/SKILL.md` — 16 reference knowledge modules
+- `.claude/agents/*.md` — 3 agents (docs-writer, docs-researcher, docs-reviewer)
+- `.claude/rules/*.md` — 3 rules (doc-standards, content-filter, docs-awareness)
+- `commands/*.md` — 15 command definitions (13 active + 2 stubs)
+- `hooks/content-filter-guard.sh` — content filter write guard (Claude Code only, opt-in)
 - `.claude-plugin/plugin.json` — plugin manifest
 - `upstream-versions.json` — pinned upstream spec versions
 
@@ -10787,11 +9657,13 @@ PitchDocs is a Claude Code plugin that generates marketing-quality repository do
 
 ---
 
-# Source: GEMINI.md
+## Gemini Context
+
+Source: ./GEMINI.md
 
 # PitchDocs
 
-A Claude Code plugin that generates marketing-quality repository documentation — READMEs, changelogs, AI context files, and 15+ more doc types for any codebase.
+A Claude Code plugin that generates marketing-quality repository documentation — READMEs, changelogs, and 15+ more doc types for any codebase. For AI context file management, see [ContextDocs](https://github.com/littlebearapps/contextdocs).
 
 ## Tech Stack
 
@@ -10811,17 +9683,19 @@ No build, test, or deploy commands — this is a pure Markdown plugin. Lint with
 
 ## Key Paths
 
-- `.claude/skills/*/SKILL.md`: 15 reference knowledge modules
-- `.claude/agents/docs-writer.md`: orchestration agent
-- `.claude/rules/doc-standards.md`: quality standards (Claude Code only)
-- `commands/*.md`: 15 slash command definitions
-- `hooks/*.sh`: 5 Context Guard hooks (Claude Code only, opt-in)
+- `.claude/skills/*/SKILL.md`: 16 reference knowledge modules
+- `.claude/agents/*.md`: 3 agents (docs-writer, docs-researcher, docs-reviewer)
+- `.claude/rules/*.md`: 3 rules (doc-standards, content-filter, docs-awareness)
+- `commands/*.md`: 15 command definitions (13 active + 2 stubs)
+- `hooks/content-filter-guard.sh`: content filter write guard (Claude Code only, opt-in)
 - `.claude-plugin/plugin.json`: plugin manifest
 - `upstream-versions.json`: pinned upstream spec versions
 
 ---
 
-# Source: tests/evaluations.json
+## Evaluation Scenarios
+
+Source: ./tests/evaluations.json
 
 [
   {
@@ -10854,11 +9728,11 @@ No build, test, or deploy commands — this is a pure Markdown plugin. Lint with
     "description": "Features command routes to feature-benefits skill"
   },
   {
-    "id": "cmd-ai-context",
+    "id": "cmd-ai-context-stub",
     "input": "/pitchdocs:ai-context audit",
     "expected_skill": "ai-context",
     "should_respond": true,
-    "description": "AI context audit routes to ai-context skill"
+    "description": "AI context command shows stub redirect to ContextDocs"
   },
   {
     "id": "cmd-launch",
@@ -10903,11 +9777,11 @@ No build, test, or deploy commands — this is a pure Markdown plugin. Lint with
     "description": "User guide command routes to user-guides skill"
   },
   {
-    "id": "cmd-context-guard",
+    "id": "cmd-context-guard-stub",
     "input": "/pitchdocs:context-guard install",
     "expected_skill": "context-guard",
     "should_respond": true,
-    "description": "Context guard install routes to context-guard skill"
+    "description": "Context guard command shows stub redirect to ContextDocs"
   },
   {
     "id": "cmd-platform",
@@ -10963,6 +9837,3 @@ No build, test, or deploy commands — this is a pure Markdown plugin. Lint with
     "reason": "Test execution is not a documentation task"
   }
 ]
-
----
-
