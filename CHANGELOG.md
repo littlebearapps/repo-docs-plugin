@@ -66,6 +66,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+* You can now test skill activation with the built-in eval runner (`/skip` to skip tool calls in claude -p mode) — enables automated testing of skill routing and command activation
+* **Skill activation evaluation suite** — comprehensive test runner for validating skill activation patterns across different prompt types and contexts
+* **Three test artifacts** — hook unit tests, banned phrase checker, and results documentation for CI validation workflows
+* **Six new CI checks** — spell checking, actionlint validation, frontmatter parsing, llms.txt consistency verification, orphan file detection, and token budget enforcement
+
+### Fixed
+
+* Activation eval runner now correctly processes stream-json output format and operates without tool call restrictions
+
+### Documentation
+
+* Added Testing & Validation section to CLAUDE.md with test artifact inventory and CI check descriptions
 * **visual-standards skill** — extracted emoji headings, screenshots, device image specs, and caption guidance from auto-loaded `doc-standards` rule into an on-demand skill (`/pitchdocs:visual-standards`)
 * **geo-optimisation skill** — extracted GEO patterns (citation capsules, statistics, comparison tables, atomic sections) from auto-loaded `doc-standards` rule into an on-demand skill (`/pitchdocs:geo`)
 * **skill-authoring skill** — extracted token budget guidelines for skill authors from auto-loaded `doc-standards` rule into an on-demand skill

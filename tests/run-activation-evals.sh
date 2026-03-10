@@ -8,13 +8,14 @@
 #   bash tests/run-activation-evals.sh              # Run all tests once
 #   bash tests/run-activation-evals.sh --runs 3     # Run each test 3 times (statistical)
 #   bash tests/run-activation-evals.sh --dry-run    # Show what would be tested
+#   bash tests/run-activation-evals.sh --debug      # Show raw stdout/stderr for diagnosis
 #
 # Requirements:
 #   - claude CLI installed and authenticated
 #   - jq installed
 #   - PitchDocs plugin installed (or run from PitchDocs project directory)
 #
-# Cost estimate: ~$0.01-0.03 per test case per run (Haiku model recommended)
+# Cost estimate: ~$0.10-0.50 per test case per run (model may fall back to Sonnet)
 #
 # NOTE: Do NOT run this from inside a Claude Code session.
 #       Run it from a regular terminal shell.
@@ -28,6 +29,7 @@ RESULTS_DIR="$SCRIPT_DIR/activation-results"
 RUNS=1
 DRY_RUN=false
 SAVE_RAW=false
+DEBUG_MODE=false
 MODEL="haiku"  # Use cheapest model for activation testing
 
 # Parse arguments
@@ -37,6 +39,7 @@ while [[ $# -gt 0 ]]; do
     --dry-run) DRY_RUN=true; shift ;;
     --model) MODEL="$2"; shift 2 ;;
     --save-raw) SAVE_RAW=true; shift ;;
+    --debug) DEBUG_MODE=true; SAVE_RAW=true; shift ;;
     *) echo "Unknown option: $1"; exit 1 ;;
   esac
 done
@@ -52,6 +55,35 @@ if [ -n "${CLAUDECODE:-}" ]; then
   echo "Run this from a regular terminal: bash tests/run-activation-evals.sh"
   exit 1
 fi
+
+# Pre-flight check: verify claude -p produces output
+echo "Pre-flight check: testing claude -p connectivity..."
+PREFLIGHT_STDERR=$(mktemp)
+PREFLIGHT=$(cd "$PROJECT_DIR" && claude -p "Say OK" \
+  --output-format stream-json \
+  --verbose \
+  --model "$MODEL" \
+  --permission-mode default \
+  --no-session-persistence \
+  2>"$PREFLIGHT_STDERR") || true
+if [ -z "$PREFLIGHT" ]; then
+  echo "Error: claude -p produces no stdout."
+  if [ -s "$PREFLIGHT_STDERR" ]; then
+    echo "stderr output:"
+    head -5 "$PREFLIGHT_STDERR"
+  fi
+  rm -f "$PREFLIGHT_STDERR"
+  echo ""
+  echo "Possible causes:"
+  echo "  - API key not configured (run: claude auth)"
+  echo "  - Model '$MODEL' not available"
+  echo "  - stream-json output may go to stderr (try: claude -p 'Say OK' --output-format stream-json 2>&1 | head -5)"
+  exit 1
+fi
+PREFLIGHT_LINES=$(echo "$PREFLIGHT" | wc -l)
+echo "Pre-flight OK: $PREFLIGHT_LINES lines of stream-json output"
+rm -f "$PREFLIGHT_STDERR"
+echo ""
 
 # Load test cases
 TOTAL_CASES=$(jq length "$EVALS_FILE")
@@ -102,21 +134,44 @@ for run in $(seq 1 "$RUNS"); do
     echo -n "  [$ID] $INPUT ... "
 
     # Run claude -p with stream-json to capture tool use events
-    # --max-budget-usd 0.05 caps cost per invocation
     # NOTE: Do NOT use --allowedTools "Skill" — it prevents Claude from loading
     # plugin context. Let Claude use all tools so skills can activate properly.
+    # IMPORTANT: Use "|| true" (not "|| OUTPUT=''") to preserve captured stdout
+    # on non-zero exit. Capture stderr to a log file for diagnostics.
+    STDERR_LOG="$RESULTS_DIR/.stderr-last.log"
     OUTPUT=$(cd "$PROJECT_DIR" && claude -p "$INPUT" \
       --output-format stream-json \
+      --verbose \
       --model "$MODEL" \
-      --max-budget-usd 0.05 \
+      --permission-mode default \
+      --max-budget-usd 0.50 \
       --no-session-persistence \
-      2>/dev/null) || OUTPUT=""
+      2>"$STDERR_LOG") || true
 
-    # Optionally save raw output for debugging
+    # Show diagnostics when output is empty
+    if [ -z "$OUTPUT" ] && [ -s "$STDERR_LOG" ]; then
+      echo ""
+      echo "    [stderr]: $(head -3 "$STDERR_LOG" | tr '\n' ' ')"
+    fi
+
+    # Debug mode: show raw output
+    if $DEBUG_MODE; then
+      echo ""
+      echo "    [debug stdout bytes]: $(echo "$OUTPUT" | wc -c)"
+      echo "    [debug stdout head]: $(echo "$OUTPUT" | head -c 300)"
+      if [ -s "$STDERR_LOG" ]; then
+        echo "    [debug stderr head]: $(head -1 "$STDERR_LOG" | head -c 200)"
+      fi
+    fi
+
+    # Save raw output for debugging
     if $SAVE_RAW; then
       RAW_DIR="$RESULTS_DIR/raw-$TIMESTAMP"
       mkdir -p "$RAW_DIR"
       echo "$OUTPUT" > "$RAW_DIR/${ID}-run${run}.json"
+      if [ -s "$STDERR_LOG" ]; then
+        cp "$STDERR_LOG" "$RAW_DIR/${ID}-run${run}.stderr"
+      fi
     fi
 
     # Extract which skill was activated (if any)

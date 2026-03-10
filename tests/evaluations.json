@@ -2,7 +2,7 @@
   {
     "id": "cmd-readme",
     "input": "/pitchdocs:readme",
-    "expected_skill": "public-readme",
+    "expected_skill": "readme",
     "expected_agent": "docs-writer",
     "should_respond": true,
     "description": "Direct readme command routes to public-readme skill and docs-writer agent"
@@ -24,7 +24,7 @@
   {
     "id": "cmd-features",
     "input": "/pitchdocs:features benefits",
-    "expected_skill": "feature-benefits",
+    "expected_skill": "features",
     "should_respond": true,
     "description": "Features command routes to feature-benefits skill"
   },
@@ -38,7 +38,7 @@
   {
     "id": "cmd-launch",
     "input": "/pitchdocs:launch",
-    "expected_skill": "launch-artifacts",
+    "expected_skill": "launch",
     "should_respond": true,
     "description": "Launch command routes to launch-artifacts skill"
   },
@@ -59,7 +59,7 @@
   {
     "id": "cmd-docs-audit",
     "input": "/pitchdocs:docs-audit",
-    "expected_skill": "pitchdocs-suite",
+    "expected_skill": "docs-audit",
     "should_respond": true,
     "description": "Docs audit routes to pitchdocs-suite skill"
   },
@@ -73,7 +73,7 @@
   {
     "id": "cmd-user-guide",
     "input": "/pitchdocs:user-guide",
-    "expected_skill": "user-guides",
+    "expected_skill": "user-guide",
     "should_respond": true,
     "description": "User guide command routes to user-guides skill"
   },
@@ -94,14 +94,14 @@
   {
     "id": "nl-readme",
     "input": "generate a readme for this project",
-    "expected_skill": "public-readme",
+    "expected_skill": "readme",
     "should_respond": true,
     "description": "Natural language readme request triggers public-readme skill"
   },
   {
     "id": "nl-docs-audit",
     "input": "audit this repo's documentation",
-    "expected_skill": "pitchdocs-suite",
+    "expected_skill": "docs-audit",
     "should_respond": true,
     "description": "Natural language audit request triggers pitchdocs-suite skill"
   },
@@ -115,7 +115,7 @@
   {
     "id": "nl-positioning",
     "input": "why should someone use this project?",
-    "expected_skill": "feature-benefits",
+    "expected_skill": "features",
     "should_respond": true,
     "description": "Positioning question triggers feature-benefits skill"
   },
