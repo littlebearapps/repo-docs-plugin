@@ -3,7 +3,7 @@ title: "Use PitchDocs with Other AI Tools"
 description: "Set up PitchDocs with Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose."
 type: how-to
 difficulty: intermediate
-last_verified: "1.11.0"
+last_verified: "2.0.0"
 related:
   - guides/getting-started.md
   - guides/troubleshooting.md
@@ -48,14 +48,13 @@ The source of truth lives in `.claude/`. Here's what each piece does:
 
 | Directory | Contents | Purpose | Cross-Tool? |
 |-----------|----------|---------|-------------|
-| `.claude/skills/*/SKILL.md` | 18 skill files | Reference knowledge for all doc types plus context guard installation | Yes — Claude Code, OpenCode, Codex CLI |
+| `.claude/skills/*/SKILL.md` | 16 skill files | Reference knowledge for all doc types | Yes — Claude Code, OpenCode, Codex CLI |
 | `.claude/agents/docs-writer.md` | 1 agent file | Orchestration workflow: codebase scanning → feature extraction → doc writing → validation | Partial — Claude Code, OpenCode (may vary) |
 | `.claude/rules/doc-standards.md` | 1 rule file | Core quality standards: 4-question framework, progressive disclosure, benefit-driven language, badges. Extended references in `visual-standards`, `geo-optimisation`, `skill-authoring` skills | Auto-loaded in Claude Code; copy manually for other tools |
-| `.claude/rules/context-quality.md` | 1 rule file | AI context file quality standards: cross-file consistency, path verification, sync points | Auto-loaded in Claude Code; copy manually for other tools |
 | `.claude/rules/content-filter.md` | 1 rule file | Content filter quick reference: risk levels, fetch commands, chunked writing for high-risk OSS files | Auto-loaded in Claude Code; copy manually for other tools |
 | `.claude/rules/docs-awareness.md` | 1 rule file | Documentation trigger map: suggests PitchDocs commands when documentation-relevant work is detected | Auto-loaded in Claude Code; copy manually for other tools |
 | `commands/*.md` | 15 command files | Slash command definitions for all PitchDocs commands | Yes — Claude Code, OpenCode |
-| `hooks/*.sh` | 5 hook scripts | Post-commit drift detection, structural change reminders, content filter write guard, session-end context nudge (Tier 1), and pre-commit context enforcement (Tier 2) | **Claude Code only** |
+| `hooks/*.sh` | 1 hook script | Content filter write guard for high-risk OSS files | **Claude Code only** |
 
 ## Tool Compatibility Summary
 
@@ -69,7 +68,7 @@ Not all PitchDocs features work in every tool. Here's what's portable and what's
 | Doc-standards rule | Auto-loaded | Copy to context | Copy to context | Cursor: `.cursor/rules/`; others: copy to context file |
 | Content-filter rule | Auto-loaded | Copy to context | Copy to context | Copy to tool-specific context file |
 | Docs-awareness rule | Auto-loaded | Not applicable | Not applicable | Not applicable |
-| Content filter hook (1) | Native (opt-in) | Not supported | Not supported | Not supported |
+| Content filter hook | Native (opt-in) | Not supported | Not supported | Not supported |
 | AGENTS.md | Loaded | Primary context file | Primary context file | Not used |
 | CLAUDE.md | Loaded | Fallback (if no AGENTS.md) | Not used | Not used |
 

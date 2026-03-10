@@ -3,7 +3,7 @@ title: "How PitchDocs Thinks"
 description: "Design rationale and frameworks behind PitchDocs output — evidence-based features, GEO, 4-question test, Diátaxis, the Lobby Principle, and context drift detection."
 type: explanation
 difficulty: intermediate
-last_verified: "1.14.0"
+last_verified: "2.0.0"
 related:
   - guides/customising-output.md
   - guides/command-reference.md
@@ -12,7 +12,7 @@ order: 5
 
 # How PitchDocs Thinks
 
-> **TL;DR**: PitchDocs applies 7 documentation frameworks — evidence-based features, feature-to-benefit translation, user benefits extraction, the 4-question test, progressive disclosure, GEO, and Diátaxis — plus the Signal Gate principle for AI context files and context drift detection to keep AI coding assistants in sync with your code.
+> **TL;DR**: PitchDocs applies 7 documentation frameworks — evidence-based features, feature-to-benefit translation, user benefits extraction, the 4-question test, progressive disclosure, GEO, and Diátaxis. For AI context file management using the Signal Gate principle, see [ContextDocs](https://github.com/littlebearapps/contextdocs).
 
 PitchDocs applies several documentation frameworks to generate consistently high-quality output. Understanding these frameworks helps you steer the tool and evaluate its suggestions.
 

@@ -2,7 +2,7 @@
 title: "Command Reference"
 description: "All 15 PitchDocs commands with arguments, generated files, and examples."
 type: reference
-last_verified: "1.14.0"
+last_verified: "2.0.0"
 related:
   - guides/getting-started.md
   - guides/workflows.md

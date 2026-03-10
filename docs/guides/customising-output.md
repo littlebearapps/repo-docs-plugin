@@ -3,7 +3,7 @@ title: "Customising PitchDocs Output"
 description: "Steer PitchDocs output with prompt patterns, tone control, monorepo support, and iterative refinement."
 type: how-to
 difficulty: intermediate
-last_verified: "1.14.0"
+last_verified: "2.0.0"
 related:
   - guides/concepts.md
   - guides/command-reference.md
@@ -102,10 +102,6 @@ If PitchDocs generates content you find overly structured, it's following these 
 /pitchdocs:readme without emoji headings
 /pitchdocs:readme shorter features section — max 5 items
 ```
-
-### context-quality (Claude Code only)
-
-Ensures AI context files (AGENTS.md, CLAUDE.md, etc.) stay consistent with each other and with the actual codebase. Checks file paths, command lists, and version numbers.
 
 ### content-filter (Claude Code only)
 

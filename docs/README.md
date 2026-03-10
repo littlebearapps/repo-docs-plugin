@@ -34,4 +34,4 @@ See the [Command Reference guide](guides/command-reference.md) for all 15 comman
 
 ## Skills Reference
 
-PitchDocs includes 18 reference skills loaded on-demand. See the [Available Skills](../AGENTS.md#available-skills) table in AGENTS.md for the full inventory.
+PitchDocs includes 16 reference skills loaded on-demand. See the [Available Skills](../AGENTS.md#available-skills) table in AGENTS.md for the full inventory.

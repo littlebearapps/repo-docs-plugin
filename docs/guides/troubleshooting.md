@@ -3,7 +3,7 @@ title: "Troubleshooting & FAQ"
 description: "Common PitchDocs issues and solutions — content filter errors, score interpretation, badge issues, and cross-tool limitations."
 type: how-to
 difficulty: intermediate
-last_verified: "1.11.0"
+last_verified: "2.0.0"
 related:
   - guides/getting-started.md
   - guides/other-ai-tools.md

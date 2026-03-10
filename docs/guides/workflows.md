@@ -4,7 +4,7 @@ description: "Step-by-step recipes for common PitchDocs workflows: public-ready 
 type: how-to
 difficulty: intermediate
 time_to_complete: "varies per workflow"
-last_verified: "1.14.0"
+last_verified: "2.0.0"
 related:
   - guides/getting-started.md
   - guides/command-reference.md
