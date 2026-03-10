@@ -1,7 +1,7 @@
 ---
 name: pitchdocs
 description: Generate marketing-quality repository documentation from codebase analysis. Scans 10 signal categories, extracts features with file-level evidence, and produces README, CHANGELOG, ROADMAP, and 15+ more docs. Zero runtime dependencies. For AI context file management, see ContextDocs.
-version: "2.0.0"
+version: "1.19.3"
 author: Little Bear Apps
 tags:
   - documentation
