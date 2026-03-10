@@ -1,6 +1,6 @@
 # PitchDocs
 
-Generate high-quality public-facing repository documentation with a marketing edge. PitchDocs is a Claude Code plugin (pure Markdown, zero runtime dependencies) with 16 skills, 3 agents (adaptive researcher → writer → reviewer pipeline), 3 quality rules, 13 slash commands (+2 stubs redirecting to ContextDocs), and 1 opt-in hook.
+Generate high-quality public-facing repository documentation with a marketing edge. PitchDocs is a Claude Code plugin (pure Markdown, zero runtime dependencies) with 16 skills, 3 agents (adaptive researcher → writer → reviewer pipeline), 3 quality rules, 14 slash commands (+2 stubs redirecting to ContextDocs), 1 opt-in hook, and 20 evaluation test cases.
 
 ## Project Architecture
 
@@ -15,7 +15,7 @@ This is a **100% Markdown-based plugin** — no JavaScript, no Python, no build 
 .claude/rules/doc-standards.md  → Quality standards (auto-loaded every session)
 .claude/rules/content-filter.md → Content filter quick reference (auto-loaded; Claude Code only)
 .claude/rules/docs-awareness.md → Documentation trigger map (auto-loaded; Claude Code only)
-commands/*.md                   → 13 slash command definitions (+2 stubs redirecting to ContextDocs)
+commands/*.md                   → 14 slash command definitions (+2 stubs redirecting to ContextDocs)
 hooks/*.sh                      → 1 opt-in hook script (Claude Code only)
 ```
 
@@ -40,6 +40,7 @@ hooks/*.sh                      → 1 opt-in hook script (Claude Code only)
 | `upstream-versions.json` | Tracks 7 pinned spec versions — checked monthly by GitHub Action |
 | `llms.txt` | AI-readable content index — must be updated when files are added/removed |
 | `AGENTS.md` | Cross-tool AI context (Codex CLI format) — must stay in sync with skills/commands |
+| `tests/evaluations.json` | 20 command routing test scenarios — used by skill-creator evals |
 
 ## When Modifying This Plugin
 
@@ -49,6 +50,20 @@ hooks/*.sh                      → 1 opt-in hook script (Claude Code only)
 4. **Updating upstream specs**: Edit `upstream-versions.json` and the corresponding skill content
 5. **Adding platform support**: Update the `platform-profiles` skill for new platform equivalents. Existing skills reference it via cross-link.
 6. **Bumping version**: Handled automatically by release-please from conventional commit messages
+
+## Testing & Validation
+
+PitchDocs includes static validation in CI and supports runtime skill evaluation via the [skill-creator](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator) plugin.
+
+| Test | What It Checks | How to Run |
+|------|---------------|------------|
+| Frontmatter validation | YAML metadata in skills, commands, agents | `python tests/validate-frontmatter.py` |
+| Token budgets | Skill/rule/agent file sizes within limits | `bash tests/check-token-budgets.sh` |
+| llms.txt consistency | All referenced files exist, no orphans | `bash tests/validate-llms-txt.sh` |
+| Command routing evals | Skills activate for correct prompts | `tests/evaluations.json` via skill-creator |
+| Skill quality benchmarks | Output quality with/without plugin | skill-creator A/B comparison |
+
+Install skill-creator: `/plugin marketplace add anthropics/claude-plugins-official` then `/plugin install skill-creator`
 
 ## Relationship to ContextDocs
 
