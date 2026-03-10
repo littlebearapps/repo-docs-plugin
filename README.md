@@ -179,11 +179,16 @@ See the [Other AI Tools guide](docs/guides/other-ai-tools.md) for per-tool setup
 
 ## 📚 Documentation
 
-- [Getting Started Guide](docs/guides/getting-started.md) — Installation, first README generation, and full command walkthrough
-- [Workflows](docs/guides/workflows.md) — Recipes for public-ready repos, releases, launches, and ongoing maintenance
+New to PitchDocs? Start with the **[Tutorial: Build Your First Documentation Suite](docs/tutorials/build-your-first-docs-suite.md)** (20 minutes).
+
+Then explore:
+
+- [Getting Started Guide](docs/guides/getting-started.md) — Installation, first README generation, full command walkthrough (5 min)
+- [Workflows](docs/guides/workflows.md) — Recipes for public-ready repos, releases, launches, ongoing maintenance
+- [Command Reference](docs/guides/command-reference.md) — All 15 commands with arguments and examples
 - [Troubleshooting](docs/guides/troubleshooting.md) — Content filter errors, quality scores, badge issues, and FAQ
 - [Other AI Tools](docs/guides/other-ai-tools.md) — Setup for Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose
-- [Documentation Hub](docs/README.md) — All guides, command reference, and skills reference
+- **[Full Documentation Hub](docs/README.md)** — All tutorials, guides, reference docs, and explanations
 - [Support](SUPPORT.md) — Getting help, common questions, and response times
 
 ---

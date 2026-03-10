@@ -13,6 +13,7 @@
 - [Support](./SUPPORT.md): Getting help, common questions, contact details, and response times
 - [Claude.md](./CLAUDE.md): Claude Code project context — architecture, conventions, key files, and modification guide
 - [Docs Hub](./docs/README.md): Documentation index with command reference, skills reference, and links to all guides
+- [Build Your First Documentation Suite Tutorial](./docs/tutorials/build-your-first-docs-suite.md): Hands-on learning journey — walk through generating README, changelog, guides, and verification on a real project (20 minutes)
 - [Getting Started Guide](./docs/guides/getting-started.md): Step-by-step installation, first README generation, and full command walkthrough
 - [Workflows Guide](./docs/guides/workflows.md): Workflow cookbook — make a repo public-ready, prepare a release, launch on a platform, keep docs fresh over time
 - [Command Reference](./docs/guides/command-reference.md): All commands with arguments, generated files, cross-tool support, and examples
