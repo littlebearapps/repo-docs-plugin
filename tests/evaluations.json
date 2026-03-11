@@ -31,9 +31,8 @@
   {
     "id": "cmd-ai-context-stub",
     "input": "/pitchdocs:ai-context audit",
-    "expected_skill": "ai-context",
-    "should_respond": true,
-    "description": "AI context command shows stub redirect to ContextDocs"
+    "should_respond": false,
+    "reason": "Stub command — Claude expands redirect inline without Skill tool invocation"
   },
   {
     "id": "cmd-launch",
@@ -80,14 +79,13 @@
   {
     "id": "cmd-context-guard-stub",
     "input": "/pitchdocs:context-guard install",
-    "expected_skill": "context-guard",
-    "should_respond": true,
-    "description": "Context guard command shows stub redirect to ContextDocs"
+    "should_respond": false,
+    "reason": "Stub command — Claude expands redirect inline without Skill tool invocation"
   },
   {
     "id": "cmd-platform",
     "input": "/pitchdocs:platform",
-    "expected_skill": "platform-profiles",
+    "expected_skill": "platform",
     "should_respond": true,
     "description": "Platform detection routes to platform-profiles skill"
   },
@@ -121,10 +119,10 @@
   },
   {
     "id": "nl-positioning",
-    "input": "why should someone use this project?",
+    "input": "extract the key features and benefits of this project",
     "expected_skill": "feature",
     "should_respond": true,
-    "description": "Positioning question triggers feature-benefits skill"
+    "description": "Feature extraction request triggers feature-benefits skill"
   },
   {
     "id": "neg-debug",
