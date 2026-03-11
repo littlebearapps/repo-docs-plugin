@@ -1,0 +1,182 @@
+[
+  {
+    "id": "cmd-readme",
+    "run": 1,
+    "input": "/pitchdocs:readme",
+    "expected_skill": "readme",
+    "activated_skill": "none",
+    "should_respond": true,
+    "result": "fail"
+  },
+  {
+    "id": "cmd-changelog",
+    "run": 1,
+    "input": "/pitchdocs:changelog",
+    "expected_skill": "changelog",
+    "activated_skill": "changelog",
+    "should_respond": true,
+    "result": "pass"
+  },
+  {
+    "id": "cmd-docs-verify",
+    "run": 1,
+    "input": "/pitchdocs:docs-verify ci --min-score 80",
+    "expected_skill": "docs-verify",
+    "activated_skill": "pitchdocs:docs-verify",
+    "should_respond": true,
+    "result": "pass"
+  },
+  {
+    "id": "cmd-features",
+    "run": 1,
+    "input": "/pitchdocs:features benefits",
+    "expected_skill": "feature",
+    "activated_skill": "pitchdocs:features",
+    "should_respond": true,
+    "result": "pass"
+  },
+  {
+    "id": "cmd-ai-context-stub",
+    "run": 1,
+    "input": "/pitchdocs:ai-context audit",
+    "expected_skill": "ai-context",
+    "activated_skill": "pitchdocs:ai-context",
+    "should_respond": true,
+    "result": "pass"
+  },
+  {
+    "id": "cmd-launch",
+    "run": 1,
+    "input": "/pitchdocs:launch",
+    "expected_skill": "launch",
+    "activated_skill": "launch-artifacts",
+    "should_respond": true,
+    "result": "pass"
+  },
+  {
+    "id": "cmd-llms-txt",
+    "run": 1,
+    "input": "/pitchdocs:llms-txt",
+    "expected_skill": "llms-txt",
+    "activated_skill": "none",
+    "should_respond": true,
+    "result": "fail"
+  },
+  {
+    "id": "cmd-roadmap",
+    "run": 1,
+    "input": "/pitchdocs:roadmap",
+    "expected_skill": "roadmap",
+    "activated_skill": "pitchdocs:roadmap",
+    "should_respond": true,
+    "result": "pass"
+  },
+  {
+    "id": "cmd-docs-audit",
+    "run": 1,
+    "input": "/pitchdocs:docs-audit",
+    "expected_skill": "docs-audit",
+    "activated_skill": "none",
+    "should_respond": true,
+    "result": "fail"
+  },
+  {
+    "id": "cmd-doc-refresh",
+    "run": 1,
+    "input": "/pitchdocs:doc-refresh",
+    "expected_skill": "doc-refresh",
+    "activated_skill": "pitchdocs:doc-refresh",
+    "should_respond": true,
+    "result": "pass"
+  },
+  {
+    "id": "cmd-user-guide",
+    "run": 1,
+    "input": "/pitchdocs:user-guide",
+    "expected_skill": "user-guide",
+    "activated_skill": "user-guides",
+    "should_respond": true,
+    "result": "pass"
+  },
+  {
+    "id": "cmd-context-guard-stub",
+    "run": 1,
+    "input": "/pitchdocs:context-guard install",
+    "expected_skill": "context-guard",
+    "activated_skill": "none",
+    "should_respond": true,
+    "result": "fail"
+  },
+  {
+    "id": "cmd-platform",
+    "run": 1,
+    "input": "/pitchdocs:platform",
+    "expected_skill": "platform-profiles",
+    "activated_skill": "platform-profiles",
+    "should_respond": true,
+    "result": "pass"
+  },
+  {
+    "id": "nl-readme",
+    "run": 1,
+    "input": "generate a readme for this project",
+    "expected_skill": "readme",
+    "activated_skill": "pitchdocs:readme",
+    "should_respond": true,
+    "result": "pass"
+  },
+  {
+    "id": "nl-docs-audit",
+    "run": 1,
+    "input": "audit this repo's documentation",
+    "expected_skill": "docs-audit",
+    "activated_skill": "pitchdocs:docs-audit",
+    "should_respond": true,
+    "result": "pass"
+  },
+  {
+    "id": "nl-changelog",
+    "run": 1,
+    "input": "write a changelog from git history",
+    "expected_skill": "changelog",
+    "activated_skill": "pitchdocs:changelog",
+    "should_respond": true,
+    "result": "pass"
+  },
+  {
+    "id": "nl-positioning",
+    "run": 1,
+    "input": "why should someone use this project?",
+    "expected_skill": "feature",
+    "activated_skill": "none",
+    "should_respond": true,
+    "result": "fail"
+  },
+  {
+    "id": "neg-debug",
+    "run": 1,
+    "input": "debug this error in my code",
+    "expected_skill": "none",
+    "activated_skill": "none",
+    "should_respond": false,
+    "result": "pass"
+  },
+  {
+    "id": "neg-deploy",
+    "run": 1,
+    "input": "deploy this to Cloudflare Workers",
+    "expected_skill": "none",
+    "activated_skill": "none",
+    "should_respond": false,
+    "result": "pass"
+  },
+  {
+    "id": "neg-test",
+    "run": 1,
+    "input": "run the test suite",
+    "expected_skill": "none",
+    "activated_skill": "none",
+    "should_respond": false,
+    "result": "pass"
+  }
+]

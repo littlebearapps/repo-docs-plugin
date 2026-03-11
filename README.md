@@ -96,6 +96,21 @@ For other AI tools, see the [setup guide](docs/guides/other-ai-tools.md).
 
 ---
 
+## 📚 Documentation
+
+Learn PitchDocs through tutorials, guides, and reference docs. Pick your path:
+
+| I want to… | Start here |
+|-----------|----------|
+| **Learn by doing** | [Build Your First Docs Suite](docs/tutorials/build-your-first-docs-suite.md) — 20-minute hands-on tutorial |
+| **Understand how it works** | [How PitchDocs Thinks](docs/guides/concepts.md) — Design rationale, frameworks, and philosophy |
+| **See all commands** | [Command Reference](docs/guides/command-reference.md) — All 15 commands with arguments and examples |
+| **Solve a problem** | [Troubleshooting & FAQ](docs/guides/troubleshooting.md) — Common issues and solutions |
+| **Find a workflow** | [Workflow Cookbook](docs/guides/workflows.md) — Recipes for public-ready repos, releases, and launches |
+| **Explore everything** | [Full Documentation Hub](docs/README.md) — All guides organised by learning type (tutorial, how-to, reference, explanation) |
+
+---
+
 ## 🚀 What PitchDocs Does
 
 Your repo is ready to go public, but the docs aren't. You need a README that sells, a CHANGELOG that makes sense to users, a SECURITY policy, contributing guidelines, issue templates, PR templates — and it all needs to look professional.
@@ -115,6 +130,7 @@ For AI context file management (AGENTS.md, CLAUDE.md, .cursorrules, and more), s
 - ✅ **Professional docs without documentation expertise** — every generated doc passes the 4-question test, applies the lobby principle for progressive disclosure, and targets measurable Time to Hello World
 - 🔎 **GEO-optimised for AI citation** — structured so ChatGPT, Perplexity, and Google AI Overviews cite your project accurately
 - 📊 **Quality scoring (0–100)** — grades docs on completeness, structure, freshness, link health, and evidence quality — export to CI with `--min-score`
+- 🧪 **CI-ready validation checks** — 6 automated GitHub Actions checks (spell check, frontmatter validation, llms.txt consistency, banned phrase detection, orphan file detection, token budget enforcement) catch documentation issues before merging
 - 🛡️ **Content filter protection** — automatically handles Claude Code's API filter for CODE_OF_CONDUCT, LICENSE, and SECURITY so you never hit HTTP 400 errors *(Claude Code only)*
 - 🌐 **GitHub, GitLab, and Bitbucket** — auto-detects hosting platform and adapts badges, URLs, CI config, and Markdown rendering for each
 - 🔌 **Works with 9 AI tools** — Claude Code, OpenCode, Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, Goose

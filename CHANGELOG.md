@@ -64,36 +64,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Breaking Changes
+
+* **`/pitchdocs:ai-context` and `/pitchdocs:context-guard` deprecated** — AI context file management is now the responsibility of [ContextDocs](https://github.com/littlebearapps/contextdocs). These commands remain as stubs that redirect users to install ContextDocs. For projects that had Context Guard hooks enabled, migrate to ContextDocs' hook-based approach for continued drift detection.
+
 ### Added
 
-* You can now test skill activation with the built-in eval runner (`/skip` to skip tool calls in claude -p mode) — enables automated testing of skill routing and command activation
-* **Skill activation evaluation suite** — comprehensive test runner for validating skill activation patterns across different prompt types and contexts
-* **Three test artifacts** — hook unit tests, banned phrase checker, and results documentation for CI validation workflows
-* **Six new CI checks** — spell checking, actionlint validation, frontmatter parsing, llms.txt consistency verification, orphan file detection, and token budget enforcement
+* **6 new automated CI checks** — Validate documentation quality in GitHub Actions (or any CI/CD system) so you catch broken links, stale content, and formatting issues before merging. Includes spell checking (typos, misspellings), frontmatter validation (YAML metadata), llms.txt consistency (orphan file detection), banned phrase detection (AI-speak prevention), file orphan detection, and token budget enforcement for skills and rules.
+
+* **Activation evaluation framework** — Measure how well PitchDocs commands trigger for the prompts you use. The `/pitchdocs:features` skill now includes activation eval support via Claude's `-p` prompt-caching mode, and all 16 skills have been tuned against 20 baseline evaluation scenarios (achieving 80%+ accuracy).
+
+* **Test artifacts and validation results** — Track activation eval runs in `tests/activation-results/` to catch skill regressions early. New test scripts validate hook content-filter integration, token budgets, frontmatter, and llms.txt consistency.
+
+### Documentation
+
+* Comprehensive getting-started tutorial and workflow guides for new users
+* Launch artifacts generation (Dev.to articles, Hacker News posts, Reddit submissions, promotion drafts)
+* Detailed roadmap with milestone tracking and feature planning visibility
+* Activation evaluation results demonstrating 80% skill routing accuracy across all test scenarios
 
 ### Fixed
 
-* Activation eval runner now correctly processes stream-json output format and operates without tool call restrictions
-
-### Documentation
-
-* Added Testing & Validation section to CLAUDE.md with test artifact inventory and CI check descriptions
-* **visual-standards skill** — extracted emoji headings, screenshots, device image specs, and caption guidance from auto-loaded `doc-standards` rule into an on-demand skill (`/pitchdocs:visual-standards`)
-* **geo-optimisation skill** — extracted GEO patterns (citation capsules, statistics, comparison tables, atomic sections) from auto-loaded `doc-standards` rule into an on-demand skill (`/pitchdocs:geo`)
-* **skill-authoring skill** — extracted token budget guidelines for skill authors from auto-loaded `doc-standards` rule into an on-demand skill
-
-### Changed
-
-* **doc-standards rule slimmed by 56%** — reduced from 591 to 168 lines (~5,760 → ~1,872 tokens) by extracting visual, GEO, and token budget sections into on-demand skills; condensed banned phrases table to a single-line list
-* **context-quality rule condensed** — removed Signal Gate size guidance (duplicated ai-context skill), condensed tool compatibility table to prose (107 → 59 lines)
-* **command instructions deduplicated** — readme, features, and docs-audit commands now reference skills instead of repeating their workflow steps
-* **agent instructions trimmed** — removed redundant "load doc-standards rule" from all 3 agents (rules auto-load)
-* **skill cross-references updated** — public-readme and pitchdocs-suite skills reference new on-demand skills instead of duplicating content
-* **auto-loaded token budget reduced 56%** — from ~7,820 to ~3,415 tokens across all 4 rules
-
-### Documentation
-
-* updated skill/command counts across README, AGENTS.md, CLAUDE.md, llms.txt, and all 6 user guides (15 → 18 skills, 13 → 15 commands)
+* Fixed version numbering inconsistency in v2.0.0 and v5 documentation references
+* Resolved false-positive drift check warnings in Context Guard migration period
 
 ## [1.17.0](https://github.com/littlebearapps/pitchdocs/compare/v1.16.0...v1.17.0) (2026-03-08)
 
