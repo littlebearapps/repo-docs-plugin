@@ -26,7 +26,7 @@
 
 ### 2. Token Budget Audit
 
-**Result: 9 advisory warnings (pre-existing)**
+**Result: 9 advisory warnings (pre-existing) → 6 after fixes (see Phase 3.5)**
 
 #### Auto-loaded rules (every session overhead):
 
@@ -191,6 +191,37 @@ New manual-trigger GitHub Actions workflow for running skill activation evals in
 
 ---
 
+## Phase 3.5: Token Budget Fixes (#36, #37)
+
+**Status**: Complete — warnings reduced from 9 to 6.
+
+### Issue #36: Auto-loaded rules slimmed
+
+Slimmed `doc-standards.md` from 5,431 → 4,625 chars (~200 token reduction). TTHW table replaced with one-line summary + skill pointer. Marketing Principles and Extended References sections compressed. `content-filter.md` and `docs-awareness.md` kept as-is (already lean/essential).
+
+| Rule | Before | After | Status |
+|------|--------|-------|--------|
+| doc-standards.md | ~1,357 tokens | ~1,156 tokens | Still over (essential content) |
+| content-filter.md | ~750 tokens | ~750 tokens | Unchanged (all essential) |
+| docs-awareness.md | ~549 tokens | ~549 tokens | Unchanged (all essential) |
+
+### Issue #37: Over-budget skills split into companions
+
+4 skills split into core SKILL.md + SKILL-reference.md companion files:
+
+| Skill | Before | After | Reference File |
+|-------|--------|-------|----------------|
+| user-guides | ~3,969 tokens | ~1,987 tokens | SKILL-reference.md (882 tokens) |
+| docs-verify | ~3,850 tokens | ~1,371 tokens | SKILL-reference.md (2,140 tokens) |
+| pitchdocs-suite | ~3,227 tokens | ~1,981 tokens | SKILL-reference.md (1,489 tokens) |
+| package-registry | ~2,968 tokens | ~1,308 tokens | SKILL-reference.md (1,820 tokens) |
+
+Old `docs-verify/SKILL-extended.md` removed (replaced by SKILL-reference.md).
+
+**Remaining 2** (doc-refresh ~2,453 tokens, launch-artifacts ~2,286 tokens): Close to budget, content is essential, accepted as-is.
+
+---
+
 ## Phase 4: Output Quality Evaluation (Pending)
 
 **Status**: Not yet run. Requires generating docs for test repos with and without PitchDocs, then blind comparison.
@@ -203,13 +234,13 @@ New manual-trigger GitHub Actions workflow for running skill activation evals in
 
 **Severity**: Medium (affects all sessions, not just doc sessions)
 **Details**: 3 auto-loaded rules total ~2,613 tokens, exceeding the recommended ~1,500 aggregate budget by 74%.
-**Recommendation**: Split doc-standards.md into an auto-loaded summary (~300 tokens) and an on-demand skill for the full reference.
+**Resolution**: Slimmed doc-standards.md (~200 token reduction). Remaining overhead is essential content. See Phase 3.5.
 
 ### ISSUE-2: 6 skills exceed individual token budgets
 
 **Severity**: Low (on-demand only, loaded when needed)
 **Details**: user-guides, docs-verify, pitchdocs-suite, package-registry, doc-refresh, and launch-artifacts all exceed the ~2,000 token skill budget.
-**Recommendation**: Review for content that can be delegated to companion files (SKILL-*.md) or trimmed.
+**Resolution**: 4 of 6 split into companion files. Remaining 2 (doc-refresh, launch-artifacts) are close to budget and accepted. Warnings reduced 9 → 6. See Phase 3.5.
 
 ---
 
