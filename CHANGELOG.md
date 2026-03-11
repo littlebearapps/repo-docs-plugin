@@ -5,6 +5,52 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0](https://github.com/littlebearapps/pitchdocs/compare/v1.19.3...v2.0.0) (2026-03-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* /pitchdocs:ai-context and /pitchdocs:context-guard moved to ContextDocs (https://github.com/littlebearapps/contextdocs). Both remain as stub redirects. 39 files changed, 16 skills, 3 rules, 1 hook.
+
+### Added
+
+* add 3 test artifacts — hook unit tests, banned phrase checker, results doc ([dc54272](https://github.com/littlebearapps/pitchdocs/commit/dc5427200fd8b197ad10e2eb00392db83b467ecd))
+* add 6 CI checks — spell check, actionlint, frontmatter validation, llms.txt consistency, orphan detection, token budgets ([e2eb70b](https://github.com/littlebearapps/pitchdocs/commit/e2eb70bafd3eb2dce01b027ec2ad2aa9143b63c4))
+* add CI integration — hook tests, banned phrases, activation eval workflow ([45372e4](https://github.com/littlebearapps/pitchdocs/commit/45372e482943bff738facff78a51e37f599a0b5e))
+* add skill activation eval runner for claude -p testing ([2be7a4d](https://github.com/littlebearapps/pitchdocs/commit/2be7a4d125ac768cdcaa12b1b8a2be976fb20061))
+* split AI context management into ContextDocs plugin ([6320b98](https://github.com/littlebearapps/pitchdocs/commit/6320b9801d6ea9323ec904bc8a4a171f937f31fb))
+
+
+### Fixed
+
+* AU English spelling, typos config for brands/HTML, lychee exclude canva.com ([8871d20](https://github.com/littlebearapps/pitchdocs/commit/8871d205e61853f03beb93dc2755c666b090555d))
+* correct hook file path in llms.txt from gitignored .claude/hooks/ to tracked hooks/ ([dd6bce0](https://github.com/littlebearapps/pitchdocs/commit/dd6bce04783336d63eb70b7e3d2b4934d478c470))
+* fix activation eval runner — stream-json format, remove tool restriction ([7c35f1c](https://github.com/littlebearapps/pitchdocs/commit/7c35f1ccbf4abd18af4f89779fd99a1483d84b0c))
+* heading level increment and dead discussions link ([55fcb22](https://github.com/littlebearapps/pitchdocs/commit/55fcb2229c1fc489ac9afe8df04660530413d638))
+* resolve markdown lint errors in RESULTS.md and tutorial ([5147950](https://github.com/littlebearapps/pitchdocs/commit/5147950464dd822f40be613c92d74c9496bf7e15))
+* resolve shellcheck SC2012 and SC2129 in CI workflows ([81f6411](https://github.com/littlebearapps/pitchdocs/commit/81f6411cc88ecac0e7bee010dc1af0e8acae903b))
+* revert premature version bump so release-please proposes v2.0.0 ([47ad6b5](https://github.com/littlebearapps/pitchdocs/commit/47ad6b5ebee90866741fd634e7c0739b00a378cc))
+
+
+### Performance
+
+* slim doc-standards.md auto-loaded rule (~200 token reduction) ([6f7f9d2](https://github.com/littlebearapps/pitchdocs/commit/6f7f9d2429c2f2c717fab23eef58d982cdadfdbc)), closes [#36](https://github.com/littlebearapps/pitchdocs/issues/36)
+* split 4 over-budget skills into companion reference files ([ed0cc84](https://github.com/littlebearapps/pitchdocs/commit/ed0cc84d1387fcd7ebf1a52723f3c90ee141ebbd))
+
+
+### Documentation
+
+* add activation eval reminder to release workflow ([c5cf5dd](https://github.com/littlebearapps/pitchdocs/commit/c5cf5ddd1bb4eefe266152bf9f6d7308194e449a))
+* add Testing & Validation section to CLAUDE.md ([9734907](https://github.com/littlebearapps/pitchdocs/commit/9734907bb28895e5558bc3596dae534a3dce5ffe))
+* add tutorial, launch artifacts, ROADMAP, and rewrite docs hub ([a222d6c](https://github.com/littlebearapps/pitchdocs/commit/a222d6cb76648ee0fb5d62555b4886d89861fbb5))
+* add Untether integration guide and consolidate cross-references ([c1a4d89](https://github.com/littlebearapps/pitchdocs/commit/c1a4d89ae4a7950c5f6037d2a6c687c431c6d67f))
+* add V5 activation eval results (80%) and fix V6 name mismatch ([61d75d9](https://github.com/littlebearapps/pitchdocs/commit/61d75d940b6b7f5dc8f582a36ca9b28a835e8d23))
+* regenerate llms-full.txt for v2.0.0 ([c63a87f](https://github.com/littlebearapps/pitchdocs/commit/c63a87f2e8cb0bd5f584264c59547bf61700cdf3))
+* update CHANGELOG and README for v1.20.0, add V6 eval results ([55e9cce](https://github.com/littlebearapps/pitchdocs/commit/55e9cceca545e4fdee59548b73c9d7ea6161bfc6))
+* update CHANGELOG.md with skill activation eval and CI check additions ([9ae707b](https://github.com/littlebearapps/pitchdocs/commit/9ae707bb31d1451752481c6c7caa8fa841b558e4))
+* update guides for v2.0.0 — remove stale context references ([7c54cab](https://github.com/littlebearapps/pitchdocs/commit/7c54cabf3d752958855115638d8e2dd9ba36184f))
+* update RESULTS.md with Phase 3.5 token budget fix outcomes ([8d48cab](https://github.com/littlebearapps/pitchdocs/commit/8d48cab00c3a96fb0380077d6e76e629f64e20c2))
+
 ## [1.19.3](https://github.com/littlebearapps/pitchdocs/compare/v1.19.2...v1.19.3) (2026-03-09)
 
 
