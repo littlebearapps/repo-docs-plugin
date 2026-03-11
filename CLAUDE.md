@@ -50,6 +50,7 @@ hooks/*.sh                      → 1 opt-in hook script (Claude Code only)
 4. **Updating upstream specs**: Edit `upstream-versions.json` and the corresponding skill content
 5. **Adding platform support**: Update the `platform-profiles` skill for new platform equivalents. Existing skills reference it via cross-link.
 6. **Bumping version**: Handled automatically by release-please from conventional commit messages
+7. **Before merging a release PR**: Run activation evals from GitHub Actions (`Actions → Activation Evals → Run workflow`) to confirm skill activation hasn't regressed. Target: 80%+.
 
 ## Testing & Validation
 

@@ -10,6 +10,7 @@ When working on a project with PitchDocs installed, recognise documentation-rele
 | Workflow or CLI args changed | `/pitchdocs:user-guide` to refresh guides | User guides may reference old behaviour |
 | Version bump or new git tag | `/pitchdocs:doc-refresh` | Changelog, README metrics, and guides need updating |
 | Release prep or changelog discussion | `/pitchdocs:changelog` then `/pitchdocs:launch` | Ship release notes and promotion content together |
+| Merging a release-please PR | Remind: run activation evals first (`Actions → Activation Evals → Run workflow`) | Confirm skill activation hasn't regressed (target 80%+) |
 | Project going public (no README or thin README) | `/pitchdocs:readme` | First impressions — generate the full marketing framework |
 | Missing docs detected (no `docs/guides/`, no llms.txt) | `/pitchdocs:docs-audit` | Identify all documentation gaps at once |
 | User asks "why should someone use this?" or discusses positioning | `/pitchdocs:features benefits` | Surface the two-path user benefits extraction (auto-scan or conversational) |

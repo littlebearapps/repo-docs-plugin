@@ -23,6 +23,7 @@ Closes #
 - [ ] Verified generated output quality
 - [ ] Consistent spelling throughout
 - [ ] Cross-references between components are valid
+- [ ] If skill/command changed: ran activation evals (`Actions → Activation Evals → Run workflow`)
 
 ## Checklist
 
