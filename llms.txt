@@ -96,7 +96,7 @@
 - [Doc Standards](./.claude/rules/doc-standards.md): Auto-loaded quality rule — 4-question framework, Lobby Principle, progressive disclosure, benefit-driven language, file naming
 - [Content Filter Reference](./.claude/rules/content-filter.md): Auto-loaded quick reference for handling API filter when generating CODE_OF_CONDUCT, LICENSE, SECURITY (Claude Code only)
 - [Documentation Awareness](./.claude/rules/docs-awareness.md): Auto-loaded trigger map — suggests PitchDocs commands when documentation-relevant work is detected (Claude Code only)
-- [Content Filter Hook](./.claude/hooks/content-filter-guard.sh): PreToolUse hook blocking writes to high-risk OSS files and advising chunked strategies (Claude Code only)
+- [Content Filter Hook](./hooks/content-filter-guard.sh): PreToolUse hook blocking writes to high-risk OSS files and advising chunked strategies (Claude Code only)
 - [Upstream Versions](./upstream-versions.json): Pinned versions of 7 referenced specifications (Keep a Changelog, Contributor Covenant, Conventional Commits, Semantic Versioning, GitHub Issue Forms, npm/PyPI Trusted Publishing)
 - [Test Evaluations](./tests/evaluations.json): 20 test scenarios for command routing verification — maps commands to expected skills with negative cases
 - [Test Results](./tests/RESULTS.md): Documentation and status of all validation tests
