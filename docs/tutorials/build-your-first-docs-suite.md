@@ -79,12 +79,13 @@ If you're using OpenCode, the install command is identical.
 
 For this tutorial, we'll work with a sample project. Choose one:
 
-**Option A: Use an existing project**
+##### Option A: Use an existing project
+
 ```bash
 cd /path/to/your/project
 ```
 
-**Option B: Create a minimal sample project**
+##### Option B: Create a minimal sample project
 ```bash
 mkdir pitchdocs-tutorial
 cd pitchdocs-tutorial

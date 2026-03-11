@@ -10,7 +10,7 @@
 
 ### 1. Hook Unit Tests — content-filter-guard.sh
 
-**Result: 25/25 PASS**
+Result: 25/25 PASS
 
 | Category | Tests | Pass | Fail |
 |----------|-------|------|------|
@@ -26,9 +26,9 @@
 
 ### 2. Token Budget Audit
 
-**Result: 9 advisory warnings (pre-existing) → 6 after fixes (see Phase 3.5)**
+Result: 9 advisory warnings (pre-existing) → 6 after fixes (see Phase 3.5)
 
-#### Auto-loaded rules (every session overhead):
+#### Auto-loaded rules (every session overhead)
 
 | Rule | Chars | Tokens (est.) | Budget | Status |
 |------|-------|---------------|--------|--------|
@@ -43,7 +43,7 @@
 
 **Recommendation**: Consider splitting doc-standards.md — keep only the 4-Question Test and Lobby Principle in the auto-loaded rule (~300 tokens), and move the rest (banned phrases, file naming, feature-benefit patterns) into a skill loaded on demand.
 
-#### Skills over budget:
+#### Skills over budget
 
 | Skill | Tokens (est.) | Budget | Over by |
 |-------|---------------|--------|---------|
@@ -58,7 +58,7 @@ These are loaded on-demand only, so the impact is per-invocation, not per-sessio
 
 ### 3. Banned Phrase Check — README.md
 
-**Result: CLEAN — 0 banned phrases found**
+Result: CLEAN — 0 banned phrases found
 
 Scanned for 23 banned AI-detectable phrases from doc-standards.md. The current README.md contains none of them.
 
@@ -85,7 +85,7 @@ Scanned for 23 banned AI-detectable phrases from doc-standards.md. The current R
 | 1 | 2026-03-10 | V1 (`--output-format json`, `--allowedTools "Skill"`) | 0/17 pos, 3/3 neg | Wrong output format, too-restrictive tool filter |
 | 2 | 2026-03-10 | V2 (`stream-json`, no tool filter, 3-strategy parser) | 0/17 pos, 3/3 neg | Missing `--verbose`, hidden by `2>/dev/null` |
 | 3 | 2026-03-10 | V2 (re-run from iTerm2/mosh) | 0/17 pos, 3/3 neg | Same issue confirmed |
-| 4 | 2026-03-10 | V3 (pre-flight check, stderr capture, `|| true`) | Pre-flight FAIL | Error: `stream-json requires --verbose` |
+| 4 | 2026-03-10 | V3 (pre-flight check, stderr capture, `\|\| true`) | Pre-flight FAIL | Error: `stream-json requires --verbose` |
 | 5 | 2026-03-10 | V4 (`--verbose` added) | 4/17 pos, 3/3 neg (35%) | Budget too low, plan mode, name mismatches |
 | 6 | 2026-03-10 | V5 (`--permission-mode default`, $0.50 budget, name fixes) | **13/17 pos, 3/3 neg (80%)** | First successful run |
 
@@ -111,7 +111,7 @@ Scanned for 23 banned AI-detectable phrases from doc-standards.md. The current R
 
 | Version | Changes |
 |---------|---------|
-| V3 | `|| true`, stderr capture, pre-flight check, `--debug` flag |
+| V3 | `\|\| true`, stderr capture, pre-flight check, `--debug` flag |
 | V4 | Added `--verbose` to all `claude -p` invocations |
 | V5 | Added `--permission-mode default`, budget $0.10→$0.50, fixed 8 `expected_skill` values |
 | V6 | Fixed `features`→`feature` for Skill tool name inconsistency (2 test cases) |
