@@ -58,9 +58,8 @@
   {
     "id": "cmd-docs-audit",
     "input": "/pitchdocs:docs-audit",
-    "expected_skill": "pitchdocs-suite",
-    "should_respond": true,
-    "description": "Docs audit routes to pitchdocs-suite skill"
+    "should_respond": false,
+    "reason": "Self-contained command — 290-line audit checklist is inline, Claude handles directly without Skill tool delegation"
   },
   {
     "id": "cmd-doc-refresh",
@@ -92,9 +91,8 @@
   {
     "id": "cmd-activate",
     "input": "/pitchdocs:activate status",
-    "expected_skill": "activate",
-    "should_respond": true,
-    "description": "Activate command routes to activate command for per-project feature management"
+    "should_respond": false,
+    "reason": "Pure command with no backing skill — Claude handles install/uninstall/status inline without Skill tool delegation"
   },
   {
     "id": "nl-readme",

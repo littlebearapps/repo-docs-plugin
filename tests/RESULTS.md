@@ -285,6 +285,48 @@ Old `docs-verify/SKILL-extended.md` removed (replaced by SKILL-reference.md).
 
 ---
 
+## Phase 3.7: Failure Investigation and Test Fixes (2026-03-12)
+
+**Status**: Complete — 2 test expectations fixed, 5 accepted as model variance.
+
+### Investigation Summary
+
+All 7 distinct failures across Haiku (85.7%) and Sonnet (76.1%) were investigated by examining command definitions, skill files, and frontmatter routing.
+
+### Category A: Test Expectation Bugs (2 fixed)
+
+| Test | Models | Root Cause | Fix |
+|------|--------|------------|-----|
+| `cmd-activate` | Both | No `activate` skill exists — pure command with no backing skill. Test expected skill invocation that can never happen. | Changed to `should_respond: false` |
+| `cmd-docs-audit` | Both | `commands/docs-audit.md` is 290 lines with the full audit checklist inline. Both models handle directly without loading `pitchdocs-suite` skill. | Changed to `should_respond: false` |
+
+### Category B: Non-Deterministic Model Routing (5 accepted)
+
+| Test | Model | Root Cause |
+|------|-------|------------|
+| `cmd-features` | Haiku | Non-deterministic — passes in some runs, fails in others |
+| `nl-positioning` | Haiku | NL routing inherently ~50% without forced-eval hooks |
+| `cmd-readme` | Sonnet | Over-handles: reads comprehensive command + broad allowed-tools, executes directly (1-3 min) |
+| `cmd-doc-refresh` | Sonnet | Same over-handling pattern |
+| `cmd-user-guide` | Sonnet | Same over-handling pattern |
+
+**Why Sonnet over-handles**: Commands like `/readme`, `/doc-refresh`, and `/user-guide` have broad `allowed-tools` lists (Read, Glob, Grep, Bash, Write, Edit, WebFetch, GitHub MCP) and detailed procedural instructions. Sonnet sees all the tools + instructions and decides it can execute directly. Haiku delegates more conservatively.
+
+### Test Count Changes
+
+| Metric | Before | After |
+|--------|--------|-------|
+| Total tests | 21 | 21 |
+| Positive (should activate) | 16 | 14 |
+| Negative (should NOT activate) | 5 | 7 |
+
+### Expected Results After Fixes
+
+- Haiku: ~90%+ (was 85.7%, gains 2 from reclassification)
+- Sonnet: ~86%+ (was 76.1%, gains 2 from reclassification)
+
+---
+
 ## Phase 4: Output Quality Evaluation (Pending)
 
 **Status**: Not yet run. Requires generating docs for test repos with and without PitchDocs, then blind comparison.
