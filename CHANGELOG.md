@@ -5,6 +5,33 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0](https://github.com/littlebearapps/pitchdocs/compare/v2.0.0...v2.1.0) (2026-03-12)
+
+
+### Added
+
+* add per-project activation for advisory features ([fc57dd2](https://github.com/littlebearapps/pitchdocs/commit/fc57dd2b21ba6a56c8a00a3696e22fb2244fa588))
+
+
+### Fixed
+
+* add --plugin-dir to activation eval script for CI compatibility ([45866e7](https://github.com/littlebearapps/pitchdocs/commit/45866e7eed7c4823818818876c9d6e3cdc8f4e53))
+* correct last 2 activation eval test expectations ([cb3af25](https://github.com/littlebearapps/pitchdocs/commit/cb3af2554a8aa69c576c9c4bcc5763c9dc721905))
+* correct test expectations for activation evals ([8d3c20a](https://github.com/littlebearapps/pitchdocs/commit/8d3c20a36be719050d3df43fb85e87d4f8151395))
+* detect API key auth failures in activation eval pre-flight ([1ddc554](https://github.com/littlebearapps/pitchdocs/commit/1ddc5549f67c7c58d2a47b0b30cdf9249b8ddade))
+* detect billing and rate limit errors in activation eval pre-flight ([ed6e8cc](https://github.com/littlebearapps/pitchdocs/commit/ed6e8cc11d06a8f792aab6f59979f0dead64e05f))
+* install plugin via CLI marketplace for CI activation evals ([76156bd](https://github.com/littlebearapps/pitchdocs/commit/76156bd2b61d5f779e7c902625bdf425a6b8666f))
+* reclassify 2 activation eval tests after failure investigation ([c87603d](https://github.com/littlebearapps/pitchdocs/commit/c87603d91b2473f88c438de41de8e19243a1c9aa))
+* register plugin in installed_plugins.json for CI activation evals ([c371239](https://github.com/littlebearapps/pitchdocs/commit/c37123926b3a37d8430ca194b4bb1c33296877c0))
+* use parent directory for --plugin-dir in activation evals ([9fe0ded](https://github.com/littlebearapps/pitchdocs/commit/9fe0ded69765da60c788142f548d0ff81a18f99f))
+
+
+### Documentation
+
+* add CI activation eval results and Haiku vs Sonnet comparison ([172b371](https://github.com/littlebearapps/pitchdocs/commit/172b3716df919014bb63236e2c1c45cbaeb8026a))
+* add headless mode (claude -p) known limitation to changelog and troubleshooting ([f407ef1](https://github.com/littlebearapps/pitchdocs/commit/f407ef10353bfa1cf8fa73818ed01abea770ff05))
+* update roadmap, results, and README for post-v2.0.0 changes ([2bbac91](https://github.com/littlebearapps/pitchdocs/commit/2bbac91669f42294c156e4b2caf9ac048753192b))
+
 ## [2.0.0](https://github.com/littlebearapps/pitchdocs/compare/v1.19.3...v2.0.0) (2026-03-11)
 
 
