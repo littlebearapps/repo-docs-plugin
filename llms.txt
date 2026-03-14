@@ -16,7 +16,7 @@
 - [Tutorial: Build Your First Documentation Suite](./docs/tutorials/build-your-first-docs-suite.md): Hands-on 20-minute journey — walk through generating README, changelog, guides, and verification on a real project
 - [Getting Started Guide](./docs/guides/getting-started.md): Step-by-step installation, first README generation, and full command walkthrough (5 minutes)
 - [Workflow Recipes](./docs/guides/workflows.md): Copy-paste-ready workflows for public-ready repos, releases, launches, and docs maintenance
-- [Command Reference](./docs/guides/command-reference.md): All 15 commands with arguments, generated files, cross-tool support, and examples
+- [Command Reference](./docs/guides/command-reference.md): All 16 commands with arguments, generated files, cross-tool support, and examples
 - [Customising Output Guide](./docs/guides/customising-output.md): Steer PitchDocs — prompt patterns, tone control, monorepo support, iterative refinement
 - [Concepts Guide](./docs/guides/concepts.md): How PitchDocs thinks — evidence-based features, GEO, 4-question test, Diataxis, Lobby Principle, Time to Hello World
 - [Troubleshooting & FAQ](./docs/guides/troubleshooting.md): Content filter errors, quality score interpretation, feature extraction issues, badge failures, cross-tool limitations
@@ -27,6 +27,7 @@
 
 - [Public README Skill](./.claude/skills/public-readme/SKILL.md): Three-part hero template, value proposition, features with evidence-based benefits, Time to Hello World targets, and Daytona/Banesullivan marketing framework
 - [Public README Reference](./.claude/skills/public-readme/SKILL-reference.md): Extended reference — logo guidelines, registry-specific badges, credibility rows, bold-outcome bullets, use-case framing, visual elements (loaded on demand)
+- [Feature Benefits Skill](./.claude/skills/feature-benefits/SKILL.md): 7-step codebase scanning with feature-to-benefit translation across 5 categories — time saved, confidence gained, pain avoided, capability unlocked, cost reduced
 - [Feature Benefits Skill](./.claude/skills/feature-benefits/SKILL.md): 7-step codebase scanning with feature-to-benefit translation across 5 categories — time saved, confidence gained, pain avoided, capability unlocked, cost reduced
 - [Feature Benefits Signals](./.claude/skills/feature-benefits/SKILL-signals.md): Extended reference — 10 signal categories, JTBD mapping, persona inference, conversational path prompts, per-ecosystem patterns (loaded on demand)
 - [Changelog Skill](./.claude/skills/changelog/SKILL.md): Keep a Changelog format with language rules that rewrite commits into user-facing benefit language
@@ -39,7 +40,7 @@
 - [Package Registry Reference](./.claude/skills/package-registry/SKILL-reference.md): Extended reference — npm/PyPI field tables, SPDX licence guidance, badge templates, audit checklists (loaded on demand)
 - [User Guides Skill](./.claude/skills/user-guides/SKILL.md): Task-oriented how-to documentation with Diataxis framework, frontmatter standard, title conventions, numbered steps, copy-paste code
 - [User Guides Reference](./.claude/skills/user-guides/SKILL-reference.md): Extended reference — frontmatter tables, title conventions, video placeholders, troubleshooting template (loaded on demand)
-- [User Guide Templates](./.claude/skills/user-guides/SKILL-templates.md): Companion templates for tutorial, reference, explanation document types (loaded on demand)
+- [User Guide Templates](./.claude/skills/user-guides/SKILL-templates.md): Companion templates for tutorial, reference, explanation, hub page, troubleshooting, and cross-link document types (loaded on demand)
 - [Docs Verify Skill](./.claude/skills/docs-verify/SKILL.md): Validate docs — broken links, stale content, llms.txt sync, heading hierarchy, badge URLs, quality scoring (0–100), security scanning
 - [Docs Verify Reference](./.claude/skills/docs-verify/SKILL-reference.md): Extended reference — scoring dimensions, grade bands, freshness thresholds, image URL patterns, report format examples (loaded on demand)
 - [Launch Artifacts Skill](./.claude/skills/launch-artifacts/SKILL.md): Platform-specific launch content — Dev.to articles, Hacker News posts, Reddit posts, Twitter/X threads, awesome list submissions
@@ -58,6 +59,7 @@
 - [Docs Researcher Agent](./.claude/agents/docs-researcher.md): Codebase discovery — platform detection, 7-step feature extraction across 10 signals, security scanning, lobby split planning, structured research packets
 - [Docs Reviewer Agent](./.claude/agents/docs-reviewer.md): Quality validation — banned phrases, citation capsule completeness, GEO readiness, 6-dimension quality scoring (0–100 rubric)
 - [Context Updater Agent](./.claude/agents/context-updater.md): Patches AI context files after structural changes — updates counts, tables, and path references surgically
+- [Docs Freshness Agent (Installed)](./.claude/agents/docs-freshness.md): Installed copy of freshness checker — auto-loaded locally in this repo (source: agents/docs-freshness.md)
 
 ## Slash Commands
 
@@ -97,15 +99,17 @@
 - [Plugin Manifest](./.claude-plugin/plugin.json): Plugin metadata, version, keywords, author info
 - [Content Filter Reference](./.claude/rules/content-filter.md): Auto-loaded quick reference for handling API filter when generating CODE_OF_CONDUCT, LICENSE, SECURITY (Claude Code only)
 - [Context Quality Standards](./.claude/rules/context-quality.md): Auto-loaded quality standards for AI context files — cross-file consistency, path verification, version accuracy, sync points (Claude Code only)
+- [Doc Standards (Installed)](./.claude/rules/doc-standards.md): Installed copy of quality standards — auto-loaded locally in this repo (source: rules/doc-standards.md)
+- [Documentation Awareness (Installed)](./.claude/rules/docs-awareness.md): Installed copy of documentation trigger map — auto-loaded locally in this repo (source: rules/docs-awareness.md)
 - [Doc Standards Template](./rules/doc-standards.md): Quality standards — installed per-project by /pitchdocs:activate. 4-question framework, Lobby Principle, benefit-driven language, file naming
 - [Documentation Awareness Template](./rules/docs-awareness.md): Documentation trigger map — installed per-project by /pitchdocs:activate. Suggests PitchDocs commands at documentation moments (Claude Code only)
 - [Docs Freshness Agent Template](./agents/docs-freshness.md): Read-only freshness checker agent — installed per-project by /pitchdocs:activate. Checks version alignment, changelog coverage, doc staleness, suggests commands
 - [Content Filter Hook](./hooks/content-filter-guard.sh): PreToolUse hook blocking writes to high-risk OSS files — installed per-project by /pitchdocs:activate install strict (Claude Code only)
 - [Activate Command](./commands/activate.md): Install, uninstall, or check status of per-project PitchDocs features — rules, agent, and hook
 - [Upstream Versions](./upstream-versions.json): Pinned versions of 7 referenced specifications (Keep a Changelog, Contributor Covenant, Conventional Commits, Semantic Versioning, GitHub Issue Forms, npm/PyPI Trusted Publishing)
-- [Test Evaluations](./tests/evaluations.json): 21 test scenarios for command routing verification — maps commands to expected skills with negative cases
+- [Test Evaluations](./tests/evaluations.json): 24 test scenarios for command routing verification — maps commands to expected skills with negative cases
 - [Test Results](./tests/RESULTS.md): Documentation and status of all validation tests
-- [Activation Eval Runner](./tests/run-activation-evals.sh): Measure skill activation accuracy via Claude's prompt caching mode (-p flag) — runs 21 test scenarios
+- [Activation Eval Runner](./tests/run-activation-evals.sh): Measure skill activation accuracy via Claude's prompt caching mode (-p flag) — runs 24 test scenarios
 - [Frontmatter Validator](./tests/validate-frontmatter.py): Validate YAML metadata in skills, commands, and agents
 - [Token Budget Checker](./tests/check-token-budgets.sh): Enforce size limits on skills, rules, and agents
 - [Banned Phrase Checker](./tests/check-banned-phrases.sh): Scan docs for AI-speak and forbidden phrases

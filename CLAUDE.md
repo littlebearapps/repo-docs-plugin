@@ -1,6 +1,6 @@
 # PitchDocs
 
-Generate high-quality public-facing repository documentation with a marketing edge. PitchDocs is a Claude Code plugin (pure Markdown, zero runtime dependencies) with 16 skills, 5 agents (4 pipeline + 1 per-project freshness checker), 2 auto-loaded rules, 2 installable rules, 16 slash commands (14 active + 2 stubs redirecting to ContextDocs), 1 opt-in hook, and 21 evaluation test cases.
+Generate high-quality public-facing repository documentation with a marketing edge. PitchDocs is a Claude Code plugin (pure Markdown, zero runtime dependencies) with 16 skills, 4 agents (3 pipeline + 1 per-project), 3 auto-loaded rules (1 global + 2 installed), 2 installable rule templates, 16 slash commands (14 active + 2 stubs), 1 opt-in hook, and 24 eval test cases. This repo also has ContextDocs installed, which adds the `context-updater` agent and `context-quality.md` rule.
 
 ## Project Architecture
 
@@ -12,9 +12,12 @@ This is a **100% Markdown-based plugin** — no JavaScript, no Python, no build 
 .claude/agents/docs-writer.md   → Orchestration agent (coordinates researcher → write → reviewer pipeline)
 .claude/agents/docs-researcher.md → Codebase discovery and feature extraction agent
 .claude/agents/docs-reviewer.md → Post-generation quality validation agent
-.claude/agents/context-updater.md → AI context file updater agent (patches context files after structural changes)
+.claude/agents/context-updater.md → AI context file updater agent (from ContextDocs, not PitchDocs)
+.claude/agents/docs-freshness.md → Installed freshness checker (auto-loaded locally; source: agents/docs-freshness.md)
 .claude/rules/content-filter.md → Content filter quick reference (auto-loaded; Claude Code only)
-.claude/rules/context-quality.md → AI context file quality standards (auto-loaded; Claude Code only)
+.claude/rules/context-quality.md → AI context file quality standards (from ContextDocs, auto-loaded; Claude Code only)
+.claude/rules/doc-standards.md → Installed quality standards (auto-loaded locally; source: rules/doc-standards.md)
+.claude/rules/docs-awareness.md → Installed documentation trigger map (auto-loaded locally; source: rules/docs-awareness.md)
 rules/doc-standards.md          → Quality standards (installed per-project by /pitchdocs:activate)
 rules/docs-awareness.md         → Documentation trigger map (installed per-project by /pitchdocs:activate)
 agents/docs-freshness.md        → Freshness checker agent (installed per-project by /pitchdocs:activate)
@@ -44,7 +47,7 @@ hooks/*.sh                      → 1 opt-in hook script (Claude Code only, inst
 | `upstream-versions.json` | Tracks 7 pinned spec versions — checked monthly by GitHub Action |
 | `llms.txt` | AI-readable content index — must be updated when files are added/removed |
 | `AGENTS.md` | Cross-tool AI context (Codex CLI format) — must stay in sync with skills/commands |
-| `tests/evaluations.json` | 21 command routing test scenarios — used by skill-creator evals |
+| `tests/evaluations.json` | 24 command routing test scenarios — used by skill-creator evals |
 
 ## When Modifying This Plugin
 

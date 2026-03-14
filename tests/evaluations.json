@@ -123,6 +123,27 @@
     "description": "Feature extraction for readme triggers feature-benefits skill"
   },
   {
+    "id": "cmd-geo",
+    "input": "/pitchdocs:geo",
+    "expected_skill": "geo",
+    "should_respond": true,
+    "description": "GEO command routes to geo-optimisation skill"
+  },
+  {
+    "id": "cmd-visual-standards",
+    "input": "/pitchdocs:visual-standards",
+    "expected_skill": "visual-standards",
+    "should_respond": true,
+    "description": "Visual standards command routes to visual-standards skill"
+  },
+  {
+    "id": "nl-geo",
+    "input": "optimise my docs for AI search engines like ChatGPT and Perplexity",
+    "expected_skill": "geo",
+    "should_respond": true,
+    "description": "Natural language GEO request triggers geo-optimisation skill"
+  },
+  {
     "id": "neg-debug",
     "input": "debug this error in my code",
     "should_respond": false,

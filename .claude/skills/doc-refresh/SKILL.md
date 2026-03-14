@@ -1,6 +1,6 @@
 ---
 name: doc-refresh
-description: Orchestrates documentation updates after version bumps, feature additions, or periodic maintenance. Analyses git history since the last release, identifies which docs are affected, and delegates to existing skills (changelog, feature-benefits, docs-verify, ai-context, llms-txt, user-guides) for selective refresh. Use when releasing a new version or refreshing stale docs.
+description: Orchestrates documentation updates after version bumps, feature additions, or periodic maintenance. Analyses git history since the last release, identifies which docs are affected, and delegates to existing skills (changelog, feature-benefits, docs-verify, llms-txt, user-guides) for selective refresh. Delegates AI context updates to ContextDocs if installed. Use when releasing a new version or refreshing stale docs.
 version: "1.0.0"
 ---
 

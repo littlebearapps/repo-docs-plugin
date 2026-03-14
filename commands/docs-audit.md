@@ -91,6 +91,14 @@ Diataxis Coverage:
   · Explanation: 0 docs (consider adding architecture decisions doc)
 ```
 
+### API Reference Check
+
+If the project has a public API (TypeScript with `exports` in package.json, Python with `py_modules`, Go package, Rust crate):
+- [ ] API reference documentation exists (generated or hand-written)
+- [ ] Source code has doc comments (JSDoc/TSDoc, docstrings, godoc, rustdoc)
+
+If missing, recommend: load the `api-reference` skill for generator setup guidance (TypeDoc, Sphinx, godoc, or rustdoc).
+
 ### Documentation Verification Check
 
 If the `docs-verify` skill is loaded, also run:

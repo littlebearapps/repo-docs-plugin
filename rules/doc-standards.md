@@ -40,7 +40,7 @@ The README is the **lobby** of the repository — it gives visitors enough to de
 
 ## Time to Hello World
 
-Target a measurable Time to Hello World (TTHW) in every quick start section. State it explicitly where evidence supports it (e.g. "Get your first README in under 60 seconds"). Concrete before abstract, one concept per step, all commands copy-paste-ready. Load `public-readme` or `feature-benefits` for TTHW target tables by project type.
+Target a measurable Time to Hello World (TTHW) in every quick start section. State it explicitly where evidence supports it (e.g. "Get your first README in under 60 seconds"). Concrete before abstract, one concept per step, all commands copy-paste-ready. The `public-readme` skill's `SKILL-reference.md` has TTHW target tables by project type.
 
 ## Tone & Language
 

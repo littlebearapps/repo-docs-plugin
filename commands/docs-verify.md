@@ -40,7 +40,7 @@ Validate that documentation remains accurate, linked, and fresh over time. Catch
 | Feature coverage | README features vs actual code — undocumented and over-documented |
 | Badge URLs | Shields.io badges returning errors or outdated formats |
 | Token audit | Skill files exceeding recommended token budgets |
-| Quality score | Numeric 0–100 score across 5 dimensions with grade band and actionable fix suggestions |
+| Quality score | Numeric 0–100 score across 6 dimensions with grade band and actionable fix suggestions |
 
 ## Output Format
 

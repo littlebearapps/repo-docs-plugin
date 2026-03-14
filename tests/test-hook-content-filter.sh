@@ -42,31 +42,31 @@ run_test() {
 echo "=== Hook Unit Tests: content-filter-guard.sh ==="
 echo ""
 
-echo "--- HIGH-risk files (should block, exit 1) ---"
+echo "--- HIGH-risk files (should block via JSON decision, exit 0) ---"
 run_test "CODE_OF_CONDUCT.md blocks" \
-  '{"tool_name":"Write","tool_input":{"file_path":"CODE_OF_CONDUCT.md"}}' 1 "block"
+  '{"tool_name":"Write","tool_input":{"file_path":"CODE_OF_CONDUCT.md"}}' 0 "block"
 run_test "CODE_OF_CONDUCT.MD blocks" \
-  '{"tool_name":"Write","tool_input":{"file_path":"CODE_OF_CONDUCT.MD"}}' 1 "block"
+  '{"tool_name":"Write","tool_input":{"file_path":"CODE_OF_CONDUCT.MD"}}' 0 "block"
 run_test "LICENSE blocks" \
-  '{"tool_name":"Write","tool_input":{"file_path":"LICENSE"}}' 1 "block"
+  '{"tool_name":"Write","tool_input":{"file_path":"LICENSE"}}' 0 "block"
 run_test "LICENSE.md blocks" \
-  '{"tool_name":"Write","tool_input":{"file_path":"LICENSE.md"}}' 1 "block"
+  '{"tool_name":"Write","tool_input":{"file_path":"LICENSE.md"}}' 0 "block"
 run_test "LICENSE.txt blocks" \
-  '{"tool_name":"Write","tool_input":{"file_path":"LICENSE.txt"}}' 1 "block"
+  '{"tool_name":"Write","tool_input":{"file_path":"LICENSE.txt"}}' 0 "block"
 run_test "LICENCE blocks (AU spelling)" \
-  '{"tool_name":"Write","tool_input":{"file_path":"LICENCE"}}' 1 "block"
+  '{"tool_name":"Write","tool_input":{"file_path":"LICENCE"}}' 0 "block"
 run_test "LICENCE.md blocks" \
-  '{"tool_name":"Write","tool_input":{"file_path":"LICENCE.md"}}' 1 "block"
+  '{"tool_name":"Write","tool_input":{"file_path":"LICENCE.md"}}' 0 "block"
 run_test "LICENCE.txt blocks" \
-  '{"tool_name":"Write","tool_input":{"file_path":"LICENCE.txt"}}' 1 "block"
+  '{"tool_name":"Write","tool_input":{"file_path":"LICENCE.txt"}}' 0 "block"
 run_test "SECURITY.md blocks" \
-  '{"tool_name":"Write","tool_input":{"file_path":"SECURITY.md"}}' 1 "block"
+  '{"tool_name":"Write","tool_input":{"file_path":"SECURITY.md"}}' 0 "block"
 run_test "SECURITY.MD blocks" \
-  '{"tool_name":"Write","tool_input":{"file_path":"SECURITY.MD"}}' 1 "block"
+  '{"tool_name":"Write","tool_input":{"file_path":"SECURITY.MD"}}' 0 "block"
 run_test "Nested path CODE_OF_CONDUCT" \
-  '{"tool_name":"Write","tool_input":{"file_path":"/tmp/project/CODE_OF_CONDUCT.md"}}' 1 "block"
+  '{"tool_name":"Write","tool_input":{"file_path":"/tmp/project/CODE_OF_CONDUCT.md"}}' 0 "block"
 run_test "Nested path LICENSE" \
-  '{"tool_name":"Write","tool_input":{"file_path":"src/LICENSE.md"}}' 1 "block"
+  '{"tool_name":"Write","tool_input":{"file_path":"src/LICENSE.md"}}' 0 "block"
 
 echo ""
 echo "--- MEDIUM-risk files (should allow with advisory, exit 0) ---"

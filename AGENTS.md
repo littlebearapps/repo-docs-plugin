@@ -70,6 +70,7 @@ PitchDocs commands work globally. Advisory features (quality standards, document
 
 - **Auto-loaded** (globally): `.claude/rules/content-filter.md` (content filter quick reference — prevents HTTP 400 errors), `.claude/rules/context-quality.md` (AI context file quality standards)
 - **Installed per-project** by `/pitchdocs:activate install`: `rules/doc-standards.md` (quality standards), `rules/docs-awareness.md` (documentation trigger map), `agents/docs-freshness.md` (freshness checker agent)
+- **This repo** has Standard tier activated — `.claude/rules/doc-standards.md`, `.claude/rules/docs-awareness.md`, and `.claude/agents/docs-freshness.md` are auto-loaded locally
 - **Installed per-project** by `/pitchdocs:activate install strict`: also adds `hooks/content-filter-guard.sh` (Write guard for high-risk OSS files)
 
 ## AI Context Files

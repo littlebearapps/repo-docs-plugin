@@ -34,7 +34,7 @@ Refresh existing documentation to reflect the current state of the codebase. Ana
    - `changelog` for CHANGELOG updates
    - `feature-benefits` for README features
    - `user-guides` for affected guides
-   - `ai-context` for context file drift
+   - [ContextDocs](https://github.com/littlebearapps/contextdocs) for context file drift (if installed)
    - `llms-txt` for file index updates
    - `package-registry` for registry metadata
    - `docs-verify` for final verification

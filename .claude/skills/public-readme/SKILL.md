@@ -97,7 +97,7 @@ For bold-outcome bullets, credibility rows, use-case framing (section 3.5), and 
 
 ### 4. Quick Start
 
-Must achieve the **Time to Hello World** target for the detected project type (see `doc-standards` rule for targets).
+Must achieve the **Time to Hello World** target for the detected project type (see TTHW Targets table in `SKILL-reference.md` in this skill directory).
 
 **Rules:**
 - Show the SIMPLEST possible usage first

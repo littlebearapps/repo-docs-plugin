@@ -2,6 +2,20 @@
 
 Detailed examples, templates, and tables split from SKILL.md to reduce token overhead. Load on demand when generating READMEs for complex projects.
 
+## Time to Hello World (TTHW) Targets
+
+Target TTHW for quick start sections by project type. State explicitly where evidence supports it.
+
+| Project Type | TTHW Target | Quick Start Style |
+|-------------|-------------|-------------------|
+| library | 30 seconds | `npm install` + import + one function call |
+| cli | 60 seconds | Install + one command with output |
+| web-app | 2 minutes | Clone + install + `npm start` |
+| api | 60 seconds | `curl` example with response body |
+| plugin | 60 seconds | Plugin install command + verify |
+| docs-site | 2 minutes | Clone + serve locally |
+| monorepo | 3 minutes | Root install + key package usage |
+
 ## Hero Section Templates
 
 **Project logo guidelines:**

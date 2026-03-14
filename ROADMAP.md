@@ -90,7 +90,7 @@ We're reducing context overhead to improve performance for all users — especia
 
 ### Testing & Validation
 
-- [ ] Expand skill evaluation test suite (currently 21 scenarios, 95.2% on Haiku)
+- [ ] Expand skill evaluation test suite (currently 24 scenarios, 95.2% on Haiku)
 - [ ] Add integration tests for multi-tool compatibility (Cursor, Windsurf, Cline, Gemini CLI, Aider, Goose)
 - [ ] Benchmark quality improvements from v1.18 context reduction on larger codebases
 

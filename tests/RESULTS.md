@@ -1,7 +1,7 @@
 # PitchDocs Plugin Test Results
 
-**Date**: 2026-03-10
-**Plugin version**: 1.19.3
+**Date**: 2026-03-14
+**Plugin version**: 2.1.0
 **Tester**: Claude Opus 4.6 (automated) + Nathan (oversight)
 
 ---
@@ -68,7 +68,7 @@ Scanned for 23 banned AI-detectable phrases from doc-standards.md. The current R
 
 | Check | Result |
 |-------|--------|
-| Frontmatter validation | PASS (16 skills, 16 commands, 3 agents) |
+| Frontmatter validation | PASS (16 skills, 16 commands, 5 agents) |
 | llms.txt consistency | PASS (0 errors, 2 pre-existing orphan warnings) |
 | Token budgets | 9 advisory warnings (see above) |
 

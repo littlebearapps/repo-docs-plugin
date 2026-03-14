@@ -18,7 +18,7 @@ Check heading hierarchy and structural consistency across all `.md` files. Verif
 
 ### 2. Link Validation
 
-Check all internal and external links. **Internal**: verify target file exists, anchor links match headings, check case-sensitivity (Linux vs macOS). **External**: check HTTP status, timeout 10s, skip authenticated URLs, flag 404s/5xx. Enhanced detection patterns (case-sensitivity, fragments, redirect chains, nested relative links) in `SKILL-extended.md`.
+Check all internal and external links. **Internal**: verify target file exists, anchor links match headings, check case-sensitivity (Linux vs macOS). **External**: check HTTP status, timeout 10s, skip authenticated URLs, flag 404s/5xx. Enhanced detection patterns (case-sensitivity, fragments, redirect chains, nested relative links) in `SKILL-reference.md`.
 
 ### 3. llms.txt Sync Check
 
@@ -66,7 +66,7 @@ Verify `docs/` files have valid YAML frontmatter per the `user-guides` skill sta
 
 ### 9. Token Audit
 
-Estimate token cost for all skill files in `.claude/skills/` using `wc -w` × 1.3. Flag skills over 3,000 tokens (reference) or 5,000 tokens (combined). Full audit script and thresholds in `SKILL-extended.md`.
+Estimate token cost for all skill files in `.claude/skills/` using `wc -w` × 1.3. Flag skills over 3,000 tokens (reference) or 5,000 tokens (combined). Full audit script and thresholds in `SKILL-reference.md`.
 
 ### 10. Security Scan
 
@@ -78,7 +78,7 @@ Basic presence and staleness check for AI context files (CLAUDE.md, AGENTS.md, .
 
 ## CI Integration
 
-When run with `ci` argument, output machine-readable `ERROR:`/`WARN:` lines with file:line format and exit code 1 on errors. Supports `--min-score N` threshold. Full CI output format and GitHub Actions workflow template in `SKILL-extended.md`.
+When run with `ci` argument, output machine-readable `ERROR:`/`WARN:` lines with file:line format and exit code 1 on errors. Supports `--min-score N` threshold. Full CI output format and GitHub Actions workflow template in `SKILL-reference.md`.
 
 ## Anti-Patterns
 

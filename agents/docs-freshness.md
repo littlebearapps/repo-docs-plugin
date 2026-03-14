@@ -1,6 +1,8 @@
 ---
 name: docs-freshness
 description: "Checks documentation freshness and suggests PitchDocs commands to fix staleness. Launch when docs-awareness rule detects documentation moments, after version bumps, or before releases. Does NOT modify docs — only reports and suggests."
+model: inherit
+color: cyan
 tools:
   - Read
   - Glob

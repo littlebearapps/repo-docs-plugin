@@ -5,7 +5,7 @@
 #          on files known to trigger Claude Code's API content filter (HTTP 400).
 #          HIGH-risk files are blocked with a fetch-from-URL suggestion.
 #          MEDIUM-risk files pass through with a chunked-writing advisory.
-# Installed by: /context-guard install
+# Installed by: /pitchdocs:activate install strict
 #
 # Claude Code only — OpenCode, Codex CLI, Cursor, and other tools
 # do not support Claude Code hooks.
@@ -33,7 +33,7 @@ case "$FILENAME" in
   "reason": "CODE_OF_CONDUCT.md is HIGH risk for content filter errors (HTTP 400). Fetch from the canonical URL instead:\n\ncurl -sL \"https://www.contributor-covenant.org/version/3/0/code_of_conduct/code_of_conduct.md\" -o CODE_OF_CONDUCT.md\n\nThen use Edit to replace [INSERT CONTACT METHOD] with the project's contact details."
 }
 EOF
-    exit 1
+    exit 0
     ;;
   LICENSE|LICENSE.md|LICENSE.txt|LICENCE|LICENCE.md|LICENCE.txt)
     cat << 'EOF'
@@ -42,7 +42,7 @@ EOF
   "reason": "LICENSE is HIGH risk for content filter errors (HTTP 400). Fetch from SPDX instead:\n\ncurl -sL \"https://raw.githubusercontent.com/spdx/license-list-data/main/text/MIT.txt\" -o LICENSE\n\nReplace MIT with the appropriate SPDX identifier. Then use Edit to fill in [year] and [fullname]."
 }
 EOF
-    exit 1
+    exit 0
     ;;
   SECURITY.md|SECURITY.MD)
     cat << 'EOF'
@@ -51,7 +51,7 @@ EOF
   "reason": "SECURITY.md is MEDIUM-HIGH risk for content filter errors (HTTP 400). Fetch a template first:\n\ncurl -sL \"https://raw.githubusercontent.com/github/.github/main/SECURITY.md\" -o SECURITY.md\n\nNote: This fetches GitHub's own security policy. Use Edit to replace all GitHub-specific references with the project's details, including reporting method, response timeline, and supported versions."
 }
 EOF
-    exit 1
+    exit 0
     ;;
 esac
 
