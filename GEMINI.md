@@ -21,8 +21,8 @@ No build, test, or deploy commands — this is a pure Markdown plugin. Lint with
 ## Key Paths
 
 - `.claude/skills/*/SKILL.md`: 16 reference knowledge modules
-- `.claude/agents/*.md`: 4 pipeline agents (docs-writer, docs-researcher, docs-reviewer, context-updater)
-- `.claude/rules/content-filter.md`, `.claude/rules/context-quality.md`: 2 auto-loaded rules
+- `.claude/agents/*.md`: 3 pipeline agents (docs-writer, docs-researcher, docs-reviewer)
+- `.claude/rules/content-filter.md`: 1 globally auto-loaded rule; `.claude/rules/doc-standards.md`, `.claude/rules/docs-awareness.md`: 2 installed auto-loaded rules
 - `rules/*.md`: 2 installable rules (doc-standards, docs-awareness — installed per-project by `/pitchdocs:activate`)
 - `agents/docs-freshness.md`: 1 installable agent (freshness checker — installed per-project by `/pitchdocs:activate`)
 - `commands/*.md`: 16 command definitions (14 active + 2 stubs)

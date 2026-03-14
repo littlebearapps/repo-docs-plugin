@@ -5,8 +5,8 @@ You are working on PitchDocs, a Claude Code plugin that generates marketing-qual
 ## Architecture
 
 - **Skills** (16): `.claude/skills/*/SKILL.md` — reference knowledge loaded on-demand
-- **Agents** (4 pipeline + 1 per-project): `.claude/agents/*.md` — docs-writer (orchestrator), docs-researcher, docs-reviewer, context-updater; `agents/docs-freshness.md` — installed per-project
-- **Rules** (2 auto-loaded + 2 installable): `.claude/rules/content-filter.md`, `.claude/rules/context-quality.md` (auto-loaded); `rules/doc-standards.md`, `rules/docs-awareness.md` (installed per-project by `/pitchdocs:activate`)
+- **Agents** (4): `.claude/agents/*.md` — docs-writer (orchestrator), docs-researcher, docs-reviewer; `agents/docs-freshness.md` — installed per-project by `/pitchdocs:activate`
+- **Rules** (3 auto-loaded + 2 installable): `.claude/rules/content-filter.md` (global); `.claude/rules/doc-standards.md`, `.claude/rules/docs-awareness.md` (installed auto-loaded); `rules/doc-standards.md`, `rules/docs-awareness.md` (source templates installed per-project by `/pitchdocs:activate`)
 - **Commands** (16): `commands/*.md` — 14 active + 2 stubs redirecting to [ContextDocs](https://github.com/littlebearapps/contextdocs)
 - **Hooks** (1 opt-in): `hooks/content-filter-guard.sh` — installed per-project by `/pitchdocs:activate install strict` (Claude Code only)
 
