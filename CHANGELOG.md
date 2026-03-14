@@ -27,6 +27,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * **Agent frontmatter** — Added `model: inherit` and `color` fields to `docs-freshness` (cyan) and `context-updater` (magenta) agents for consistency with the 3 pipeline agents.
 * **TTHW targets table** — Added Time to Hello World targets by project type to `public-readme/SKILL-reference.md` so quick start sections have concrete benchmarks.
 
+### Removed
+
+* **`skill-authoring` skill** — Removed. This was a meta-guide about token budgets for writing Claude Code skills, which is out of scope for PitchDocs (a public-facing documentation plugin). Skill authoring guidance belongs in the `plugin-dev` plugin. Skill count: 16 → 15. Closes #40.
+
 ### Changed
 
 * **Roadmap skill description** — Now says "GitHub, GitLab, or Bitbucket" instead of just "GitHub Projects" so the skill activates correctly for non-GitHub repos.

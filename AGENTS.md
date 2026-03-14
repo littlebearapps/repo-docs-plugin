@@ -8,7 +8,7 @@ Australian English (realise, colour). Conventional commits. Benefit-driven langu
 
 ## Available Skills
 
-Skills are loaded on-demand to provide deep reference knowledge. Each lives at `.claude/skills/<name>/SKILL.md` (or `.agents/skills/<name>/SKILL.md` if you've copied them for Codex CLI). There are 16 skills in total.
+Skills are loaded on-demand to provide deep reference knowledge. Each lives at `.claude/skills/<name>/SKILL.md` (or `.agents/skills/<name>/SKILL.md` if you've copied them for Codex CLI). There are 15 skills in total.
 
 | Skill | What It Provides |
 |-------|-----------------|
@@ -26,7 +26,7 @@ Skills are loaded on-demand to provide deep reference knowledge. Each lives at `
 | `doc-refresh` | Version-bump documentation orchestration — analyses git history, identifies affected docs, delegates AI context refresh to ContextDocs if installed |
 | `visual-standards` | Visual formatting — emoji heading prefixes, horizontal rules, TOC anchors, callouts. Companion `SKILL-reference.md` has screenshot dimensions, HTML patterns, captions, shadows, image optimisation (loaded on demand) |
 | `geo-optimisation` | GEO patterns for AI citation — citation capsules, crisp definitions, atomic sections, comparison tables, statistics, semantic scaffolding |
-| `skill-authoring` | Token budget guidelines for writing skills — budgets by type, metadata/activation limits, measuring cost, anti-patterns |
+
 | `platform-profiles` | Platform detection and Markdown rendering compatibility matrix. Companion `SKILL-tables.md` has full lookup tables for GitLab/Bitbucket — template directories, badge URLs, CLI tools, CI/CD, and Bitbucket degradation (loaded on demand) |
 
 ## Agent Pipeline

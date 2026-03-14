@@ -1,6 +1,6 @@
 # PitchDocs
 
-Generate high-quality public-facing repository documentation with a marketing edge. PitchDocs is a Claude Code plugin (pure Markdown, zero runtime dependencies) with 16 skills, 4 agents (3 pipeline + 1 per-project), 3 auto-loaded rules (1 global + 2 installed), 2 installable rule templates, 16 slash commands (14 active + 2 stubs), 1 opt-in hook, and 24 eval test cases. This repo also has ContextDocs installed, which adds the `context-updater` agent and `context-quality.md` rule.
+Generate high-quality public-facing repository documentation with a marketing edge. PitchDocs is a Claude Code plugin (pure Markdown, zero runtime dependencies) with 15 skills, 4 agents (3 pipeline + 1 per-project), 3 auto-loaded rules (1 global + 2 installed), 2 installable rule templates, 16 slash commands (14 active + 2 stubs), 1 opt-in hook, and 24 eval test cases. This repo also has ContextDocs installed, which adds the `context-updater` agent and `context-quality.md` rule.
 
 ## Project Architecture
 

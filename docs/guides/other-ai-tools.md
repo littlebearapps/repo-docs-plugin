@@ -48,9 +48,9 @@ The source of truth lives in `.claude/`. Here's what each piece does:
 
 | Directory | Contents | Purpose | Cross-Tool? |
 |-----------|----------|---------|-------------|
-| `.claude/skills/*/SKILL.md` | 16 skill files | Reference knowledge for all doc types | Yes — Claude Code, OpenCode, Codex CLI |
+| `.claude/skills/*/SKILL.md` | 15 skill files | Reference knowledge for all doc types | Yes — Claude Code, OpenCode, Codex CLI |
 | `.claude/agents/docs-writer.md` | 1 agent file | Orchestration workflow: codebase scanning → feature extraction → doc writing → validation | Partial — Claude Code, OpenCode (may vary) |
-| `rules/doc-standards.md` | 1 rule file | Core quality standards: 4-question framework, progressive disclosure, benefit-driven language, badges. Extended references in `visual-standards`, `geo-optimisation`, `skill-authoring` skills | Installed per-project in Claude Code (`/pitchdocs:activate`); copy manually for other tools |
+| `rules/doc-standards.md` | 1 rule file | Core quality standards: 4-question framework, progressive disclosure, benefit-driven language, badges. Extended references in `visual-standards`, `geo-optimisation` skills | Installed per-project in Claude Code (`/pitchdocs:activate`); copy manually for other tools |
 | `.claude/rules/content-filter.md` | 1 rule file | Content filter quick reference: risk levels, fetch commands, chunked writing for high-risk OSS files | Auto-loaded in Claude Code; copy manually for other tools |
 | `rules/docs-awareness.md` | 1 rule file | Documentation trigger map: suggests PitchDocs commands when documentation-relevant work is detected | Installed per-project in Claude Code (`/pitchdocs:activate`); not applicable for other tools |
 | `agents/docs-freshness.md` | 1 agent file | Read-only freshness checker with command suggestions | Installed per-project in Claude Code (`/pitchdocs:activate`); not applicable for other tools |
@@ -96,7 +96,7 @@ OpenCode also supports MCP servers, so if you have the GitHub MCP server configu
 # From your project root (not the PitchDocs repo)
 PITCHDOCS="/path/to/pitchdocs"
 
-# Copy all 16 skills
+# Copy all 15 skills
 cp -r "$PITCHDOCS/.claude/skills/"* .agents/skills/
 
 # Copy the quality standards as AGENTS.md (Codex reads this automatically)

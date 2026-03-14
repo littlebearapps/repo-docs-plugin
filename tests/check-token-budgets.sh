@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Check token budgets for skill files.
 # Uses character count as proxy (~4 chars per token for English Markdown).
-# Flags files that exceed recommended budgets from skill-authoring guidelines.
+# Flags files that exceed recommended token budgets.
 set -euo pipefail
 
 # Budget thresholds (in characters, ~4 chars/token)

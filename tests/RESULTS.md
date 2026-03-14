@@ -68,7 +68,7 @@ Scanned for 23 banned AI-detectable phrases from doc-standards.md. The current R
 
 | Check | Result |
 |-------|--------|
-| Frontmatter validation | PASS (16 skills, 16 commands, 5 agents) |
+| Frontmatter validation | PASS (15 skills, 16 commands, 5 agents) |
 | llms.txt consistency | PASS (0 errors, 2 pre-existing orphan warnings) |
 | Token budgets | 9 advisory warnings (see above) |
 

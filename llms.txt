@@ -49,7 +49,6 @@
 - [Visual Standards Skill](./.claude/skills/visual-standards/SKILL.md): Visual formatting standards — emoji heading prefixes, horizontal rules, TOC anchors, callouts
 - [Visual Standards Reference](./.claude/skills/visual-standards/SKILL-reference.md): Extended reference — screenshot dimensions, HTML patterns, captions, borders, annotations, image optimisation (loaded on demand)
 - [GEO Optimisation Skill](./.claude/skills/geo-optimisation/SKILL.md): Generative Engine Optimisation patterns for AI citation — capsules, definitions, atomic sections, statistics, tables
-- [Skill Authoring Skill](./.claude/skills/skill-authoring/SKILL.md): Token budget guidelines — budgets by skill type, activation content limits, measuring cost, anti-patterns
 - [Platform Profiles Skill](./.claude/skills/platform-profiles/SKILL.md): Platform detection and Markdown compatibility for GitHub, GitLab, Bitbucket
 - [Platform Profiles Tables](./.claude/skills/platform-profiles/SKILL-tables.md): Extended reference — full lookup tables for templates, badges, CLI tools, CI/CD, features, URLs (loaded on demand)
 
