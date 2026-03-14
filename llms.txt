@@ -28,7 +28,6 @@
 - [Public README Skill](./.claude/skills/public-readme/SKILL.md): Three-part hero template, value proposition, features with evidence-based benefits, Time to Hello World targets, and Daytona/Banesullivan marketing framework
 - [Public README Reference](./.claude/skills/public-readme/SKILL-reference.md): Extended reference — logo guidelines, registry-specific badges, credibility rows, bold-outcome bullets, use-case framing, visual elements (loaded on demand)
 - [Feature Benefits Skill](./.claude/skills/feature-benefits/SKILL.md): 7-step codebase scanning with feature-to-benefit translation across 5 categories — time saved, confidence gained, pain avoided, capability unlocked, cost reduced
-- [Feature Benefits Skill](./.claude/skills/feature-benefits/SKILL.md): 7-step codebase scanning with feature-to-benefit translation across 5 categories — time saved, confidence gained, pain avoided, capability unlocked, cost reduced
 - [Feature Benefits Signals](./.claude/skills/feature-benefits/SKILL-signals.md): Extended reference — 10 signal categories, JTBD mapping, persona inference, conversational path prompts, per-ecosystem patterns (loaded on demand)
 - [Changelog Skill](./.claude/skills/changelog/SKILL.md): Keep a Changelog format with language rules that rewrite commits into user-facing benefit language
 - [Roadmap Skill](./.claude/skills/roadmap/SKILL.md): ROADMAP.md structure from GitHub milestones with emoji indicators and community involvement
@@ -78,6 +77,16 @@
 - [/pitchdocs:activate](./commands/activate.md): Install, uninstall, or check status of per-project PitchDocs features — rules, agent, and hook
 - [/pitchdocs:ai-context](./commands/ai-context.md): Stub — redirects to [ContextDocs](https://github.com/littlebearapps/contextdocs) for AI context file management
 - [/pitchdocs:context-guard](./commands/context-guard.md): Stub — redirects to [ContextDocs](https://github.com/littlebearapps/contextdocs) for Context Guard hooks
+
+## Launch Artifacts
+
+- [Launch Coordination Hub](./docs/launch/INDEX.md): Central checklist for planning, timing, and messaging your multi-platform launch — review artifacts, set timeline, track success metrics
+- [Dev.to Article](./docs/launch/devto-article.md): 2500-word narrative article with problem-solution framing — post to Dev.to for long-form discovery and SEO
+- [Hacker News Post](./docs/launch/hackernews-post.md): "Show HN" title and technical-depth first comment — post Tue–Thu 9–11 AM US Eastern for maximum visibility
+- [Reddit Post Templates](./docs/launch/reddit-posts.md): Three subreddit variants (r/programming, r/webdev, r/opensource) with author context and community angles
+- [Twitter Thread](./docs/launch/twitter-thread.md): 5-tweet narrative (hook → problem → features → proof → CTA) — all under 280 chars per tweet
+- [Awesome List Submissions](./docs/launch/awesome-list-submissions.md): 6 curated awesome lists with PR templates and submission strategy — stagger submissions every 2–3 days
+- [Social Preview Guide](./docs/launch/social-preview-guide.md): 1280×640 image specs, design guidance, and testing checklist for GitHub social preview card
 
 ## Project Context
 

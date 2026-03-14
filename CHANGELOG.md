@@ -35,6 +35,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * **Roadmap skill description** — Now says "GitHub, GitLab, or Bitbucket" instead of just "GitHub Projects" so the skill activates correctly for non-GitHub repos.
 
+### Security
+
+* **GitHub Actions supply chain security** — All third-party GitHub Actions are now pinned to commit SHAs instead of mutable version tags, preventing malicious updates. Added CODEOWNERS file for transparent code review governance.
+
 ## [2.1.0](https://github.com/littlebearapps/pitchdocs/compare/v2.0.0...v2.1.0) (2026-03-12)
 
 

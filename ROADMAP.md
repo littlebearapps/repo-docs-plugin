@@ -6,28 +6,37 @@ PitchDocs is a pure Markdown plugin with 15 skills, 4 agents (3 pipeline + 1 per
 
 ---
 
-## 🎯 Current Focus
+## 🎯 Current Milestone: v2.2 — Command Completeness & Upstream Stability
 
-### Context Token Optimisation
+Target: Q1 2026
 
-We're reducing context overhead to improve performance for all users — especially those running PitchDocs alongside other plugins.
+### In Progress
 
-- **Auto-loaded rules overspend** ([#36](https://github.com/littlebearapps/pitchdocs/issues/36)) — ✅ Resolved in v2.0.0: moved `doc-standards.md` and `docs-awareness.md` to per-project installable rules via `/pitchdocs:activate`. Only `content-filter.md` remains auto-loaded (~500 tokens)
-- **Skills exceed individual budgets** ([#37](https://github.com/littlebearapps/pitchdocs/issues/37)) — ✅ Partially resolved: 4 of 6 skills split into companion reference files (`docs-verify`, `package-registry`, `pitchdocs-suite`, `user-guides`). Remaining 2 (`doc-refresh` ~2,453, `launch-artifacts` ~2,286) accepted as near-budget
+- **Add `/pitchdocs:api-reference` command** ([#41](https://github.com/littlebearapps/pitchdocs/issues/41)) — Direct slash command for TypeDoc, Sphinx, godoc, and rustdoc integration. Currently unreachable through primary `/pitchdocs:*` pattern. Needs command definition, 1–2 eval test cases, and skill cross-references to `user-guides` and `platform-profiles`
+- **Resolve upstream spec version drift** ([#12](https://github.com/littlebearapps/pitchdocs/issues/12)) — Contributor Covenant v3.0 detected in monthly check (latest is v2.1). Update `upstream-versions.json` and refresh skill content
 
-### Upstream Specification Drift
+### Previous Focus — Context Token Optimisation (v2.0–v2.1) ✅
 
-**Contributor Covenant** ([#12](https://github.com/littlebearapps/pitchdocs/issues/12)) — pinned v3.0, latest is v2.1. Needs review and re-pinning in `upstream-versions.json`.
+- ✅ Auto-loaded rules reduced to ~500 tokens (moved advisory features to per-project install)
+- ✅ 4 of 6 over-budget skills split into companion reference files
+- ✅ Per-project activation system (`/pitchdocs:activate`) for doc-standards, docs-awareness, docs-freshness agent, and optional content-filter hook
+- ✅ Auto-loaded context reduced by 41%, `/readme` context overhead reduced by 72% for small projects
 
 ---
 
 ## ✅ Recently Completed
 
+### v2.1.0 (2026-03-12)
+- Completed per-project activation system (`/pitchdocs:activate install` / `install strict`)
+- Installable rules: `doc-standards.md`, `docs-awareness.md` moved from `.claude/` to source templates
+- Installable agent: `docs-freshness.md` read-only freshness checker (per-project)
+- Strict tier: optional `content-filter-guard.sh` hook for Claude Code
+- Fully backwards-compatible — all 15 commands work globally regardless of activation tier
+
 ### v2.0.0 (2026-03-11)
 - **Breaking**: Split AI context management into [ContextDocs](https://github.com/littlebearapps/contextdocs) — stub redirects remain for `/pitchdocs:ai-context` and `/pitchdocs:context-guard`
 - Added 6 automated CI checks (spell check, frontmatter validation, llms.txt consistency, banned phrases, orphan detection, token budgets)
 - Added skill activation eval framework with 21 test cases — 95.2% accuracy on Haiku
-- Added per-project activation (`/pitchdocs:activate`) for advisory features (rules, freshness agent, content filter hook)
 - Split 4 over-budget skills into companion reference files for token budget compliance
 - Added comprehensive documentation: getting-started tutorial, workflow guides, launch artifacts, ROADMAP
 
@@ -67,32 +76,29 @@ We're reducing context overhead to improve performance for all users — especia
 
 ---
 
-## 🔮 Future Directions
+## 🔮 Upcoming Milestones
 
-### Documentation Quality
+### v2.3 — Automation & Polish (Q2 2026)
 
-- [ ] Enhance GEO optimisation patterns for AI citation across more doc types
-- [ ] Add per-tool AI context guides for platforms beyond Claude Code, OpenCode, and Codex
-- [ ] Expand user benefits extraction to support industry-specific personas (DevOps, data science, ML ops)
+- [ ] Auto-update docs on release — trigger `/pitchdocs:doc-refresh` when version tags are created
+- [ ] GitHub Actions template for scheduled doc refreshes
+- [ ] Enhanced content filter mitigation — reduce need for chunked writes on legal templates
+- [ ] Skill quality benchmarking in CI — track A/B comparison scores over time
 
-### Feature Coverage
+### v3.0 — Expansion (Q3 2026)
 
-- [ ] Support for generating GitHub discussion templates
-- [ ] Issue template generation with auto-categorisation (bug, feature, docs)
-- [ ] PR review checklist generation from CONTRIBUTING.md
-- [ ] API reference documentation generation (TypeDoc, Sphinx, godoc, rustdoc integration)
+- [ ] Multi-language README support — generate localized docs for i18n projects
+- [ ] Interactive README builder — REPL-style step-by-step Q&A for custom documentation
+- [ ] Blog post generator — auto-extract Dev.to, Medium, Hashnode-ready content from README
+- [ ] Jira / Linear integration — pull roadmap data from issue tracking platforms
+- [ ] API reference direct integration — complete `/pitchdocs:api-reference` with API doc linking
 
-### Platform Expansion
+### v4.0+ — Community Features (Beyond 2026)
 
-- [ ] Gitea support (self-hosted Git alternative)
-- [ ] Forgejo support (community-driven Gitea fork)
-- [ ] Sourcehut support (minimalist Git forge)
-
-### Testing & Validation
-
-- [ ] Expand skill evaluation test suite (currently 24 scenarios, 95.2% on Haiku)
-- [ ] Add integration tests for multi-tool compatibility (Cursor, Windsurf, Cline, Gemini CLI, Aider, Goose)
-- [ ] Benchmark quality improvements from v1.18 context reduction on larger codebases
+- [ ] Gitea, Forgejo, and Sourcehut platform support
+- [ ] GitHub discussion template generator
+- [ ] Expand user benefits extraction to industry-specific personas (DevOps, ML ops, data science)
+- [ ] Integration tests for all 9 supported AI tools (Claude Code, OpenCode, Codex, Cursor, Gemini, Windsurf, Cline, Aider, Goose)
 
 ---
 
@@ -122,10 +128,12 @@ Interested in deeper involvement? See [CONTRIBUTING.md](CONTRIBUTING.md) for the
 
 | Metric | Current | Target |
 |--------|---------|--------|
-| Auto-loaded context | ~500 tokens | ~1,500 tokens |
+| Plugin version | 2.1.0 | 3.0.0 (2026) |
+| Auto-loaded context | ~500 tokens | <1,000 tokens |
 | Skills exceeding 2k token limit | 2 | 0 |
-| Supported platforms | 3 (GitHub, GitLab, Bitbucket) | 6+ |
-| AI tool compatibility | 9 | 12+ |
+| Supported platforms | 3 (GitHub, GitLab, Bitbucket) | 6+ by v4.0 |
+| AI tool compatibility | 9 (including stubs) | 12+ |
+| Activation eval test coverage | 21 scenarios (95.2% Haiku) | 30+ |
 | Generated doc types | 20+ | 25+ |
 
 ---
@@ -134,6 +142,7 @@ Interested in deeper involvement? See [CONTRIBUTING.md](CONTRIBUTING.md) for the
 
 - **Getting started:** See [Getting Started Guide](docs/guides/getting-started.md)
 - **Troubleshooting:** See [Troubleshooting Guide](docs/guides/troubleshooting.md)
+- **Contribution:** See [CONTRIBUTING.md](CONTRIBUTING.md)
 - **Support:** See [SUPPORT.md](SUPPORT.md)
 
-Last updated: 2026-03-12
+Last updated: 2026-03-14

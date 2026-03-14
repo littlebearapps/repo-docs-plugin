@@ -66,17 +66,29 @@ The docs PitchDocs generates apply three proven frameworks:
 
 ChatGPT, Perplexity, and Google AI Overviews increasingly cite open source projects. PitchDocs structures docs with atomic sections, comparison tables, concrete statistics, and cross-referencing patterns so LLMs cite your project accurately.
 
-### Quality Scoring (0–100)
+### Quality Scoring (0–100) & CI Validation
 
-Want to know if your docs are actually good? `/docs-verify score` rates your documentation across 5 dimensions:
+Want to know if your docs are actually good? `/docs-verify score` rates your documentation across 6 dimensions:
 
 - Completeness — all key features documented?
 - Structure — correct heading hierarchy and formatting?
 - Freshness — content matches code (90-day git blame check)?
 - Link health — broken links, outdated anchors?
 - Evidence — features backed by code paths?
+- Accessibility — alt text, Time to Hello World targets
 
 Get a 0–100 score with A–F grade bands. Export to CI with `--min-score` to enforce documentation standards.
+
+PitchDocs v2.1.0 also includes **6 automated GitHub Actions checks** that run on every commit:
+
+- **Spell check** — Catches typos and misspellings before you ship
+- **Frontmatter validation** — Ensures YAML metadata in skills and docs is correct
+- **llms.txt consistency** — Detects orphaned files and broken references
+- **Banned phrase detection** — Flags AI-speak ("in today's digital landscape", "game-changer")
+- **Token budget enforcement** — Prevents skills and rules from ballooning in size
+- **Orphan file detection** — Finds undocumented or unreferenced documentation
+
+Enable these in your CI/CD pipeline to catch documentation issues before merging.
 
 ## Getting Started (Under 60 Seconds)
 
@@ -111,14 +123,30 @@ That's it. You now have a professional, marketing-ready README.
 /pitchdocs:launch                 # Create Dev.to, HN, Reddit posts
 ```
 
+### Optional: Enable Per-Project Advisory Features
+
+By default, PitchDocs commands work everywhere. But you can optionally enable project-specific doc standards, freshness checking, and quality awareness:
+
+```bash
+# Standard tier — install doc standards + awareness rules
+/pitchdocs:activate install
+
+# Strict tier — also adds content-filter-guard hook (Claude Code only)
+/pitchdocs:activate install strict
+```
+
+This is useful for public repos that need marketing-grade docs, but skippable for private projects. You control which projects get which level.
+
 ## Key Features
 
 - **10 signal categories** — scans exports, CLI commands, API endpoints, config, integrations, errors, auth, security, performance, accessibility
 - **Full docs suite** — README, CHANGELOG, ROADMAP, CONTRIBUTING, USER GUIDES, SECURITY, issue templates, PR templates, llms.txt
 - **Professional standards** — 4-question test, lobby principle, Time to Hello World targets
 - **GEO optimised** — structured for LLM citation (ChatGPT, Perplexity, Google AI)
-- **Quality scoring (0–100)** — completeness, structure, freshness, link health, evidence
+- **Quality scoring (0–100)** — 6-dimension grading across completeness, structure, freshness, link health, and evidence quality
+- **6 CI validation checks** — Spell check, frontmatter validation, llms.txt consistency, banned phrase detection, orphan file detection, and token budget enforcement
 - **Content filter protection** — handles Claude Code's API filter so you never hit HTTP 400
+- **Per-project advisory rules** — Optional document standards, awareness nudges, and freshness checking per project
 - **Multi-platform support** — GitHub, GitLab, Bitbucket with platform-specific badges and URLs
 - **9 AI tools** — Claude Code, OpenCode, Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, Goose
 
@@ -146,12 +174,16 @@ Users report:
 | Quality scoring (0–100) | Yes | No | No |
 | Cross-tool compatible | 9 AI tools | CLI only | Tool-specific |
 
-## What's Coming Next
+## What's New in v2.1.0
 
-- Enhanced feature extraction with ML-powered signal detection
-- LaTeX math support in documentation
-- Enhanced security policy templates with threat model guidance
-- Automated docs translation for international projects
+**Breaking Change:** AI context file management (AGENTS.md, CLAUDE.md, .cursorrules) has moved to [ContextDocs](https://github.com/littlebearapps/contextdocs). The `/pitchdocs:ai-context` and `/pitchdocs:context-guard` commands now redirect to ContextDocs. If you use these features, install ContextDocs separately.
+
+**New in v2.1.0:**
+- Per-project activation for advisory features (rules, agents, hooks)
+- 6 CI validation checks (spell, frontmatter, llms.txt, phrases, tokens, orphans)
+- Skill activation eval framework for routing accuracy (80%+ on all commands)
+- Enhanced user guides with Diataxis classification (tutorial, how-to, reference, explanation)
+- Launch artifacts generation (Dev.to, HN, Reddit, Twitter, awesome lists)
 
 See the [full roadmap](https://github.com/littlebearapps/pitchdocs/blob/main/ROADMAP.md) for what's planned.
 
@@ -165,6 +197,6 @@ Found a way to make generated docs even better? Contributions welcome. Check out
 
 ---
 
-**PitchDocs is open source (MIT)** — [GitHub](https://github.com/littlebearapps/pitchdocs) | [Docs](https://github.com/littlebearapps/pitchdocs#-documentation) | [Install](https://code.claude.com/docs/en/plugins)
+**PitchDocs v2.1.0 is open source (MIT)** — [GitHub](https://github.com/littlebearapps/pitchdocs) | [Docs](https://github.com/littlebearapps/pitchdocs/blob/main/docs/README.md) | [Getting Started](https://github.com/littlebearapps/pitchdocs/blob/main/docs/tutorials/build-your-first-docs-suite.md) | [Install](https://code.claude.com/docs/en/plugins)
 
-Star ⭐ on GitHub if you find it useful — it helps others discover it too.
+Star ⭐ on GitHub if you find it useful — it helps others discover it too. Questions? Open an [issue](https://github.com/littlebearapps/pitchdocs/issues) or join the [discussions](https://github.com/littlebearapps/pitchdocs/discussions).

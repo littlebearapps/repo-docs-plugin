@@ -25,7 +25,9 @@ The secret sauce is evidence-based feature extraction. Instead of generic bullet
 - Scans 10 signal categories for evidence-based feature extraction
 - Applies proven documentation frameworks (4-question test, lobby principle, Time to Hello World targets)
 - GEO optimised for AI citation (ChatGPT, Perplexity, Google AI will cite your project accurately)
-- Quality scoring (0–100) across 5 dimensions: completeness, structure, freshness, link health, evidence
+- Quality scoring (0–100) across 6 dimensions: completeness, structure, freshness, link health, evidence, accessibility
+- 6 CI validation checks (spell, frontmatter, llms.txt, banned phrases, orphans, token budgets)
+- Per-project advisory rules (documentation standards, freshness checking, content-filter guard hook)
 - Handles Claude Code's content filter automatically so you never hit HTTP 400 when generating sensitive docs
 
 Built with Markdown skills (100% plugin, zero runtime dependencies). Works with Claude Code, OpenCode, Cursor, Codex CLI, Windsurf, Cline, Gemini CLI, Aider, and Goose.
