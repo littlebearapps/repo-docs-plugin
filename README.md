@@ -39,7 +39,7 @@
     </td>
     <td align="center" width="200">
       <a href="https://github.com/littlebearapps/outlook-assistant">
-        <img src="https://raw.githubusercontent.com/littlebearapps/outlook-assistant/main/docs/assets/outlook-assistant-logo-icon.svg" width="80" alt="Outlook Assistant logo" /><br />
+        <img src="https://raw.githubusercontent.com/littlebearapps/outlook-assistant/main/docs/assets/outlook-assistant-logo-icon.png" width="80" alt="Outlook Assistant logo" /><br />
         <strong>Outlook Assistant</strong>
       </a><br />
       <sub>MCP server for Outlook email, calendar, and contacts</sub>
