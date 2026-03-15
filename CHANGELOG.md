@@ -9,35 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-* **SKILL.md version mismatch** — Root marketplace entry said `1.19.3` while plugin.json said `2.1.0`. release-please does not update SKILL.md frontmatter; version now synced manually.
-* **docs-verify broken companion references** — Three references to `SKILL-extended.md` (renamed to `SKILL-reference.md` during v2.0.0 token budget split) now point to the correct file.
-* **Hook exit codes** — `content-filter-guard.sh` used `exit 1` after `"decision": "block"` JSON. Changed to `exit 0` so Claude Code treats it as a clean block, not a hook crash. Tests updated to match.
-* **docs-verify command dimension count** — Said "5 dimensions" but the skill defines a 6-dimension scoring rubric. Now says "6 dimensions".
-* **doc-refresh stale ai-context reference** — Skill description and command both referenced `ai-context` as a delegated skill, but it moved to ContextDocs in v2.0.0. Updated to reference ContextDocs directly.
-* **CLAUDE.md component counts** — Corrected agent count (PitchDocs provides 4, not 5 — context-updater is from ContextDocs) and rule count (3 auto-loaded, not 4 — context-quality.md is from ContextDocs).
-* **Hook installed-by comment** — Updated from `/context-guard install` (pre-ContextDocs) to `/pitchdocs:activate install strict`.
-* **RESULTS.md stale metadata** — Version updated from 1.19.3 to 2.1.0, agent count from 3 to 5.
-* **TTHW circular reference** — `public-readme` skill pointed to `doc-standards` for TTHW targets, which pointed back to `public-readme`. Added the actual targets table to `SKILL-reference.md` and fixed both pointers.
-* **llms.txt orphans** — Added missing reference for `feature-benefits/SKILL.md` and updated `user-guides/SKILL-templates.md` description. Fixed "15 commands" → "16 commands" in command reference link.
-
-### Added
-
-* **3 new activation eval test cases** — `/pitchdocs:geo`, `/pitchdocs:visual-standards`, and a natural language GEO trigger. Eval suite now has 24 test scenarios (was 21).
-* **API Reference Check in docs-audit** — The `/pitchdocs:docs-audit` command now checks for API reference documentation and recommends loading the `api-reference` skill when a public API is detected (#41).
-* **Agent frontmatter** — Added `model: inherit` and `color` fields to `docs-freshness` (cyan) and `context-updater` (magenta) agents for consistency with the 3 pipeline agents.
-* **TTHW targets table** — Added Time to Hello World targets by project type to `public-readme/SKILL-reference.md` so quick start sections have concrete benchmarks.
+* **Plugin review issues from v2.1.0 release** — Version sync in skill frontmatter, hook exit codes, stale references to moved skills, and evaluation test coverage now properly aligned with production state.
 
 ### Removed
 
-* **`skill-authoring` skill** — Removed. This was a meta-guide about token budgets for writing Claude Code skills, which is out of scope for PitchDocs (a public-facing documentation plugin). Skill authoring guidance belongs in the `plugin-dev` plugin. Skill count: 16 → 15. Closes #40.
-
-### Changed
-
-* **Roadmap skill description** — Now says "GitHub, GitLab, or Bitbucket" instead of just "GitHub Projects" so the skill activates correctly for non-GitHub repos.
+* **`skill-authoring` skill** — This meta-guide about token budgets for writing Claude Code skills is out of scope for PitchDocs (a documentation plugin). Skill authoring guidance belongs in the `plugin-dev` plugin instead.
 
 ### Security
 
-* **GitHub Actions supply chain security** — All third-party GitHub Actions are now pinned to commit SHAs instead of mutable version tags, preventing malicious updates. Added CODEOWNERS file for transparent code review governance.
+* **GitHub Actions supply chain security** — All third-party GitHub Actions are now pinned to specific commit SHAs instead of mutable version tags, preventing malicious updates. CODEOWNERS file added for transparent code review governance.
 
 ## [2.1.0](https://github.com/littlebearapps/pitchdocs/compare/v2.0.0...v2.1.0) (2026-03-12)
 
