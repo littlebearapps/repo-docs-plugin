@@ -5,6 +5,15 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.1](https://github.com/littlebearapps/pitchdocs/compare/v2.2.0...v2.2.1) (2026-05-06)
+
+
+### Documentation
+
+* add FAQ index for marketing-site FAQPage schema ([#46](https://github.com/littlebearapps/pitchdocs/issues/46)) ([2301ae1](https://github.com/littlebearapps/pitchdocs/commit/2301ae1b728ddfbc14b0e9af599bece02c8b4bb5)), closes [#45](https://github.com/littlebearapps/pitchdocs/issues/45)
+* mark docs/faq/index.md as protected, add retention guidance ([#47](https://github.com/littlebearapps/pitchdocs/issues/47)) ([6ed224f](https://github.com/littlebearapps/pitchdocs/commit/6ed224f5f328ae531a6f8593fff913c343c5c22f))
+* refresh AI context bridges with FAQ retention guidance ([#48](https://github.com/littlebearapps/pitchdocs/issues/48)) ([278bccb](https://github.com/littlebearapps/pitchdocs/commit/278bccb14d89d6064d3654e0bcc4e9dccab632de))
+
 ## [2.2.0](https://github.com/littlebearapps/pitchdocs/compare/v2.1.0...v2.2.0) (2026-03-15)
 
 
