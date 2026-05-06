@@ -47,6 +47,7 @@ hooks/*.sh                      → 1 opt-in hook script (Claude Code only, inst
 | `upstream-versions.json` | Tracks 7 pinned spec versions — checked monthly by GitHub Action |
 | `llms.txt` | AI-readable content index — must be updated when files are added/removed |
 | `AGENTS.md` | Cross-tool AI context (Codex CLI format) — must stay in sync with skills/commands |
+| `docs/faq/index.md` | **Protected** — source for marketing-site FAQPage JSON-LD on `https://littlebearapps.com/help/pitchdocs/`. The site's docs-sync (`scripts/docs-sync.config.ts` in `littlebearapps/littlebearapps.com`) hard-fails if this directory is missing. Keep ≥7 question-shaped `## ` H2 headings; update entries in place — never delete. See [Protected Documentation Files](AGENTS.md#protected-documentation-files) in AGENTS.md. |
 | `tests/evaluations.json` | 24 command routing test scenarios — used by skill-creator evals |
 
 ## When Modifying This Plugin
@@ -58,6 +59,7 @@ hooks/*.sh                      → 1 opt-in hook script (Claude Code only, inst
 5. **Adding platform support**: Update the `platform-profiles` skill for new platform equivalents. Existing skills reference it via cross-link.
 6. **Bumping version**: Handled automatically by release-please from conventional commit messages
 7. **Before merging a release PR**: Run activation evals from GitHub Actions (`Actions → Activation Evals → Run workflow`) to confirm skill activation hasn't regressed. Target: 80%+.
+8. **Updating `docs/faq/index.md`**: Edit answers in place when content drifts; keep ≥7 question-shaped `## ` H2 headings. **Do not delete or move the file** — the marketing-site sync pipeline hard-fails without it. See [Protected Documentation Files](AGENTS.md#protected-documentation-files).
 
 ## Testing & Validation
 

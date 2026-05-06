@@ -20,6 +20,7 @@
 - [Customising Output Guide](./docs/guides/customising-output.md): Steer PitchDocs — prompt patterns, tone control, monorepo support, iterative refinement
 - [Concepts Guide](./docs/guides/concepts.md): How PitchDocs thinks — evidence-based features, GEO, 4-question test, Diataxis, Lobby Principle, Time to Hello World
 - [Troubleshooting & FAQ](./docs/guides/troubleshooting.md): Content filter errors, quality score interpretation, feature extraction issues, badge failures, cross-tool limitations
+- [Frequently Asked Questions](./docs/faq/index.md): Quick answers on installation, AI tool support, data privacy, monorepos, content filter errors, headless mode, updates, and uninstall — also rendered on https://littlebearapps.com/help/pitchdocs/ as `Schema.org/FAQPage` JSON-LD (load-bearing — do not delete)
 - [Other AI Tools Setup](./docs/guides/other-ai-tools.md): Per-tool instructions and compatibility matrix for Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose
 - [Untether Integration Guide](./docs/guides/untether-integration.md): Use PitchDocs via Untether's Telegram bridge — hook behaviour, environment variables, security considerations
 
