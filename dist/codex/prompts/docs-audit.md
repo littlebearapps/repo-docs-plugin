@@ -1,0 +1,297 @@
+---
+description: "Audit repository documentation completeness and quality: $ARGUMENTS"
+argument-hint: "[project-path or 'fix' to auto-generate missing docs]"
+allowed-tools:
+  - Read
+  - Glob
+  - Grep
+  - Bash
+  - Write
+  - Edit
+  - mcp__github__get_file_contents
+  - mcp__github__list_issues
+  - mcp__github__list_releases
+---
+
+# /docs-audit
+
+Check what public-facing documentation is missing or needs improvement.
+
+## Behaviour
+
+1. Load the `pitchdocs-suite` skill for the complete inventory
+2. If GitHub MCP tools are unavailable (GitLab/Bitbucket), gather equivalent data via `glab` CLI, REST API, or git history. Load `platform-profiles` for platform-specific template paths.
+3. Scan the repository for all expected documentation files
+4. Quality-check existing documents against the 4-question framework (auto-loaded via `doc-standards` rule)
+5. Report findings with severity levels
+
+## Audit Checklist
+
+### Presence Check (Does the file exist?)
+
+| Priority | File | Status |
+|----------|------|--------|
+| Critical | README.md | ? |
+| Critical | LICENSE | ? |
+| High | CONTRIBUTING.md | ? |
+| High | .github/ISSUE_TEMPLATE/bug_report.yml | ? |
+| High | .github/ISSUE_TEMPLATE/feature_request.yml | ? |
+| High | .github/PULL_REQUEST_TEMPLATE.md | ? |
+| Medium | CHANGELOG.md | ? |
+| Medium | CODE_OF_CONDUCT.md | ? |
+| Medium | SECURITY.md | ? |
+| Medium | .github/ISSUE_TEMPLATE/config.yml | ? |
+| Medium | SUPPORT.md | ? |
+| Medium | .github/release.yml | ? |
+| Medium | llms.txt | ? |
+| Low | ROADMAP.md | ? |
+| Low | .github/FUNDING.yml | ? |
+| Low | docs/README.md | ? |
+| Low | docs/guides/ | ? |
+| Low | CITATION.cff | ? |
+| Medium | AGENTS.md | ? |
+| Medium | .github/copilot-instructions.md | ? |
+| Low | CLAUDE.md | ? |
+| Low | .cursorrules | ? |
+
+### AI Context Files Check
+
+If the project has AI context files, verify they reflect the current codebase:
+
+- [ ] AGENTS.md references correct language/framework version
+- [ ] AGENTS.md key commands are runnable (`test`, `build`, `lint`)
+- [ ] CLAUDE.md file paths exist on disk
+- [ ] .cursorrules conventions match current linter config
+- [ ] .github/copilot-instructions.md patterns are consistent with codebase
+
+Report format:
+```
+AI Context Files:
+  ✓ AGENTS.md — present, references TypeScript + Vitest (matches codebase)
+  ⚠ CLAUDE.md — references src/index.ts but file is now src/main.ts
+  · .cursorrules — not present (recommend: install ContextDocs and run /contextdocs:ai-context cursor)
+  · .github/copilot-instructions.md — not present (recommend: install ContextDocs and run /contextdocs:ai-context copilot)
+```
+
+### Diataxis Coverage Check
+
+Classify existing docs into Diataxis quadrants and flag gaps:
+
+- [ ] At least one How-to Guide exists (docs/guides/)
+- [ ] Tutorial exists for onboarding (docs/tutorials/) — optional for small projects
+- [ ] Reference docs exist for public API (docs/reference/ or docs/api/) — if applicable
+- [ ] Explanation docs exist for architecture decisions — optional for small projects
+
+Report format:
+```
+Diataxis Coverage:
+  ✓ How-to Guides: 4 docs (getting-started, configuration, deployment, troubleshooting)
+  · Tutorials: 0 docs (consider adding for complex onboarding)
+  ✓ Reference: 1 doc (api.md)
+  · Explanation: 0 docs (consider adding architecture decisions doc)
+```
+
+### API Reference Check
+
+If the project has a public API (TypeScript with `exports` in package.json, Python with `py_modules`, Go package, Rust crate):
+- [ ] API reference documentation exists (generated or hand-written)
+- [ ] Source code has doc comments (JSDoc/TSDoc, docstrings, godoc, rustdoc)
+
+If missing, recommend: load the `api-reference` skill for generator setup guidance (TypeDoc, Sphinx, godoc, or rustdoc).
+
+### Documentation Verification Check
+
+If the `docs-verify` skill is loaded, also run:
+- [ ] All internal links resolve
+- [ ] llms.txt references match files on disk
+- [ ] No stale docs (>90 days without update, relative to last commit)
+- [ ] Badge URLs return valid responses
+
+Recommend: run `/docs-verify` for the full verification report.
+
+### Quality Check (Is the content good?)
+
+For README.md:
+- [ ] Has badges (build, coverage, version, license)
+- [ ] First paragraph is non-technical and benefit-focused
+- [ ] Has a quickstart section that works
+- [ ] Has a features section with benefits (emoji+bold+em-dash bullets or table)
+- [ ] Features list is 8 or fewer items (Lobby Principle — excess delegated to docs)
+- [ ] Hero has bold one-liner + explanatory sentence (not just a one-liner)
+- [ ] Use-case framing with reader context (if "What X Does" section is present)
+- [ ] No section exceeds 2 paragraphs or an 8-row table without delegation to a guide
+- [ ] Has contributing/community links
+- [ ] Consistent spelling and language
+- [ ] Links to user guides (if docs/guides/ exists)
+
+For CONTRIBUTING.md:
+- [ ] Matches actual dev workflow (correct commands)
+- [ ] Includes prerequisites
+- [ ] References conventional commits (if used)
+- [ ] Links to issue templates
+
+For CHANGELOG.md:
+- [ ] Up to date with latest release
+- [ ] Uses Keep a Changelog format
+- [ ] Written in user-benefit language
+- [ ] Has version comparison links
+
+For docs/guides/:
+- [ ] Hub page exists (docs/README.md)
+- [ ] Getting started guide exists
+- [ ] Guides are linked from README.md
+- [ ] Each guide has verification steps
+
+### Feature Coverage Check
+
+Load the `feature-benefits` skill and scan the codebase for feature signals. Compare against README features section:
+
+- [ ] Features table has a benefits column (not just feature names)
+- [ ] All listed features have evidence (traceable to code)
+- [ ] No major codebase features missing from README
+- [ ] At least 3 different benefit categories used
+- [ ] No over-documented claims (features listed but no code evidence)
+
+Report format:
+```
+Feature Coverage: N documented / M detected (X%)
+
+Missing from README:
+  - [Feature] — found in [file]
+
+Over-documented:
+  - [Claimed feature] — no evidence found
+```
+
+### Visual Assets Check
+
+- [ ] README references at least one image or GIF (demo, screenshot, architecture diagram)
+- [ ] Referenced image files exist (check relative paths resolve)
+- [ ] Images have descriptive alt text for accessibility
+- [ ] Social preview image set (remind user: Settings > Social preview, 1280x640)
+
+Report format:
+```
+Visual Assets:
+  ✓ README references 2 images (demo.gif, architecture.svg)
+  ⚠ docs/images/demo.gif missing alt text
+  · Social preview image — check Settings > Social preview (1280×640)
+```
+
+### Repository Metadata Check
+
+Check GitHub repo-level settings that affect discoverability. Read current values:
+
+```bash
+gh repo view --json topics,homepageUrl,description
+```
+
+- [ ] GitHub topics set (at least 5 relevant topics from the topic suggestion framework)
+- [ ] Repository description set (matches README value proposition, under ~350 chars)
+- [ ] Website/homepage URL set (docs site, homepage, or package registry)
+
+Report format:
+```
+Repository Metadata:
+  ✓ Topics: typescript, documentation, cli, claude-code, readme-generator (5)
+  ✗ Description — not set (suggest: match README one-liner)
+  ⚠ Website URL — not set (suggest: docs site or homepage)
+```
+
+When `fix` argument is used: suggest specific topics based on the codebase scan from the feature-benefits extraction, and offer to apply them:
+
+```bash
+# Suggest and apply
+gh repo edit --add-topic <topic1> --add-topic <topic2> ...
+gh repo edit --description "<README one-liner>"
+gh repo edit --homepage "<docs URL or homepage>"
+```
+
+### Package Registry Metadata Check (Conditional)
+
+Load the `package-registry` skill for field inventories and audit checks. This section only applies when the project is published to a package registry.
+
+**Detection:**
+```bash
+[ -f "package.json" ] && echo "npm project detected"
+[ -f "pyproject.toml" ] && echo "PyPI project detected"
+```
+
+**npm audit (if package.json exists):**
+- [ ] `description` present and matches README value proposition
+- [ ] `keywords` present with at least 3 relevant entries
+- [ ] `repository` present with correct URL format and case
+- [ ] `homepage` set (docs site, project page, or registry page)
+- [ ] `license` matches LICENSE file content (SPDX identifier)
+- [ ] `types`/`typings` present if TypeScript project (check for tsconfig.json)
+- [ ] `files` whitelist present (preferred over .npmignore)
+- [ ] README avoids npm-incompatible Markdown features (relative images, Mermaid, footnotes)
+
+**PyPI audit (if pyproject.toml exists):**
+- [ ] `[project].description` present and non-empty
+- [ ] `[project].readme` configured to point at README.md
+- [ ] `[project].keywords` present with at least 3 entries
+- [ ] `[project].license` present (SPDX expression preferred per PEP 639)
+- [ ] `[project.urls]` uses well-known labels (Homepage, Repository, Documentation, Changelog, Issues)
+- [ ] `[project].requires-python` present
+- [ ] README avoids PyPI-incompatible Markdown (heading anchors, relative images, GitHub callouts, details/summary)
+
+## Output Format
+
+```
+📋 Documentation Audit: [project-name]
+
+Score: 7/14 files present (50%)
+
+✓ README.md — Present, good quality
+✓ LICENSE — MIT
+✗ CONTRIBUTING.md — Missing (High priority)
+✗ CHANGELOG.md — Missing (Medium priority)
+⚠ .github/ISSUE_TEMPLATE/ — Uses .md format, consider upgrading to YAML forms
+✗ docs/guides/ — No user guides found
+
+Quality Issues:
+  README.md:
+    ⚠ No badges found
+    ⚠ First paragraph is too technical
+    ✓ Quickstart section present
+    ✗ No features table
+
+Repository Metadata:
+  ✗ Topics — none set
+  ✗ Description — not set
+  ✗ Website URL — not set
+
+Package Registry Metadata:
+  Registry: npm (package.json detected)
+  ✓ description: "Ship production-ready APIs in minutes"
+  ✓ keywords: typescript, api, framework (5 keywords)
+  ✗ repository — missing (add repository.url for npm page sidebar)
+  ⚠ types — not set (TypeScript project detected from tsconfig.json)
+  ⚠ README uses relative image paths — broken on npmjs.com
+
+Recommended actions (in priority order):
+  1. Add CONTRIBUTING.md — run /readme to generate
+  2. Add badges to README.md
+  3. Rewrite README first paragraph for non-technical audience
+  4. Set GitHub topics, description, and website URL
+  5. Add visual assets to README (demo GIF, screenshot, or diagram)
+  6. Add registry metadata fields (repository, types) to package.json
+  7. Fix README cross-renderer issues (relative images, callouts)
+  8. Generate llms.txt — run /llms-txt
+  9. Create CHANGELOG.md — run /changelog full
+  10. Create user guides in docs/guides/ — run /user-guide
+```
+
+## Arguments
+
+- No arguments: runs audit and reports findings
+- `fix`: runs audit AND auto-generates all missing files
+- Path argument: audits a specific project directory
+
+## When to Run
+
+- Before making a repo public
+- Before major releases
+- After significant restructuring
+- Periodically (quarterly) for maintenance

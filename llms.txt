@@ -98,6 +98,13 @@
 - [Cline Rules](./.clinerules): Cline VS Code extension project context — tech stack, important paths, pre-commit checklist
 - [Gemini Context](./GEMINI.md): Gemini CLI project context — tech stack, conventions, key paths
 
+## Cross-Platform Distribution
+
+- [Platform Manifest](./pitchdocs.json): Machine-readable index of all skills, commands, agents, and rules — used by setup scripts and build tooling
+- [Portable Agent](./agents/docs-writer-flat.md): Single-file docs-writer agent combining research, writing, and review — for platforms without sub-agent support (Codex CLI, Cursor, Gemini CLI, Cline, Goose, Windsurf, Aider)
+- [Build Script](./scripts/build-dist.sh): Generates platform-specific distributions from canonical .claude/ sources — Codex, Gemini, Cursor, Cline, Windsurf, Goose, Aider
+- [Setup Script](./scripts/setup.sh): Universal installer — auto-detects platform and copies pre-built distribution into target project
+
 ## Optional & Supporting
 
 - [Security Policy](./SECURITY.md): Vulnerability reporting process and response timeline

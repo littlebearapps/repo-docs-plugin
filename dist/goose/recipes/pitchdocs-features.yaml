@@ -1,0 +1,14 @@
+name: pitchdocs-features
+description: Extract features and benefits from this codebase
+steps:
+  - prompt: |
+      Read the PitchDocs feature-benefits skill, then scan this codebase
+      across 10 signal categories and extract features with evidence.
+
+      Classify features by tier (Hero 1-3, Core 4-8, Supporting 9+).
+      Translate each feature to benefit language using one of 5 categories:
+      time saved, confidence gained, pain avoided, capability unlocked,
+      cost reduced.
+
+      Skill to reference:
+      - /path/to/pitchdocs/.claude/skills/feature-benefits/SKILL.md

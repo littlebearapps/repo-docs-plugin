@@ -1,0 +1,215 @@
+{
+  "name": "pitchdocs",
+  "version": "2.2.0",
+  "description": "Generate high-quality public-facing repository documentation with a marketing edge.",
+  "repository": "https://github.com/littlebearapps/pitchdocs",
+  "license": "MIT",
+  "skills": [
+    {
+      "name": "api-reference",
+      "path": ".claude/skills/api-reference/SKILL.md",
+      "description": "Guidance for setting up API reference documentation generators — TypeDoc, Sphinx, godoc, and rustdoc."
+    },
+    {
+      "name": "changelog",
+      "path": ".claude/skills/changelog/SKILL.md",
+      "description": "Generates user-friendly changelogs from git history using conventional commits."
+    },
+    {
+      "name": "doc-refresh",
+      "path": ".claude/skills/doc-refresh/SKILL.md",
+      "description": "Orchestrates documentation updates after version bumps, feature additions, or periodic maintenance."
+    },
+    {
+      "name": "docs-verify",
+      "path": ".claude/skills/docs-verify/SKILL.md",
+      "companion": ".claude/skills/docs-verify/SKILL-reference.md",
+      "description": "Validates documentation quality and freshness — checks for broken links, stale content, and badge URLs."
+    },
+    {
+      "name": "feature-benefits",
+      "path": ".claude/skills/feature-benefits/SKILL.md",
+      "companion": ".claude/skills/feature-benefits/SKILL-signals.md",
+      "description": "Systematic codebase scanning for features and evidence-based feature-to-benefit translation."
+    },
+    {
+      "name": "geo-optimisation",
+      "path": ".claude/skills/geo-optimisation/SKILL.md",
+      "description": "Generative Engine Optimisation patterns for documentation that surfaces in AI-generated answers."
+    },
+    {
+      "name": "launch-artifacts",
+      "path": ".claude/skills/launch-artifacts/SKILL.md",
+      "description": "Transforms README and CHANGELOG into Dev.to articles, HN posts, Reddit posts, and Twitter threads."
+    },
+    {
+      "name": "llms-txt",
+      "path": ".claude/skills/llms-txt/SKILL.md",
+      "description": "Generates llms.txt and llms-full.txt following the llmstxt.org specification."
+    },
+    {
+      "name": "package-registry",
+      "path": ".claude/skills/package-registry/SKILL.md",
+      "companion": ".claude/skills/package-registry/SKILL-reference.md",
+      "description": "Documentation guidance for npm and PyPI — metadata fields, cross-renderer compatibility, provenance."
+    },
+    {
+      "name": "pitchdocs-suite",
+      "path": ".claude/skills/pitchdocs-suite/SKILL.md",
+      "companions": [
+        ".claude/skills/pitchdocs-suite/SKILL-reference.md",
+        ".claude/skills/pitchdocs-suite/SKILL-templates.md"
+      ],
+      "description": "One-command generation and audit of the full public repository documentation set."
+    },
+    {
+      "name": "platform-profiles",
+      "path": ".claude/skills/platform-profiles/SKILL.md",
+      "companion": ".claude/skills/platform-profiles/SKILL-tables.md",
+      "description": "Platform-specific equivalents for GitLab and Bitbucket — file paths, badges, CI/CD, CLI tools."
+    },
+    {
+      "name": "public-readme",
+      "path": ".claude/skills/public-readme/SKILL.md",
+      "companion": ".claude/skills/public-readme/SKILL-reference.md",
+      "description": "Generates READMEs with the Daytona/Banesullivan marketing framework — hero, features, quickstart, CTAs."
+    },
+    {
+      "name": "roadmap",
+      "path": ".claude/skills/roadmap/SKILL.md",
+      "description": "Generates ROADMAP.md from project milestones, issues, and boards."
+    },
+    {
+      "name": "user-guides",
+      "path": ".claude/skills/user-guides/SKILL.md",
+      "companions": [
+        ".claude/skills/user-guides/SKILL-reference.md",
+        ".claude/skills/user-guides/SKILL-templates.md"
+      ],
+      "description": "Generates task-oriented user guides and how-to documentation."
+    },
+    {
+      "name": "visual-standards",
+      "path": ".claude/skills/visual-standards/SKILL.md",
+      "companion": ".claude/skills/visual-standards/SKILL-reference.md",
+      "description": "Visual formatting standards — emoji headings, screenshots, image optimisation."
+    }
+  ],
+  "commands": [
+    {
+      "name": "readme",
+      "path": "commands/readme.md",
+      "description": "Generate or update a marketing-friendly README.md"
+    },
+    {
+      "name": "features",
+      "path": "commands/features.md",
+      "description": "Extract features and benefits from a codebase"
+    },
+    {
+      "name": "changelog",
+      "path": "commands/changelog.md",
+      "description": "Generate or update CHANGELOG.md from git history"
+    },
+    {
+      "name": "roadmap",
+      "path": "commands/roadmap.md",
+      "description": "Generate or update ROADMAP.md from milestones and issues"
+    },
+    {
+      "name": "docs-audit",
+      "path": "commands/docs-audit.md",
+      "description": "Audit repository documentation completeness and quality"
+    },
+    {
+      "name": "docs-verify",
+      "path": "commands/docs-verify.md",
+      "description": "Verify documentation quality, links, freshness, and consistency"
+    },
+    {
+      "name": "launch",
+      "path": "commands/launch.md",
+      "description": "Generate platform-specific launch and promotion artifacts"
+    },
+    {
+      "name": "llms-txt",
+      "path": "commands/llms-txt.md",
+      "description": "Generate llms.txt and llms-full.txt for LLM-friendly content curation"
+    },
+    {
+      "name": "user-guide",
+      "path": "commands/user-guide.md",
+      "description": "Generate user guide documentation for the repository"
+    },
+    {
+      "name": "platform",
+      "path": "commands/platform.md",
+      "description": "Detect hosting platform and report PitchDocs feature support"
+    },
+    {
+      "name": "doc-refresh",
+      "path": "commands/doc-refresh.md",
+      "description": "Refresh documentation after version bumps or periodic maintenance"
+    },
+    {
+      "name": "geo",
+      "path": "commands/geo.md",
+      "description": "Load GEO optimisation patterns for AI citation"
+    },
+    {
+      "name": "visual-standards",
+      "path": "commands/visual-standards.md",
+      "description": "Load visual formatting standards for screenshots and emoji headings"
+    },
+    {
+      "name": "activate",
+      "path": "commands/activate.md",
+      "description": "Install, uninstall, or check status of PitchDocs per-project features"
+    }
+  ],
+  "agents": [
+    {
+      "name": "docs-writer",
+      "path": ".claude/agents/docs-writer.md",
+      "portable": "agents/docs-writer-flat.md",
+      "description": "Orchestrates documentation generation via a research-write-review pipeline."
+    },
+    {
+      "name": "docs-researcher",
+      "path": ".claude/agents/docs-researcher.md",
+      "description": "Codebase discovery and feature extraction for documentation generation."
+    },
+    {
+      "name": "docs-reviewer",
+      "path": ".claude/agents/docs-reviewer.md",
+      "description": "Post-generation quality validation with scoring rubric."
+    },
+    {
+      "name": "docs-freshness",
+      "path": "agents/docs-freshness.md",
+      "description": "Read-only freshness checker with command suggestions."
+    }
+  ],
+  "rules": [
+    {
+      "name": "doc-standards",
+      "path": "rules/doc-standards.md",
+      "description": "Quality standards — 4-question framework, progressive disclosure, benefit-driven language, banned phrases."
+    },
+    {
+      "name": "docs-awareness",
+      "path": "rules/docs-awareness.md",
+      "description": "Documentation trigger map — suggests PitchDocs commands at documentation moments."
+    },
+    {
+      "name": "content-filter",
+      "path": ".claude/rules/content-filter.md",
+      "description": "Content filter quick reference — risk levels, fetch commands, chunked writing for high-risk OSS files."
+    }
+  ],
+  "platforms": {
+    "native": ["claude-code", "opencode"],
+    "supported": ["codex-cli", "gemini-cli", "cursor", "cline"],
+    "basic": ["windsurf", "goose", "aider"]
+  }
+}

@@ -1,0 +1,13 @@
+name: pitchdocs-changelog
+description: Generate CHANGELOG.md from git history using benefit language
+steps:
+  - prompt: |
+      Read the PitchDocs changelog skill, then analyse this project's git
+      history and generate a CHANGELOG.md.
+
+      Use Keep a Changelog format. Rewrite commit messages in user-benefit
+      language ("You can now..." not "Refactored internal..."). Exclude
+      internal refactors that don't affect users.
+
+      Skill to reference:
+      - /path/to/pitchdocs/.claude/skills/changelog/SKILL.md

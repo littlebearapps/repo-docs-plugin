@@ -1,0 +1,77 @@
+description = "Refresh documentation after version bumps, feature additions, or periodic maintenance"
+
+[prompt]
+text = """
+
+# /doc-refresh
+
+Refresh existing documentation to reflect the current state of the codebase. Analyses git history since the last release, identifies what changed, and surgically updates only the affected docs.
+
+## Behaviour
+
+1. Load the `doc-refresh` skill for the orchestration workflow
+2. Load the `doc-standards` rule for tone and quality
+3. If GitHub MCP tools are unavailable (GitLab/Bitbucket), gather equivalent data via `glab` CLI, REST API, or git history. Load `platform-profiles` for CI/CD equivalents.
+4. Detect the change boundary (latest tag, provided version, or range)
+5. Parse conventional commits and classify changes by type and doc impact
+6. Detect file-level changes to identify which areas of the project changed
+7. Build a refresh plan mapping changes to doc updates
+8. Execute the plan, loading additional skills as needed:
+   - `changelog` for CHANGELOG updates
+   - `feature-benefits` for README features
+   - `user-guides` for affected guides
+   - [ContextDocs](https://github.com/littlebearapps/contextdocs) for context file drift (if installed)
+   - `llms-txt` for file index updates
+   - `package-registry` for registry metadata
+   - `docs-verify` for final verification
+9. Report what was updated and the quality score
+
+## Arguments
+
+- **No arguments**: Detect latest tag, analyse changes since that tag, refresh all affected docs
+- **Version** (e.g., `1.7.0`): Refresh docs for a specific version release
+- **Range** (e.g., `v1.5.0..v1.7.0`): Refresh docs for a range of versions (useful for catching up)
+- **`plan`**: Dry run — analyse and report what needs refreshing, without writing anything
+- **`changelog`**: Only refresh CHANGELOG.md
+- **`readme`**: Only refresh README.md features and metrics
+- **`guides`**: Only update affected user guides
+- **`context`**: Only refresh AI context files and llms.txt
+- **`release-notes`**: Only generate GitHub release body
+- **`full`**: Refresh everything regardless of what changed
+
+## Release-Please Integration
+
+Run `/doc-refresh` before merging a release-please PR:
+
+1. release-please creates a PR with version bumps and CHANGELOG skeleton
+2. `/doc-refresh` enhances CHANGELOG entries with benefit language, updates README features and metrics, refreshes context files
+3. Commit the refreshed docs to the release-please branch
+4. Merge the PR — release-please creates the GitHub Release
+
+release-please owns version strings and the `x-release-please-version` badge marker. `/doc-refresh` owns prose, features, metrics, user guides, AI context, and llms.txt.
+
+## Output
+
+```
+📋 Documentation Refresh: [project-name] v1.7.0
+
+Changes detected: 15 commits (8 feat, 4 fix, 2 docs, 1 chore)
+
+Refresh Plan:
+  ✓ CHANGELOG.md — 8 entries enhanced with benefit language
+  ✓ README.md — 2 new features added, metrics updated (10→11 commands)
+  ✓ docs/guides/getting-started.md — updated for new /doc-refresh command
+  ✓ AGENTS.md — updated commands table
+  ✓ llms.txt — 2 new entries added
+  ⊘ User guides — no affected guides beyond getting-started
+  ⊘ Package registry — no metadata changes needed
+
+📊 Quality Score: 82/100 (B — Minor fixes needed) [was 78]
+
+Remaining: Merge the release-please PR to complete the release.
+```
+
+---
+For the full PitchDocs skill reference, read the corresponding SKILL.md file
+from the PitchDocs skills/ directory.
+"""

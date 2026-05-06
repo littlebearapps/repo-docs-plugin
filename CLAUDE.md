@@ -21,8 +21,13 @@ This is a **100% Markdown-based plugin** — no JavaScript, no Python, no build 
 rules/doc-standards.md          → Quality standards (installed per-project by /pitchdocs:activate)
 rules/docs-awareness.md         → Documentation trigger map (installed per-project by /pitchdocs:activate)
 agents/docs-freshness.md        → Freshness checker agent (installed per-project by /pitchdocs:activate)
+agents/docs-writer-flat.md      → Portable docs-writer agent (single-file pipeline for non-Claude Code tools)
 commands/*.md                   → 16 slash command definitions (14 active + 2 stubs redirecting to ContextDocs)
 hooks/*.sh                      → 1 opt-in hook script (Claude Code only, installed by /pitchdocs:activate install strict)
+pitchdocs.json                  → Platform-neutral manifest (machine-readable skill/command/agent index)
+scripts/build-dist.sh           → Generates dist/ packages for 8 platforms from canonical .claude/ sources
+scripts/setup.sh                → Universal installer for non-Claude Code platforms
+dist/                           → Pre-built platform distributions (Codex, Gemini, Cursor, Cline, Windsurf, Goose, Aider)
 ```
 
 ## Conventions
@@ -49,17 +54,22 @@ hooks/*.sh                      → 1 opt-in hook script (Claude Code only, inst
 | `AGENTS.md` | Cross-tool AI context (Codex CLI format) — must stay in sync with skills/commands |
 | `docs/faq/index.md` | **Protected** — source for marketing-site FAQPage JSON-LD on `https://littlebearapps.com/help/pitchdocs/`. The site's docs-sync (`scripts/docs-sync.config.ts` in `littlebearapps/littlebearapps.com`) hard-fails if this directory is missing. Keep ≥7 question-shaped H2 headings (`##`); update entries in place — never delete. See [Protected Documentation Files](AGENTS.md#protected-documentation-files) in AGENTS.md. |
 | `tests/evaluations.json` | 24 command routing test scenarios — used by skill-creator evals |
+| `pitchdocs.json` | Platform-neutral manifest — machine-readable index of skills, commands, agents, rules |
+| `agents/docs-writer-flat.md` | Portable agent — single-file docs-writer for non-Claude Code platforms |
+| `scripts/build-dist.sh` | Build script — generates `dist/` packages for 8 platforms from canonical sources |
+| `scripts/setup.sh` | Universal installer — auto-detects platform, copies pre-built distribution |
 
 ## When Modifying This Plugin
 
-1. **Adding a skill**: Create `.claude/skills/<name>/SKILL.md`, add a corresponding command in `commands/<name>.md`, update the features list in `README.md`, skills table in `AGENTS.md`, and `llms.txt`
-2. **Adding a command**: Create `commands/<name>.md` with YAML frontmatter, update commands tables in `README.md`, `AGENTS.md`, and `llms.txt`
-3. **Changing quality standards**: Edit `rules/doc-standards.md` — this propagates to all projects that have activated PitchDocs
+1. **Adding a skill**: Create `.claude/skills/<name>/SKILL.md`, add a corresponding command in `commands/<name>.md`, update the features list in `README.md`, skills table in `AGENTS.md`, `llms.txt`, and `pitchdocs.json`. Run `bash scripts/build-dist.sh` to regenerate platform distributions.
+2. **Adding a command**: Create `commands/<name>.md` with YAML frontmatter, update commands tables in `README.md`, `AGENTS.md`, `llms.txt`, and `pitchdocs.json`. Run `bash scripts/build-dist.sh` to regenerate TOML (Gemini) and prompt (Codex) translations.
+3. **Changing quality standards**: Edit `rules/doc-standards.md` — this propagates to all projects that have activated PitchDocs. Run `bash scripts/build-dist.sh` to update distilled standards in Windsurf, Cline, Goose, and Aider distributions.
 4. **Updating upstream specs**: Edit `upstream-versions.json` and the corresponding skill content
 5. **Adding platform support**: Update the `platform-profiles` skill for new platform equivalents. Existing skills reference it via cross-link.
-6. **Bumping version**: Handled automatically by release-please from conventional commit messages
+6. **Bumping version**: Handled automatically by release-please from conventional commit messages. Update version in `pitchdocs.json` and `dist/gemini/gemini-extension.json`.
 7. **Before merging a release PR**: Run activation evals from GitHub Actions (`Actions → Activation Evals → Run workflow`) to confirm skill activation hasn't regressed. Target: 80%+.
-8. **Updating `docs/faq/index.md`**: Edit answers in place when content drifts; keep ≥7 question-shaped H2 headings (`##`). **Do not delete or move the file** — the marketing-site sync pipeline hard-fails without it. See [Protected Documentation Files](AGENTS.md#protected-documentation-files).
+8. **Regenerating distributions**: Run `bash scripts/build-dist.sh` after any change to skills, commands, agents, or rules. Use `bash scripts/build-dist.sh --check` in CI to verify sync.
+9. **Updating `docs/faq/index.md`**: Edit answers in place when content drifts; keep ≥7 question-shaped H2 headings (`##`). **Do not delete or move the file** — the marketing-site sync pipeline hard-fails without it. See [Protected Documentation Files](AGENTS.md#protected-documentation-files).
 
 ## Testing & Validation
 
@@ -72,6 +82,7 @@ PitchDocs includes static validation in CI and supports runtime skill evaluation
 | llms.txt consistency | All referenced files exist, no orphans | `bash tests/validate-llms-txt.sh` |
 | Command routing evals | Skills activate for correct prompts | `tests/evaluations.json` via skill-creator |
 | Skill quality benchmarks | Output quality with/without plugin | skill-creator A/B comparison |
+| Distribution sync | `dist/` matches canonical `.claude/` sources | `bash scripts/build-dist.sh --check` |
 
 Install skill-creator: `/plugin marketplace add anthropics/claude-plugins-official` then `/plugin install skill-creator`
 

@@ -1,0 +1,5 @@
+---
+description: Content filter mitigation for generating OSS documentation files (CODE_OF_CONDUCT, LICENSE, SECURITY, CHANGELOG, CONTRIBUTING). Activate when writing these file types.
+---
+
+

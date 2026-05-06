@@ -3,7 +3,7 @@ title: "Use PitchDocs with Other AI Tools"
 description: "Set up PitchDocs with Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose."
 type: how-to
 difficulty: intermediate
-last_verified: "2.1.0"
+last_verified: "2.2.0"
 related:
   - guides/getting-started.md
   - guides/troubleshooting.md
@@ -12,13 +12,36 @@ order: 7
 
 # Use PitchDocs with Other AI Tools
 
-> **Summary**: PitchDocs skills are plain Markdown — here's how to use them with Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose.
+> **Summary**: PitchDocs skills are plain Markdown — here's how to use them with Codex CLI, Cursor, Windsurf, Cline, Gemini CLI, Aider, and Goose. Use the automated setup script or follow the manual steps below.
 
 PitchDocs is built as a Claude Code plugin, but the documentation knowledge it contains — skills, agent workflows, quality standards — is stored as plain Markdown files with YAML frontmatter. That makes it portable to other AI coding tools with minimal effort.
 
-## Universal Pattern
+## Quick Setup (Automated)
 
-Regardless of which AI tool you use, the workflow is the same:
+PitchDocs includes a setup script that installs the right files for your platform:
+
+```bash
+# Clone PitchDocs
+git clone https://github.com/littlebearapps/pitchdocs.git /path/to/pitchdocs
+
+# Install for your platform (from your project directory)
+bash /path/to/pitchdocs/scripts/setup.sh codex    # Codex CLI
+bash /path/to/pitchdocs/scripts/setup.sh gemini   # Gemini CLI
+bash /path/to/pitchdocs/scripts/setup.sh cursor    # Cursor
+bash /path/to/pitchdocs/scripts/setup.sh cline     # Cline
+bash /path/to/pitchdocs/scripts/setup.sh windsurf  # Windsurf
+bash /path/to/pitchdocs/scripts/setup.sh goose     # Goose
+bash /path/to/pitchdocs/scripts/setup.sh aider     # Aider
+
+# Auto-detect platform (checks for .cursor/, .gemini/, .codex/, etc.)
+bash /path/to/pitchdocs/scripts/setup.sh
+```
+
+The setup script copies platform-specific distributions from `dist/`. These are pre-built packages containing skills, rules, agents, and commands translated into each platform's native format.
+
+## Manual Setup
+
+If you prefer to set things up manually, the universal pattern is:
 
 1. **Clone the PitchDocs repo** (or download just the `.claude/` directory):
 
@@ -88,9 +111,17 @@ OpenCode also supports MCP servers, so if you have the GitHub MCP server configu
 
 ## Codex CLI
 
-[Codex CLI](https://codex.openai.com/) (OpenAI) uses the same SKILL.md format as Claude Code but looks for skills at a different path: `.agents/skills/` instead of `.claude/skills/`.
+[Codex CLI](https://codex.openai.com/) (OpenAI) uses the same SKILL.md format as Claude Code but looks for skills at a different path: `.agents/skills/` instead of `.claude/skills/`. PitchDocs provides a pre-built Codex distribution with all skills, a portable agent, and command prompts.
 
-**Step 1 — Copy skills into your project:**
+**Automated setup:**
+
+```bash
+bash /path/to/pitchdocs/scripts/setup.sh codex
+```
+
+This installs 15 skills to `.agents/skills/`, a `pitchdocs-writer` agent to `.codex/agents/`, and copies AGENTS.md.
+
+**Manual setup:**
 
 ```bash
 # From your project root (not the PitchDocs repo)
@@ -101,9 +132,13 @@ cp -r "$PITCHDOCS/.claude/skills/"* .agents/skills/
 
 # Copy the quality standards as AGENTS.md (Codex reads this automatically)
 cp "$PITCHDOCS/AGENTS.md" ./AGENTS.md
+
+# Copy the portable docs-writer agent
+mkdir -p .codex/agents
+cp "$PITCHDOCS/agents/docs-writer-flat.md" .codex/agents/pitchdocs-writer.md
 ```
 
-**Step 2 — Use the skills:**
+**Use the skills:**
 
 Codex CLI loads SKILL.md files automatically when they're in `.agents/skills/`. Ask it to generate documentation and it will have access to the PitchDocs frameworks:
 
@@ -112,7 +147,7 @@ Codex CLI loads SKILL.md files automatically when they're in `.agents/skills/`. 
 > Extract features and benefits from this codebase using the feature-benefits skill
 ```
 
-**Step 3 (optional) — Add slash commands:**
+**(Optional) Add slash commands:**
 
 Copy PitchDocs command files into your Codex prompts directory to get `/prompts:readme`, `/prompts:changelog`, etc.:
 
@@ -124,38 +159,32 @@ cp "$PITCHDOCS/commands/"*.md ~/.codex/prompts/pitchdocs/
 
 ## Cursor
 
-[Cursor](https://cursor.com/) uses `.cursor/rules/*.mdc` files for contextual rules and `.cursor/agents/*.md` for subagents. It doesn't read SKILL.md files, but you can adapt PitchDocs content to Cursor's format.
+[Cursor](https://cursor.com/) uses `.cursor/rules/*.mdc` files for contextual rules and `.cursor/agents/*.md` for subagents. It doesn't read SKILL.md files, but PitchDocs provides pre-built `.mdc` rules and a portable agent.
 
-**Step 1 — Add the documentation standards as a Cursor rule:**
+**Automated setup:**
 
-Create `.cursor/rules/doc-standards.mdc` in your project:
-
-```
----
-description: PitchDocs documentation quality standards — 4-question framework, benefit-driven language, progressive disclosure, marketing-friendly structure
----
-
-(Paste the contents of rules/doc-standards.md here, without its YAML frontmatter)
+```bash
+bash /path/to/pitchdocs/scripts/setup.sh cursor
 ```
 
-Because this rule has a `description` but no `globs` or `alwaysApply`, Cursor treats it as an **agent-selected rule** — it gets included automatically when the AI determines it's relevant to your request.
+This installs 2 rules (`pitchdocs-standards.mdc`, `pitchdocs-filter.mdc`) and a `pitchdocs-writer` agent.
 
-**Step 2 — Add the docs-writer agent:**
+**Manual setup:**
 
-Create `.cursor/agents/docs-writer.md` in your project:
+Copy the pre-built files from `dist/cursor/`:
 
-```
----
-name: docs-writer
-description: Generates high-quality public-facing repository documentation with marketing appeal
----
-
-(Paste the contents of .claude/agents/docs-writer.md here, without its YAML frontmatter)
+```bash
+PITCHDOCS="/path/to/pitchdocs"
+mkdir -p .cursor/rules .cursor/agents
+cp "$PITCHDOCS/dist/cursor/.cursor/rules/"*.mdc .cursor/rules/
+cp "$PITCHDOCS/dist/cursor/.cursor/agents/"*.md .cursor/agents/
 ```
 
-**Step 3 — Reference skills on demand:**
+The rules use **agent-selected** activation — Cursor includes them automatically when it detects documentation tasks.
 
-Cursor doesn't have a skills directory, but you can reference PitchDocs skill files directly. Clone the PitchDocs repo somewhere accessible, then ask Cursor:
+**Reference skills on demand:**
+
+Cursor doesn't have a skills directory, but you can reference PitchDocs skill files directly:
 
 ```
 > Read the file at /path/to/pitchdocs/.claude/skills/public-readme/SKILL.md and use it to generate a README for this project
@@ -167,20 +196,26 @@ Or paste specific skill content into additional `.cursor/rules/*.mdc` files for 
 
 ## Windsurf
 
-[Windsurf](https://codeium.com/windsurf) (by Codeium) uses `.windsurfrules` for project-level context. Its Cascade AI reads this file from the project root automatically.
+[Windsurf](https://codeium.com/windsurf) (by Codeium) uses `.windsurf/rules/*.md` for project-level context. Windsurf has a 6,000 character per rule limit, so PitchDocs provides a distilled rule that fits within it.
 
-**Step 1 — Add the documentation standards:**
-
-Create `.windsurfrules` in your project root:
+**Automated setup:**
 
 ```bash
-# Copy the doc-standards rule as Windsurf context
-cp /path/to/pitchdocs/rules/doc-standards.md .windsurfrules
+bash /path/to/pitchdocs/scripts/setup.sh windsurf
+```
+
+This installs a distilled `pitchdocs.md` rule to `.windsurf/rules/` containing the core standards (4-question framework, banned phrases, benefit-driven language, progressive disclosure).
+
+**Manual setup:**
+
+```bash
+mkdir -p .windsurf/rules
+cp /path/to/pitchdocs/dist/windsurf/.windsurf/rules/pitchdocs.md .windsurf/rules/
 ```
 
 Or install [ContextDocs](https://github.com/littlebearapps/contextdocs) and use `/contextdocs:ai-context windsurf` to generate a tailored `.windsurfrules` from your codebase analysis.
 
-**Step 2 — Reference skills on demand:**
+**Reference skills on demand:**
 
 Windsurf can read files from your workspace. Ask Cascade to load specific skill files:
 
@@ -192,20 +227,26 @@ Windsurf can read files from your workspace. Ask Cascade to load specific skill 
 
 ## Cline
 
-[Cline](https://github.com/cline/cline) (VS Code extension) uses `.clinerules` for project-level context. It supports richer Markdown with task checklists.
+[Cline](https://github.com/cline/cline) (VS Code extension) uses `.clinerules/` directory for project-level context. It has skill support, 8 hook types, and MCP integration.
 
-**Step 1 — Add the documentation standards:**
-
-Create `.clinerules` in your project root:
+**Automated setup:**
 
 ```bash
-# Copy the doc-standards rule as Cline context
-cp /path/to/pitchdocs/rules/doc-standards.md .clinerules
+bash /path/to/pitchdocs/scripts/setup.sh cline
+```
+
+This installs documentation standards and content filter rules to `.clinerules/`.
+
+**Manual setup:**
+
+```bash
+mkdir -p .clinerules
+cp /path/to/pitchdocs/dist/cline/.clinerules/*.md .clinerules/
 ```
 
 Or install [ContextDocs](https://github.com/littlebearapps/contextdocs) and use `/contextdocs:ai-context cline` to generate a tailored `.clinerules` from your codebase analysis.
 
-**Step 2 — Reference skills on demand:**
+**Reference skills on demand:**
 
 Cline can read files from your workspace. Reference PitchDocs skill files directly in your Cline session:
 
@@ -217,17 +258,20 @@ Read /path/to/pitchdocs/.claude/skills/public-readme/SKILL.md and use it to gene
 
 ## Gemini CLI
 
-[Gemini CLI](https://github.com/google-gemini/gemini-cli) uses `GEMINI.md` for project context and `.gemini/commands/*.toml` for custom commands. It doesn't read SKILL.md files directly, but the knowledge transfers easily.
+[Gemini CLI](https://github.com/google-gemini/gemini-cli) uses `GEMINI.md` for project context and supports a full extension framework with skills, TOML commands, and hooks. PitchDocs provides a pre-built Gemini extension with all 15 skills and 14 TOML command wrappers.
 
-**Option A — Quick setup (context file):**
-
-Copy the documentation standards into your project's Gemini context:
+**Automated setup:**
 
 ```bash
-# Create .gemini/ directory
-mkdir -p .gemini
+bash /path/to/pitchdocs/scripts/setup.sh gemini
+```
 
-# Use the doc-standards rule as your base context
+This installs a Gemini extension to `~/.gemini/extensions/pitchdocs/` with skills, TOML commands, and a manifest.
+
+**Manual setup (context file only):**
+
+```bash
+mkdir -p .gemini
 cp /path/to/pitchdocs/rules/doc-standards.md .gemini/GEMINI.md
 ```
 
@@ -237,22 +281,14 @@ Then ask Gemini to read specific skill files when needed:
 > Read /path/to/pitchdocs/.claude/skills/public-readme/SKILL.md and use it to generate a README
 ```
 
-**Option B — Custom commands (TOML):**
+**Manual setup (TOML commands):**
 
-For frequently used workflows, create TOML command files. For example, `.gemini/commands/readme.toml`:
+PitchDocs pre-generates all 14 TOML command files in `dist/gemini/commands/`. Copy them to get `/readme`, `/changelog`, `/features`, etc.:
 
-```toml
-description = "Generate a marketing-friendly README using PitchDocs standards"
-prompt = """
-Read the PitchDocs public-readme skill at /path/to/pitchdocs/.claude/skills/public-readme/SKILL.md
-and the feature-benefits skill at /path/to/pitchdocs/.claude/skills/feature-benefits/SKILL.md.
-
-Then analyse this codebase and generate a README.md following the skill instructions.
-Use the 4-question framework, progressive disclosure, and benefit-driven language.
-"""
+```bash
+mkdir -p .gemini/commands
+cp /path/to/pitchdocs/dist/gemini/commands/*.toml .gemini/commands/
 ```
-
-This gives you a `/readme` command in Gemini CLI.
 
 ---
 
@@ -278,9 +314,17 @@ Generate a README for this project following the skill instructions.
 
 ## Goose
 
-[Goose](https://github.com/block/goose) (by Block) uses `.goosehints` for project context and MCP servers for tool access.
+[Goose](https://github.com/block/goose) (by Block) uses `.goosehints` for project context, YAML recipes for reusable workflows, and MCP servers for tool access.
 
-**Add PitchDocs context to `.goosehints`:**
+**Automated setup:**
+
+```bash
+bash /path/to/pitchdocs/scripts/setup.sh goose
+```
+
+This creates a `.goosehints` file with PitchDocs standards and installs 3 recipes (readme, changelog, features) to `.goose/recipes/`.
+
+**Manual setup:**
 
 ```bash
 # Append the doc-standards rule to your project hints
@@ -288,6 +332,26 @@ cat /path/to/pitchdocs/rules/doc-standards.md >> .goosehints
 ```
 
 For specific documentation tasks, reference skill files in your Goose session. If you have the GitHub MCP server configured, Goose can access repository metadata just as Claude Code does.
+
+---
+
+## Portable Agent
+
+PitchDocs provides a portable docs-writer agent at `agents/docs-writer-flat.md` that combines the full research-write-review pipeline in a single agent. This is designed for platforms that don't support sub-agent spawning (Codex CLI, Cursor, Gemini CLI, Cline, Goose, Windsurf, Aider).
+
+The portable agent includes:
+- Codebase research workflow (platform detection, feature extraction, lobby split planning)
+- Writing framework (4-question test, progressive disclosure, benefit-driven language)
+- Quality review checklist (structure, content, GEO readiness, technical accuracy)
+- Content filter mitigation strategies for high-risk OSS files
+
+The setup script installs this agent automatically for platforms that support custom agents (Codex CLI, Cursor).
+
+---
+
+## Machine-Readable Manifest
+
+PitchDocs includes a `pitchdocs.json` manifest at the repository root — a platform-neutral index of all skills, commands, agents, and rules with their file paths and descriptions. Build tools and scripts can parse this file to discover PitchDocs components programmatically.
 
 ---
 
@@ -300,3 +364,22 @@ Read /path/to/pitchdocs/llms.txt to see all available PitchDocs skills and docum
 ```
 
 This is especially useful when you're not sure which skill to use — `llms.txt` maps each file to a short description so your AI tool can pick the right one.
+
+---
+
+## Platform Support Tiers
+
+| Tier | Platforms | What Works |
+|------|-----------|------------|
+| **Native** | Claude Code, OpenCode | Skills, commands, agents, rules, hooks — full experience |
+| **Supported** | Codex CLI, Gemini CLI, Cursor, Cline | Skills (native or via reference), commands (translated), portable agent, rules |
+| **Basic** | Windsurf, Goose, Aider | Distilled rules, skill reference on demand, recipes (Goose) |
+
+### Claude Code Only Features
+
+These features depend on Claude Code-specific infrastructure:
+- Sub-agent spawning in docs-writer (portable agent is the alternative)
+- Per-project activation (`/pitchdocs:activate`)
+- Content filter write guard hook
+- Docs-awareness rule (suggests commands at documentation moments)
+- Docs-freshness agent (session-start freshness checks)

@@ -1,0 +1,8 @@
+# PitchDocs documentation standards
+# Add these entries to your project's .aider.conf.yml
+read:
+  - /path/to/pitchdocs/rules/doc-standards.md
+  # Add specific skills as needed:
+  # - /path/to/pitchdocs/.claude/skills/public-readme/SKILL.md
+  # - /path/to/pitchdocs/.claude/skills/feature-benefits/SKILL.md
+  # - /path/to/pitchdocs/.claude/skills/changelog/SKILL.md

@@ -1,0 +1,25 @@
+# PitchDocs Documentation Standards
+
+When generating public-facing repository documentation, follow these principles:
+
+## 4-Question Framework
+Every document must answer: (1) Does this solve my problem? (2) Can I use it? (3) Who made it? (4) Where do I learn more?
+
+## Progressive Disclosure
+README is the lobby — first paragraph non-technical, quick start copy-paste-ready (5-7 lines), features 8 or fewer items. Delegate detailed content to docs/guides/.
+
+## Feature-to-Benefit Writing
+Pattern: [Technical feature] so you can [user outcome] — [evidence]
+Use at least 3 benefit categories: time saved, confidence gained, pain avoided, capability unlocked, cost reduced.
+
+## Tone
+Professional-yet-approachable. "You can now..." not "We implemented...". Active voice, short sentences. Match project locale.
+
+## Banned Phrases
+Never use: "in today's digital landscape", "dive into", "leverage", "game-changer", "cutting-edge", "seamless", "robust", "furthermore", "revolutionise", "utilise", "comprehensive", "navigate the complexities", "elevate your".
+
+## PitchDocs Skills
+For detailed guidance on specific documentation types, read the SKILL.md files from:
+/path/to/pitchdocs/.claude/skills/
+
+Key skills: public-readme, feature-benefits, changelog, geo-optimisation, docs-verify

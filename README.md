@@ -200,9 +200,27 @@ For AI context file management (AGENTS.md, CLAUDE.md, .cursorrules, and more), s
 
 ## 🔀 Use with Other AI Tools
 
-PitchDocs works natively with [Claude Code](https://code.claude.com/) and [OpenCode](https://opencode.ai/). It's also portable to [Codex CLI](https://codex.openai.com/), [Cursor](https://cursor.com/), [Windsurf](https://codeium.com/windsurf), [Cline](https://github.com/cline/cline), [Gemini CLI](https://github.com/google-gemini/gemini-cli), [Aider](https://aider.chat/), and [Goose](https://github.com/block/goose) — all knowledge is stored as plain Markdown files.
+PitchDocs works natively with [Claude Code](https://code.claude.com/) and [OpenCode](https://opencode.ai/), and ships pre-built distributions for 6 more platforms:
 
-See the [Other AI Tools guide](docs/guides/other-ai-tools.md) for per-tool setup instructions and a full compatibility matrix.
+| Platform | Support | What Works |
+|----------|---------|------------|
+| [Claude Code](https://code.claude.com/) | Native | Skills, commands, agents, rules, hooks — full experience |
+| [OpenCode](https://opencode.ai/) | Native | Reads `.claude/skills/` directly — same install, same experience |
+| [Codex CLI](https://codex.openai.com/) | Supported | 15 skills (native SKILL.md), portable agent, 14 command prompts |
+| [Gemini CLI](https://github.com/google-gemini/gemini-cli) | Supported | Gemini extension with skills, 14 TOML commands, context file |
+| [Cursor](https://cursor.com/) | Supported | Agent-selected `.mdc` rules, portable docs-writer agent |
+| [Cline](https://github.com/cline/cline) | Supported | Rules in `.clinerules/`, skill reference on demand |
+| [Windsurf](https://codeium.com/windsurf) | Basic | Distilled standards rule (fits the 6,000 char limit) |
+| [Goose](https://github.com/block/goose) | Basic | `.goosehints` template, 3 YAML recipes |
+| [Aider](https://aider.chat/) | Basic | Config snippet, CONVENTIONS.md template |
+
+**Quick install for any platform:**
+
+```bash
+bash /path/to/pitchdocs/scripts/setup.sh codex    # or gemini, cursor, cline, windsurf, goose, aider
+```
+
+See the [Other AI Tools guide](docs/guides/other-ai-tools.md) for per-tool setup instructions, manual setup steps, and the full compatibility matrix.
 
 ---
 

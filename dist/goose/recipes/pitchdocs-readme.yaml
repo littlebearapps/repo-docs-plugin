@@ -1,0 +1,15 @@
+name: pitchdocs-readme
+description: Generate a marketing-friendly README using PitchDocs standards
+steps:
+  - prompt: |
+      Read the PitchDocs public-readme skill and feature-benefits skill, then
+      scan this codebase and generate a README.md.
+
+      Follow the 4-question framework, progressive disclosure (Lobby Principle),
+      and benefit-driven language. Hero section needs bold one-liner + explanatory
+      sentence + badges. Features section uses emoji+bold+em-dash bullets with
+      evidence from the codebase. Quick start must be copy-paste-ready.
+
+      Skills to reference:
+      - /path/to/pitchdocs/.claude/skills/public-readme/SKILL.md
+      - /path/to/pitchdocs/.claude/skills/feature-benefits/SKILL.md
