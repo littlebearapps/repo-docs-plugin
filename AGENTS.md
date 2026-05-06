@@ -79,7 +79,7 @@ These files are **load-bearing** for downstream systems and must be retained —
 
 | File | Why It's Load-Bearing | Update Discipline |
 |------|----------------------|-------------------|
-| `docs/faq/index.md` | Source for the marketing-site FAQPage JSON-LD on `https://littlebearapps.com/help/pitchdocs/`. The site's docs-sync pipeline (`scripts/docs-sync.config.ts` in `littlebearapps/littlebearapps.com`, mapped under `pitchdocs` with `category: faq`) **hard-fails** if this directory is missing. Closes [#45](https://github.com/littlebearapps/pitchdocs/issues/45). | Keep ≥7 question-shaped `## ` H2 headings (each ending `?`); preserve `title`/`description` frontmatter only — sync injects `category`, `tool`, dates. Update entries in place when answers drift; don't rewrite wholesale. |
+| `docs/faq/index.md` | Source for the marketing-site FAQPage JSON-LD on `https://littlebearapps.com/help/pitchdocs/`. The site's docs-sync pipeline (`scripts/docs-sync.config.ts` in `littlebearapps/littlebearapps.com`, mapped under `pitchdocs` with `category: faq`) **hard-fails** if this directory is missing. Closes [#45](https://github.com/littlebearapps/pitchdocs/issues/45). | Keep ≥7 question-shaped H2 headings (`##`) (each ending `?`); preserve `title`/`description` frontmatter only — sync injects `category`, `tool`, dates. Update entries in place when answers drift; don't rewrite wholesale. |
 
 ## AI Context Files
 
