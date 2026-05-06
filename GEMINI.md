@@ -29,3 +29,7 @@ No build, test, or deploy commands — this is a pure Markdown plugin. Lint with
 - `hooks/content-filter-guard.sh`: content filter write guard (Claude Code only, installed by `/pitchdocs:activate install strict`)
 - `.claude-plugin/plugin.json`: plugin manifest
 - `upstream-versions.json`: pinned upstream spec versions
+
+## Protected Files
+
+- `docs/faq/index.md` — load-bearing source for the marketing-site `FAQPage` JSON-LD on `https://littlebearapps.com/help/pitchdocs/`. The docs-sync pipeline (`scripts/docs-sync.config.ts` in `littlebearapps/littlebearapps.com`, mapped under `pitchdocs` with `category: faq`) hard-fails if the directory is missing. Keep ≥7 question-shaped H2 headings (`##`); update entries in place; never delete. See [Protected Documentation Files](AGENTS.md#protected-documentation-files) in `AGENTS.md`.

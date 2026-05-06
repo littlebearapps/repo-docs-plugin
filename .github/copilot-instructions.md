@@ -25,3 +25,7 @@ PitchDocs is a Claude Code plugin that generates marketing-quality repository do
 ## Sync Points
 
 When modifying skills or commands, keep these files in sync: README.md, AGENTS.md, llms.txt, and the bug report template component dropdown.
+
+## Protected Files
+
+`docs/faq/index.md` is load-bearing — it sources the marketing-site `FAQPage` JSON-LD on `https://littlebearapps.com/help/pitchdocs/`. The docs-sync pipeline (`scripts/docs-sync.config.ts` in `littlebearapps/littlebearapps.com`, mapped under `pitchdocs` with `category: faq`) hard-fails if the directory is missing. Keep ≥7 question-shaped H2 headings (`##`); edit entries in place; never delete. See [Protected Documentation Files](../AGENTS.md#protected-documentation-files) in `AGENTS.md`.

@@ -27,6 +27,10 @@ PitchDocs is a Claude Code plugin that generates marketing-quality repository do
 - `.claude/agents/docs-writer.md` — orchestration agent workflow
 - `upstream-versions.json` — pinned upstream spec versions, checked monthly
 
+## Protected Files
+
+- `docs/faq/index.md` — load-bearing source for the marketing-site `FAQPage` JSON-LD on `https://littlebearapps.com/help/pitchdocs/`. The docs-sync pipeline (`scripts/docs-sync.config.ts` in `littlebearapps/littlebearapps.com`, mapped under `pitchdocs` with `category: faq`) hard-fails if the directory is missing. Keep ≥7 question-shaped H2 headings (`##`); edit entries in place; never delete. See [Protected Documentation Files](AGENTS.md#protected-documentation-files) in `AGENTS.md`.
+
 ## Commands
 
 No build or test commands — this is a pure Markdown plugin.
